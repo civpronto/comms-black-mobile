@@ -1,111 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comms Black Mobile - Products</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — Comms Black Mobile</title>
+  <meta name="description" content="Explore products and services from Comms Black Mobile — mobile repairs, accessories, and communication solutions." />
+
+  <!-- SEO & Social -->
+  <meta property="og:title" content="Comms Black Mobile — Products" />
+  <meta property="og:description" content="Explore mobile repairs, accessories, and communication solutions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/products.html" />
+  <meta property="og:image" content="https://civpronto.github.io/comms-black-mobile/assets/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+
+  <link rel="stylesheet" href="/comms-black-mobile/assets/css/styles.css">
 </head>
 <body>
-  <!-- Header / Navbar -->
-  <header>
-    <div class="logo">Comms Black Mobile</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Mission</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="academy.html">Academy</a></li>
-        <li><a href="faq.html">FAQ's</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/comms-black-mobile/" class="brand">
+        <img src="/comms-black-mobile/assets/img/logo.svg" width="32" height="32" alt="Comms Black Mobile logo">
+        Comms Black Mobile
+      </a>
+      <nav class="nav">
+        <ul>
+          <li><a href="/comms-black-mobile/">Mission</a></li>
+          <li><a href="/comms-black-mobile/products.html" aria-current="page">Products</a></li>
+          <li><a href="/comms-black-mobile/academy.html">Academy</a></li>
+          <li><a href="/comms-black-mobile/faqs.html">FAQ’s</a></li>
+          <li><a href="/comms-black-mobile/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <h1>Communication Suites</h1>
+  <main class="section">
+    <div class="container">
+      <h1>Our Products & Services</h1>
+      <p class="lead">We provide trusted solutions in mobile repair, accessories, and communication services. Every product is backed by expertise, security, and value.</p>
 
-  <!-- Everyday Aussie -->
-  <section class="product-card">
-    <h2>Everyday Aussie</h2>
-    <div class="product-images">
-      <img src="images/products/pixel8a/pixel8a-front.jpg" alt="Pixel 8a front view">
-      <img src="images/products/pixel8a/pixel8a-back.jpg" alt="Pixel 8a back view">
-      <img src="images/products/pixel8a/pixel8a-board.jpg" alt="Pixel 8a lifestyle">
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="/comms-black-mobile/assets/img/repairs.jpg" alt="Phone repair service">
+          <h2>Device Repairs</h2>
+          <p>Screen replacements, battery upgrades, and diagnostics — fast, affordable, and done right the first time.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="/comms-black-mobile/assets/img/accessories.jpg" alt="Mobile accessories">
+          <h2>Accessories</h2>
+          <p>Quality chargers, cases, and screen protectors that extend the life of your device.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="/comms-black-mobile/assets/img/secure.jpg" alt="Secure mobile services">
+          <h2>Secure Mobile Solutions</h2>
+          <p>Privacy-focused communication tools to keep your data safe in an increasingly connected world.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="/comms-black-mobile/assets/img/consulting.jpg" alt="Consulting services">
+          <h2>Consulting</h2>
+          <p>Personalized advice on device care, upgrades, and data security — tailored to your needs.</p>
+        </div>
+      </div>
     </div>
-    <p>
-      GrapheneOS Pixel 8a suite: case, privacy screen protector, always-on VPN, Cake Wallet,
-      Signal Messenger, KeeXD password manager, Tor browser. <br>
-      <strong>Customer uses existing SIM.</strong>
-    </p>
-    <p class="price">
-      AUD $1,499 <br>
-      ≈ 6.9 XMR <span class="discount">(5% off if paid directly in XMR)</span>
-    </p>
-  </section>
+  </main>
 
-  <!-- Anonymous Aussie -->
-  <section class="product-card">
-    <h2>Anonymous Aussie</h2>
-    <div class="product-images">
-      <img src="images/products/pixel8a/pixel8a-front.jpg" alt="Pixel 8a front view">
-      <img src="images/products/pixel8a/pixel8a-back.jpg" alt="Pixel 8a back view">
-      <img src="images/products/pixel8a/pixel8a-board.jpg" alt="Pixel 8a lifestyle">
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p class="muted">© <span data-year></span> Comms Black Mobile — All rights reserved.</p>
     </div>
-    <p>
-      GrapheneOS Pixel 8a suite: case, privacy screen protector, always-on VPN, Cake Wallet,
-      Signal Messenger, KeeXD password manager, Tor browser, <strong>Anonymous eSIM (Silent.Link)</strong>.
-    </p>
-    <p class="price">
-      AUD $1,699 <br>
-      ≈ 7.8 XMR <span class="discount">(5% off if paid directly in XMR)</span>
-    </p>
-  </section>
-
-  <!-- Urban Operator -->
-  <section class="product-card">
-    <h2>Urban Operator</h2>
-    <div class="product-images">
-      <img src="images/products/pixel8a/pixel8a-front.jpg" alt="Pixel 8a front view">
-      <img src="images/products/pixel8a/pixel8a-back.jpg" alt="Pixel 8a back view">
-      <img src="images/products/pixel8a/pixel8a-board.jpg" alt="Pixel 8a lifestyle">
-    </div>
-    <p>
-      GrapheneOS Pixel 8a suite: case, privacy screen protector, always-on VPN, Cake Wallet,
-      Signal Messenger, KeeXD password manager, Tor browser, <br>
-      Anonymous eSIM (Silent.Link) installed to <strong>Nitrowall privacy router</strong>. <br>
-      Phone always in <strong>airplane mode (air gapped)</strong>.
-    </p>
-    <p class="price">
-      AUD $2,099 <br>
-      ≈ 9.6 XMR <span class="discount">(5% off if paid directly in XMR)</span>
-    </p>
-  </section>
-
-  <!-- Bush Ranger -->
-  <section class="product-card">
-    <h2>Bush Ranger</h2>
-    <div class="product-images">
-      <img src="images/products/pixel8a/pixel8a-front.jpg" alt="Pixel 8a front view">
-      <img src="images/products/pixel8a/pixel8a-back.jpg" alt="Pixel 8a back view">
-      <img src="images/products/pixel8a/pixel8a-board.jpg" alt="Pixel 8a lifestyle">
-    </div>
-    <p>
-      GrapheneOS Pixel 8a suite: case, privacy screen protector, always-on VPN, Cake Wallet,
-      Signal Messenger, KeeXD password manager, Tor browser, <br>
-      Anonymous eSIM (Silent.Link) installed to <strong>Nitrowall privacy router</strong>. <br>
-      Phone always in <strong>airplane mode (air gapped)</strong>. <br>
-      Includes <strong>Starlink Mini</strong> for global satellite service out of tower range.
-    </p>
-    <p class="price">
-      AUD $2,899 <br>
-      ≈ 13.3 XMR <span class="discount">(5% off if paid directly in XMR)</span>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Comms Black Mobile. All rights reserved.</p>
-    <p>Contact only via Signal: <strong>commsblack.10</strong></p>
   </footer>
+
+  <script src="/comms-black-mobile/assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,34 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comms Black Mobile - Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Comms Black Mobile</title>
+  <meta name="description" content="Contact Comms Black Mobile securely through Signal messenger. Username: commsblack.10" />
+
+  <!-- SEO & Social -->
+  <meta property="og:title" content="Comms Black Mobile — Contact" />
+  <meta property="og:description" content="Reach us securely on Signal messenger. Username: commsblack.10" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/contact.html" />
+  <meta property="og:image" content="https://civpronto.github.io/comms-black-mobile/assets/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+
+  <link rel="stylesheet" href="/comms-black-mobile/assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/comms-black-mobile/" class="brand">
+        <img src="/comms-black-mobile/assets/img/logo.svg" width="32" height="32" alt="Comms Black Mobile logo">
+        Comms Black Mobile
+      </a>
+      <nav class="nav">
+        <ul>
+          <li><a href="/comms-black-mobile/">Mission</a></li>
+          <li><a href="/comms-black-mobile/products.html">Products</a></li>
+          <li><a href="/comms-black-mobile/academy.html">Academy</a></li>
+          <li><a href="/comms-black-mobile/faqs.html">FAQ’s</a></li>
+          <li><a href="/comms-black-mobile/contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="contact-card">
-      <h2>Secure Contact</h2>
-      <p>
-        We only accept contact through <strong>Signal Messenger</strong>.<br>
-        Add our handle directly in your Signal app:
-      </p>
+  <main class="section">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="lead">We value your privacy. The only way to contact us is through <strong>Signal messenger</strong>.</p>
 
-      <!-- Signal "button" styled like a link -->
-      <div class="signal-button">
-        <span>@commsblack.10</span>
+      <div class="contact-box">
+        <img src="/comms-black-mobile/assets/img/signal-logo.png" alt="Signal logo" width="64" height="64">
+        <h2>Signal Username</h2>
+        <p><code>commsblack.10</code></p>
+        <p class="muted">Add us on Signal to start a secure and private chat.</p>
       </div>
-
-      <p class="note">
-        ⚠️ For privacy, please search our handle inside Signal.  
-        We do not accept phone calls, SMS, or emails.
-      </p>
-    </section>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p class="muted">© <span data-year></span> Comms Black Mobile — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/comms-black-mobile/assets/js/main.js" defer></script>
 </body>
 </html>
