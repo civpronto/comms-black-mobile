@@ -1,63 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Comms Black Mobile</title>
-  <meta name="description" content="Contact Comms Black Mobile securely through Signal messenger. Username: commsblack.10" />
-
-  <!-- SEO & Social -->
-  <meta property="og:title" content="Comms Black Mobile — Contact" />
-  <meta property="og:description" content="Reach us securely on Signal messenger. Username: commsblack.10" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/contact.html" />
-  <meta property="og:image" content="https://civpronto.github.io/comms-black-mobile/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
-
-  <link rel="stylesheet" href="/comms-black-mobile/assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Commsblack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/comms-black-mobile/" class="brand">
-        <img src="/comms-black-mobile/assets/img/logo.svg" width="32" height="32" alt="Comms Black Mobile logo">
-        Comms Black Mobile
-      </a>
-      <nav class="nav">
-        <ul>
-          <li><a href="/comms-black-mobile/">Mission</a></li>
-          <li><a href="/comms-black-mobile/products.html">Products</a></li>
-          <li><a href="/comms-black-mobile/academy.html">Academy</a></li>
-          <li><a href="/comms-black-mobile/faqs.html">FAQ’s</a></li>
-          <li><a href="/comms-black-mobile/contact.html" aria-current="page">Contact</a></li>
-        </ul>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-black text-white shadow">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold">Commsblack</a>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="mission.html" class="hover:underline">Mission</a>
+        <a href="products.html" class="hover:underline">Products</a>
+        <a href="academy.html" class="hover:underline">Academy</a>
+        <a href="faqs.html" class="hover:underline">FAQs</a>
+        <a href="contact.html" class="underline font-semibold">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p class="lead">We value your privacy. The only way to contact us is through <strong>Signal messenger</strong>.</p>
-
-      <div class="contact-box">
-        <img src="/comms-black-mobile/assets/img/signal-logo.png" alt="Signal logo" width="64" height="64">
-        <h2>Signal Username</h2>
-        <p><code>commsblack.10</code></p>
-        <p class="muted">Add us on Signal to start a secure and private chat.</p>
+  <!-- Main -->
+  <main class="max-w-3xl mx-auto p-6 text-center">
+    <h1 class="text-4xl font-bold mb-6">Contact Us</h1>
+    <p class="text-lg mb-8">
+      For privacy and security, Commsblack only accepts contact via Signal.
+    </p>
+    
+    <!-- Signal Contact Card -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 inline-block border border-gray-200">
+      <div class="flex flex-col items-center">
+        <!-- Signal Logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-blue-500 mb-4" viewBox="0 0 512 512" fill="currentColor">
+          <path d="M256 32C132.3 32 32 132.3 32 256c0 52.9 17.3 101.7 46.6 141.2L64 480l82.8-14.7C183.5 484.7 219 496 256 496c123.7 0 224-100.3 224-224S379.7 32 256 32z"/>
+        </svg>
+        
+        <h2 class="text-2xl font-bold mb-2">Signal Handle</h2>
+        <p class="font-mono text-lg mb-4">@commsblack.10</p>
+        
+        <a href="https://signal.me/#u/commsblack.10" target="_blank" class="bg-black text-white px-6 py-2 rounded-lg shadow hover:bg-gray-800">
+          Message on Signal
+        </a>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p class="muted">© <span data-year></span> Comms Black Mobile — All rights reserved.</p>
-    </div>
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4 mt-10">
+    <p>&copy; 2025 Commsblack Mobile. All rights reserved.</p>
   </footer>
-
-  <script src="/comms-black-mobile/assets/js/main.js" defer></script>
 </body>
 </html>

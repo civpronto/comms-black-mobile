@@ -1,81 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ’s — Comms Black Mobile</title>
-  <meta name="description" content="Frequently Asked Questions — Comms Black Mobile answers to common queries about products, services, and policies." />
-
-  <!-- SEO & Social -->
-  <meta property="og:title" content="Comms Black Mobile — FAQ’s" />
-  <meta property="og:description" content="Answers to common questions about mobile repairs, accessories, security solutions, and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/faqs.html" />
-  <meta property="og:image" content="https://civpronto.github.io/comms-black-mobile/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
-
-  <link rel="stylesheet" href="/comms-black-mobile/assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commsblack Mobile - FAQ’s</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/comms-black-mobile/" class="brand">
-        <img src="/comms-black-mobile/assets/img/logo.svg" width="32" height="32" alt="Comms Black Mobile logo">
-        Comms Black Mobile
-      </a>
-      <nav class="nav">
-        <ul>
-          <li><a href="/comms-black-mobile/">Mission</a></li>
-          <li><a href="/comms-black-mobile/products.html">Products</a></li>
-          <li><a href="/comms-black-mobile/academy.html">Academy</a></li>
-          <li><a href="/comms-black-mobile/faqs.html" aria-current="page">FAQ’s</a></li>
-          <li><a href="/comms-black-mobile/contact.html">Contact</a></li>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-black text-white py-6 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Commsblack Mobile</h1>
+      <nav>
+        <ul class="flex space-x-6 text-sm">
+          <li><a href="index.html" class="hover:underline">Mission</a></li>
+          <li><a href="products.html" class="hover:underline">Products</a></li>
+          <li><a href="academy.html" class="hover:underline">Academy</a></li>
+          <li><a href="faqs.html" class="hover:underline">FAQ’s</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Frequently Asked Questions</h1>
-      <p class="lead">Here you’ll find answers to the most common questions our customers ask. If you don’t see your question here, reach out via our contact page.</p>
-
-      <section class="faq">
-        <h2>Do you charge for viewing Academy content?</h2>
-        <p>No. The Academy is 100% free to access. Our goal is to make mobile knowledge available to everyone.</p>
-      </section>
-
-      <section class="faq">
-        <h2>How long do repairs take?</h2>
-        <p>Most repairs can be completed within 24–48 hours, depending on parts availability and the type of service.</p>
-      </section>
-
-      <section class="faq">
-        <h2>Do your accessories come with a warranty?</h2>
-        <p>Yes. All accessories are backed by a 6-month warranty covering manufacturing defects.</p>
-      </section>
-
-      <section class="faq">
-        <h2>Can I request a custom consultation?</h2>
-        <p>Absolutely. We provide tailored advice and security-focused consultations. Just head over to our Contact page to book.</p>
-      </section>
-
-      <section class="faq">
-        <h2>How do you ensure customer data security?</h2>
-        <p>We follow strict privacy practices, minimize data collection, and never share your personal details with third parties without consent.</p>
-      </section>
+  <!-- Hero -->
+  <section class="bg-gray-900 text-white py-16">
+    <div class="max-w-3xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-extrabold mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-gray-300">Everything you need to know about Commsblack Mobile kits, services, and support.</p>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p class="muted">© <span data-year></span> Comms Black Mobile — All rights reserved.</p>
+  <!-- FAQ Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 space-y-8">
+
+      <!-- Q1 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">Do I need a subscription to use Commsblack Mobile?</h3>
+        <p class="text-gray-700 leading-relaxed">
+          No. Commsblack Mobile does not charge a subscription. However, some features in the communication kits rely on <strong>third-party providers</strong> such as Silent.link (data eSIM), Blacktel (VoIP services), or Starlink (satellite internet). Any ongoing costs come directly from those providers, not from Commsblack Mobile.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">What’s included with each communication kit?</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Every kit comes with a GrapheneOS phone, protective accessories, charging equipment, and (depending on the package) privacy hardware and anonymous connectivity.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+          <li><strong>Anonymous Aussie, Operator Aussie, and Sovereign Aussie</strong> include <strong>10GB of prepaid data</strong> on Silent.link and <strong>$10 credit</strong> for Blacktel VoIP services to get you started.</li>
+          <li><strong>Everyday Aussie</strong> does not include prepaid data or VoIP credit, since it is designed for customers using their own SIM.</li>
+        </ul>
+      </div>
+
+      <!-- Q3 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">How do I recharge data or VoIP credit?</h3>
+        <p class="text-gray-700 leading-relaxed">
+          You can recharge directly through Silent.link, Blacktel, or Starlink. If you prefer, Commsblack Mobile can guide you through the process or handle the recharge for you if you provide the funds.
+        </p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">How much do ongoing services cost?</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li><strong>Silent.link (Data eSIM):</strong> About $3 per GB, never expires.</li>
+          <li><strong>Blacktel (VoIP):</strong> $90/month for a number, $0.09/min incoming, $0.12/min outgoing, free incoming texts, $0.71 per outgoing text.</li>
+          <li><strong>Starlink (Satellite):</strong> $80/month for 50GB or $195/month unlimited.</li>
+        </ul>
+      </div>
+
+      <!-- Q5 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">Can I use my own SIM card instead?</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Yes. The Everyday Aussie kit is designed for customers who want to use their own SIM. For other kits, you can still swap in your SIM if preferred, but some privacy features rely on anonymous eSIMs.
+        </p>
+      </div>
+
+      <!-- Q6 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">Is GrapheneOS difficult to use?</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Not at all. GrapheneOS is based on Android, so it feels familiar if you’ve used an Android phone before. The difference is in the security: GrapheneOS removes bloatware and gives you more control over your device.
+        </p>
+      </div>
+
+      <!-- Q7 -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-2">What kind of support do you provide?</h3>
+        <p class="text-gray-700 leading-relaxed">
+          We offer guidance on setup, using your communication kit, and managing third-party services. You’ll always know how to recharge data, VoIP, or satellite services — either by doing it yourself or through our support.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
+      © 2025 Commsblack Mobile. All rights reserved.
     </div>
   </footer>
 
-  <script src="/comms-black-mobile/assets/js/main.js" defer></script>
 </body>
 </html>

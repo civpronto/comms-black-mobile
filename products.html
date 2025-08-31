@@ -1,82 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Products — Comms Black Mobile</title>
-  <meta name="description" content="Explore products and services from Comms Black Mobile — mobile repairs, accessories, and communication solutions." />
-
-  <!-- SEO & Social -->
-  <meta property="og:title" content="Comms Black Mobile — Products" />
-  <meta property="og:description" content="Explore mobile repairs, accessories, and communication solutions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/products.html" />
-  <meta property="og:image" content="https://civpronto.github.io/comms-black-mobile/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
-
-  <link rel="stylesheet" href="/comms-black-mobile/assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commsblack Mobile - Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/comms-black-mobile/" class="brand">
-        <img src="/comms-black-mobile/assets/img/logo.svg" width="32" height="32" alt="Comms Black Mobile logo">
-        Comms Black Mobile
-      </a>
-      <nav class="nav">
-        <ul>
-          <li><a href="/comms-black-mobile/">Mission</a></li>
-          <li><a href="/comms-black-mobile/products.html" aria-current="page">Products</a></li>
-          <li><a href="/comms-black-mobile/academy.html">Academy</a></li>
-          <li><a href="/comms-black-mobile/faqs.html">FAQ’s</a></li>
-          <li><a href="/comms-black-mobile/contact.html">Contact</a></li>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-black text-white py-6 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Commsblack Mobile</h1>
+      <nav>
+        <ul class="flex space-x-6 text-sm">
+          <li><a href="index.html" class="hover:underline">Mission</a></li>
+          <li><a href="products.html" class="hover:underline">Products</a></li>
+          <li><a href="academy.html" class="hover:underline">Academy</a></li>
+          <li><a href="faqs.html" class="hover:underline">FAQ’s</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Our Products & Services</h1>
-      <p class="lead">We provide trusted solutions in mobile repair, accessories, and communication services. Every product is backed by expertise, security, and value.</p>
+  <!-- Hero Section -->
+  <section class="bg-gray-900 text-white py-20">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-extrabold mb-6">Secure Communication Kits for Privacy & Freedom</h2>
+      <p class="text-lg text-gray-300">From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
+    </div>
+  </section>
 
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="/comms-black-mobile/assets/img/repairs.jpg" alt="Phone repair service">
-          <h2>Device Repairs</h2>
-          <p>Screen replacements, battery upgrades, and diagnostics — fast, affordable, and done right the first time.</p>
+  <!-- Product Grid -->
+  <section id="products" class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Communication Suites</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Everyday Aussie -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <h3 class="text-xl font-semibold mb-2">Everyday Aussie</h3>
+          <p class="text-gray-500 mb-4 italic">Privacy Made Simple</p>
+          <ul class="space-y-2 flex-1">
+            <li>✅ GrapheneOS Pixel 8a</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Small Faraday bag</li>
+            <li>✅ Customer’s SIM</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Includes everything you need for a secure start. No ongoing service costs unless you choose to add them.</p>
+          <a href="contact.html" class="mt-6 inline-block bg-black text-white px-4 py-2 rounded-xl text-center hover:bg-gray-800">Buy Now</a>
         </div>
 
-        <div class="product-card">
-          <img src="/comms-black-mobile/assets/img/accessories.jpg" alt="Mobile accessories">
-          <h2>Accessories</h2>
-          <p>Quality chargers, cases, and screen protectors that extend the life of your device.</p>
+        <!-- Anonymous Aussie -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <h3 class="text-xl font-semibold mb-2">Anonymous Aussie</h3>
+          <p class="text-gray-500 mb-4 italic">Anonymity Without Compromise</p>
+          <ul class="space-y-2 flex-1">
+            <li>✅ GrapheneOS Pixel 8a</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Small Faraday bag</li>
+            <li>✅ Anonymous silent.link eSIM pre-installed</li>
+            <li>✅ Encrypted VoIP app with private number</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Comes ready-to-use with <strong>10GB anonymous data</strong> and <strong>$10 VoIP credit</strong> included. Future usage is flexible and pay-as-you-go.</p>
+          <a href="contact.html" class="mt-6 inline-block bg-black text-white px-4 py-2 rounded-xl text-center hover:bg-gray-800">Buy Now</a>
         </div>
 
-        <div class="product-card">
-          <img src="/comms-black-mobile/assets/img/secure.jpg" alt="Secure mobile services">
-          <h2>Secure Mobile Solutions</h2>
-          <p>Privacy-focused communication tools to keep your data safe in an increasingly connected world.</p>
+        <!-- Operator Aussie -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <h3 class="text-xl font-semibold mb-2">Operator Aussie</h3>
+          <p class="text-gray-500 mb-4 italic">Air-Gapped Security for High-Risk Environments</p>
+          <ul class="space-y-2 flex-1">
+            <li>✅ GrapheneOS Pixel 8a (airplane mode enforced)</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Large Faraday bag</li>
+            <li>✅ NitroWall / Blue Merle privacy router</li>
+            <li>✅ Anonymous eSIM via router</li>
+            <li>✅ Encrypted VoIP app with private number</li>
+            <li>✅ 1m Ethernet cable</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Includes <strong>10GB anonymous data</strong> and <strong>$10 VoIP credit</strong>. Ongoing usage is flexible and supported by us.</p>
+          <a href="contact.html" class="mt-6 inline-block bg-black text-white px-4 py-2 rounded-xl text-center hover:bg-gray-800">Buy Now</a>
         </div>
 
-        <div class="product-card">
-          <img src="/comms-black-mobile/assets/img/consulting.jpg" alt="Consulting services">
-          <h2>Consulting</h2>
-          <p>Personalized advice on device care, upgrades, and data security — tailored to your needs.</p>
+        <!-- Sovereign Aussie -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-2 border-black">
+          <h3 class="text-xl font-semibold mb-2">Sovereign Aussie</h3>
+          <p class="text-gray-500 mb-4 italic">Secure Connectivity Anywhere on Earth</p>
+          <ul class="space-y-2 flex-1">
+            <li>✅ GrapheneOS Pixel 8a (airplane mode enforced)</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Large Faraday bag</li>
+            <li>✅ NitroWall / Blue Merle privacy router</li>
+            <li>✅ Anonymous eSIM via router</li>
+            <li>✅ Encrypted VoIP app with private number</li>
+            <li>✅ Starlink Mini (anonymously registered)</li>
+            <li>✅ 1m + 10m Ethernet cables</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Delivered ready for use with <strong>10GB anonymous data</strong> and <strong>$10 VoIP credit</strong>. Starlink provides flexible subscription options for global connectivity.</p>
+          <a href="contact.html" class="mt-6 inline-block bg-black text-white px-4 py-2 rounded-xl text-center hover:bg-gray-800">Buy Now</a>
         </div>
+
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p class="muted">© <span data-year></span> Comms Black Mobile — All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
+      © 2025 Commsblack Mobile. All rights reserved.
     </div>
   </footer>
 
-  <script src="/comms-black-mobile/assets/js/main.js" defer></script>
 </body>
 </html>

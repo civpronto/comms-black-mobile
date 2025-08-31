@@ -1,67 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Academy — Comms Black Mobile</title>
-  <meta name="description" content="Comms Black Mobile Academy — free knowledge hub with tips, guides, and insights on mobile technology, security, and repairs." />
-
-  <!-- SEO & Social -->
-  <meta property="og:title" content="Comms Black Mobile — Academy" />
-  <meta property="og:description" content="Free knowledge hub with tips, guides, and insights on mobile technology, security, and repairs." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/academy.html" />
-  <meta property="og:image" content="https://civpronto.github.io/comms-black-mobile/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
-
-  <link rel="stylesheet" href="/comms-black-mobile/assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commsblack Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/comms-black-mobile/" class="brand">
-        <img src="/comms-black-mobile/assets/img/logo.svg" width="32" height="32" alt="Comms Black Mobile logo">
-        Comms Black Mobile
-      </a>
-      <nav class="nav">
-        <ul>
-          <li><a href="/comms-black-mobile/">Mission</a></li>
-          <li><a href="/comms-black-mobile/products.html">Products</a></li>
-          <li><a href="/comms-black-mobile/academy.html" aria-current="page">Academy</a></li>
-          <li><a href="/comms-black-mobile/faqs.html">FAQ’s</a></li>
-          <li><a href="/comms-black-mobile/contact.html">Contact</a></li>
-        </ul>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-black text-white shadow">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold">Commsblack</a>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="mission.html" class="hover:underline">Mission</a>
+        <a href="products.html" class="hover:underline">Products</a>
+        <a href="academy.html" class="underline font-semibold">Academy</a>
+        <a href="faqs.html" class="hover:underline">FAQs</a>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Academy</h1>
-      <p class="lead">The Comms Black Mobile Academy is a free knowledge hub — no logins, no fees, just practical guidance to help you get the most from your mobile devices.</p>
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6">Commsblack Academy</h1>
+    <p class="text-lg mb-8">Learn how to secure your communications, protect your privacy, and operate with confidence in a digital-first world.</p>
 
-      <article class="blog-entry">
-        <h2>Mobile Basics</h2>
-        <p>Learn the fundamentals of smartphones, operating systems, and everyday maintenance. From setting up your first device to keeping it updated, this section covers the essentials.</p>
-      </article>
+    <!-- Accordion Section -->
+    <div class="space-y-4">
 
-      <article class="blog-entry">
-        <h2>DIY Repairs</h2>
-        <p>Step-by-step guides for diagnosing and fixing common issues like screen cracks, weak batteries, and water damage. Always proceed carefully and know when professional help is best.</p>
-      </article>
+      <!-- Core Topics -->
+      <h2 class="text-2xl font-semibold">Core Topics</h2>
+      <div class="space-y-2">
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">GrapheneOS Basics</summary>
+          <p class="mt-2 text-gray-700">GrapheneOS is an open-source, security-focused mobile OS built on the Android Open Source Project. It’s hardened against exploits, free from unnecessary apps, and puts you in control of what runs on your device. We cover:<br>- How GrapheneOS differs from standard Android.<br>- Why verified boot and memory safety matter.<br>- Getting started with app installation via sandboxed Google Play or open-source alternatives.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">VoIP & Anonymous Numbers</summary>
+          <p class="mt-2 text-gray-700">Voice over IP lets you make calls and send texts over the internet instead of through a carrier. Providers like Blacktel allow you to operate with anonymous numbers, but costs, quality, and reliability vary. You’ll learn:<br>- Advantages and limitations of VoIP over SIM-based calls.<br>- When to use anonymous numbers.<br>- Managing costs, credits, and recharges.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">Data Security</summary>
+          <p class="mt-2 text-gray-700">Your browsing and communications are constantly being profiled. Anonymous eSIMs, VPNs, and privacy routers help break the link between you and your activity. Topics include:<br>- How eSIMs like Silent.link reduce traceability.<br>- Using a privacy router (IMEI/IMSI/BSSID randomization).<br>- Threat models: when a VPN helps and when it doesn’t.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">Air-Gapped Devices</summary>
+          <p class="mt-2 text-gray-700">Air-gapping means keeping a device permanently offline, reducing its attack surface to near-zero. This is critical for handling highly sensitive data. We explore:<br>- Setting up an air-gapped GrapheneOS device.<br>- Secure file transfer between offline and online devices.<br>- Use cases for personal and professional security.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">Faraday Protection</summary>
+          <p class="mt-2 text-gray-700">Faraday bags block wireless signals, preventing location tracking and unwanted communication. You’ll learn:<br>- How they work.<br>- When to store devices inside them.<br>- Limitations (e.g. accidental signal leakage).</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">Satellite Internet</summary>
+          <p class="mt-2 text-gray-700">Satellite connectivity, like Starlink, allows you to operate outside of cell coverage. With global reach comes new risks and considerations:<br>- Latency and bandwidth limitations.<br>- Starlink mini phased-array antennas for mobile use.<br>- Using satellite safely with privacy tools.</p>
+        </details>
+      </div>
 
-      <article class="blog-entry">
-        <h2>Data Security</h2>
-        <p>Understand how to protect your personal information, avoid scams, and use privacy tools effectively. Digital safety is just as important as physical device care.</p>
-      </article>
+      <!-- Advanced Topics -->
+      <h2 class="text-2xl font-semibold mt-6">Advanced Topics</h2>
+      <div class="space-y-2">
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">Monero (XMR)</summary>
+          <p class="mt-2 text-gray-700">Monero (XMR) is a cryptocurrency designed for private, untraceable transactions. Unlike Bitcoin, Monero hides sender, receiver, and transaction amounts. Learn:<br>- How Monero achieves privacy with ring signatures and stealth addresses.<br>- Best practices for storing and transacting securely.<br>- Common mistakes to avoid when using Monero for anonymity.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">OPSEC (Operational Security)</summary>
+          <p class="mt-2 text-gray-700">OPSEC is about protecting your intentions and activities from being exposed. In practice, it’s about discipline:<br>- Understanding what information you leak unintentionally.<br>- Avoiding predictable patterns.<br>- Building habits that protect identity and intent.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">COMSEC (Communications Security)</summary>
+          <p class="mt-2 text-gray-700">COMSEC focuses on keeping messages private against interception or tampering. We cover:<br>- Encryption methods for messaging and calls.<br>- Secure channels vs. insecure channels.<br>- Balancing convenience with security.</p>
+        </details>
+        <details class="bg-white rounded-xl shadow p-4">
+          <summary class="cursor-pointer font-semibold">Countersurveillance</summary>
+          <p class="mt-2 text-gray-700">Countersurveillance helps detect and avoid being monitored — digitally or physically. You’ll learn:<br>- How surveillance works in the real world.<br>- Techniques for reducing exposure in digital spaces.<br>- Practical physical-world countersurveillance basics.</p>
+        </details>
+      </div>
+    </div>
 
-      <article class="blog-entry">
-        <h2>Advanced Tips</h2>
-        <p>Explore hidden features, optimization hacks, and advanced configurations to make your device faster, safer, and more efficient.</p>
-      </article>
+    <div class="mt-10 p-6 bg-gray-100 rounded-xl shadow text-center">
+      <h3 class="text-xl font-semibold mb-2">Your Next Step</h3>
+      <p class="mb-4">Browse the topics above, expand the sections to learn more, and when you’re ready, explore Commsblack communication kits to put this knowledge into practice.</p>
+      <a href="products.html" class="inline-block bg-black text-white px-6 py-2 rounded-lg shadow hover:bg-gray-800">View Communication Kits</a>
+    </div>
+  </main>
 
-      <article class="blog-entry">
-        <h2>Fut
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4 mt-10">
+    <p>&copy; 2025 Commsblack Mobile. All rights reserved.</p>
+  </footer>
+</body>
+</html>
