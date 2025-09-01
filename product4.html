@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Product 4</title>
+  <style>
+    body {font-family: Arial, sans-serif; background: #111; color: #eee; max-width: 700px; margin: auto; line-height: 1.6; padding: 20px;}
+    h1, h2 {color: #fff;}
+    pre {background: #1b1b1b; padding: 12px; border-radius: 6px; word-wrap: break-word; border: 1px solid #333; font-size: 0.95em;}
+    .button {display: inline-block; padding: 12px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;}
+    .button:hover {background: #3d8e40;}
+    #qrcode {margin-top: 10px; padding: 10px; border: 1px solid #333; border-radius: 6px; background: #000; display: inline-block;}
+    .note {font-size: 0.9em; color: #bbb;}
+    .privacy {margin-top: 20px; padding: 15px; background: #1a1a1a; border-radius: 6px; border: 1px solid #333; font-size: 0.9em; color: #ccc;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <h1>Checkout: Product 4</h1>
+  <p><strong>Price:</strong> <span id="xmrPrice">Loading...</span></p>
+
+  <h2>Step 1: Send Payment</h2>
+  <p>Send exactly <strong><span id="xmrAmount">Loading...</span></strong> to the Monero address below:</p>
+
+  <pre id="xmrAddress">
+84h4Y7rWNF7gd134i5m9vHH4iwU95FS3i9hZZ8rVPbA1NX5gY4HLESfTXyV8GeXHVSNXNLEQce8L7jnVi6XCq2UrFfF6nSp
+  </pre>
+
+  <p>Or scan this QR code with your Monero wallet:</p>
+  <div id="qrcode"></div>
+
+  <h2>Step 2: Confirm & Send Your Shipping Address</h2>
+  <p>After you’ve sent payment, open Signal using the button below and send:</p>
+  <ul>
+    <li>📸 A screenshot of your wallet’s payment confirmation</li>
+    <li>📦 Your full shipping address</li>
+  </ul>
+
+  <p>
+    <a id="signalButton" href="#" target="_blank" class="button">Send via Signal</a>
+  </p>
+
+  <div class="privacy">
+    🔒 <strong>Your privacy matters.</strong><br>
+    Any personal details you share (like your shipping address) will only be used to complete your order.  
+    They will not be stored, profiled, or passed on. I respect your trust and handle your information with care.
+  </div>
+
+  <hr>
+  <p class="note">
+    Payments are verified manually. Once your XMR transaction is confirmed, you’ll receive an order confirmation on Signal.
+  </p>
+
+  <script>
+    const AUD_PRICE = 3300;
+    const address = "84h4Y7rWNF7gd134i5m9vHH4iwU95FS3i9hZZ8rVPbA1NX5gY4HLESfTXyV8GeXHVSNXNLEQce8L7jnVi6XCq2UrFfF6nSp";
+    const signalHandle = "commsblack.10";
+
+    async function updateCheckout() {
+      try {
+        const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=monero&vs_currencies=aud");
+        const data = await res.json();
+        const xmrToAud = data.monero.aud;
+        const xmrAmount = (AUD_PRICE / xmrToAud).toFixed(4);
+
+        document.getElementById("xmrPrice").textContent = `${AUD_PRICE} AUD (~${xmrAmount} XMR)`;
+        document.getElementById("xmrAmount").textContent = `${xmrAmount} XMR`;
+
+        const moneroURI = `monero:${address}?tx_amount=${xmrAmount}`;
+        document.getElementById("qrcode").innerHTML = "";
+        new QRCode(document.getElementById("qrcode"), {text: moneroURI, width: 240, height: 240});
+
+        const signalMessage = `Hi, I’ve sent payment (~${xmrAmount} XMR). Here is my proof of payment screenshot and shipping address:`;
+        const encodedMessage = encodeURIComponent(signalMessage);
+        document.getElementById("signalButton").href = `https://signal.me/#eu/${signalHandle}?text=${encodedMessage}`;
+      } catch (err) {
+        document.getElementById("xmrPrice").textContent = "Error loading price.";
+        document.getElementById("xmrAmount").textContent = "Error";
+      }
+    }
+
+    updateCheckout();
+  </script>
+
+</body>
+</html>
