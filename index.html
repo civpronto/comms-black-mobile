@@ -1,86 +1,219 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commsblack Mobile - Mission</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commsblack Mobile</title>
 
-  <!-- Header -->
-  <header class="bg-black text-white py-6 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Commsblack Mobile</h1>
-      <nav>
-        <ul class="flex space-x-6 text-sm">
-          <li><a href="index.html" class="hover:underline">Mission</a></li>
-          <li><a href="products.html" class="hover:underline">Products</a></li>
-          <li><a href="academy.html" class="hover:underline">Academy</a></li>
-          <li><a href="faqs.html" class="hover:underline">FAQ’s</a></li>
-          <li><a href="contact.html" class="hover:underline">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #f9fbff, #edf3ff);
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      background: #fff;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo svg {
+      width: 52px;
+      height: 52px;
+      margin-right: 0.5rem;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .logo-text {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+    .logo-text .black { color: #000; }
+    .logo-text .blue { color: #3A76F0; font-weight: 500; margin-left: 0.25rem; }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    nav a:hover { color: #3A76F0; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4.5rem;
+      background: linear-gradient(135deg, #ffffff, #3A76F0);
+      color: #111;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+      max-width: 1000px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      color: #222;
+    }
+    .hero .cta a {
+      display: inline-block;
+      padding: 0.9rem 1.9rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      background: #3A76F0;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .hero .cta a:hover { background: #2a5cd6; transform: translateY(-2px); }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    .topic {
+      background: #fff;
+      color: #333;
+      padding: 3rem 2.5rem;
+      margin: 2rem 0;
+      border-radius: 16px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .topic:hover { transform: translateY(-4px); }
+    .topic h3 {
+      font-size: 1.9rem;
+      text-align: center;
+      color: #000;
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+    .topic p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      color: #444;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: #fff;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <!-- Globe + black padlock -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <defs>
+          <clipPath id="globeClip">
+            <circle cx="32" cy="32" r="28"/>
+          </clipPath>
+          <style>
+            .g{stroke:#3A76F0;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+            .lock{stroke:#000;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+          </style>
+        </defs>
+        <g class="g" clip-path="url(#globeClip)">
+          <line x1="-6" y1="32" x2="70" y2="32"/>
+          <line x1="32" y1="-6" x2="32" y2="70"/>
+          <path d="M26 -6 C10 24, 10 40, 26 70"/>
+          <path d="M38 -6 C54 24, 54 40, 38 70"/>
+        </g>
+        <circle cx="32" cy="32" r="28" class="g"/>
+        <g class="lock" transform="translate(0,-4)">
+          <path d="M22 32 v-7 a10 10 0 0 1 20 0 v7"/>
+          <rect x="20" y="32" width="24" height="20" rx="3" ry="3"/>
+        </g>
+      </svg>
+      <div class="logo-text">
+        <span class="black">Commsblack</span>
+        <span class="blue">Mobile</span>
+      </div>
     </div>
+    <nav>
+      <a href="#Mission">Mission</a>
+      <a href="#Products">Products</a>
+      <a href="#Academy">Academy</a>
+      <a href="#FAQ">FAQ’s</a>
+      <a href="#Contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-gray-900 text-white py-20">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-4xl font-extrabold mb-6">Private. Secure. Anonymous.</h2>
-      <p class="text-lg text-gray-300">Our mission is simple: give people back control of their communications — free from surveillance, exploitation, and unnecessary risk.</p>
-      <a href="products.html" class="mt-8 inline-block bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">Explore Products</a>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Private. Secure. Anonymous.</h1>
+    <p>Our mission is simple: give people back control of their communications — free from surveillance, exploitation, and unnecessary risk.</p>
+    <div class="cta">
+      <a href="#Products">Explore products</a>
     </div>
   </section>
 
-  <!-- Mission Content -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6 space-y-12">
-
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Why We Exist</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Big Tech and telecom providers profit from your data. Governments and third parties track your movements and communications. We exist to give you back control — with tools that protect your personal freedom, digital identity, and ability to connect on your own terms.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-2xl font-bold mb-4">What We Offer</h3>
-        <p class="text-gray-700 leading-relaxed">
-          We build <strong>communication kits</strong> that combine hardened GrapheneOS phones, privacy hardware, and anonymous services. From simple, everyday privacy to sovereign global connectivity, each kit is tailored to your needs — whether you’re at home, traveling, or operating beyond the grid.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Who It’s For</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Everyday users who value privacy</li>
-          <li>Professionals handling sensitive information</li>
-          <li>Travelers, operators, and global citizens</li>
-          <li>Anyone tired of being the product in the surveillance economy</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-2xl font-bold mb-4">The Commsblack Difference</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>No unnecessary apps, bloat, or trackers</li>
-          <li>Anonymous and secure by default</li>
-          <li>Transparent about <strong>third-party service costs</strong> (for data, VoIP, or satellite) — these are charged by outside providers, not Commsblack Mobile</li>
-          <li>Simple, ready-to-use packages with initial data and credit included</li>
-          <li>Ongoing support to help you recharge or manage services easily</li>
-        </ul>
-      </div>
-
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="topic" id="Mission">
+      <h3>Why we exist</h3>
+      <p>Big Tech and telecom providers profit from your data. Governments and third parties track your movements and communications. We exist to give you back control — with tools that protect your personal freedom, digital identity, and ability to connect on your own terms.</p>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white py-6 mt-12">
-    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-      © 2025 Commsblack Mobile. All rights reserved.
+    <div class="topic" id="Products">
+      <h3>What we offer</h3>
+      <p>We build communication kits that combine hardened GrapheneOS phones, privacy hardware, and anonymous services. They are designed for simple everyday privacy, sovereign global connectivity, and seamless use at home, in travel, or off-grid.</p>
     </div>
+
+    <div class="topic" id="Who">
+      <h3>Who it’s for</h3>
+      <p>Commsblack Mobile is for everyday users who value privacy, professionals handling sensitive information, travelers and global citizens, and anyone tired of being the product in the surveillance economy.</p>
+    </div>
+
+    <div class="topic" id="Difference">
+      <h3>The Commsblack difference</h3>
+      <p>No unnecessary apps, bloat, or trackers. Anonymous and secure by default. Transparent about third-party service costs. Simple, ready-to-use packages with data included. Ongoing support to help you recharge or manage services easily.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Commsblack Mobile. All rights reserved.
   </footer>
-
 </body>
 </html>
