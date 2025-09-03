@@ -23,7 +23,7 @@
       color: #222;
     }
 
-    /* HEADER (from index.html) */
+    /* HEADER */
     header {
       background: #fff;
       padding: 0.8rem 2rem;
@@ -154,7 +154,7 @@
     }
     .contact-card a:hover { background: #2a5cd6; transform: translateY(-2px); }
 
-    /* FOOTER (from index.html) */
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem;
@@ -174,7 +174,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Same Globe + Padlock Logo -->
+      <!-- Globe + Padlock Logo -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Commsblack Mobile logo">
         <defs>
           <clipPath id="globeClip">
@@ -236,11 +236,7 @@
     &copy; 2025 Commsblack Mobile. All rights reserved.
   </footer>
 
-  <script>
-    function toggleMenu(){
-      const nav=document.getElementById("mobileNav");
-      nav.style.display = nav.style.display==="flex"?"none":"flex";
-    }
-  </script>
+  <!-- Use one shared script across ALL pages -->
+  <script src="main.js"></script>
 </body>
 </html>

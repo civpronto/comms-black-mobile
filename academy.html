@@ -222,7 +222,7 @@
       <div class="logo-text"><span class="black">Commsblack</span><span class="blue">Mobile</span></div>
     </div>
     <nav>
-      <a href="index.html#Mission">Mission</a>
+      <a href="mission.html">Mission</a>
       <a href="products.html">Products</a>
       <a href="academy.html">Academy</a>
       <a href="faqs.html">FAQ’s</a>
@@ -232,7 +232,7 @@
   </header>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html#Mission" onclick="toggleMenu()">Mission</a>
+    <a href="mission.html" onclick="toggleMenu()">Mission</a>
     <a href="products.html" onclick="toggleMenu()">Products</a>
     <a href="academy.html" onclick="toggleMenu()">Academy</a>
     <a href="faqs.html" onclick="toggleMenu()">FAQ’s</a>
@@ -270,10 +270,16 @@
   </footer>
 
   <script>
-    function toggleMenu(){
-      const nav=document.getElementById("mobileNav");
-      nav.style.display = nav.style.display==="flex"?"none":"flex";
+    function toggleMenu() {
+      const nav = document.getElementById("mobileNav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
+    // Ensure nav resets if resized back to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        document.getElementById("mobileNav").style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>
