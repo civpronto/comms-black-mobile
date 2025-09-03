@@ -1,4 +1,4 @@
-// assets/js/main.js
+// main.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".menu-toggle");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileNav.classList.toggle("active");
   });
 
-  // Optional: close menu when a link is clicked
+  // Close menu when a link is clicked
   const links = mobileNav.querySelectorAll("a");
   links.forEach(link => {
     link.addEventListener("click", () => {

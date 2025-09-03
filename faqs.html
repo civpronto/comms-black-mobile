@@ -4,109 +4,270 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commsblack Mobile - FAQ’s</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-black text-white py-6 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Commsblack Mobile</h1>
-      <nav>
-        <ul class="flex space-x-6 text-sm">
-          <li><a href="index.html" class="hover:underline">Mission</a></li>
-          <li><a href="products.html" class="hover:underline">Products</a></li>
-          <li><a href="academy.html" class="hover:underline">Academy</a></li>
-          <li><a href="faqs.html" class="hover:underline">FAQ’s</a></li>
-          <li><a href="contact.html" class="hover:underline">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Favicons (same as index.html) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?v=4">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=4">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=4">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png?v=4">
+  <link rel="shortcut icon" href="favicon.ico?v=4">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #f9fbff, #edf3ff);
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      background: #fff;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo svg {
+      width: 52px;
+      height: 52px;
+      margin-right: 0.5rem;
+    }
+    .logo-text {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+    .logo-text .black { color: #000; }
+    .logo-text .blue { color: #3A76F0; font-weight: 500; margin-left: 0.25rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    nav a:hover { color: #3A76F0; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .menu-toggle span {
+      width: 24px;
+      height: 3px;
+      background: #111;
+      border-radius: 2px;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      padding: 1rem;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 8px;
+    }
+    .mobile-nav a {
+      margin: 0.5rem 0;
+      font-weight: 600;
+      color: #111;
+      text-decoration: none;
+    }
+    .mobile-nav a:hover { color: #3A76F0; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      background: linear-gradient(135deg, #ffffff, #3A76F0);
+      color: #111;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #222;
+    }
+
+    /* FAQ SECTION */
+    .faq {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .faq-item {
+      background: #fff;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+    .faq-item h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #000;
+    }
+    .faq-item p, .faq-item ul {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .faq-item ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: #fff;
+      color: #555;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .menu-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <!-- Same Globe + Padlock Logo -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Commsblack Mobile logo">
+        <defs>
+          <clipPath id="globeClip">
+            <circle cx="32" cy="32" r="28"/>
+          </clipPath>
+          <style>
+            .globe { stroke:#3A76F0; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round }
+            .lock-body { fill:#000; stroke:none }
+            .lock-shackle { stroke:#000; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round }
+          </style>
+        </defs>
+        <rect x="18" y="28" width="28" height="20" rx="3" ry="3" class="lock-body"/>
+        <path d="M20 28 v-3 a12 12 0 0 1 24 0 v3" class="lock-shackle"/>
+        <g class="globe" clip-path="url(#globeClip)">
+          <line x1="-6" y1="32" x2="70" y2="32"/>
+          <line x1="32" y1="-6" x2="32" y2="70"/>
+          <path d="M26 -6 C10 24, 10 40, 26 70"/>
+          <path d="M38 -6 C54 24, 54 40, 38 70"/>
+        </g>
+        <circle cx="32" cy="32" r="28" class="globe"/>
+      </svg>
+      <div class="logo-text"><span class="black">Commsblack</span><span class="blue">Mobile</span></div>
     </div>
+    <nav>
+      <a href="index.html#Mission">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </header>
 
-  <!-- Hero -->
-  <section class="bg-gray-900 text-white py-16">
-    <div class="max-w-3xl mx-auto text-center px-6">
-      <h2 class="text-4xl font-extrabold mb-4">Frequently Asked Questions</h2>
-      <p class="text-lg text-gray-300">Everything you need to know about Commsblack Mobile kits, services, and support.</p>
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#Mission" onclick="toggleMenu()">Mission</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
+    <a href="academy.html" onclick="toggleMenu()">Academy</a>
+    <a href="faqs.html" onclick="toggleMenu()">FAQ’s</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about Commsblack Mobile kits, services, and support.</p>
+  </section>
+
+  <!-- FAQ CONTENT -->
+  <section class="faq">
+    <div class="faq-item">
+      <h3>Do I need a subscription to use Commsblack Mobile?</h3>
+      <p>No. Commsblack Mobile does not charge a subscription. However, some features in the communication kits rely on <strong>third-party providers</strong> such as Silent.link (data eSIM), Blacktel (VoIP services), or Starlink (satellite internet). Any ongoing costs come directly from those providers, not from Commsblack Mobile.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What’s included with each communication kit?</h3>
+      <p>Every kit comes with a GrapheneOS phone, protective accessories, charging equipment, and (depending on the package) privacy hardware and anonymous connectivity.</p>
+      <ul>
+        <li><strong>Anonymous Aussie, Operator Aussie, and Sovereign Aussie</strong> include <strong>10GB of prepaid data</strong> on Silent.link and <strong>$10 credit</strong> for Blacktel VoIP services to get you started.</li>
+        <li><strong>Everyday Aussie</strong> does not include prepaid data or VoIP credit, since it is designed for customers using their own SIM.</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I recharge data or VoIP credit?</h3>
+      <p>You can recharge directly through Silent.link, Blacktel, or Starlink. If you prefer, Commsblack Mobile can guide you through the process or handle the recharge for you if you provide the funds.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much do ongoing services cost?</h3>
+      <ul>
+        <li><strong>Silent.link (Data eSIM):</strong> About $3 per GB, never expires.</li>
+        <li><strong>Blacktel (VoIP):</strong> $90/month for a number, $0.09/min incoming, $0.12/min outgoing, free incoming texts, $0.71 per outgoing text.</li>
+        <li><strong>Starlink (Satellite):</strong> $80/month for 50GB or $195/month unlimited.</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I use my own SIM card instead?</h3>
+      <p>Yes. The Everyday Aussie kit is designed for customers who want to use their own SIM. For other kits, you can still swap in your SIM if preferred, but some privacy features rely on anonymous eSIMs.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is GrapheneOS difficult to use?</h3>
+      <p>Not at all. GrapheneOS is based on Android, so it feels familiar if you’ve used an Android phone before. The difference is in the security: GrapheneOS removes bloatware and gives you more control over your device.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What kind of support do you provide?</h3>
+      <p>We offer guidance on setup, using your communication kit, and managing third-party services. You’ll always know how to recharge data, VoIP, or satellite services — either by doing it yourself or through our support.</p>
     </div>
   </section>
 
-  <!-- FAQ Content -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6 space-y-8">
-
-      <!-- Q1 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">Do I need a subscription to use Commsblack Mobile?</h3>
-        <p class="text-gray-700 leading-relaxed">
-          No. Commsblack Mobile does not charge a subscription. However, some features in the communication kits rely on <strong>third-party providers</strong> such as Silent.link (data eSIM), Blacktel (VoIP services), or Starlink (satellite internet). Any ongoing costs come directly from those providers, not from Commsblack Mobile.
-        </p>
-      </div>
-
-      <!-- Q2 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">What’s included with each communication kit?</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Every kit comes with a GrapheneOS phone, protective accessories, charging equipment, and (depending on the package) privacy hardware and anonymous connectivity.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-          <li><strong>Anonymous Aussie, Operator Aussie, and Sovereign Aussie</strong> include <strong>10GB of prepaid data</strong> on Silent.link and <strong>$10 credit</strong> for Blacktel VoIP services to get you started.</li>
-          <li><strong>Everyday Aussie</strong> does not include prepaid data or VoIP credit, since it is designed for customers using their own SIM.</li>
-        </ul>
-      </div>
-
-      <!-- Q3 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">How do I recharge data or VoIP credit?</h3>
-        <p class="text-gray-700 leading-relaxed">
-          You can recharge directly through Silent.link, Blacktel, or Starlink. If you prefer, Commsblack Mobile can guide you through the process or handle the recharge for you if you provide the funds.
-        </p>
-      </div>
-
-      <!-- Q4 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">How much do ongoing services cost?</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li><strong>Silent.link (Data eSIM):</strong> About $3 per GB, never expires.</li>
-          <li><strong>Blacktel (VoIP):</strong> $90/month for a number, $0.09/min incoming, $0.12/min outgoing, free incoming texts, $0.71 per outgoing text.</li>
-          <li><strong>Starlink (Satellite):</strong> $80/month for 50GB or $195/month unlimited.</li>
-        </ul>
-      </div>
-
-      <!-- Q5 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">Can I use my own SIM card instead?</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Yes. The Everyday Aussie kit is designed for customers who want to use their own SIM. For other kits, you can still swap in your SIM if preferred, but some privacy features rely on anonymous eSIMs.
-        </p>
-      </div>
-
-      <!-- Q6 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">Is GrapheneOS difficult to use?</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Not at all. GrapheneOS is based on Android, so it feels familiar if you’ve used an Android phone before. The difference is in the security: GrapheneOS removes bloatware and gives you more control over your device.
-        </p>
-      </div>
-
-      <!-- Q7 -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-2">What kind of support do you provide?</h3>
-        <p class="text-gray-700 leading-relaxed">
-          We offer guidance on setup, using your communication kit, and managing third-party services. You’ll always know how to recharge data, VoIP, or satellite services — either by doing it yourself or through our support.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white py-6 mt-12">
-    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-      © 2025 Commsblack Mobile. All rights reserved.
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Commsblack Mobile. All rights reserved.
   </footer>
 
+  <script>
+    function toggleMenu(){
+      const nav=document.getElementById("mobileNav");
+      nav.style.display = nav.style.display==="flex"?"none":"flex";
+    }
+  </script>
 </body>
 </html>
