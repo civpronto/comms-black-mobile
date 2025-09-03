@@ -1,14 +1,19 @@
-// main.js — Comms Black Mobile
-// Lightweight, privacy-friendly, security-conscious
+// assets/js/main.js
 
-(function () {
-  "use strict";
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const mobileNav = document.querySelector(".mobile-nav");
 
-  // Auto-fill current year in footer
-  const yearSpan = document.querySelector("[data-year]");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+  // Toggle menu on hamburger click
+  toggle.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
 
-  // Future: add simple accessibility or UI features here
-})();
+  // Optional: close menu when a link is clicked
+  const links = mobileNav.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+    });
+  });
+});

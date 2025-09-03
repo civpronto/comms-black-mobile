@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -13,131 +13,8 @@
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png?v=3">
   <link rel="shortcut icon" href="favicon.ico?v=3">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, #f9fbff, #edf3ff);
-      color: #222;
-    }
-
-    /* HEADER */
-    header {
-      background: #fff;
-      padding: 0.8rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo svg {
-      width: 52px;
-      height: 52px;
-      margin-right: 0.5rem;
-      fill: none;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .logo-text {
-      font-size: 1.35rem;
-      font-weight: 600;
-    }
-    .logo-text .black { color: #000; }
-    .logo-text .blue { color: #3A76F0; font-weight: 500; margin-left: 0.25rem; }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #111;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    nav a:hover { color: #3A76F0; }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem 4.5rem;
-      background: linear-gradient(135deg, #ffffff, #3A76F0);
-      color: #111;
-    }
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin: 0 auto 1rem;
-      max-width: 1000px;
-      line-height: 1.1;
-      white-space: nowrap;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-      color: #222;
-    }
-    .hero .cta a {
-      display: inline-block;
-      padding: 0.9rem 1.9rem;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      background: #3A76F0;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-    .hero .cta a:hover { background: #2a5cd6; transform: translateY(-2px); }
-
-    /* MAIN CONTENT */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    .topic {
-      background: #fff;
-      color: #333;
-      padding: 3rem 2.5rem;
-      margin: 2rem 0;
-      border-radius: 16px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .topic:hover { transform: translateY(-4px); }
-    .topic h3 {
-      font-size: 1.9rem;
-      text-align: center;
-      color: #000;
-      margin: 0 0 1rem;
-      font-weight: 600;
-    }
-    .topic p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 1.5rem auto 0;
-      color: #444;
-      text-align: center;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #fff;
-      color: #555;
-    }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <!-- HEADER -->
@@ -171,6 +48,8 @@
         <span class="blue">Mobile</span>
       </div>
     </div>
+
+    <!-- Desktop nav -->
     <nav>
       <a href="#Mission">Mission</a>
       <a href="#Products">Products</a>
@@ -178,6 +57,22 @@
       <a href="#FAQ">FAQ’s</a>
       <a href="#Contact">Contact</a>
     </nav>
+
+    <!-- Hamburger button (mobile only) -->
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav">
+      <a href="#Mission">Mission</a>
+      <a href="#Products">Products</a>
+      <a href="#Academy">Academy</a>
+      <a href="#FAQ">FAQ’s</a>
+      <a href="#Contact">Contact</a>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -215,5 +110,8 @@
   <footer>
     &copy; 2025 Commsblack Mobile. All rights reserved.
   </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
