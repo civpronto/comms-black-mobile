@@ -194,3 +194,40 @@ footer {
   nav { display: none; }
   .menu-toggle { display: flex; }
 }
+
+
+/* Mobile Nav Fix */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding: 1rem;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  nav { display: none; }
+  .menu-toggle { display: flex; }
+}
