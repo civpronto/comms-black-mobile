@@ -194,16 +194,16 @@
       <a href="faqs.html">FAQ’s</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </header>
 
   <!-- Mobile Menu -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Mission</a>
-    <a href="products.html">Products</a>
-    <a href="academy.html">Academy</a>
-    <a href="faqs.html">FAQ’s</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" onclick="toggleMenu()">Mission</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
+    <a href="academy.html" onclick="toggleMenu()">Academy</a>
+    <a href="faqs.html" onclick="toggleMenu()">FAQ’s</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
   </div>
 
   <!-- HERO -->
@@ -214,6 +214,7 @@
 
   <!-- FAQ CONTENT -->
   <section class="faq">
+    <!-- your FAQ items remain unchanged -->
     <div class="faq-item">
       <h3>Do I need a subscription to use Commsblack Mobile?</h3>
       <p>No. Commsblack Mobile does not charge a subscription. However, some features in the communication kits rely on <strong>third-party providers</strong> such as Silent.link (data eSIM), Blacktel (VoIP services), or Starlink (satellite internet). Any ongoing costs come directly from those providers, not from Commsblack Mobile.</p>

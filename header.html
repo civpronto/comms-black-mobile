@@ -56,3 +56,11 @@
   <a href="faqs.html" onclick="toggleMenu()">FAQ’s</a>
   <a href="contact.html" onclick="toggleMenu()">Contact</a>
 </div>
+
+<!-- Toggle Script -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("mobileNav");
+    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+  }
+</script>

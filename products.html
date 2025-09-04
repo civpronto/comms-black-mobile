@@ -1,290 +1,113 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Commsblack Mobile - Products</title>
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=4">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?v=4">
-  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=4">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=4">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png?v=4">
-  <link rel="shortcut icon" href="favicon.ico?v=4">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, #f9fbff, #edf3ff);
-      color: #222;
-    }
-
-    /* HEADER */
-    header {
-      background: #fff;
-      padding: 0.8rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo svg {
-      width: 52px;
-      height: 52px;
-      margin-right: 0.5rem;
-    }
-    .logo-text {
-      font-size: 1.35rem;
-      font-weight: 600;
-    }
-    .logo-text .black { color: #000; }
-    .logo-text .blue { color: #3A76F0; font-weight: 500; margin-left: 0.25rem; }
-    
-    nav {
-      display: flex;
-      align-items: center;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #111;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    nav a:hover { color: #3A76F0; }
-
-    /* Hamburger button (hidden on desktop) */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-    .menu-toggle span {
-      width: 24px;
-      height: 3px;
-      background: #111;
-      border-radius: 2px;
-    }
-
-    /* Mobile menu (hidden by default) */
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: #fff;
-      padding: 1rem;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      border-radius: 8px;
-    }
-    .mobile-nav a {
-      margin: 0.5rem 0;
-      font-weight: 600;
-      color: #111;
-      text-decoration: none;
-    }
-    .mobile-nav a:hover {
-      color: #3A76F0;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem 4.5rem;
-      background: linear-gradient(135deg, #ffffff, #3A76F0);
-      color: #111;
-    }
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin: 0 auto 1rem;
-      max-width: 1000px;
-      line-height: 1.1;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-      color: #222;
-    }
-    .hero .cta a {
-      display: inline-block;
-      padding: 0.9rem 1.9rem;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      background: #3A76F0;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-    .hero .cta a:hover { background: #2a5cd6; transform: translateY(-2px); }
-
-    /* MAIN CONTENT */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    .topic {
-      background: #fff;
-      color: #333;
-      padding: 3rem 2.5rem;
-      margin: 2rem 0;
-      border-radius: 16px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .topic:hover { transform: translateY(-4px); }
-    .topic h3 {
-      font-size: 1.9rem;
-      text-align: center;
-      color: #000;
-      margin: 0 0 1rem;
-      font-weight: 600;
-    }
-    .topic p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 1.5rem auto 0;
-      color: #444;
-      text-align: center;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #fff;
-      color: #555;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { display: none; }
-      .menu-toggle { display: flex; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comms Black Mobile - Products</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="load.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <!-- Globe + Padlock Logo -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Commsblack Mobile logo">
-        <defs>
-          <clipPath id="globeClip">
-            <circle cx="32" cy="32" r="28"/>
-          </clipPath>
-          <style>
-            .globe { stroke:#3A76F0; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round }
-            .lock-body { fill:#000; stroke:none }
-            .lock-shackle { stroke:#000; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round }
-          </style>
-        </defs>
-        <rect x="18" y="28" width="28" height="20" rx="3" ry="3" class="lock-body"/>
-        <path d="M20 28 v-3 a12 12 0 0 1 24 0 v3" class="lock-shackle"/>
-        <g class="globe" clip-path="url(#globeClip)">
-          <line x1="-6" y1="32" x2="70" y2="32"/>
-          <line x1="32" y1="-6" x2="32" y2="70"/>
-          <path d="M26 -6 C10 24, 10 40, 26 70"/>
-          <path d="M38 -6 C54 24, 54 40, 38 70"/>
-        </g>
-        <circle cx="32" cy="32" r="28" class="globe"/>
-      </svg>
-      <div class="logo-text">
-        <span class="black">Commsblack</span>
-        <span class="blue">Mobile</span>
-      </div>
-    </div>
+  <!-- Header -->
+  <div id="header"></div>
 
-    <!-- Desktop Nav -->
-    <nav>
-      <a href="index.html">Mission</a>
-      <a href="products.html">Products</a>
-      <a href="academy.html">Academy</a>
-      <a href="faqs.html">FAQ’s</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <!-- Hamburger Button -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html" onclick="toggleMenu()">Mission</a>
-    <a href="products.html" onclick="toggleMenu()">Products</a>
-    <a href="academy.html" onclick="toggleMenu()">Academy</a>
-    <a href="faqs.html" onclick="toggleMenu()">FAQ’s</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
-  </div>
-
-  <!-- HERO -->
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Our Products</h1>
-    <p>Explore our communication kits, phones, and privacy tools designed for secure, anonymous, and reliable connectivity.</p>
+    <div class="hero-content">
+      <h2>Secure Communication Kits for Privacy & Freedom</h2>
+      <p>From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
+    </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <div class="topic">
-      <h3>Product Overview</h3>
-      <p>We build communication kits that combine hardened GrapheneOS phones, privacy hardware, and anonymous services. They are designed for simple everyday privacy, sovereign global connectivity, and seamless use at home, in travel, or off-grid.</p>
+  <!-- Product Grid -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2 class="section-title">Communication Suites</h2>
+
+      <div class="product-grid">
+        
+        <!-- Everyday Aussie -->
+        <div class="product-card">
+          <h3>Everyday Aussie</h3>
+          <p class="subtitle">Privacy Made Simple</p>
+          <ul>
+            <li>✅ GrapheneOS Pixel 8a</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Small Faraday bag</li>
+            <li>✅ Customer’s SIM</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="price">$1,400 AUD</p>
+          <p class="note">Payment in XMR — live conversion at checkout</p>
+          <a href="product1.html" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Anonymous Aussie -->
+        <div class="product-card">
+          <h3>Anonymous Aussie</h3>
+          <p class="subtitle">Anonymity Without Compromise</p>
+          <ul>
+            <li>✅ GrapheneOS Pixel 8a</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Small Faraday bag</li>
+            <li>✅ Anonymous silent.link eSIM pre-installed</li>
+            <li>✅ Encrypted VoIP app with private number</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="price">$1,600 AUD</p>
+          <p class="note">Payment in XMR — live conversion at checkout</p>
+          <a href="product2.html" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Operator Aussie -->
+        <div class="product-card">
+          <h3>Operator Aussie</h3>
+          <p class="subtitle">Air-Gapped Security for High-Risk Environments</p>
+          <ul>
+            <li>✅ GrapheneOS Pixel 8a (airplane mode enforced)</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Large Faraday bag</li>
+            <li>✅ NitroWall / Blue Merle privacy router</li>
+            <li>✅ Anonymous eSIM via router</li>
+            <li>✅ Encrypted VoIP app with private number</li>
+            <li>✅ 1m Ethernet cable</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="price">$2,500 AUD</p>
+          <p class="note">Payment in XMR — live conversion at checkout</p>
+          <a href="product3.html" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Sovereign Aussie -->
+        <div class="product-card highlight">
+          <h3>Sovereign Aussie</h3>
+          <p class="subtitle">Secure Connectivity Anywhere on Earth</p>
+          <ul>
+            <li>✅ GrapheneOS Pixel 8a (airplane mode enforced)</li>
+            <li>✅ Phone case + privacy screen</li>
+            <li>✅ Large Faraday bag</li>
+            <li>✅ NitroWall / Blue Merle privacy router</li>
+            <li>✅ Anonymous eSIM via router</li>
+            <li>✅ Encrypted VoIP app with private number</li>
+            <li>✅ Starlink Mini (anonymously registered)</li>
+            <li>✅ 1m + 10m Ethernet cables</li>
+            <li>✅ USB-C charging cable + adapter</li>
+            <li>✅ 30W USB power charger</li>
+          </ul>
+          <p class="price">$3,300 AUD</p>
+          <p class="note">Payment in XMR — live conversion at checkout</p>
+          <a href="product4.html" class="btn">Buy Now</a>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="topic">
-      <h3>Product 1</h3>
-      <p>Placeholder description for Product 1.</p>
-    </div>
-
-    <div class="topic">
-      <h3>Product 2</h3>
-      <p>Placeholder description for Product 2.</p>
-    </div>
-
-    <div class="topic">
-      <h3>Product 3</h3>
-      <p>Placeholder description for Product 3.</p>
-    </div>
-
-    <div class="topic">
-      <h3>Product 4</h3>
-      <p>Placeholder description for Product 4.</p>
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 Commsblack Mobile. All rights reserved.
-  </footer>
-
-  <!-- JS for menu -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("mobileNav");
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
+  <!-- Footer -->
+  <div id="footer"></div>
 </body>
 </html>
