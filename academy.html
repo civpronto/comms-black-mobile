@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Commsblack Academy</title>
 
-  <!-- Favicons (same as index.html) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=4">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
@@ -23,7 +23,7 @@
       color: #222;
     }
 
-    /* HEADER (same as index.html) */
+    /* HEADER */
     header {
       background: #fff;
       padding: 0.8rem 2rem;
@@ -177,7 +177,7 @@
     }
     .cta-box a:hover { background: #2a5cd6; transform: translateY(-2px); }
 
-    /* FOOTER (same as index.html) */
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem;
@@ -197,7 +197,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- Same Globe + Padlock Logo -->
+      <!-- Globe + Padlock Logo -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Commsblack Mobile logo">
         <defs>
           <clipPath id="globeClip">
@@ -222,7 +222,7 @@
       <div class="logo-text"><span class="black">Commsblack</span><span class="blue">Mobile</span></div>
     </div>
     <nav>
-      <a href="mission.html">Mission</a>
+      <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="academy.html">Academy</a>
       <a href="faqs.html">FAQ’s</a>
@@ -232,7 +232,7 @@
   </header>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="mission.html" onclick="toggleMenu()">Mission</a>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="products.html" onclick="toggleMenu()">Products</a>
     <a href="academy.html" onclick="toggleMenu()">Academy</a>
     <a href="faqs.html" onclick="toggleMenu()">FAQ’s</a>
@@ -274,7 +274,6 @@
       const nav = document.getElementById("mobileNav");
       nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
-    // Ensure nav resets if resized back to desktop
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         document.getElementById("mobileNav").style.display = "none";

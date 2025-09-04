@@ -1,19 +1,58 @@
-// main.js
+<!-- header.html -->
+<header>
+  <div class="logo">
+    <!-- Globe + Padlock Logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Commsblack Mobile logo">
+      <defs>
+        <clipPath id="globeClip">
+          <circle cx="32" cy="32" r="28"/>
+        </clipPath>
+        <style>
+          .globe { stroke:#3A76F0; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round }
+          .lock-body { fill:#000; stroke:none }
+          .lock-shackle { stroke:#000; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round }
+        </style>
+      </defs>
+      <!-- Padlock -->
+      <rect x="18" y="28" width="28" height="20" rx="3" ry="3" class="lock-body"/>
+      <path d="M20 28 v-3 a12 12 0 0 1 24 0 v3" class="lock-shackle"/>
+      <!-- Globe -->
+      <g class="globe" clip-path="url(#globeClip)">
+        <line x1="-6" y1="32" x2="70" y2="32"/>
+        <line x1="32" y1="-6" x2="32" y2="70"/>
+        <path d="M26 -6 C10 24, 10 40, 26 70"/>
+        <path d="M38 -6 C54 24, 54 40, 38 70"/>
+      </g>
+      <circle cx="32" cy="32" r="28" class="globe"/>
+    </svg>
+    <div class="logo-text">
+      <span class="black">Commsblack</span>
+      <span class="blue">Mobile</span>
+    </div>
+  </div>
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const mobileNav = document.querySelector(".mobile-nav");
+  <!-- Desktop Nav -->
+  <nav>
+    <a href="index.html">Mission</a>
+    <a href="products.html">Products</a>
+    <a href="academy.html">Academy</a>
+    <a href="faqs.html">FAQ’s</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  // Toggle menu on hamburger click
-  toggle.addEventListener("click", () => {
-    mobileNav.classList.toggle("active");
-  });
+  <!-- Hamburger Button -->
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
 
-  // Close menu when a link is clicked
-  const links = mobileNav.querySelectorAll("a");
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.remove("active");
-    });
-  });
-});
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Mission</a>
+  <a href="products.html">Products</a>
+  <a href="academy.html">Academy</a>
+  <a href="faqs.html">FAQ’s</a>
+  <a href="contact.html">Contact</a>
+</div>
