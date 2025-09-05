@@ -1,99 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commsblack Mobile - Products</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — Comms Black Mobile</title>
+  <meta name="description" content="Secure communication kits for privacy and freedom." />
+  <link rel="canonical" href="https://civpronto.github.io/comms-black-mobile/products.html" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Commsblack Mobile logo">
-        <defs>
-          <clipPath id="globeClip"><circle cx="32" cy="32" r="28"/></clipPath>
-          <style>.globe{stroke:#3A76F0;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
-          .lock-body{fill:#000;stroke:none}.lock-shackle{stroke:#000;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
-        </defs>
-        <rect x="18" y="28" width="28" height="20" rx="3" ry="3" class="lock-body"/>
-        <path d="M20 28 v-3 a12 12 0 0 1 24 0 v3" class="lock-shackle"/>
-        <g class="globe" clip-path="url(#globeClip)">
-          <line x1="-6" y1="32" x2="70" y2="32"/>
-          <line x1="32" y1="-6" x2="32" y2="70"/>
-          <path d="M26 -6 C10 24, 10 40, 26 70"/>
-          <path d="M38 -6 C54 24, 54 40, 38 70"/>
-        </g>
-        <circle cx="32" cy="32" r="28" class="globe"/>
-      </svg>
-      <div class="logo-text"><span class="black">Commsblack</span><span class="blue">Mobile</span></div>
-    </div>
-    <nav>
-      <a href="index.html">Mission</a>
-      <a href="products.html">Products</a>
-      <a href="academy.html">Academy</a>
-      <a href="faqs.html">FAQ’s</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="menu-toggle"><span></span><span></span><span></span></div>
-  </header>
-
-  <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Mission</a>
-    <a href="products.html">Products</a>
-    <a href="academy.html">Academy</a>
-    <a href="faqs.html">FAQ’s</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Secure Communication Kits for Privacy & Freedom</h2>
-    <p>From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
-  </section>
-
-  <!-- Products -->
-  <section id="products">
-    <h2>Communication Suites</h2>
-    <div class="products-grid">
-      <div class="product-card">
+  <div id="site-header"></div>
+  <main class="section container">
+    <h1>Secure Communication Kits</h1>
+    <p class="muted">From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
+    <div class="pricing">
+      <article class="card">
         <h3>Everyday Aussie</h3>
-        <p class="tagline">Privacy Made Simple</p>
-        <ul class="products-list">
+        <p class="muted">Privacy made simple.</p>
+        <ul>
           <li>GrapheneOS Pixel 8a</li>
           <li>Phone case + privacy screen</li>
           <li>Small Faraday bag</li>
           <li>Customer’s SIM</li>
-          <li>USB-C charging cable + adapter</li>
+          <li>USB‑C charging cable + adapter</li>
           <li>30W USB power charger</li>
         </ul>
-        <p class="product-price">$1,400 AUD</p>
-        <p class="product-note">Payment in XMR — live conversion at checkout</p>
-        <a href="product1.html" class="cta">Buy Now</a>
-      </div>
+        <p class="price">A$1,400</p>
+        <p><a class="btn" href="product1.html">Buy now</a></p>
+      </article>
 
-      <div class="product-card">
+      <article class="card">
         <h3>Anonymous Aussie</h3>
-        <p class="tagline">Anonymity Without Compromise</p>
-        <ul class="products-list">
+        <p class="muted">Anonymity without compromise.</p>
+        <ul>
           <li>GrapheneOS Pixel 8a</li>
           <li>Phone case + privacy screen</li>
           <li>Small Faraday bag</li>
-          <li>Anonymous silent.link eSIM pre-installed</li>
+          <li>Anonymous silent.link eSIM pre‑installed</li>
           <li>Encrypted VoIP app with private number</li>
-          <li>USB-C charging cable + adapter</li>
+          <li>USB‑C charging cable + adapter</li>
           <li>30W USB power charger</li>
         </ul>
-        <p class="product-price">$1,600 AUD</p>
-        <p class="product-note">Payment in XMR — live conversion at checkout</p>
-        <a href="product2.html" class="cta">Buy Now</a>
-      </div>
+        <p class="price">A$1,600</p>
+        <p><a class="btn" href="product2.html">Buy now</a></p>
+      </article>
 
-      <div class="product-card">
+      <article class="card">
         <h3>Operator Aussie</h3>
-        <p class="tagline">Air-Gapped Security for High-Risk Environments</p>
-        <ul class="products-list">
+        <p class="muted">Air‑gapped security for high‑risk environments.</p>
+        <ul>
           <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
           <li>Phone case + privacy screen</li>
           <li>Large Faraday bag</li>
@@ -101,18 +56,17 @@
           <li>Anonymous eSIM via router</li>
           <li>Encrypted VoIP app with private number</li>
           <li>1m Ethernet cable</li>
-          <li>USB-C charging cable + adapter</li>
+          <li>USB‑C charging cable + adapter</li>
           <li>30W USB power charger</li>
         </ul>
-        <p class="product-price">$2,500 AUD</p>
-        <p class="product-note">Payment in XMR — live conversion at checkout</p>
-        <a href="product3.html" class="cta">Buy Now</a>
-      </div>
+        <p class="price">A$2,500</p>
+        <p><a class="btn" href="product3.html">Buy now</a></p>
+      </article>
 
-      <div class="product-card">
+      <article class="card">
         <h3>Sovereign Aussie</h3>
-        <p class="tagline">Secure Connectivity Anywhere on Earth</p>
-        <ul class="products-list">
+        <p class="muted">Secure connectivity anywhere on Earth.</p>
+        <ul>
           <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
           <li>Phone case + privacy screen</li>
           <li>Large Faraday bag</li>
@@ -121,18 +75,16 @@
           <li>Encrypted VoIP app with private number</li>
           <li>Starlink Mini (anonymously registered)</li>
           <li>1m + 10m Ethernet cables</li>
-          <li>USB-C charging cable + adapter</li>
+          <li>USB‑C charging cable + adapter</li>
           <li>30W USB power charger</li>
         </ul>
-        <p class="product-price">$3,300 AUD</p>
-        <p class="product-note">Payment in XMR — live conversion at checkout</p>
-        <a href="product4.html" class="cta">Buy Now</a>
-      </div>
+        <p class="price">A$3,300</p>
+        <p><a class="btn" href="product4.html">Buy now</a></p>
+      </article>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>© 2025 Commsblack Mobile. All rights reserved.</footer>
-  <script src="main.js"></script>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/load.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
