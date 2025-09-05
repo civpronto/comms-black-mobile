@@ -1,20 +1,8 @@
-# Comms Black Mobile Website
+# Comms Black Mobile Website (Live v2)
 
-Source code for **Comms Black Mobile**, deployed via GitHub Pages.
+Updates in this release:
+- Transparent background applied to **logo.png** and **favicon.ico**
+- Mobile hamburger menu now shows page names as a **vertical list** (`<ul><li>`)
+- Retained: dark/light toggle, responsive nav, active page highlight (desktop & mobile), smooth scroll, 404
 
-## Pages
-- `index.html` — Mission
-- `products.html` — Products
-- `academy.html` — Academy
-- `faqs.html` — FAQs
-- `contact.html` — Contact
-- `404.html` — Custom 404
-
-## Features
-- Desktop inline nav + mobile full-screen hamburger (accessible; Esc closes; focus trap; scroll lock)
-- Dark/Light theme toggle (manual; persisted)
-- Active page highlighting (desktop + mobile) — accent pill, static
-- Smooth scroll for in-page anchors
-
-## Deploy
-Commit these files to the repo root on your default branch. GitHub Pages will serve them automatically.
+Deploy by copying these files to the repo root and pushing to your default branch.

@@ -80,7 +80,7 @@
   }
 })();
 
-// ACTIVE LINK HIGHLIGHT (desktop + mobile), static style (no animation)
+// ACTIVE LINK HIGHLIGHT (desktop + mobile), static
 (function(){
   function leaf(href){
     if(!href) return '';
@@ -90,11 +90,8 @@
     if(file === '') file = 'index.html';
     return file;
   }
-  // Determine current page leaf from location
   let current = leaf(window.location.pathname);
   if(current === '' || current.endsWith('/')) current = 'index.html';
-
-  // Apply .active to matching links in both navs
   const anchors = document.querySelectorAll('.desktop-nav a, .mobile-menu a');
   anchors.forEach(a => {
     const target = leaf(a.getAttribute('href'));
