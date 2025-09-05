@@ -92,7 +92,7 @@
   }
   let current = leaf(window.location.pathname);
   if(current === '' || current.endsWith('/')) current = 'index.html';
-  const anchors = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
+  const anchors = document.querySelectorAll('.desktop-nav a, .mobile-menu a');
   anchors.forEach(a => {
     const target = leaf(a.getAttribute('href'));
     if(target === current){
