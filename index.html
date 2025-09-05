@@ -1,58 +1,68 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comms Black Mobile — Private. Secure. Anonymous.</title>
-  <meta name="description" content="Communication kits combining GrapheneOS phones, privacy hardware and anonymous connectivity. Take back control of your communications." />
-  <link rel="canonical" href="https://civpronto.github.io/comms-black-mobile/" />
-  <meta name="theme-color" content="#0b0f12" />
-  <link rel="preload" href="styles.css" as="style" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="favicon-180.png">
-  <link rel="manifest" href="site.webmanifest">
-  <meta property="og:title" content="Comms Black Mobile" />
-  <meta property="og:description" content="Private. Secure. Anonymous. Communication kits for privacy and freedom." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://civpronto.github.io/comms-black-mobile/" />
+  <title>Comms Black Mobile — Mission</title>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<script defer src="script.js"></script>
+
+  <meta name="description" content="Private. Secure. Anonymous. Take back control of your communications.">
 </head>
 <body>
-  <a class="skip-link" href="#main" style="position: absolute;left:-999px">Skip to content</a>
-  <div id="site-header"></div>
+  
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Comms Black Mobile logo" class="logo">
+      <span>Comms Black Mobile</span>
+    </a>
+    <nav class="nav desktop-nav" aria-label="Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
+    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
+    <nav class="mobile-nav" aria-label="Mobile Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main id="main">
-    <section class="hero" id="mission">
-      <div class="container">
-        <span class="kicker">Private. Secure. Anonymous.</span>
-        <h1>Take back control of your communications</h1>
-        <p>We build communication kits that combine hardened GrapheneOS phones, privacy hardware, and anonymous services. Designed for simple everyday privacy, sovereign global connectivity, and seamless use at home, in travel, or off‑grid.</p>
-        <p><a class="btn" href="products.html">Explore products</a> <a class="btn secondary" href="academy.html">Learn the basics</a></p>
+  <main class="container">
+    
+    <section class="hero">
+      <h1>Private. Secure. Anonymous.</h1>
+      <p>Our mission is simple: give people back control of their communications — free from surveillance, exploitation, and unnecessary risk.</p>
+      <div class="cta-row">
+        <a class="btn" href="products.html">Explore Products</a>
+        <a class="btn btn-outline" href="academy.html">Learn the Basics</a>
       </div>
     </section>
-
-    <section class="section">
-      <div class="container feature-list">
-        <div class="card">
-          <h3>Why we exist</h3>
-          <p>Big Tech and telecom providers profit from your data. Governments and third parties track your movements and communications. We exist to give you back control — with tools that protect your personal freedom, digital identity, and ability to connect on your own terms.</p>
-        </div>
-        <div class="card">
-          <h3>Who it’s for</h3>
-          <p>Everyday users who value privacy, professionals handling sensitive information, travellers and global citizens, and anyone tired of being the product in the surveillance economy.</p>
-        </div>
-        <div class="card">
-          <h3>The difference</h3>
-          <p>No unnecessary apps, bloat, or trackers. Anonymous and secure by default. Transparent about third‑party service costs. Simple, ready‑to‑use packages with data included. Ongoing support to help you recharge or manage services easily.</p>
-        </div>
-      </div>
-    </section>
+    
   </main>
+  
+<footer>
+  <div class="container">
+    <p>© 2025 Comms Black Mobile. All rights reserved.</p>
+  </div>
+</footer>
 
-  <div id="site-footer"></div>
-
-  <script src="js/load.js" defer></script>
-  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,90 +1,121 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Products — Comms Black Mobile</title>
-  <meta name="description" content="Secure communication kits for privacy and freedom." />
-  <link rel="canonical" href="https://civpronto.github.io/comms-black-mobile/products.html" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Comms Black Mobile — Products</title>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<script defer src="script.js"></script>
+
+  <meta name="description" content="Secure communication kits for privacy & freedom. Choose the kit that fits your lifestyle.">
 </head>
 <body>
-  <div id="site-header"></div>
-  <main class="section container">
-    <h1>Secure Communication Kits</h1>
-    <p class="muted">From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
-    <div class="pricing">
-      <article class="card">
-        <h3>Everyday Aussie</h3>
-        <p class="muted">Privacy made simple.</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a</li>
-          <li>Phone case + privacy screen</li>
-          <li>Small Faraday bag</li>
-          <li>Customer’s SIM</li>
-          <li>USB‑C charging cable + adapter</li>
-          <li>30W USB power charger</li>
-        </ul>
-        <p class="price">A$1,400</p>
-        <p><a class="btn" href="product1.html">Buy now</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Anonymous Aussie</h3>
-        <p class="muted">Anonymity without compromise.</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a</li>
-          <li>Phone case + privacy screen</li>
-          <li>Small Faraday bag</li>
-          <li>Anonymous silent.link eSIM pre‑installed</li>
-          <li>Encrypted VoIP app with private number</li>
-          <li>USB‑C charging cable + adapter</li>
-          <li>30W USB power charger</li>
-        </ul>
-        <p class="price">A$1,600</p>
-        <p><a class="btn" href="product2.html">Buy now</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Operator Aussie</h3>
-        <p class="muted">Air‑gapped security for high‑risk environments.</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
-          <li>Phone case + privacy screen</li>
-          <li>Large Faraday bag</li>
-          <li>NitroWall / Blue Merle privacy router</li>
-          <li>Anonymous eSIM via router</li>
-          <li>Encrypted VoIP app with private number</li>
-          <li>1m Ethernet cable</li>
-          <li>USB‑C charging cable + adapter</li>
-          <li>30W USB power charger</li>
-        </ul>
-        <p class="price">A$2,500</p>
-        <p><a class="btn" href="product3.html">Buy now</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Sovereign Aussie</h3>
-        <p class="muted">Secure connectivity anywhere on Earth.</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
-          <li>Phone case + privacy screen</li>
-          <li>Large Faraday bag</li>
-          <li>NitroWall / Blue Merle privacy router</li>
-          <li>Anonymous eSIM via router</li>
-          <li>Encrypted VoIP app with private number</li>
-          <li>Starlink Mini (anonymously registered)</li>
-          <li>1m + 10m Ethernet cables</li>
-          <li>USB‑C charging cable + adapter</li>
-          <li>30W USB power charger</li>
-        </ul>
-        <p class="price">A$3,300</p>
-        <p><a class="btn" href="product4.html">Buy now</a></p>
-      </article>
+  
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Comms Black Mobile logo" class="logo">
+      <span>Comms Black Mobile</span>
+    </a>
+    <nav class="nav desktop-nav" aria-label="Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
+    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
+    <nav class="mobile-nav" aria-label="Mobile Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    
+    <h1>Secure Communication Kits for Privacy & Freedom</h1>
+    <p>From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
+    <section class="card-grid">
+      <article class="card">
+        <h2>Everyday Aussie</h2>
+        <p class="muted">Privacy made simple</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a</li>
+          <li>Case + privacy screen</li>
+          <li>Small Faraday bag</li>
+          <li>Your own SIM</li>
+          <li>USB‑C cable + 30W charger</li>
+        </ul>
+        <p class="price">$1,400 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+      <article class="card">
+        <h2>Anonymous Aussie</h2>
+        <p class="muted">Anonymity without compromise</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a</li>
+          <li>Case + privacy screen</li>
+          <li>Small Faraday bag</li>
+          <li>Silent.link eSIM preinstalled</li>
+          <li>Encrypted VoIP app & number</li>
+          <li>USB‑C cable + 30W charger</li>
+        </ul>
+        <p class="price">$1,600 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+      <article class="card">
+        <h2>Operator Aussie</h2>
+        <p class="muted">Air‑gapped security for high‑risk work</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
+          <li>Case + privacy screen</li>
+          <li>Large Faraday bag</li>
+          <li>Privacy router</li>
+          <li>Anonymous eSIM via router</li>
+          <li>Encrypted VoIP app & number</li>
+          <li>Ethernet cable + charger</li>
+        </ul>
+        <p class="price">$2,500 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+      <article class="card">
+        <h2>Sovereign Aussie</h2>
+        <p class="muted">Secure connectivity anywhere on Earth</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
+          <li>Case + privacy screen</li>
+          <li>Large Faraday bag</li>
+          <li>Privacy router</li>
+          <li>Anonymous eSIM via router</li>
+          <li>Encrypted VoIP app & number</li>
+          <li>Satellite option</li>
+        </ul>
+        <p class="price">$3,300 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+    </section>
+    
   </main>
-  <div id="site-footer"></div>
-  <script src="js/load.js" defer></script>
-  <script src="js/main.js" defer></script>
+  
+<footer>
+  <div class="container">
+    <p>© 2025 Comms Black Mobile. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -1,53 +1,64 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQs — Comms Black Mobile</title>
-  <meta name="description" content="Frequently asked questions about kits, services and support." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Comms Black Mobile — FAQs</title>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<script defer src="script.js"></script>
+
+  <meta name="description" content="Everything you need to know about Comms Black Mobile kits, services, and support.">
 </head>
 <body>
-  <div id="site-header"></div>
-  <main class="section container">
-    <h1>Frequently Asked Questions</h1>
-    <div class="details">
-      <details open>
-        <summary>Do I need a subscription?</summary>
-        <p>No. Comms Black Mobile does not charge a subscription. Some features rely on third‑party providers (e.g., Silent.link for data eSIMs, Blacktel for VoIP, Starlink for satellite internet). Ongoing costs come directly from those providers.</p>
-      </details>
-      <details>
-        <summary>What’s included with each communication kit?</summary>
-        <p>Every kit includes a GrapheneOS phone, protective accessories, charging equipment, and, depending on the package, privacy hardware and anonymous connectivity.</p>
-        <ul>
-          <li><strong>Anonymous/Operator/Sovereign Aussie</strong>: include starter credits for data and VoIP to get you going.</li>
-          <li><strong>Everyday Aussie</strong>: designed for customers using their own SIM.</li>
-        </ul>
-      </details>
-      <details>
-        <summary>How do I recharge data or VoIP credit?</summary>
-        <p>Recharge directly through the provider (Silent.link / Blacktel / Starlink). We can guide you through the process or handle it if you provide funds.</p>
-      </details>
-      <details>
-        <summary>How much do ongoing services cost?</summary>
-        <p>Prices change over time. Expect roughly market rates for data eSIMs, VoIP numbers, and satellite plans. We’ll provide current rates during ordering.</p>
-      </details>
-      <details>
-        <summary>Can I use my own SIM card?</summary>
-        <p>Yes. Everyday Aussie is designed for your own SIM. Other kits can also use your SIM, though some privacy features rely on anonymous eSIMs.</p>
-      </details>
-      <details>
-        <summary>Is GrapheneOS difficult to use?</summary>
-        <p>No. It feels familiar if you’ve used Android. The difference is hardened security and more control.</p>
-      </details>
-      <details>
-        <summary>What support do you provide?</summary>
-        <p>We’ll help with setup, using your kit, and managing providers. You’ll always know how to recharge data, VoIP or satellite services.</p>
-      </details>
+  
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Comms Black Mobile logo" class="logo">
+      <span>Comms Black Mobile</span>
+    </a>
+    <nav class="nav desktop-nav" aria-label="Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
+    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
+    <nav class="mobile-nav" aria-label="Mobile Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    
+    <h1>Frequently Asked Questions</h1>
+    <details open><summary>Do I need a subscription?</summary><p>No subscription from us. Some features use third‑party providers with their own costs.</p></details>
+    <details><summary>How do I recharge data or VoIP credit?</summary><p>Recharge directly with the providers, or we can guide you through it.</p></details>
+    <details><summary>Can I use my own SIM?</summary><p>Yes — Everyday Aussie is designed for your own SIM.</p></details>
+    
   </main>
-  <div id="site-footer"></div>
-  <script src="js/load.js" defer></script>
-  <script src="js/main.js" defer></script>
+  
+<footer>
+  <div class="container">
+    <p>© 2025 Comms Black Mobile. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>

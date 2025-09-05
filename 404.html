@@ -1,20 +1,59 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Not found — Comms Black Mobile</title>
-  <link rel="stylesheet" href="styles.css" />
-  <meta http-equiv="refresh" content="6; url=/comms-black-mobile/">
+  <title>Page Not Found — Comms Black Mobile</title>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<script defer src="script.js"></script>
+
+  <meta name="description" content="404 error page for Comms Black Mobile.">
 </head>
 <body>
-  <div id="site-header"></div>
-  <main class="section container">
-    <h1>Page not found</h1>
-    <p class="muted">The page you’re looking for doesn’t exist. Redirecting to the homepage…</p>
-    <p><a href="/comms-black-mobile/">Go home</a></p>
+  
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Comms Black Mobile logo" class="logo">
+      <span>Comms Black Mobile</span>
+    </a>
+    <nav class="nav desktop-nav" aria-label="Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
+    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
+    <nav class="mobile-nav" aria-label="Mobile Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <h1>404 — Page Not Found</h1><p>The page you’re looking for doesn’t exist. <a href='index.html'>Return home</a>.</p>
   </main>
-  <div id="site-footer"></div>
-  <script src="js/load.js" defer></script>
+  
+<footer>
+  <div class="container">
+    <p>© 2025 Comms Black Mobile. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>

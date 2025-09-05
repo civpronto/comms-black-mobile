@@ -1,26 +1,20 @@
-# Comms Black Mobile — static site
+# Comms Black Mobile Website
 
-Optimised GitHub Pages site with accessible, fast, and easy‑to‑maintain HTML.
+Source code for **Comms Black Mobile**, deployed via GitHub Pages.
 
-## What’s inside
-- Semantic HTML with shared `header.html` / `footer.html`
-- Mobile‑first styles (`styles.css`)
-- Simple JS (`js/load.js`, `js/main.js`) — no frameworks
-- XMR live conversion on product pages (`js/checkout.js`) with graceful fallback
-- SEO & PWA basics: sitemap, robots, web manifest, favicons
-- 404 redirect page
+## Pages
+- `index.html` — Mission
+- `products.html` — Products
+- `academy.html` — Academy
+- `faqs.html` — FAQs
+- `contact.html` — Contact
+- `404.html` — Custom 404
 
-## Local preview
-Double‑click `index.html` or use a static server:
-
-```bash
-python3 -m http.server 8080
-# then open http://localhost:8080/comms-black-mobile/
-```
+## Features
+- Desktop inline nav + mobile full-screen hamburger (accessible; Esc closes; focus trap; scroll lock)
+- Dark/Light theme toggle (manual; persisted)
+- Active page highlighting (desktop + mobile) — accent pill, static
+- Smooth scroll for in-page anchors
 
 ## Deploy
-Commit everything to the root of your `comms-black-mobile` repo (Pages source: `main` branch, `/` root).
-
-## Notes
-- Brand spelling is standardised to **Comms Black Mobile** (with a space). If you prefer a different style, search/replace across HTML and footer/header.
-- Update the Signal link and XMR address in the product templates if needed.
+Commit these files to the repo root on your default branch. GitHub Pages will serve them automatically.

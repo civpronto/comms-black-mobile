@@ -1,67 +1,66 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Comms Black Academy</title>
-  <meta name="description" content="Learn how to secure your communications, protect your privacy, and operate with confidence." />
-  <link rel="stylesheet" href="styles.css" />
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<script defer src="script.js"></script>
+
+  <meta name="description" content="Learn how to secure your communications, protect your privacy, and operate with confidence.">
 </head>
 <body>
-  <div id="site-header"></div>
-  <main class="section container">
-    <h1>Comms Black Academy</h1>
-    <p class="muted">Learn how to secure your communications, protect your privacy, and operate with confidence in a digital‑first world.</p>
+  
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Comms Black Mobile logo" class="logo">
+      <span>Comms Black Mobile</span>
+    </a>
+    <nav class="nav desktop-nav" aria-label="Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
+    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
+    <nav class="mobile-nav" aria-label="Mobile Primary">
+      <a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <section class="grid" style="grid-template-columns: 1fr;">
-      <div class="details">
-        <details>
-          <summary>GrapheneOS basics</summary>
-          <p>GrapheneOS is an open‑source, security‑focused mobile OS based on AOSP. It’s hardened against exploits, removes bloat, and gives you granular control. Start by creating a separate owner profile, using a strong screen lock, and installing only what you need via the “Apps” client.</p>
-        </details>
-        <details>
-          <summary>VoIP & anonymous numbers</summary>
-          <p>VoIP lets you call and text over the internet. Combined with privacy‑preserving providers, you can separate identity from everyday communications. Use per‑context numbers (work, travel, classifieds) and disable ID reuse.</p>
-        </details>
-        <details>
-          <summary>Data security</summary>
-          <p>Assume profiling on most networks. Prefer HTTPS, enable DNS‑over‑HTTPS, and keep your browser compartmentalised. Use separate profiles for sensitive tasks, and avoid mixing identities.</p>
-        </details>
-        <details>
-          <summary>Air‑gapped devices</summary>
-          <p>Air‑gapping means keeping a device permanently offline. For ultra‑sensitive workflows, prepare an offline device for note‑taking, crypto signing, or document viewing. Use a Faraday bag when moving it.</p>
-        </details>
-        <details>
-          <summary>Faraday protection</summary>
-          <p>Faraday bags block radio signals (cellular, Wi‑Fi, Bluetooth, NFC). Use them when transporting devices or when you need guaranteed offline behaviour.</p>
-        </details>
-        <details>
-          <summary>Satellite internet</summary>
-          <p>Satellite connectivity (e.g., Starlink) gives you coverage in remote areas or as a censorship fallback. Combine with a privacy router to avoid SIM identity leakage.</p>
-        </details>
-        <h2>Advanced topics</h2>
-        <details>
-          <summary>Monero (XMR)</summary>
-          <p>Monero focuses on privacy by default with ring signatures, stealth addresses, and confidential transactions. Treat wallets like keys — back them up and keep seed phrases offline.</p>
-        </details>
-        <details>
-          <summary>OPSEC</summary>
-          <p>Operational security is about protecting your plans and patterns. Separate identities, control information exposure, and keep communication channels compartmentalised.</p>
-        </details>
-        <details>
-          <summary>COMSEC</summary>
-          <p>Communications security keeps messages private and authentic. Prefer end‑to‑end encryption, verify safety numbers, and keep devices updated.</p>
-        </details>
-        <details>
-          <summary>Countersurveillance</summary>
-          <p>Understand likely threats, observe your environment, and reduce metadata. When in doubt, simplify and reduce your attack surface.</p>
-        </details>
-      </div>
-    </section>
-    <p><a class="btn" href="products.html">View Communication Kits</a></p>
+  <main class="container">
+    
+    <h1>Comms Black Academy</h1>
+    <p>Learn how to secure your communications, protect your privacy, and operate with confidence in a digital‑first world.</p>
+    <h2>Core Topics</h2>
+    <details><summary>GrapheneOS Basics</summary><p>GrapheneOS minimizes attack surface and removes bloatware.</p></details>
+    <details><summary>VoIP & Anonymous Numbers</summary><p>Use internet‑based calling and messaging with private numbers.</p></details>
+    <details><summary>Faraday Protection</summary><p>Block wireless signals in transit and storage with Faraday gear.</p></details>
+    
   </main>
-  <div id="site-footer"></div>
-  <script src="js/load.js" defer></script>
-  <script src="js/main.js" defer></script>
+  
+<footer>
+  <div class="container">
+    <p>© 2025 Comms Black Mobile. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>
