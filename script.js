@@ -1,13 +1,104 @@
 
-// Theme & SW & mobile menu & active link omitted for brevity
+// THEME TOGGLE (dark default)
 (function(){
   const btn = document.querySelector('.theme-toggle');
   const root = document.documentElement;
-  function apply(t){ if(t==='light'){root.setAttribute('data-theme','light'); if(btn)btn.textContent='🌞';} else {root.removeAttribute('data-theme'); if(btn)btn.textContent='🌙';} }
-  apply(localStorage.getItem('cbm-theme'));
-  if(btn) btn.addEventListener('click', ()=>{ const next = root.getAttribute('data-theme') === 'light' ? null : 'light'; if(next) localStorage.setItem('cbm-theme','light'); else localStorage.removeItem('cbm-theme'); apply(localStorage.getItem('cbm-theme')); });
+  const KEY = 'cbm-theme';
+  function apply(theme){
+    if(theme === 'light'){
+      root.setAttribute('data-theme','light');
+      if(btn){ btn.setAttribute('aria-pressed','true'); btn.textContent='🌞'; }
+    }else{
+      root.removeAttribute('data-theme');
+      if(btn){ btn.setAttribute('aria-pressed','false'); btn.textContent='🌙'; }
+    }
+  }
+  apply(localStorage.getItem(KEY));
+  if(btn){
+    btn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      if(next === 'light'){ localStorage.setItem(KEY,'light'); }
+      else{ localStorage.removeItem(KEY); }
+      apply(localStorage.getItem(KEY));
+    });
+  }
 })();
-if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js').catch(e=>console.warn('SW failed',e)); }
-(function(){ const hamburger=document.querySelector('.hamburger'); const mobileMenu=document.getElementById('mobileMenu'); const closeBtn=mobileMenu && mobileMenu.querySelector('.close-btn'); if(hamburger&&mobileMenu){ hamburger.addEventListener('click', ()=>{ mobileMenu.hidden=false; mobileMenu.classList.add('active'); document.body.classList.add('no-scroll'); hamburger.setAttribute('aria-expanded','true'); }); closeBtn.addEventListener('click', ()=>{ mobileMenu.classList.remove('active'); setTimeout(()=>mobileMenu.hidden=true,300); document.body.classList.remove('no-scroll'); hamburger.setAttribute('aria-expanded','false'); }); } })();
-(function(){ const anchors = document.querySelectorAll('.desktop-nav a, .mobile-nav a'); const path = window.location.pathname.split('/').pop() || 'index.html'; anchors.forEach(a=>{ if((a.getAttribute('href')||'').split('/').pop() === path) a.classList.add('active'); }); })();
-(function(){ const MONERO_ADDR = "84h4Y7rWNF7gd134i5m9vHH4iwU95FS3i9hZZ8rVPbA1NX5gY4HLESfTXyV8GeXHVSNXNLEQce8L7jnVi6XCq2UrFfF6nSp"; const products = document.querySelectorAll('.card.product'); if(!products.length) return; async function fetchXmrUsd(){ try{ const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=monero&vs_currencies=usd'); const j = await res.json(); return j.monero.usd; }catch(e){console.warn('XMR price fetch failed',e); return null;} } async function fetchAudToUsd(){ try{ const r = await fetch('https://api.exchangerate.host/convert?from=AUD&to=USD&amount=1'); const j = await r.json(); return j.result || 0.65; }catch(e){console.warn('AUD->USD fetch failed',e); return 0.65;} } products.forEach(prod=>{ const buyBtn = prod.querySelector('.buy-btn'); const backBtn = prod.querySelector('.flip-back'); const xmrUsdEl = prod.querySelector('.xmr-usd'); const priceAudEl = prod.querySelector('.price-aud'); const priceUsdEl = prod.querySelector('.price-usd'); const priceXmrEl = prod.querySelector('.price-xmr'); const qrImg = prod.querySelector('.qr-img'); const priceAud = parseFloat(prod.getAttribute('data-price-aud')||'0'); buyBtn.addEventListener('click', async ()=>{ prod.classList.add('is-flipped'); const [xmrUsd, audToUsd] = await Promise.all([fetchXmrUsd(), fetchAudToUsd()]); if(xmrUsd) xmrUsdEl.textContent = xmrUsd.toFixed(2); priceAudEl.textContent = priceAud.toFixed(2) + ' AUD'; const usd = priceAud * (audToUsd || 0.65); priceUsdEl.textContent = usd.toFixed(2) + ' USD'; const xmrAmt = xmrUsd ? (usd / xmrUsd) : 0; priceXmrEl.textContent = xmrAmt.toFixed(6) + ' XMR'; const uri = 'monero:' + MONERO_ADDR + '?tx_amount=' + xmrAmt.toFixed(6); const qurl = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(uri); qrImg.src = qurl; qrImg.alt = 'Monero payment QR'; }); if(backBtn) backBtn.addEventListener('click', ()=>{ prod.classList.remove('is-flipped'); }); }); })();
+
+// MOBILE MENU: full-screen slide-in + focus trap + ESC + tap-outside + scroll lock
+(function(){
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeBtn = mobileMenu ? mobileMenu.querySelector('.close-btn') : null;
+  let lastFocus = null;
+
+  function getFocusable(container){
+    return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+  }
+
+  function openMenu(){
+    if(!mobileMenu) return;
+    lastFocus = document.activeElement;
+    mobileMenu.hidden = false;
+    requestAnimationFrame(()=>{
+      mobileMenu.classList.add('active');
+      document.body.classList.add('no-scroll');
+      if(hamburger) hamburger.setAttribute('aria-expanded','true');
+      const f = getFocusable(mobileMenu);
+      if(f.length){ f[0].focus(); }
+    });
+  }
+
+  function closeMenu(){
+    if(!mobileMenu) return;
+    mobileMenu.classList.remove('active');
+    if(hamburger) hamburger.setAttribute('aria-expanded','false');
+    setTimeout(()=>{ mobileMenu.hidden = true; document.body.classList.remove('no-scroll'); }, 300);
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  if(hamburger && mobileMenu && closeBtn){
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    mobileMenu.addEventListener('click', (e)=>{
+      if(e.target.closest('a')){ closeMenu(); }
+      else if(e.target === mobileMenu){ closeMenu(); }
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(!mobileMenu.classList.contains('active')) return;
+      if(e.key === 'Escape'){ e.preventDefault(); closeMenu(); return; }
+      if(e.key === 'Tab'){
+        const f = getFocusable(mobileMenu);
+        if(!f.length) return;
+        const i = f.indexOf(document.activeElement);
+        if(e.shiftKey){
+          if(i <= 0){ e.preventDefault(); f[f.length-1].focus(); }
+        }else{
+          if(i === -1 || i >= f.length - 1){ e.preventDefault(); f[0].focus(); }
+        }
+      }
+    });
+  }
+})();
+
+// ACTIVE LINK HIGHLIGHT (desktop + mobile), static
+(function(){
+  function leaf(href){
+    if(!href) return '';
+    const noHash = href.split('#')[0];
+    const parts = noHash.split('/');
+    let file = parts.pop() || '';
+    if(file === '') file = 'index.html';
+    return file;
+  }
+  let current = leaf(window.location.pathname);
+  if(current === '' || current.endsWith('/')) current = 'index.html';
+  const anchors = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
+  anchors.forEach(a => {
+    const target = leaf(a.getAttribute('href'));
+    if(target === current){
+      a.classList.add('active');
+    }else{
+      a.classList.remove('active');
+    }
+  });
+})();
