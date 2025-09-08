@@ -13,30 +13,31 @@
 
 
 
+
+
+
+
+
 <!-- BEGIN Gallery Styles (Enhanced) -->
 <style>
   .cbm-gallery { display: grid; gap: 0.75rem; }
   .cbm-gallery-main { position: relative; display: grid; place-items: center; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.75rem; }
-  .cbm-gallery-main img { max-width: 100%; height: auto; display: block; object-fit: contain; border-radius: 0.5rem; }
+  .cbm-gallery-main img { max-width: 100%; height: auto; display: block; object-fit: contain; border-radius: 0.5rem; max-height: 340px; }
+  @media (max-width: 640px){ .cbm-gallery-main img{ max-height: 260px; } }
+  @media (min-width: 1024px){ .cbm-gallery-main img{ max-height: 380px; } }
   .cbm-gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); border: none; background: rgba(17, 24, 39, 0.7); color: #fff; width: 2.5rem; height: 2.5rem; border-radius: 9999px; cursor: pointer; font-size: 1.15rem; line-height: 2.5rem; text-align: center; transition: transform 120ms ease, background 120ms ease; }
-  .cbm-gallery-btn:hover { transform: translateY(-50%) scale(1.05); background: #00c2a8; color: #fff; } /* brand teal on hover */
+  .cbm-gallery-btn:hover { transform: translateY(-50%) scale(1.05); background: #00c2a8; color: #fff; } /* teal hover */
   .cbm-gallery-btn.prev { left: 0.5rem; }
   .cbm-gallery-btn.next { right: 0.5rem; }
-  .cbm-gallery-thumbs { display: grid; grid-auto-flow: column; gap: 0.5rem; overflow-x: auto; padding: 0.25rem 0 0.75rem; } /* avoid clipping */
-  .cbm-gallery-thumbs::-webkit-scrollbar { display: none; } /* hide scrollbar (Chrome/Safari/Edge) */
-  .cbm-gallery-thumbs { scrollbar-width: none; } /* hide scrollbar (Firefox) */
-  .cbm-thumb { width: 72px; height: 72px; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 0.25rem; cursor: pointer; background: #fff; display: grid; place-items: center; transition: box-shadow 120ms ease, transform 120ms ease; }
+  .cbm-gallery-thumbs { display: grid; grid-auto-flow: column; gap: 0.5rem; overflow-x: auto; padding: 0.25rem 0 0.75rem; }
+  .cbm-gallery-thumbs::-webkit-scrollbar { display: none; }
+  .cbm-gallery-thumbs { scrollbar-width: none; }
+  .cbm-thumb { width: 64px; height: 64px; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 0.25rem; cursor: pointer; background: #fff; display: grid; place-items: center; transition: box-shadow 120ms ease, transform 120ms ease; }
   .cbm-thumb:hover { box-shadow: 0 2px 8px rgb(0 0 0 / 0.08); transform: translateY(-1px); }
   .cbm-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
-  .cbm-thumb[aria-selected="true"] { outline: 2px solid #00c2a8; outline-offset: 2px; } /* brand teal */
-  .cbm-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); z-index: 9999; }
-  .cbm-lightbox.open { display: flex; }
-  .cbm-lightbox img { max-width: min(92vw, 1200px); max-height: 88vh; border-radius: 0.5rem; }
-  .cbm-lightbox .cbm-close { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.15); color: #fff; border: none; width: 2.5rem; height: 2.5rem; border-radius: 9999px; cursor: pointer; font-size: 1.25rem; }
+  .cbm-thumb[aria-selected="true"] { outline: 2px solid #00c2a8; outline-offset: 2px; }
 </style>
 <!-- END Gallery Styles (Enhanced) -->
-
-
 
 </head>
 <body>
@@ -75,28 +76,101 @@
   </div>
 </header>
 
+  
   <main class="container">
-    
     <h1>Secure Communication Kits for Privacy & Freedom</h1>
-    <p>From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
-    <section class="card-grid">
-      ivity anywhere on Earth</p>
+    <p class="muted">From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
+
+    <section class="card-grid" aria-label="CommsBlack Mobile product kits">
+
+      <!-- Product 1 -->
+      <article class="card">
+        <h2>Everyday Aussie</h2>
+        <div class="product-images" aria-label="Product images">
+          <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+          <img src="assets/img/products/mission_darkness_phone.jpg" alt="Mission Darkness Dry Shield Faraday Phone Sleeve" loading="lazy" class="product-img">
+          <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+          <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
+        </div>
+        <p class="muted">Privacy made simple</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a</li>
+          <li>Case + privacy screen</li>
+          <li>Small Faraday bag</li>
+          <li>USB-C adapter & cable</li>
+        </ul>
+        <p class="price">$1,300 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="card">
+        <h2>Anonymous Aussie</h2>
+        <div class="product-images" aria-label="Product images">
+          <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+          <img src="assets/img/products/mission_darkness_phone.jpg" alt="Mission Darkness Dry Shield Faraday Phone Sleeve" loading="lazy" class="product-img">
+          <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+          <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
+        </div>
+        <p class="muted">Anonymity without compromise</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a</li>
+          <li>Case + privacy screen</li>
+          <li>Large Faraday bag</li>
+          <li>USB-C adapter & cable</li>
+        </ul>
+        <p class="price">$1,900 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="card">
+        <h2>Operator Aussie</h2>
+        <div class="product-images" aria-label="Product images">
+          <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+          <img src="assets/img/products/product2.jpg" alt="GrapheneOS Pixel 8a angled view" loading="lazy" class="product-img">
+          <img src="assets/img/products/mission_darkness_tablet.jpg" alt="Mission Darkness Dry Shield Tablet Sleeve" loading="lazy" class="product-img">
+          <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+          <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
+        </div>
+        <p class="muted">Air-gapped security for high-risk work</p>
         <ul>
           <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
           <li>Case + privacy screen</li>
           <li>Large Faraday bag</li>
-          <li>Privacy router</li>
-          <li>Anonymous eSIM via router</li>
+          <li>USB-C adapter & cable</li>
+        </ul>
+        <p class="price">$2,400 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="card">
+        <h2>Sovereign Aussie</h2>
+        <div class="product-images" aria-label="Product images">
+          <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+          <img src="assets/img/products/product2.jpg" alt="GrapheneOS Pixel 8a angled view" loading="lazy" class="product-img">
+          <img src="assets/img/products/product3.jpg" alt="Satellite connectivity module" loading="lazy" class="product-img">
+          <img src="assets/img/products/mission_darkness_tablet.jpg" alt="Mission Darkness Dry Shield Tablet Sleeve" loading="lazy" class="product-img">
+          <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+          <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
+        </div>
+        <p class="muted">Secure connectivity anywhere on Earth</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
+          <li>Case + privacy screen</li>
+          <li>Large Faraday bag</li>
+          <li>Privacy router + anonymous eSIM</li>
           <li>Encrypted VoIP app & number</li>
           <li>Satellite option</li>
+          <li>USB-C adapter & cable</li>
         </ul>
         <p class="price">$3,300 AUD</p>
         <a class="btn" href="#checkout">Buy Now</a>
       </article>
+
     </section>
-    
   </main>
-  
 <footer>
   <div class="container">
     <p>© 2025 CommsBlack Mobile. All rights reserved.</p>
@@ -105,91 +179,7 @@
 
 
 
-<!-- BEGIN Gallery Script (Enhanced) -->
-<script>
-(function () {
-  // Create a single lightbox root
-  let lb = document.createElement('div');
-  lb.className = 'cbm-lightbox';
-  lb.innerHTML = '<button class="cbm-close" aria-label="Close">×</button><img alt="Expanded image">';
-  document.addEventListener('DOMContentLoaded', function() { document.body.appendChild(lb); });
-  const lbImg = () => lb.querySelector('img');
-  lb.addEventListener('click', (e) => {
-    if (e.target === lb || e.target.classList.contains('cbm-close')) closeLB();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLB();
-  });
-  function openLB(src, alt) { lbImg().src = src; lbImg().alt = alt || ''; lb.classList.add('open'); }
-  function closeLB() { lb.classList.remove('open'); lbImg().src = ''; }
 
-  function buildGallery(container) {
-    const imgs = Array.from(container.querySelectorAll('img'));
-    if (!imgs.length) return;
-    const gallery = document.createElement('div');
-    gallery.className = 'cbm-gallery';
-    const main = document.createElement('div');
-    main.className = 'cbm-gallery-main';
-    const mainImg = document.createElement('img');
-    mainImg.alt = imgs[0].alt || '';
-    mainImg.loading = 'lazy';
-    mainImg.src = imgs[0].src;
-    mainImg.style.cursor = 'zoom-in';
-    mainImg.addEventListener('click', () => openLB(mainImg.src, mainImg.alt));
-    main.appendChild(mainImg);
-    const prev = document.createElement('button');
-    prev.className = 'cbm-gallery-btn prev';
-    prev.setAttribute('type', 'button');
-    prev.setAttribute('aria-label', 'Previous image');
-    prev.textContent = '‹';
-    const next = document.createElement('button');
-    next.className = 'cbm-gallery-btn next';
-    next.setAttribute('type', 'button');
-    next.setAttribute('aria-label', 'Next image');
-    next.textContent = '›';
-    main.appendChild(prev);
-    main.appendChild(next);
-    const thumbs = document.createElement('div');
-    thumbs.className = 'cbm-gallery-thumbs';
-    imgs.forEach((img, idx) => {
-      const t = document.createElement('button');
-      t.className = 'cbm-thumb';
-      t.setAttribute('type', 'button');
-      t.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
-      t.setAttribute('aria-label', 'Thumbnail ' + (idx + 1));
-      const ti = document.createElement('img');
-      ti.src = img.src;
-      ti.alt = img.alt || '';
-      t.appendChild(ti);
-      t.addEventListener('click', () => select(idx));
-      thumbs.appendChild(t);
-    });
-    let current = 0;
-    function select(i) {
-      const n = imgs.length;
-      current = ((i % n) + n) % n; // infinite loop wrap
-      mainImg.src = imgs[current].src;
-      mainImg.alt = imgs[current].alt || '';
-      Array.from(thumbs.children).forEach((el, j) => {
-        el.setAttribute('aria-selected', j === current ? 'true' : 'false');
-      });
-    }
-    prev.addEventListener('click', () => select(current - 1));
-    next.addEventListener('click', () => select(current + 1));
-    // Build DOM
-    gallery.appendChild(main);
-    gallery.appendChild(thumbs);
-    container.innerHTML = '';
-    container.appendChild(gallery);
-    // Init
-    select(0);
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.product-images').forEach(buildGallery);
-  });
-})();
-</script>
-<!-- END Gallery Script (Enhanced) -->
 
 
 <section class="products-grid">
@@ -271,5 +261,47 @@
         <a class="btn" href="#checkout">Buy Now</a>
       </article>
 </section>
+
+<!-- BEGIN Gallery Script (Enhanced) -->
+<script>
+(function () {
+  // Lightbox
+  let lb = document.createElement('div');
+  lb.className = 'cbm-lightbox';
+  lb.innerHTML = '<button class="cbm-close" aria-label="Close">×</button><img alt="Expanded image">';
+  document.addEventListener('DOMContentLoaded', function() { document.body.appendChild(lb); });
+  const lbImg = () => lb.querySelector('img');
+  lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('cbm-close')) closeLB(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
+  function openLB(src, alt) { lbImg().src = src; lbImg().alt = alt || ''; lb.classList.add('open'); }
+  function closeLB() { lb.classList.remove('open'); lbImg().src = ''; }
+
+  function buildGallery(container) {
+    const imgs = Array.from(container.querySelectorAll('img'));
+    if (!imgs.length) return;
+    const gallery = document.createElement('div'); gallery.className = 'cbm-gallery';
+    const main = document.createElement('div'); main.className = 'cbm-gallery-main';
+    const mainImg = document.createElement('img'); mainImg.alt = imgs[0].alt || ''; mainImg.loading = 'lazy'; mainImg.src = imgs[0].src; mainImg.style.cursor='zoom-in';
+    mainImg.addEventListener('click', () => openLB(mainImg.src, mainImg.alt));
+    main.appendChild(mainImg);
+    const prev = document.createElement('button'); prev.className='cbm-gallery-btn prev'; prev.type='button'; prev.setAttribute('aria-label','Previous image'); prev.textContent='‹';
+    const next = document.createElement('button'); next.className='cbm-gallery-btn next'; next.type='button'; next.setAttribute('aria-label','Next image'); next.textContent='›';
+    main.appendChild(prev); main.appendChild(next);
+    const thumbs = document.createElement('div'); thumbs.className='cbm-gallery-thumbs';
+    imgs.forEach((img, idx) => {
+      const t=document.createElement('button'); t.className='cbm-thumb'; t.type='button'; t.setAttribute('aria-selected', idx===0?'true':'false');
+      const ti=document.createElement('img'); ti.src=img.src; ti.alt=img.alt||''; t.appendChild(ti);
+      t.addEventListener('click', ()=>select(idx)); thumbs.appendChild(t);
+    });
+    let current = 0;
+    function select(i){ const n=imgs.length; current=((i%n)+n)%n; mainImg.src=imgs[current].src; mainImg.alt=imgs[current].alt||''; Array.from(thumbs.children).forEach((el,j)=>el.setAttribute('aria-selected', j===current?'true':'false')); }
+    prev.addEventListener('click', ()=>select(current-1)); next.addEventListener('click', ()=>select(current+1));
+    gallery.appendChild(main); gallery.appendChild(thumbs); container.innerHTML=''; container.appendChild(gallery); select(0);
+  }
+  document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('.product-images').forEach(buildGallery); });
+})();
+</script>
+<!-- END Gallery Script (Enhanced) -->
+
 </body>
 </html>
