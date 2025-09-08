@@ -12,27 +12,30 @@
   <meta name="description" content="Secure communication kits for privacy & freedom. Choose the kit that fits your lifestyle.">
 
 
+
 <!-- BEGIN Gallery Styles (Enhanced) -->
 <style>
   .cbm-gallery { display: grid; gap: 0.75rem; }
   .cbm-gallery-main { position: relative; display: grid; place-items: center; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.75rem; }
   .cbm-gallery-main img { max-width: 100%; height: auto; display: block; object-fit: contain; border-radius: 0.5rem; }
   .cbm-gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); border: none; background: rgba(17, 24, 39, 0.7); color: #fff; width: 2.5rem; height: 2.5rem; border-radius: 9999px; cursor: pointer; font-size: 1.15rem; line-height: 2.5rem; text-align: center; transition: transform 120ms ease, background 120ms ease; }
-  .cbm-gallery-btn:hover { transform: translateY(-50%) scale(1.05); background: rgba(17, 24, 39, 0.85); }
+  .cbm-gallery-btn:hover { transform: translateY(-50%) scale(1.05); background: #00c2a8; color: #fff; } /* brand teal on hover */
   .cbm-gallery-btn.prev { left: 0.5rem; }
   .cbm-gallery-btn.next { right: 0.5rem; }
-  .cbm-gallery-thumbs { display: grid; grid-auto-flow: column; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.25rem; }
+  .cbm-gallery-thumbs { display: grid; grid-auto-flow: column; gap: 0.5rem; overflow-x: auto; padding: 0.25rem 0 0.75rem; } /* avoid clipping */
+  .cbm-gallery-thumbs::-webkit-scrollbar { display: none; } /* hide scrollbar (Chrome/Safari/Edge) */
+  .cbm-gallery-thumbs { scrollbar-width: none; } /* hide scrollbar (Firefox) */
   .cbm-thumb { width: 72px; height: 72px; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 0.25rem; cursor: pointer; background: #fff; display: grid; place-items: center; transition: box-shadow 120ms ease, transform 120ms ease; }
   .cbm-thumb:hover { box-shadow: 0 2px 8px rgb(0 0 0 / 0.08); transform: translateY(-1px); }
   .cbm-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
-  .cbm-thumb[aria-selected="true"] { outline: 2px solid #2563eb; outline-offset: 2px; }
-  /* Lightbox */
+  .cbm-thumb[aria-selected="true"] { outline: 2px solid #00c2a8; outline-offset: 2px; } /* brand teal */
   .cbm-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); z-index: 9999; }
   .cbm-lightbox.open { display: flex; }
   .cbm-lightbox img { max-width: min(92vw, 1200px); max-height: 88vh; border-radius: 0.5rem; }
   .cbm-lightbox .cbm-close { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.15); color: #fff; border: none; width: 2.5rem; height: 2.5rem; border-radius: 9999px; cursor: pointer; font-size: 1.25rem; }
 </style>
 <!-- END Gallery Styles (Enhanced) -->
+
 
 
 </head>
@@ -78,48 +81,50 @@
     <p>From everyday privacy to sovereign global connectivity — choose the kit that fits your lifestyle.</p>
     <section class="card-grid">
       <article class="card">
-        <h2>Everyday Aussie</h2>
-      <div class="product-images" aria-label="Product images">
-        <img src="assets/img/products/product1.jpg" alt="" loading="lazy" class="product-img">
-      </div>
+        \1
+    <div class="product-images" aria-label="Product images">
+      <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+      <img src="assets/img/products/mission_darkness_phone.jpg" alt="Mission Darkness Dry Shield Faraday Phone Sleeve" loading="lazy" class="product-img">
+      <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+      <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
 
-        <p class="muted">Privacy made simple</p>
+    </div>
+
+      <p class="muted">Privacy made simple</p>
         <ul>
           <li>GrapheneOS Pixel 8a</li>
           <li>Case + privacy screen</li>
           <li>Small Faraday bag</li>
           <li>Your own SIM</li>
-          <li>USB‑C cable + 30W charger</li>
-        </ul>
-        <p class="price">$1,400 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-      <article class="card">
-        <h2>Anonymous Aussie</h2>
-      <div class="product-images" aria-label="Product images">
-        <img src="assets/img/products/product1.jpg" alt="" loading="lazy" class="product-img">
-      </div>
+          <li>USB‑C cabl<article class="card">
+        \1
+    <div class="product-images" aria-label="Product images">
+      <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+      <img src="assets/img/products/mission_darkness_phone.jpg" alt="Mission Darkness Dry Shield Faraday Phone Sleeve" loading="lazy" class="product-img">
+      <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+      <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
 
-        <p class="muted">Anonymity without compromise</p>
+    </div>
+
+      <p class="muted">Anonymity without compromise</p>
         <ul>
           <li>GrapheneOS Pixel 8a</li>
           <li>Case + privacy screen</li>
           <li>Small Faraday bag</li>
           <li>Silent.link eSIM preinstalled</li>
           <li>Encrypted VoIP app & number</li>
-          <li>USB‑C cable + 30W charger</li>
-        </ul>
-        <p class="price">$1,600 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-      <article class="card">
-        <h2>Operator Aussie</h2>
-      <div class="product-images" aria-label="Product images">
-        <img src="assets/img/products/product1.jpg" alt="" loading="lazy" class="product-img">
-        <img src="assets/img/products/product2.jpg" alt="" loading="lazy" class="product-img">
-      </div>
+          <li>USB‑C cable<article class="card">
+        \1
+    <div class="product-images" aria-label="Product images">
+      <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+      <img src="assets/img/products/product2.jpg" alt="GrapheneOS Pixel 8a angled" loading="lazy" class="product-img">
+      <img src="assets/img/products/mission_darkness_tablet.jpg" alt="Mission Darkness Dry Shield Tablet Sleeve" loading="lazy" class="product-img">
+      <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+      <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
 
-        <p class="muted">Air‑gapped security for high‑risk work</p>
+    </div>
+
+      <p class="muted">Air‑gapped security for high‑risk work</p>
         <ul>
           <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
           <li>Case + privacy screen</li>
@@ -127,20 +132,31 @@
           <li>Privacy router</li>
           <li>Anonymous eSIM via router</li>
           <li>Encrypted VoIP app & number</li>
-          <li>Ethernet cable + charger</li>
-        </ul>
-        <p class="price">$2,500 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-      <article class="card">
-        <h2>Sovereign Aussie</h2>
-      <div class="product-images" aria-label="Product images">
-        <img src="assets/img/products/product1.jpg" alt="" loading="lazy" class="product-img">
-        <img src="assets/img/products/product2.jpg" alt="" loading="lazy" class="product-img">
-        <img src="assets/img/products/product3.jpg" alt="" loading="lazy" class="product-img">
-      </div>
+     <article class="card">
+        \1
+    <div class="product-images" aria-label="Product images">
+      <img src="assets/img/products/product1.jpg" alt="GrapheneOS Pixel 8a front" loading="lazy" class="product-img">
+      <img src="assets/img/products/product2.jpg" alt="GrapheneOS Pixel 8a angled" loading="lazy" class="product-img">
+      <img src="assets/img/products/product3.jpg" alt="Device stand side view" loading="lazy" class="product-img">
+      <img src="assets/img/products/mission_darkness_tablet.jpg" alt="Mission Darkness Dry Shield Tablet Sleeve" loading="lazy" class="product-img">
+      <img src="assets/img/products/typea-c.jpg" alt="USB Type-C to USB-A adapter" loading="lazy" class="product-img">
+      <img src="assets/img/products/typec-c.jpg" alt="USB-C to USB-C cable" loading="lazy" class="product-img">
 
-        <p class="muted">Secure connectivity anywhere on Earth</p>
+    </div>
+
+      <p class="muted">Secure connectivity anywhere on Earth</p>
+        <ul>
+          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
+          <li>Case + privacy screen</li>
+          <li>Large Faraday bag</li>
+          <li>Privacy router</li>
+          <li>Anonymous eSIM via router</li>
+          <li>Encrypted VoIP app & number</li>
+          <li>Satellite option</li>
+        </ul>
+        <p class="price">$3,300 AUD</p>
+        <a class="btn" href="#checkout">Buy Now</a>
+      </article>ivity anywhere on Earth</p>
         <ul>
           <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
           <li>Case + privacy screen</li>
