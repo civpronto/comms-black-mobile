@@ -39,6 +39,43 @@
 </style>
 <!-- END Gallery Styles (Enhanced) -->
 
+
+<!-- Layout & Gallery Fallback Safeguards -->
+<style>
+  /* Container width and padding */
+  .container { max-width: 1200px; margin-inline: auto; padding-inline: 1rem; }
+
+  /* Robust grid for product cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* Card structure */
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Baseline images (works even if JS gallery doesn't run) */
+  .product-images { display: grid; place-items: center; gap: 0.5rem; }
+  .product-images img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+
+  /* Enhanced gallery constraints */
+  .cbm-gallery-main img { max-width: 100%; height: auto; object-fit: contain; max-height: 340px; }
+  @media (max-width: 640px){ .cbm-gallery-main img{ max-height: 260px; } }
+  @media (min-width: 1024px){ .cbm-gallery-main img{ max-height: 380px; } }
+
+  /* Prevent overflow artifacts */
+  .cbm-gallery, .cbm-gallery-main, .cbm-gallery-thumbs, .card { overflow: visible; }
+
+  /* Optional: hide active thumbnail to avoid duplicate look */
+  /* .cbm-gallery-thumbs .cbm-thumb[aria-selected="true"] { display: none; } */
+</style>
+
 </head>
 <body>
   
