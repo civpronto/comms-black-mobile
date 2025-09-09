@@ -117,3 +117,27 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
   .desktop-nav{display:none}
   .hamburger{display:flex}
 }
+
+
+/* PGP key block styling */
+.pgp-key-block{
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 1rem;
+  border-radius: 12px;
+  overflow: auto;
+  max-height: 320px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: .85rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.card details > summary{
+  cursor: pointer;
+}
+.key-notes{
+  font-size:.95rem;
+  opacity:.9;
+  margin-top:.5rem;
+}
