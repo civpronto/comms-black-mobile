@@ -1,85 +1,364 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <title>CommsBlack Academy</title>
-  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<script defer src="script.js"></script>
-
-  <meta name="description" content="Learn how to secure your communications, protect your privacy, and operate with confidence.">
-</head>
+<title>CommsBlack Academy</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="assets/favicon.ico" rel="icon" type="image/x-icon"/>
+<script defer="" src="script.js"></script>
+<meta content="Learn how to secure your communications, protect your privacy, and operate with confidence." name="description"/>
+<style>
+/* academy component styles */
+.section { margin: 2rem 0; }
+.section h2 { font-size: 1.6rem; margin: 0 0 .5rem; }
+.section-body { padding: .25rem .25rem 1rem; }
+details { border: 1px solid var(--card-border, #ddd); border-radius: 10px; margin: .75rem 0; padding: .5rem .75rem; background: var(--card-bg, #fff); }
+summary { cursor: pointer; list-style: none; font-weight: 600; display: flex; align-items: center; gap: .5rem; }
+summary::-webkit-details-marker { display: none; }
+.chev { width: .6rem; height: .6rem; border-right: 2px solid var(--brand, #0a7cff); border-bottom: 2px solid var(--brand, #0a7cff); transform: rotate(-45deg); transition: transform .2s ease; }
+details[open] .chev { transform: rotate(45deg); }
+.kicker { margin-left: auto; font-size: .75rem; padding: .1rem .5rem; border-radius: 999px; border: 1px solid rgba(10,124,255,.25); color: var(--brand, #0a7cff); background: rgba(10,124,255,.08); }
+.tips { margin: .5rem 0 0 1rem; }
+.fine { color: #666; font-size: .85rem; margin-top: 1rem; }
+</style></head>
 <body>
-  
 <header>
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="CommsBlack Mobile logo" class="logo">
-      <span>CommsBlack Mobile</span>
-    </a>
-    <nav class="nav desktop-nav" aria-label="Primary">
-      <a href="index.html">Mission</a>
-      <a href="products.html">Products</a>
-      <a href="academy.html">Academy</a>
-      <a href="faqs.html">FAQ’s</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
-      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
-    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
-    <nav class="mobile-nav" aria-label="Mobile Primary">
-      <ul>
-        <li><a href="index.html">Mission</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="academy.html">Academy</a></li>
-        <li><a href="faqs.html">FAQ’s</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<img alt="CommsBlack Mobile logo" class="logo" src="assets/logo.png"/>
+<span>CommsBlack Mobile</span>
+</a>
+<nav aria-label="Primary" class="nav desktop-nav">
+<a href="index.html">Mission</a>
+<a href="products.html">Products</a>
+<a href="academy.html">Academy</a>
+<a href="faqs.html">FAQ’s</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<button aria-label="Toggle dark or light theme" aria-pressed="false" class="theme-toggle" title="Toggle dark/light">🌙</button>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+<div aria-modal="true" class="mobile-menu" hidden="" id="mobileMenu" role="dialog">
+<button aria-label="Close menu" class="close-btn" title="Close menu">×</button>
+<nav aria-label="Mobile Primary" class="mobile-nav">
+<ul>
+<li><a href="index.html">Mission</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="academy.html">Academy</a></li>
+<li><a href="faqs.html">FAQ’s</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
 </header>
-
-  <main class="container">
-    
-    <h1>CommsBlack Academy</h1>
-    <p>Learn how to secure your communications, protect your privacy, and operate with confidence in a digital‑first world.</p>
-    <h2>Core Topics</h2>
-    <details><summary>GrapheneOS Basics</summary><p>GrapheneOS minimizes attack surface and removes bloatware.</p></details>
-    <details><summary>VoIP & Anonymous Numbers</summary><p>Use internet‑based calling and messaging with private numbers.</p></details>
-    <details><summary>Faraday Protection</summary><p>Block wireless signals in transit and storage with Faraday gear.</p></details>
-    
-  
-    <section class="card" id="pgp" aria-labelledby="pgp-title">
-      <h2 id="pgp-title">PGP: quick explanation</h2>
-      <p><strong>PGP</strong> (Pretty Good Privacy) is a way to protect the contents of a message using public‑key cryptography. You encrypt with our <em>public key</em>; only we can decrypt it with our <em>private key</em>.</p>
-      <ol>
-        <li>Import our public key from the <a href="assets/pgp/commsblack_public.asc" download>download link</a>.</li>
-        <li>Write your message (e.g., crypto receipt + postal address) and encrypt it to our key.</li>
-        <li>Email the encrypted text (the long block that starts with <code>-----BEGIN PGP MESSAGE-----</code>).</li>
-      </ol>
-      <p>Heads‑up: email <em>subject lines</em> and metadata are not encrypted. Keep subjects generic.</p>
-      <p>Want a deeper dive? See these guides:</p>
-      <ul>
-        <li><a href="https://proton.me/support/how-to-use-pgp" target="_blank" rel="noopener">How to use PGP (Proton guide)</a></li>
-        <li><a href="https://ssd.eff.org/ps/module/key-verification" target="_blank" rel="noopener">EFF: verifying keys & fingerprints</a></li>
-      </ul>
-    </section>
-
-  </main>
-  
+<main>
+<section class="section" id="know-the-threats">
+<h2>1) Know the Threats (Awareness)</h2>
+<div class="section-body">
+<details><summary><span class="chev"></span> Surveillance Laws in Plain English <span class="kicker">Context</span></summary>
+<article>
+<p>Australia’s surveillance framework is broad. Interception powers (TIAA), two-year <em>metadata retention</em>, the TOLA assistance regime, the AFP/ACIC <em>Identify &amp; Disrupt</em> powers, and Online Safety mechanisms create overlapping ways to access data. These laws aim at crime and national security, but they also enable <strong>dragnet collection</strong> and compelled assistance that can touch ordinary people. A realistic stance is neither panic nor apathy: know the capabilities, then reduce your exposure.</p>
+<ul class="tips">
+<li><strong>Prefer end-to-end encrypted services</strong> with open protocols and public audits.</li>
+<li><strong>Keep less data</strong>: prune cloud backups, auto-delete messages, minimize account sprawl.</li>
+<li><strong>Separate roles</strong>: don’t mix personal and sensitive work on the same identity or device.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Metadata Retention <span class="kicker">Awareness</span></summary>
+<article>
+<p>“It’s only metadata” is misleading—connection times, IPs, cell sites, and contact graphs <em>map your life</em>. In Australia, telcos must keep metadata; many agencies can access it. Even when message content is encrypted, metadata can reveal who you talk to, when, and from where.</p>
+<ul class="tips">
+<li>Use messengers that <strong>minimize metadata</strong> (e.g., sealed-sender, contact discovery protections).</li>
+<li>Prefer Wi-Fi with a reputable <strong>VPN</strong> or <strong>Tor</strong> to reduce location traces.</li>
+<li>Turn off Wi-Fi/Bluetooth scanning; disable ad-ID tracking on mobile.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Compelled Assistance <span class="kicker">Risk</span></summary>
+<article>
+<p>TOLA can require companies—and in some cases people—to help agencies access data or build capabilities. While backdoors are <em>theoretically</em> limited, the practical outcome is uncertainty: can your provider be forced to push a targeted update or share telemetry?</p>
+<ul class="tips">
+<li>Favor <strong>open-source</strong> apps and community-audited builds.</li>
+<li>Diversify providers; avoid single points of failure for comms, storage, and identity.</li>
+<li>Pin app versions where possible for high-risk work; verify signatures.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Lawful Hacking <span class="kicker">Devices</span></summary>
+<article>
+<p>If agencies can’t read your encrypted traffic, they may target the endpoints. Lawful hacking implants can capture screenshots, keystrokes, or files before encryption. The best defense is reducing attack surface and isolating risky tasks.</p>
+<ul class="tips">
+<li>Keep OS and firmware updated; uninstall rarely used apps and browser extensions.</li>
+<li>Use <strong>hardened OS</strong> options (GrapheneOS, Qubes OS) for sensitive roles.</li>
+<li>Restart phones daily; it can clear some transient exploits.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Everyday Surveillance <span class="kicker">Life</span></summary>
+<article>
+<p>Workplace monitoring, retail facial recognition, license-plate readers, smart TVs, and voice assistants all trade convenience for data. Even if each stream seems harmless, their <em>combination</em> profiles you.</p>
+<ul class="tips">
+<li>Audit home devices; disable mics/cameras, guest-network IoT, and unneeded cloud features.</li>
+<li>Ask employers for monitoring policies; use personal devices for personal accounts.</li>
+<li>Carry camera covers; deny unnecessary app permissions by default.</li>
+</ul>
+</article>
+</details>
+</div>
+</section>
+<section class="section" id="protect-yourself">
+<h2>2) Protect Yourself (Defense)</h2>
+<div class="section-body">
+<details><summary><span class="chev"></span> Choosing Secure Devices &amp; OS <span class="kicker">Foundation</span></summary>
+<article>
+<p>Security choices compound. GrapheneOS hardens Android on Pixel hardware; Tails routes traffic through Tor and leaves no trace; Qubes isolates tasks into compartments (qubes). Mainstream platforms can be made safer, but purpose-built systems start ahead.</p>
+<ul class="tips">
+<li>Maintain a <strong>clean, dedicated device</strong> for sensitive roles.</li>
+<li>Enable secure boot/verified boot and full-disk encryption.</li>
+<li>Prefer devices with long, reliable update lifecycles.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Private Communications <span class="kicker">Messaging</span></summary>
+<article>
+<p>SMS and traditional calls are easy to intercept and rich in metadata. Signal, Session, and Matrix offer strong end-to-end encryption and better privacy defaults. Your security improves as your contacts migrate too.</p>
+<ul class="tips">
+<li>Enable disappearing messages and <strong>registration lock</strong>/PINs.</li>
+<li>Verify safety numbers/keys for sensitive contacts.</li>
+<li>Prefer calling inside E2EE apps over carrier voice.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> VPNs, Tor &amp; Proxies <span class="kicker">Networks</span></summary>
+<article>
+<p>A VPN hides traffic from local observers but requires trust in the provider. Tor bounces traffic through relays to obscure origin—more anonymous, often slower. Proxies usually don’t encrypt; use with caution.</p>
+<ul class="tips">
+<li>Use Tor for anonymity; VPN for hostile Wi-Fi and region locking.</li>
+<li>Avoid “free” VPNs; choose reputable, audited services.</li>
+<li>Combine Tor <em>over</em> VPN if Tor is blocked on your network.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Protecting Your Browser <span class="kicker">Tracking</span></summary>
+<article>
+<p>Your browser is a data firehose: third-party cookies, fingerprinting, URL tracking, push IDs. Hardened Firefox or Brave can cut leakage dramatically when paired with disciplined habits.</p>
+<ul class="tips">
+<li>Install <strong>uBlock Origin</strong> and enable EasyPrivacy &amp; uBO filters.</li>
+<li>Block third-party cookies; consider “strict” anti-tracking.</li>
+<li>Use containers/profiles per role; disable unnecessary extensions.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Compartmentalisation <span class="kicker">Separation</span></summary>
+<article>
+<p>One identity compromise shouldn’t cascade. Separate accounts, phone numbers, emails, and devices for distinct roles (work, personal, anonymous). The goal is to limit blast radius.</p>
+<ul class="tips">
+<li>Use unique emails/aliases; separate payment instruments.</li>
+<li>Different browsers or user profiles for each role.</li>
+<li>Isolate high-risk tasks in VMs or Qubes.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Data Breach Survival <span class="kicker">Response</span></summary>
+<article>
+<p>When data leaks, speed matters. Attackers reuse credentials within hours. Treat breaches as <em>recurring</em> events—assume old data can resurface.</p>
+<ul class="tips">
+<li>Rotate passwords immediately; enable 2FA (preferably FIDO keys).</li>
+<li>Set up breach alerts (e.g., HIBP); monitor identity and bank notifications.</li>
+<li>Replace compromised emails/usernames; update recovery channels.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Crypto &amp; Privacy <span class="kicker">Finance</span></summary>
+<article>
+<p>Most crypto is <em>pseudonymous</em>, not anonymous. Exchanges, analytics, and sloppy hygiene can deanonymise you. If you must transact privately, plan each step.</p>
+<ul class="tips">
+<li>Avoid address reuse; generate fresh receive addresses.</li>
+<li>Use privacy-preserving wallets/coins where legal.</li>
+<li>Beware KYC exchanges linking your identity to on-chain history.</li>
+</ul>
+</article>
+</details>
+</div>
+</section>
+<section class="section" id="build-good-habits">
+<h2>3) Build Good Habits (Operational Security)</h2>
+<div class="section-body">
+<details><summary><span class="chev"></span> Don’t Mix Identities <span class="kicker">Discipline</span></summary>
+<article>
+<p>Cross-contamination is the #1 opsec failure. One login to a personal account from an anonymous browser can create a lasting link. Treat identities like chemicals—store separately.</p>
+<ul class="tips">
+<li>Dedicated browser profiles, containers, or devices per identity.</li>
+<li>Unique usernames, avatars, writing styles, and time zones.</li>
+<li>Never copy/paste between roles; use offline notes to relay info.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Safe Public Wi-Fi Use <span class="kicker">Travel</span></summary>
+<article>
+<p>Open hotspots are fertile ground for snooping and phishing portals. Treat any shared network as hostile.</p>
+<ul class="tips">
+<li>Use a reputable VPN <em>before</em> logging in anywhere.</li>
+<li>Disable auto-connect; verify SSIDs; use mobile tethering when possible.</li>
+<li>Carry a “burner” device for trips and conferences.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Password &amp; Key Management <span class="kicker">Access</span></summary>
+<article>
+<p>Reused or weak passwords remain the easiest breach vector. Keys (PGP, SSH, FIDO) protect higher-value assets but must be backed up and rotated safely.</p>
+<ul class="tips">
+<li>Use a reputable password manager; create long passphrases.</li>
+<li>Prefer <strong>hardware security keys</strong> for 2FA over SMS codes.</li>
+<li>Store recovery codes offline; test account recovery annually.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Detecting &amp; Responding to Device Compromise <span class="kicker">Incidents</span></summary>
+<article>
+<p>Unusual battery drain, network spikes, new admin users, or blocked updates can signal compromise. Once an endpoint is owned, assume data exposure.</p>
+<ul class="tips">
+<li>Go offline, back up essentials, then wipe and rebuild from known-good images.</li>
+<li>Rotate all credentials used on the device; re-enrol 2FA.</li>
+<li>For high-risk cases, seek professional forensics before altering evidence.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Traveling Safely with Tech <span class="kicker">Borders</span></summary>
+<article>
+<p>Some borders allow device search; compelled unlock may be lawful. Reduce what you carry and what you store locally when you travel.</p>
+<ul class="tips">
+<li>Travel with <strong>clean devices</strong>; keep sensitive data encrypted in the cloud.</li>
+<li>Use temporary accounts/phone numbers; log out before return.</li>
+<li>Assume devices inspected at borders are no longer trustworthy for high-risk work.</li>
+</ul>
+</article>
+</details>
+</div>
+</section>
+<section class="section" id="push-back">
+<h2>4) Push Back (Advocacy &amp; Rights)</h2>
+<div class="section-body">
+<details><summary><span class="chev"></span> Your Rights in Australia <span class="kicker">Oversight</span></summary>
+<article>
+<p>Regulators like the OAIC, Ombudsman, and IGIS can investigate misuse, require remediation, or recommend reforms. Paper trails matter—even small complaints contribute to systemic accountability.</p>
+<ul class="tips">
+<li>Document facts (dates, systems, people) before lodging a complaint.</li>
+<li>Request copies of data held on you; exercise correction rights.</li>
+<li>Coordinate with community groups for templates and support.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Challenging Unlawful Surveillance <span class="kicker">Remedies</span></summary>
+<article>
+<p>When powers are exceeded, courts and tribunals can suppress evidence, award damages, or set precedent. Strategic cases shift policy over time.</p>
+<ul class="tips">
+<li>Seek legal advice early; preserve logs and screenshots.</li>
+<li>Use FOI requests to surface decision-making and policies.</li>
+<li>Crowdfund or pool resources via advocacy networks.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Joining Digital Rights Movements <span class="kicker">Community</span></summary>
+<article>
+<p>Collective action multiplies impact. Groups like EFA and Digital Rights Watch (and global allies like EFF) educate the public and lobby for better laws.</p>
+<ul class="tips">
+<li>Volunteer your skills; attend events; share resources locally.</li>
+<li>Write submissions to public consultations on tech laws.</li>
+<li>Support watchdog journalism and independent research.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Why Privacy = Democracy <span class="kicker">Civics</span></summary>
+<article>
+<p>Privacy protects dissent, association, and press freedom. Chilling effects creep in when people expect to be watched. Healthy democracies preserve <em>room to think</em> and explore without constant logging.</p>
+<ul class="tips">
+<li>Normalize privacy tools in everyday life.</li>
+<li>Challenge the “nothing to hide” myth with real-world examples.</li>
+<li>Teach kids and colleagues practical digital hygiene.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Future Laws to Watch <span class="kicker">Foresight</span></summary>
+<article>
+<p>Digital ID proposals, age-verification mandates, and AI-driven workplace monitoring are evolving. Early engagement shapes outcomes; silence leaves design to others.</p>
+<ul class="tips">
+<li>Track consultations; submit feedback through civil groups.</li>
+<li>Ask vendors and employers about data governance for AI systems.</li>
+<li>Support privacy-preserving standards and procurement.</li>
+</ul>
+</article>
+</details>
+</div>
+</section>
+<section class="section" id="high-risk-playbooks">
+<h2>5) High-Risk Playbooks</h2>
+<div class="section-body">
+<details><summary><span class="chev"></span> Fortress Mode (Qubes OS) <span class="kicker">Isolation</span></summary>
+<article>
+<p>Qubes treats your laptop as many little computers. Compartmentalisation prevents a mistake in one domain from exposing all others—ideal for research, source handling, and document review.</p>
+<ul class="tips">
+<li>Map roles to qubes (work, personal, research, throwaway).</li>
+<li>Keep an offline vault qube for secrets and keys.</li>
+<li>Use disposable VMs for opening unknown files and links.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Ghost Mode (Tails) <span class="kicker">Anonymity</span></summary>
+<article>
+<p>Tails routes all traffic via Tor and forgets everything on shutdown. It’s powerful for anonymous browsing, leak handling, and high-risk comms—when used on trusted hardware.</p>
+<ul class="tips">
+<li>Verify ISO signatures; use fresh USBs; disable internal disks in BIOS if possible.</li>
+<li>Never log into personal accounts from Tails.</li>
+<li>Avoid installing persistent add-ons that could fingerprint you.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Mobile Mode (GrapheneOS) <span class="kicker">Hardened</span></summary>
+<article>
+<p>GrapheneOS on Pixel reduces attack surface, improves permissions, and enables sensible sandboxing. It feels like stock Android but respects your boundaries.</p>
+<ul class="tips">
+<li>Use separate user profiles for roles; restrict network for sensitive apps.</li>
+<li>Install apps via sandboxed Play or F-Droid; review permissions routinely.</li>
+<li>Keep baseband and firmware updated; disable USB debugging.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Crypto Hygiene <span class="kicker">Money</span></summary>
+<article>
+<p>Payments can unmask relationships. Treat every on-chain action as public by default and plan the full path—funding, spending, and cash-out.</p>
+<ul class="tips">
+<li>Use fresh wallets per project; separate hot and cold storage.</li>
+<li>Avoid linking KYC and non-KYC funds; mind blockchain analytics.</li>
+<li>Consider privacy coins where lawful; document your threat model.</li>
+</ul>
+</article>
+</details>
+<details><summary><span class="chev"></span> Breach Response Plans <span class="kicker">Preparedness</span></summary>
+<article>
+<p>Incidents are stressful; pre-planning prevents panic. Decide who to call, what to shut down, and how to rebuild—before anything happens.</p>
+<ul class="tips">
+<li>Maintain encrypted, offline backups; test restores quarterly.</li>
+<li>Write a 1-page runbook (contacts, steps, legal support).</li>
+<li>After action: rotate credentials, review logs, and tighten controls.</li>
+</ul>
+</article>
+</details>
+</div>
+<p class="fine">This page is educational, not legal advice. Adapt guidance to your own threat model.</p>
+</section>
+</main>
 <footer>
-  <div class="container">
-    <p>© 2025 CommsBlack Mobile. All rights reserved.</p>
-  </div>
+<div class="container">
+<p>© 2025 CommsBlack Mobile. All rights reserved.</p>
+</div>
 </footer>
-
 </body>
 </html>
