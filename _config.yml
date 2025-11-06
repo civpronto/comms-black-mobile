@@ -1,0 +1,7 @@
+title: Comms Black Mobile
+url: "https://commsblack.online"
+baseurl: ""
+markdown: kramdown
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
