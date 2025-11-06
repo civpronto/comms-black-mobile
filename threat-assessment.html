@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <title>Threat Assessment — Comms Black</title>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<script defer src="script.js"></script>
+
+  <meta name="description" content="Private. Secure. Anonymous. Speak Freely.">
+
+<style>
+.question{margin-bottom:1.2rem;}
+.choices label{display:block;margin:6px 0;}
+.result-box{border:1px solid #ddd;padding:1rem;margin-top:1rem;background:#fafafa;}
+.btn{display:inline-block;padding:0.6rem 1rem;border:1px solid currentColor;border-radius:6px;cursor:pointer;text-decoration:none;background:transparent;}
+main.container{max-width:960px;margin:2rem auto;padding:0 1rem;}
+</style>
+
+</head>
+<body>
+<nav class="nav desktop-nav" aria-label="Primary">
+      <a href="threat-assessment.html">Threat Assessment</a><a href="index.html">Mission</a>
+      <a href="products.html">Products</a>
+      <a href="academy.html">Academy</a>
+      <a href="faqs.html">FAQ’s</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+<main class='container'>
+
+  <h1>Threat Assessment</h1>
+  <p>Answer the following to get a brief analysis of your adversary posture and recommended Communication Kit / OPSEC posture.</p>
+
+  <form id="threatForm">
+
+    <div class="question">
+      <strong>Device use</strong>
+      <div class="choices">
+        <label><input type="radio" name="device_use" value="personal" required> Personal use</label>
+        <label><input type="radio" name="device_use" value="professional"> Professional use</label>
+        <label><input type="radio" name="device_use" value="highrisk"> High risk work</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Adversary class (opportunist / targeted / state)</strong>
+      <div class="choices">
+        <label><input type="radio" name="adversary" value="bigtech"> Big-tech / Data brokers</label>
+        <label><input type="radio" name="adversary" value="stalker"> Stalker / Private Investigator</label>
+        <label><input type="radio" name="adversary" value="scammers"> Scammers / Hackers</label>
+        <label><input type="radio" name="adversary" value="criminal"> Criminal / Organised crime</label>
+        <label><input type="radio" name="adversary" value="state"> Law enforcement / Nation-state / Military</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Assets requiring protection?</strong>
+      <div class="choices">
+        <label><input type="checkbox" name="assets" value="identity"> Identity</label>
+        <label><input type="checkbox" name="assets" value="location"> Location</label>
+        <label><input type="checkbox" name="assets" value="communications"> Communications</label>
+        <label><input type="checkbox" name="assets" value="content"> Content (photos/docs)</label>
+        <label><input type="checkbox" name="assets" value="metadata"> Metadata</label>
+        <label><input type="checkbox" name="assets" value="contacts"> Contacts / Relationships</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Consequence if assets exploited</strong>
+      <div class="choices">
+        <label><input type="checkbox" name="consequences" value="inconvenience"> Inconvenience</label>
+        <label><input type="checkbox" name="consequences" value="reputation"> Reputational harm</label>
+        <label><input type="checkbox" name="consequences" value="employment"> Employment loss</label>
+        <label><input type="checkbox" name="consequences" value="financial"> Financial loss</label>
+        <label><input type="checkbox" name="consequences" value="physical"> Physical harm</label>
+        <label><input type="checkbox" name="consequences" value="imprisonment"> Imprisonment</label>
+        <label><input type="checkbox" name="consequences" value="death"> Death</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Known targeting now?</strong>
+      <div class="choices">
+        <label><input type="radio" name="targeting" value="yes" required> Yes</label>
+        <label><input type="radio" name="targeting" value="no"> No</label>
+        <label><input type="radio" name="targeting" value="unsure"> Unsure</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Technical capability</strong>
+      <div class="choices">
+        <label><input type="radio" name="tech" value="basic" required> Basic</label>
+        <label><input type="radio" name="tech" value="intermediate"> Intermediate</label>
+        <label><input type="radio" name="tech" value="advanced"> Advanced</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Internet connection</strong>
+      <div class="choices">
+        <label><input type="radio" name="internet" value="public" required> Public Wi-Fi</label>
+        <label><input type="radio" name="internet" value="personalwifi"> Personal Wi-Fi</label>
+        <label><input type="radio" name="internet" value="personalSIM"> Personal SIM in my name</label>
+        <label><input type="radio" name="internet" value="anonSIM"> Anonymous SIM</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>OPSEC / COMMSEC posture</strong>
+      <div class="choices">
+        <label><input type="radio" name="opsec" value="disciplined" required> Disciplined</label>
+        <label><input type="radio" name="opsec" value="basic"> Basic understanding</label>
+        <label><input type="radio" name="opsec" value="unsure"> Unsure / Willing to learn</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Budget sense</strong>
+      <div class="choices">
+        <label><input type="radio" name="budget" value="conservative" required> Conservative</label>
+        <label><input type="radio" name="budget" value="balanced"> Balanced</label>
+        <label><input type="radio" name="budget" value="priority"> Priority (security first)</label>
+      </div>
+    </div>
+
+    <p><button class="btn" type="submit">Get my assessment</button></p>
+  </form>
+
+  <div id="result" class="result-box" style="display:none;"></div>
+
+</main>
+<footer>
+  <div class="container">
+    <p>© 2025 CommsBlack Mobile. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function serializeCheckboxes(form, name) {
+  return Array.from(form.querySelectorAll("input[name='" + name + "']:checked")).map(n=>n.value);
+}
+document.addEventListener('DOMContentLoaded', function(){
+  const form = document.getElementById('threatForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const f = e.target;
+    const data = {
+      device_use: f.device_use.value,
+      adversary: f.adversary.value,
+      assets: serializeCheckboxes(f, 'assets'),
+      consequences: serializeCheckboxes(f, 'consequences'),
+      targeting: f.targeting.value,
+      tech: f.tech.value,
+      internet: f.internet.value,
+      opsec: f.opsec.value,
+      budget: f.budget.value
+    };
+
+    let score = 0;
+    if(data.device_use==='highrisk') score += 3;
+    if(data.adversary==='state') score += 4;
+    if(['stalker','criminal','scammers'].includes(data.adversary)) score += 2;
+    score += data.assets.length;
+    if(data.consequences.includes('death') || data.consequences.includes('physical')) score += 3;
+    if(data.targeting==='yes') score += 3;
+    if(data.tech==='advanced') score += 2;
+    if(data.internet==='public') score += 2;
+    if(data.opsec==='disciplined') score -= 2;
+    if(data.budget==='priority') score += 1;
+
+    let posture = '';
+    if(score <= 3) posture = 'Low — Opportunistic adversary posture';
+    else if(score <= 7) posture = 'Moderate — Targeted adversary posture';
+    else posture = 'High — Advanced / Nation-state level posture likely';
+
+    let kit = [];
+    if(score <= 3) {
+      kit.push('Maintain strong unique passwords, 2FA, keep devices updated.');
+      kit.push('Use encrypted messaging for sensitive comms (Signal).');
+    } else if(score <=7) {
+      kit.push('Harden device: full-disk encryption, secure backups, separate work/personal profiles.');
+      kit.push('Use privacy-preserving comms, dedicated secure SIM or burner where possible.');
+      kit.push('Limit metadata leaks: remove EXIF, use ephemeral accounts where feasible.');
+    } else {
+      kit.push('Operationalize: air-gapped options for highest-risk assets, professional security consultation.');
+      kit.push('Use verified secure devices, multi-layered comms security, OPSEC training for contacts.');
+      kit.push('Consider legal protections and crisis plans for physical safety.');
+    }
+
+    if(data.adversary==='bigtech') {
+      kit.push('Reduce data broker exposure: audit permissions, minimise third-party accounts.');
+    }
+    if(data.adversary==='stalker') {
+      kit.push('Review physical security, home privacy, and consider changing routines.');
+    }
+    if(data.assets.includes('location')) {
+      kit.push('Disable location sharing and strip geodata from content before sharing.');
+    }
+    if(data.internet==='anonSIM') {
+      kit.push('Anonymous SIMs help, but pair with secure device configuration and postpaid separation.');
+    }
+
+    const result = document.getElementById('result');
+    let html = '<h2>Your assessment</h2>';
+    html += '<p><strong>Score:</strong> ' + score + ' — <em>' + posture + '</em></p>';
+    html += '<h3>Recommended Communication Kit / OPSEC posture</h3><ul>';
+    kit.forEach(i=> html += '<li>' + i + '</li>');
+    html += '</ul>';
+    html += '<p><em>This is a brief automated assessment — for high-risk situations seek professional security advice.</em></p>';
+    result.innerHTML = html;
+    result.style.display = 'block';
+    result.scrollIntoView({behavior:"smooth"});
+  });
+});
+</script>
+
+</body>
+</html>
