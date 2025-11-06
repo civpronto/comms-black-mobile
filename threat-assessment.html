@@ -7,37 +7,29 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <style>
-    /* Scoped UI for questionnaire tiles + progress (does not alter global header/footer) */
-    .qa-wrap { max-width: 1000px; margin: 0 auto; }
+    /* Scoped fixes for this page only */
+    body.page-threat .hero,
+    body.page-threat .hero::before,
+    body.page-threat .hero::after { display:none !important; }
+    body.page-threat main.container { max-width: 1000px; }
+    /* tiles + progress (scoped) */
     .qa-section { margin: 1.25rem 0 1.1rem; }
-    .qa-section h2 { margin: 0.25rem 0 0.6rem; font-size: 1.05rem; }
-    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-    .tile {
-      position: relative; display: flex; align-items: center; justify-content: center;
-      padding: 12px; border-radius: 12px; line-height: 1.2; cursor: pointer; user-select: none;
-      border: 1px solid rgba(255,255,255,.25); background: transparent;
-      transition: transform .06s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
-      text-align: center;
-    }
+    .qa-section h2 { margin: .25rem 0 .6rem; font-size: 1.05rem; }
+    .tiles { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:12px; }
+    .tile { position:relative; display:flex; align-items:center; justify-content:center; padding:12px; border-radius:12px; line-height:1.2; cursor:pointer; user-select:none; border:1px solid rgba(255,255,255,.25); transition: transform .06s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease; text-align:center; }
+    .tile input { position:absolute; inset:0; opacity:0; pointer-events:none; }
     .tile:hover { border-color: color-mix(in oklab, currentColor 40%, rgba(255,255,255,.25)); }
-    .tile input { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
-    .tile.active {
-      border-color: currentColor;
-      background: color-mix(in oklab, currentColor 10%, transparent);
-      box-shadow: 0 0 0 3px color-mix(in oklab, currentColor 25%, transparent);
-      transform: translateY(-1px);
-    }
-    /* sticky progress */
+    .tile.active { border-color: currentColor; background: color-mix(in oklab, currentColor 10%, transparent); box-shadow: 0 0 0 3px color-mix(in oklab, currentColor 25%, transparent); transform: translateY(-1px); }
     .progress-shell { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(4px); }
     .progress-bar-bg { height: 6px; width: 100%; background: rgba(255,255,255,.12); }
     .progress-bar-fill { height: 6px; width: 0%; background: currentColor; transition: width .25s ease; }
     .progress-meta { font-size: .9rem; margin-top: .35rem; opacity: .85; }
-    @media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } }
+    @media (max-width: 520px){ .tiles{ grid-template-columns:1fr; } }
   </style>
 </head>
-<body>
+<body class="page-threat">
 
-  <!-- Header identical to other pages; correct order; active state on this page -->
+  <!-- Header copied structure / correct order / active link -->
   <header>
     <div class="container">
       <a href="index.html" class="logo">
@@ -48,7 +40,7 @@
       <nav>
         <ul>
           <li><a href="index.html">Mission</a></li>
-          <li><a href="threat-assessment.html" class="active">Threat Assessment</a></li>
+          <li><a class="active" href="threat-assessment.html">Threat Assessment</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="academy.html">Academy</a></li>
           <li><a href="faqs.html">FAQ's</a></li>
@@ -69,7 +61,7 @@
     <div id="progressText" class="progress-meta">0% complete</div>
   </div>
 
-  <main class="container qa-wrap">
+  <main class="container">
     <h1>Threat Assessment</h1>
     <p>Answer the following to get a brief analysis of your adversary posture and recommended Communication Kit / OPSEC posture.</p>
 
@@ -185,7 +177,8 @@
   </footer>
 
   <script>
-    // Tile behavior: hide native dots/squares; use tile.active to indicate selection
+    // Tile behaviour + sticky progress + scoring
+
     document.addEventListener('click', function(e){
       const label = e.target.closest('.tile');
       if (!label) return;
@@ -195,7 +188,6 @@
         label.classList.toggle('active');
         input.checked = label.classList.contains('active');
       } else {
-        // radio
         group.querySelectorAll('.tile').forEach(t => { t.classList.remove('active'); const i=t.querySelector('input'); if(i) i.checked=false; });
         label.classList.add('active');
         input.checked = true;
@@ -203,24 +195,24 @@
       updateProgress();
     }, false);
 
-    function getAnsweredCount() {
+    function getAnsweredCount(){
       const sections = Array.from(document.querySelectorAll('section[data-q]'));
       let answered = 0;
       sections.forEach(sec => {
         const inputs = sec.querySelectorAll('input');
-        const anyChecked = Array.from(inputs).some(i => i.checked);
-        if (anyChecked) answered++;
+        const anyChecked = Array.from(inputs).some(i=>i.checked);
+        if(anyChecked) answered++;
       });
-      return { answered, total: sections.length };
+      return {answered, total: sections.length};
     }
 
-    function updateProgress() {
+    function updateProgress(){
       const {answered, total} = getAnsweredCount();
       const pct = Math.round((answered/total)*100);
       const fill = document.getElementById('progressFill');
       const text = document.getElementById('progressText');
-      if (fill) fill.style.width = pct + '%';
-      if (text) text.textContent = pct + '% complete';
+      if(fill) fill.style.width = pct + '%';
+      if(text) text.textContent = pct + '% complete';
     }
 
     document.addEventListener('DOMContentLoaded', function(){
@@ -228,19 +220,18 @@
       const form = document.getElementById('threatForm');
       form.addEventListener('submit', function(e){
         e.preventDefault();
-        // Collect
+        const f = e.target;
         const data = {
-          device_use: form.device_use.value,
-          adversary: form.adversary.value,
-          assets: Array.from(form.querySelectorAll("input[name='assets']:checked")).map(i=>i.value),
-          consequences: Array.from(form.querySelectorAll("input[name='consequences']:checked")).map(i=>i.value),
-          targeting: form.targeting.value,
-          tech: form.tech.value,
-          internet: form.internet.value,
-          opsec: form.opsec.value,
-          budget: form.budget.value
+          device_use: f.device_use.value,
+          adversary: f.adversary.value,
+          assets: Array.from(f.querySelectorAll("input[name='assets']:checked")).map(i=>i.value),
+          consequences: Array.from(f.querySelectorAll("input[name='consequences']:checked")).map(i=>i.value),
+          targeting: f.targeting.value,
+          tech: f.tech.value,
+          internet: f.internet.value,
+          opsec: f.opsec.value,
+          budget: f.budget.value
         };
-        // Score
         let score = 0;
         if(data.device_use==='highrisk') score += 3;
         if(data.adversary==='state') score += 4;
