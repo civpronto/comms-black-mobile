@@ -1,15 +1,10 @@
-- label: Mission
+﻿- label: Home
   url: /
 - label: Threat Assessment
   url: /threat-assessment.html
 - label: Armoury
-    url: /armoury.html
+  url: /armoury.html
 - label: Training
-    url: /training.html
+  url: /training.html
 - label: Contact
   url: /contact.html
-
-
-
-
-
