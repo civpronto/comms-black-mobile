@@ -1,5 +1,7 @@
 - label: Home
   url: /
+- label: Threat Assessment
+  url: /threat-assessment.html
 - label: Products
   url: /products.html
 - label: Academy
@@ -9,5 +11,3 @@
 - label: Contact
   url: /contact.html
 
-- label: Threat Assessment
-  url: /threat-assessment.html
