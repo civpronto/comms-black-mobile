@@ -2,12 +2,13 @@
   url: /
 - label: Threat Assessment
   url: /threat-assessment.html
-- label: Products
-  url: /products.html
-- label: Academy
-  url: /academy.html
+- label: Armoury
+    url: /armoury.html
+- label: Training
+    url: /training.html
 - label: Contact
   url: /contact.html
+
 
 
 

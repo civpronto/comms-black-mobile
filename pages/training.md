@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Academy
-permalink: /academy.html
+title: Training
+permalink: /training.html
 ---
 
 <main class="container">
@@ -14,4 +14,5 @@ permalink: /academy.html
     <details><summary>Faraday Protection</summary><p>Block wireless signals in transit and storage with Faraday gear.</p></details>
     
   </main>
+
 

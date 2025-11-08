@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Products
-permalink: /products.html
+title: Armoury
+permalink: /armoury.html
 ---
 
 <main class="container">
@@ -69,4 +69,5 @@ permalink: /products.html
     </section>
     
   </main>
+
 

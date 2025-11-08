@@ -10,7 +10,7 @@ permalink: /
       <div class="hero-copy">
         <h1>Speak Freely</h1>
         <div class="cta-row">
-          <a class="btn" href="products.html">Explore Products</a>
+          <a class="btn" href="products.html">Arm Yourself</a>
           <a class="btn btn-outline" href="academy.html">Learn the Basics</a>
         </div>
       </div>
@@ -25,4 +25,5 @@ permalink: /
     </section>
     
   </main>
+
 
