@@ -1,0 +1,12 @@
+title: Comms Black Mobile
+description: Official site
+url: "https://commsblack.online"
+baseurl: ""  # empty because you're using a project pages URL or custom domain via CNAME
+markdown: kramdown
+kramdown:
+  input: GFM
+# Collections scaffold (for future pages if you want pretty folders/MD)
+collections:
+  pages:
+    output: true
+    permalink: /:path/

@@ -1,0 +1,28 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #0f172a;
+  --color-primary: #0ea5e9;
+  --color-accent: #14b8a6;
+
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+}
+/* Optional SCSS mirrors if/when you start using variables in SCSS
+
+cat > _sass/_variables.scss <<'SCSS'
+:root {
+  --color-bg: #ffffff;
+  --color-text: #0f172a;
+  --color-primary: #0ea5e9;
+  --color-accent: #14b8a6;
+
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+}
+
+/* Optional SCSS mirrors if/when you start using variables in SCSS
+$primary: #0ea5e9;
+$accent:  #14b8a6;
+*/
