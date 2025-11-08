@@ -1,4 +1,4 @@
-- label: Home
+- label: Mission
   url: /
 - label: Threat Assessment
   url: /threat-assessment.html
@@ -10,4 +10,5 @@
   url: /faqs.html
 - label: Contact
   url: /contact.html
+
 
