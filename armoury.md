@@ -1,74 +1,83 @@
 ---
+
 layout: default
 title: Armoury
 permalink: /armoury.html
+
 ---
-<main class="container">
-    
-    <h1>Secure Communication Kits for Privacy & Freedom</h1>
-    <p>From everyday privacy to sovereign global connectivity â€” choose the kit that fits your lifestyle.</p>
-    <section class="card-grid">
-      <article class="card">
-        <h2>Everyday Aussie</h2>
-        <p class="muted">Privacy made simple</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a</li>
-          <li>Case + privacy screen</li>
-          <li>Small Faraday bag</li>
-          <li>Your own SIM</li>
-          <li>USBâ€‘C cable + 30W charger</li>
-        </ul>
-        <p class="price">$1,400 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-      <article class="card">
-        <h2>Anonymous Aussie</h2>
-        <p class="muted">Anonymity without compromise</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a</li>
-          <li>Case + privacy screen</li>
-          <li>Small Faraday bag</li>
-          <li>Silent.link eSIM preinstalled</li>
-          <li>Encrypted VoIP app & number</li>
-          <li>USBâ€‘C cable + 30W charger</li>
-        </ul>
-        <p class="price">$1,600 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-      <article class="card">
-        <h2>Operator Aussie</h2>
-        <p class="muted">Airâ€‘gapped security for highâ€‘risk work</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
-          <li>Case + privacy screen</li>
-          <li>Large Faraday bag</li>
-          <li>Privacy router</li>
-          <li>Anonymous eSIM via router</li>
-          <li>Encrypted VoIP app & number</li>
-          <li>Ethernet cable + charger</li>
-        </ul>
-        <p class="price">$2,500 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-      <article class="card">
-        <h2>Sovereign Aussie</h2>
-        <p class="muted">Secure connectivity anywhere on Earth</p>
-        <ul>
-          <li>GrapheneOS Pixel 8a (airplane mode enforced)</li>
-          <li>Case + privacy screen</li>
-          <li>Large Faraday bag</li>
-          <li>Privacy router</li>
-          <li>Anonymous eSIM via router</li>
-          <li>Encrypted VoIP app & number</li>
-          <li>Satellite option</li>
-        </ul>
-        <p class="price">$3,300 AUD</p>
-        <a class="btn" href="#checkout">Buy Now</a>
-      </article>
-    </section>
-    
-  </main>
 
+# Armoury
+Purpose-built secure communication kits tailored to different threat profiles.
 
+## ? Shield Kit — Baseline Personal Security
+Device: Pixel 8a (GrapheneOS)  
+SIM: Customer-provided
 
+The Shield Kit is a hardened daily-carry smartphone designed to protect you from modern data-harvesting threats without compromising usability. Powered by GrapheneOS on a Pixel 8a, it delivers a secure, privacy-respecting platform for communications, personal apps, and travel.
 
+Designed for individuals at low risk of targeted surveillance who still want meaningful protection from commercial tracking and physical compromise.
+
+### Core Benefits
+- Hardened OS (GrapheneOS): Strong sandboxing & exploitation resistance; no forced Google account
+- Encrypted storage: Protects personal data at rest
+- Duress PIN: Optional emergency PIN that instantly destroys sensitive data
+- SIM flexibility: Bring your own SIM — compatible with major carriers
+
+### Threat Protections
+- App-level data harvesting & tracking
+- Physical theft / temporary seizure
+- Opportunistic access attempts
+
+**Ideal for:** Individuals, students, journalists, business travelers.
+
+---
+
+## ? Shadow Kit — Identity-Separated Secure Communications
+Device: Pixel 8a (GrapheneOS)  
+Connectivity: Always-On VPN + Anonymous data-only eSIM
+
+The Shadow Kit extends your privacy posture for medium-to-high risk users who require identity separation, secure messaging, and shielding from passive network surveillance.
+
+### Core Benefits
+- Always-On VPN
+- Anonymous data-only eSIM
+- Anonymous crypto wallet
+- PGP encryption toolkit
+- E2E messaging & calling
+- Medium Faraday bag
+
+### Threat Protections
+- Passive dragnet surveillance
+- Metadata + network tracing
+- Opportunistic targeting
+- Identity/financial linking
+
+**Ideal for:** Researchers, activists, business professionals & frequent travelers.
+
+---
+
+## ? Ghost Kit — Maximum Anonymity & OPSEC
+Device: Pixel 8a (airplane-mode-only)  
+Connectivity: Privacy Router (Tor/VPN routing, IMEI/IMSI rotation)
+
+Built for high-risk users who face motivated adversaries.
+
+### Core Benefits
+- Airplane-mode-only operation
+- Privacy router (Tor/VPN + IMEI/IMSI rotation)
+- Anonymous data-only eSIM (in router)
+- Multi-layer traffic obfuscation
+- Anonymous crypto wallets
+- PGP tools
+- Large Faraday bag
+
+### Threat Protections
+- Persistent targeted surveillance
+- Nation-state SIGINT
+- Cellular metadata/device tracking
+- Advanced adversary profiling
+- Location inference
+
+**Ideal for:** Journalists, dissidents, whistleblowers, intelligence workers.
+
+---
