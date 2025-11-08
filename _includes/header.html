@@ -21,14 +21,9 @@
   <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
     <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
     <nav class="mobile-nav" aria-label="Mobile Primary">
-      <ul>
-        <li><a href="index.html">Mission</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="academy.html">Academy</a></li>
-        <li><a href="faqs.html">FAQ’s</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <ul>{% for item in site.data.nav %}<li><a href="{{ item.url }}">{{ item.label }}</a></li>{% endfor %}</ul>
     </nav>
   </div>
 </header>
+
 
