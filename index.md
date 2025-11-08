@@ -15,13 +15,13 @@ permalink: /
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/hero-phone.png" alt="GrapheneOS phone — CommsBlack Mobile" />
+        <img src="assets/hero-phone.png" alt="GrapheneOS phone - CommsBlack Mobile" />
       </div>
     </section>
 
     <section class="lede">
       <h2>Private. Secure. Anonymous.</h2>
-      <p>Our mission is simple: give people back control of their communications — free from surveillance, exploitation, and unnecessary risk.</p>
+      <p>Our mission is simple: give people back control of their communications - free from surveillance, exploitation, and unnecessary risk.</p>
     </section>
     
   </main>

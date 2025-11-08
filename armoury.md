@@ -9,7 +9,7 @@ permalink: /armoury.html
 # Armoury
 Purpose-built secure communication kits tailored to different threat profiles.
 
-## ? Shield Kit — Baseline Personal Security
+## ? Shield Kit ï¿½ Baseline Personal Security
 Device: Pixel 8a (GrapheneOS)  
 SIM: Customer-provided
 
@@ -21,7 +21,7 @@ Designed for individuals at low risk of targeted surveillance who still want mea
 - Hardened OS (GrapheneOS): Strong sandboxing & exploitation resistance; no forced Google account
 - Encrypted storage: Protects personal data at rest
 - Duress PIN: Optional emergency PIN that instantly destroys sensitive data
-- SIM flexibility: Bring your own SIM — compatible with major carriers
+- SIM flexibility: Bring your own SIM ï¿½ compatible with major carriers
 
 ### Threat Protections
 - App-level data harvesting & tracking
@@ -32,7 +32,7 @@ Designed for individuals at low risk of targeted surveillance who still want mea
 
 ---
 
-## ? Shadow Kit — Identity-Separated Secure Communications
+## ? Shadow Kit ï¿½ Identity-Separated Secure Communications
 Device: Pixel 8a (GrapheneOS)  
 Connectivity: Always-On VPN + Anonymous data-only eSIM
 
@@ -56,7 +56,7 @@ The Shadow Kit extends your privacy posture for medium-to-high risk users who re
 
 ---
 
-## ? Ghost Kit — Maximum Anonymity & OPSEC
+## ? Ghost Kit ï¿½ Maximum Anonymity & OPSEC
 Device: Pixel 8a (airplane-mode-only)  
 Connectivity: Privacy Router (Tor/VPN routing, IMEI/IMSI rotation)
 
