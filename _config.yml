@@ -10,3 +10,5 @@ collections:
   pages:
     output: true
     permalink: /:path/
+
+# rebuild: 2025-11-08T15:51:23
