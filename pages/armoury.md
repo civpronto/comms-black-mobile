@@ -3,7 +3,6 @@ layout: default
 title: Armoury
 permalink: /armoury.html
 ---
-
 <main class="container">
     
     <h1>Secure Communication Kits for Privacy & Freedom</h1>
@@ -69,5 +68,6 @@ permalink: /armoury.html
     </section>
     
   </main>
+
 
 

@@ -3,7 +3,6 @@ layout: default
 title: Training
 permalink: /training.html
 ---
-
 <main class="container">
     
     <h1>CommsBlack Academy</h1>
@@ -14,5 +13,6 @@ permalink: /training.html
     <details><summary>Faraday Protection</summary><p>Block wireless signals in transit and storage with Faraday gear.</p></details>
     
   </main>
+
 
 
