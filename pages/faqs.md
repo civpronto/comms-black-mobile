@@ -13,3 +13,4 @@ permalink: /faqs.html
     
   </main>
 
+<p style="text-align:center"><small>Last updated: 8 Nov 2025</small></p>
