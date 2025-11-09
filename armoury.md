@@ -33,7 +33,7 @@ Purpose-built secure communication kits tailored to your threat profile. Not sur
 
   <article class="tile" id="shield">
     <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
-    <h3>? Shield Kit &mdash; Baseline Personal Security</h3>
+    <h3>Shield Kit &mdash; Baseline Personal Security</h3>
     <div class="sub">SIM: Customer-provided &mdash; Everyday privacy upgrade</div>
     <p>The Shield Kit is a hardened daily-carry smartphone that reduces data-harvesting without compromising usability.</p>
     <ul>
@@ -50,7 +50,7 @@ Purpose-built secure communication kits tailored to your threat profile. Not sur
 
   <article class="tile" id="shadow">
     <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
-    <h3>? Shadow Kit &mdash; Identity-Separated Secure Comms</h3>
+    <h3>Shadow Kit &mdash; Identity-Separated Secure Comms</h3>
     <div class="sub">Always-On VPN &mdash; Anonymous data-only eSIM</div>
     <p>For medium-to-high risk users who need identity separation, secure messaging, and protection from passive network surveillance.</p>
     <ul>
@@ -67,7 +67,7 @@ Purpose-built secure communication kits tailored to your threat profile. Not sur
 
   <article class="tile" id="ghost">
     <span class="badge">Pixel 8a &mdash; Router-mediated</span>
-    <h3>? Ghost Kit &mdash; Maximum Anonymity &amp; OPSEC</h3>
+    <h3>Ghost Kit &mdash; Maximum Anonymity &amp; OPSEC</h3>
     <div class="sub">Airplane-mode-only device &mdash; Privacy Router (Tor/VPN + IMEI/IMSI rotation)</div>
     <p>Built for high-risk environments. The handset never exposes IMEI/IMSI; all traffic exits via a hardened privacy router.</p>
     <ul>
@@ -85,6 +85,7 @@ Purpose-built secure communication kits tailored to your threat profile. Not sur
 </div>
 
 <p style="text-align:center;margin-top:1.25rem"><small>Last updated: 8 Nov 2025</small></p>
+
 
 
 
