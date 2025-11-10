@@ -33,14 +33,14 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
   <article class="tile" id="shield">
     <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
-    <h3>Shield Kit &mdash; Baseline Personal Security</h3>
-    <div class="sub">SIM: Customer-provided &mdash; Everyday privacy upgrade</div>
+    <h3>Shield Kit &mdash; Baseline Privacy & Security</h3>
+    <div class="sub">SIM: Privacy-focused operating system &mdash; Hardened device security</div>
     <p>The Shield Kit is a hardened daily-carry smartphone that reduces data-harvesting without compromising usability.</p>
     <ul>
-      <li><strong>GrapheneOS</strong> hardening &amp; no forced Google account</li>
+      <li><strong>GrapheneOS</strong> de-googled &amp; granular app permissions</li>
       <li><strong>Encrypted storage</strong> protects data at rest</li>
       <li><strong>Duress PIN</strong> to safely wipe under coercion</li>
-      <li><strong>Bring-your-own SIM</strong>, major carriers supported</li>
+      <li><strong>Bring-your-own SIM</strong>, Physical sim & e-sim supported</li>
     </ul>
     <div class="cta">
       <a class="btn" href="/contact.html">Request Shield</a>
@@ -50,9 +50,9 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
   <article class="tile" id="shadow">
     <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
-    <h3>Shadow Kit &mdash; Identity-Separated Secure Comms</h3>
+    <h3>Shadow Kit &mdash; Privacy, Security, Anonymity</h3>
     <div class="sub">Always-On VPN &mdash; Anonymous data-only eSIM</div>
-    <p>For medium-to-high risk users who need identity separation, secure messaging, and protection from passive network surveillance.</p>
+    <p>For medium-to-high risk users who need identity separation, encrypted messaging, and protection from passive network surveillance.</p>
     <ul>
       <li><strong>Always-On VPN</strong> to block ISP/network visibility</li>
       <li><strong>Anonymous eSIM</strong> breaks device-identity binding</li>
@@ -66,13 +66,13 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   </article>
 
   <article class="tile" id="ghost">
-    <span class="badge">Pixel 8a &mdash; Router-mediated</span>
-    <h3>Ghost Kit &mdash; Maximum Anonymity &amp; OPSEC</h3>
+    <span class="badge">Pixel 8a &mdash; GrapheneOS/OpenWRT</span>
+    <h3>Ghost Kit &mdash; Anonymous &amp; Location Obfuscation</h3>
     <div class="sub">Airplane-mode-only device &mdash; Privacy Router (Tor/VPN + IMEI/IMSI rotation)</div>
     <p>Built for high-risk environments. The handset never exposes IMEI/IMSI; all traffic exits via a hardened privacy router.</p>
     <ul>
       <li><strong>Airplane-mode-only</strong> handset (no cellular IDs)</li>
-      <li><strong>Privacy Router</strong>: Tor/VPN, IMEI/IMSI rotation</li>
+      <li><strong>NitroWall Privacy Router</strong>: IDs of the NitroWall IMEI, BSSID and MAC are random and can be changed without restriction to prevent the device from being tracked by cell towers & IMSI catchers.</li>
       <li><strong>Anonymous wallets</strong> &amp; <strong>PGP tools</strong></li>
       <li><strong>Large Faraday bag</strong> for full isolation</li>
     </ul>
