@@ -34,7 +34,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <article class="tile" id="shield">
     <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
     <h3>Shield Kit &mdash; Baseline Privacy & Security</h3>
-    <div class="sub">SIM: Privacy-focused operating system &mdash; Hardened device security</div>
+    <div class="sub">Privacy-focused operating system &mdash; Hardened device security</div>
     <p>The Shield Kit is a hardened daily-carry smartphone that reduces data-harvesting without compromising usability.</p>
     <ul>
       <li><strong>GrapheneOS</strong> de-googled &amp; granular app permissions</li>
@@ -44,7 +44,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     </ul>
     <div class="cta">
       <a class="btn" href="/contact.html">Request Shield</a>
-      <a href="#shadow">Compare ?</a>
+      <a href="#ghost">Compare ?</a>
     </div>
   </article>
 
@@ -56,7 +56,8 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <ul>
       <li><strong>Always-On VPN</strong> to block ISP/network visibility</li>
       <li><strong>Anonymous eSIM</strong> breaks device-identity binding</li>
-      <li><strong>PGP toolkit</strong> &amp; <strong>Encrypted calls/messages</strong></li>
+      <li><strong>Anonymous crypto wallet</strong> &amp; <strong>PGP toolkit</strong></li>
+      <li><strong>Signal Messenger</strong> &amp; <strong>Threema Messenger</strong> gold standard encryption for calls/messages</li>
       <li><strong>Faraday bag</strong> for travel &amp; device isolation</li>
     </ul>
     <div class="cta">
@@ -73,12 +74,12 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <ul>
       <li><strong>Airplane-mode</strong> air-gapped handset (no cellular IDs)</li>
       <li><strong>NitroWall Privacy Router</strong>: Router IDs (IMEI, BSSID and MAC) are random and can be changed without restriction to prevent the device from being tracked by cell towers & IMSI catchers.</li>
-      <li><strong>Anonymous crypto wallet</strong> &amp; <strong>PGP tools</strong></li>
-      <li><strong>Large Faraday bag</strong> for handset/router isolation</li>
+      <li><strong>Anonymous crypto wallet</strong> &amp; <strong>PGP toolkit</strong></li>
+      <li><strong>Large Faraday bag</strong> for handset/router isolation between sessions</li>
     </ul>
     <div class="cta">
       <a class="btn" href="/contact.html">Request Ghost</a>
-      <a href="#shield">Back to Shield ?</a>
+      <a href="#ghost">Compare ?</a>
     </div>
   </article>
 
