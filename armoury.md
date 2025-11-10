@@ -3,7 +3,7 @@
 ---
 
 # Armoury
-Purpose-built secure communication kits tailored to your threat profile. Not sure? <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Visit the Threat Assessment page to see which kit you need</a>.
+Purpose-built secure communication kits tailored to your threat profile. Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
 
 <style>
   .tiles { display:grid; gap:1.25rem; margin:1.5rem 0; }
