@@ -50,14 +50,14 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
   <article class="tile" id="shadow">
     <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
-    <h3>Shadow Kit &mdash; Privacy, Security, Anonymity</h3>
-    <div class="sub">Always-On VPN &mdash; Anonymous data-only eSIM</div>
+    <h3>Shadow Kit &mdash; Private, Secure, Anonymous</h3>
+    <div class="sub">Always-On VPN &mdash; Anonymous eSIM</div>
     <p>For medium-to-high risk users who need identity separation, encrypted messaging, and protection from passive network surveillance.</p>
     <ul>
       <li><strong>Always-On VPN</strong> to block ISP/network visibility</li>
       <li><strong>Anonymous eSIM</strong> breaks device-identity binding</li>
-      <li><strong>PGP toolkit</strong> &amp; <strong>E2E calls/messages</strong></li>
-      <li><strong>Faraday bag</strong> for travel &amp; high-risk moments</li>
+      <li><strong>PGP toolkit</strong> &amp; <strong>Encrypted calls/messages</strong></li>
+      <li><strong>Faraday bag</strong> for travel &amp; device isolation</li>
     </ul>
     <div class="cta">
       <a class="btn" href="/contact.html">Request Shadow</a>
@@ -67,14 +67,14 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
   <article class="tile" id="ghost">
     <span class="badge">Pixel 8a &mdash; GrapheneOS/OpenWRT</span>
-    <h3>Ghost Kit &mdash; Anonymous &amp; Location Obfuscation</h3>
+    <h3>Ghost Kit &mdash; Anonymous Location Obfuscation</h3>
     <div class="sub">Airplane-mode-only device &mdash; Privacy Router (Tor/VPN + IMEI/IMSI rotation)</div>
-    <p>Built for high-risk environments. The handset never exposes IMEI/IMSI; all traffic exits via a hardened privacy router.</p>
+    <p>Dedicated second device resistant to targeted surveillance. Built for high-risk environments. Air-Gapped handset never exposes IMEI/IMSI; all traffic exits via a hardened privacy router with Tor/VPN kill switch.</p>
     <ul>
-      <li><strong>Airplane-mode-only</strong> handset (no cellular IDs)</li>
-      <li><strong>NitroWall Privacy Router</strong>: IDs of the NitroWall IMEI, BSSID and MAC are random and can be changed without restriction to prevent the device from being tracked by cell towers & IMSI catchers.</li>
-      <li><strong>Anonymous wallets</strong> &amp; <strong>PGP tools</strong></li>
-      <li><strong>Large Faraday bag</strong> for full isolation</li>
+      <li><strong>Airplane-mode</strong> air-gapped handset (no cellular IDs)</li>
+      <li><strong>NitroWall Privacy Router</strong>: Router IDs (IMEI, BSSID and MAC) are random and can be changed without restriction to prevent the device from being tracked by cell towers & IMSI catchers.</li>
+      <li><strong>Anonymous crypto wallet</strong> &amp; <strong>PGP tools</strong></li>
+      <li><strong>Large Faraday bag</strong> for handset/router isolation</li>
     </ul>
     <div class="cta">
       <a class="btn" href="/contact.html">Request Ghost</a>
