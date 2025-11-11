@@ -14,6 +14,13 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
 
 {% raw %}
 <style>
+:root {
+  --pill-bg: #6e8d8a;   /* site accent — light sage */
+  --pill-bg-hover: #5f7b78;
+  --pill-text: #0d0d0d; /* dark text on light pill */
+  --tile-border: #6e8d8a;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -21,32 +28,35 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   margin: 2rem 0;
 }
 
+/* Light pill card */
 .product-tile {
-  border: 1px solid #1f1f1f;
-  border-radius: 12px;
+  border: 1px solid var(--tile-border);
+  border-radius: 999px;                 /* full pill silhouette */
   padding: 1.25rem;
-  background: #0d0d0d;
-  color: #e6e6e6;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset;
 }
 
+/* Subtle lift on hover */
 .product-tile:hover {
-  border-color: #3f5553; /* site accent */
-  transform: translateY(-2px);
+  background: var(--pill-bg-hover);
+  transform: translateY(-1px);
 }
 
 .product-tile img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-bottom: 0.75rem;
-  border: 1px solid #222;
+  border: 1px solid rgba(0,0,0,0.12);
 }
 
 .product-tile h3 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  font-size: 1.15rem;
-  font-weight: 600;
+  margin: 0.25rem 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1px;
 }
 
 .product-tile p {
@@ -54,34 +64,42 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   font-size: 0.95rem;
 }
 
+/* Price badge matches site pill look */
 .product-price {
   display: inline-block;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 0.95rem;
-  padding: 0.2rem 0.45rem;
-  border: 1px solid #3f5553; /* themed */
-  border-radius: 6px;
-  background: #111;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(13,13,13,0.08);
+  color: var(--pill-text);
+  border: 1px solid rgba(13,13,13,0.16);
   margin-bottom: 0.5rem;
 }
 
+/* Button as small pill */
 .btn-buy {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.45rem 1rem;
-  background: #111;
-  border: 1px solid #3f5553; /* themed */
-  color: #e6e6e6;
-  font-weight: 500;
-  border-radius: 20px;
+  background: rgba(13,13,13,0.12);
+  border: 1px solid rgba(13,13,13,0.22);
+  color: var(--pill-text);
+  font-weight: 700;
+  border-radius: 999px;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+.btn-buy:hover {
+  background: rgba(13,13,13,0.18);
+  border-color: rgba(13,13,13,0.32);
+  transform: translateY(-1px);
 }
 
-.btn-buy:hover {
-  background: #1b1b1b;
-  border-color: #6e8d8a; /* lighter hover accent */
+/* Reduce outer pill curvature on small screens so content breathes */
+@media (max-width: 420px) {
+  .product-tile { border-radius: 28px; }
 }
 </style>
 
