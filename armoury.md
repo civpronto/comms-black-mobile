@@ -146,7 +146,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     <ul>
       <li>GrapheneOS Pixel 8a</li>
       <li>Anonymous SIM</li>
-      <li>Encrypted communication suite</li>
+      <li>Encrypted app suite</li>
       <li>Faraday bag (medium)</li>
     </ul>
 
