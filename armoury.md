@@ -77,15 +77,13 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
 <div class="tiles">
 
-  <!-- SHIELD -->
+  <!-- SHIELD (no eSIM image here) -->
   <article class="tile" id="shield">
     <span class="badge">Low risk threat profile</span>
 
-    <!-- Carousel: image #2 is esim.png -->
     <div class="carousel"
          data-images='[
-           "/assets/img/pixel8a-grapheneos.jpg",
-           "/assets/img/esim.png"
+           "/assets/img/pixel8a-grapheneos.jpg"
          ]'
          aria-label="PX8-A Shield images">
       <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shield">
@@ -110,13 +108,14 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   </article>
 
 
-  <!-- SHADOW -->
+  <!-- SHADOW (eSIM is 2nd image) -->
   <article class="tile" id="shadow">
     <span class="badge">Moderate-high risk profile</span>
 
     <div class="carousel"
          data-images='[
            "/assets/img/pixel8a-grapheneos.jpg",
+           "/assets/img/esim.png",
            "/assets/img/faraday-medium.jpeg"
          ]'
          aria-label="PX8-A Shadow images">
@@ -134,7 +133,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <ul>
       <li>GrapheneOS Pixel 8a</li>
       <li>Anonymous SIM</li>
-      <li>Encrypted app suite</li>
+      <li>Encrypted communication suite</li>
       <li>Faraday bag (medium)</li>
     </ul>
     <div class="cta">
@@ -143,11 +142,10 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   </article>
 
 
-  <!-- GHOST -->
+  <!-- GHOST (eSIM stays 2nd) -->
   <article class="tile" id="ghost">
     <span class="badge">High risk threat profile</span>
 
-    <!-- Carousel: esim.png is 2nd -->
     <div class="carousel"
          data-images='[
            "/assets/img/pixel8a-grapheneos.jpg",
@@ -171,7 +169,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <li>GrapheneOS Pixel 8a</li>
       <li>NW750 privacy router</li>
       <li>Anonymous SIM</li>
-      <li>Encrypted app suite</li>
+      <li>Encrypted communication suite</li>
       <li>Faraday bag (large)</li>
     </ul>
     <div class="cta">
