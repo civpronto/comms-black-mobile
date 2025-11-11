@@ -26,113 +26,134 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     background: rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.12);
   }
   .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
-  .cta .btn { padding:.55rem .9rem }
+  .cta .btn { padding:.55rem .9rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; text-decoration:none }
+  .cta .btn:hover{ border-color: rgba(255,255,255,.18) }
+
+  /* Details reveal */
+  .details { display:none; margin-top:.75rem }
+  .tile.open .details { display:block }
+  .toggle { cursor:pointer }
 </style>
 
 <div class="tiles">
 
-  <article class="tile" id="shield">
-    <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
+  <!-- SHIELD -->
+  <article class="tile" id="shield" data-tile>
+    <span class="badge">Pixel 8a — GrapheneOS</span>
     <h3>PX8-A Shield — Low risk — $1600 AUD</h3>
     <div class="sub">Designed for low risk workflows; protects against app-level surveillance & physical theft/seizure.</div>
+
     <div class="cta">
-      <a class="btn" href="#shield-details">View details</a>
+      <a class="btn toggle" data-toggle>View details</a>
+    </div>
+
+    <div class="details">
+      <h4>Hardware</h4>
+      <ul>
+        <li>Pixel 8a handset</li>
+        <li>Shockproof phone case</li>
+        <li>Privacy screen protector</li>
+      </ul>
+
+      <h4>Software (GrapheneOS)</h4>
+      <ul>
+        <li><strong>Hardened kernel & libc</strong>: improved memory-safety (zero-initialization, hardened malloc), stronger control-flow integrity, stack protections.</li>
+        <li><strong>Verified Boot & firmware integrity</strong>: ensures bootloader, system and firmware haven’t been tampered with.</li>
+        <li><strong>Attack surface reduction</strong>: disables/restricts optional hardware (USB-C data when locked, pogo-pins, NFC/UWB, sensors) and limits background services.</li>
+        <li><strong>USB-C control</strong>: charging-only mode when locked to block data-connection attacks.</li>
+        <li><strong>Improved sandboxing & isolation</strong>: stronger app/process isolation beyond standard Android.</li>
+        <li><strong>Fine-grained permission controls</strong>: one-time permissions, foreground-only access, sensor toggles, storage & contact scopes, per-app revocable network access.</li>
+        <li><strong>Network & sensor toggles + default MAC randomisation</strong> (Wi-Fi/Bluetooth; mic/camera/sensors).</li>
+        <li><strong>No built-in Google services/telemetry</strong> by default; optional sandboxed Play services.</li>
+        <li><strong>Privacy-focused apps</strong>: hardened browser, secure camera (removes EXIF), secure PDF viewer, encrypted backups (SeedVault).</li>
+        <li><strong>Timely OS updates & device support</strong> (focused device set).</li>
+        <li><strong>App compatibility</strong> via alternative stores or optional sandboxed Google Play.</li>
+        <li><strong>Duress PIN/Password</strong>: irreversible wipe (encryption keys & installed eSIMs) and power-off.</li>
+        <li><strong>Encrypted storage & backups</strong> with strong key-management.</li>
+      </ul>
     </div>
   </article>
 
-  <article class="tile" id="shadow">
-    <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
+  <!-- SHADOW -->
+  <article class="tile" id="shadow" data-tile>
+    <span class="badge">Pixel 8a — GrapheneOS</span>
     <h3>PX8-A Shadow — Moderate/High risk — $1800 AUD</h3>
     <div class="sub">Defends against passive dragnet surveillance; stronger posture against targeted surveillance.</div>
+
     <div class="cta">
-      <a class="btn" href="#shadow-details">View details</a>
+      <a class="btn toggle" data-toggle>View details</a>
+    </div>
+
+    <div class="details">
+      <h4>Hardware</h4>
+      <ul>
+        <li>Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage</li>
+        <li>NW750 NitroWall — IMEI, BSSID and MAC randomised/re-rollable to evade IMSI catcher/cell-tower tracking</li>
+        <li>Shockproof case & privacy screen protector — extends device lifetime; deters shoulder-surfing</li>
+        <li>Medium Faraday bag — total device isolation during travel & storage between sessions</li>
+      </ul>
+
+      <h4>Software</h4>
+      <ul>
+        <li>GrapheneOS — privacy & security-focused encrypted OS</li>
+        <li>Mullvad VPN — always-on kill switch; encrypts traffic and protects against local eavesdropping/manipulation</li>
+        <li>Privacy SIM (in handset) — global coverage, anonymously registered eSIM (data-only, unlimited expiry, 10GB included)</li>
+        <li>Signal & Threema — gold-standard encrypted messaging/calls/file sharing</li>
+        <li>KeePassDX — offline encrypted password manager</li>
+        <li>OpenKeychain — PGP encryption/decryption toolkit</li>
+        <li>Cake Wallet — anonymous crypto storage & transactions, separated from real-world identity</li>
+      </ul>
     </div>
   </article>
 
-  <article class="tile" id="ghost">
-    <span class="badge">Pixel 8a &mdash; GrapheneOS/OpenWrt</span>
+  <!-- GHOST -->
+  <article class="tile" id="ghost" data-tile>
+    <span class="badge">Pixel 8a — GrapheneOS/OpenWrt</span>
     <h3>PX8-A Ghost — High risk — $2500 AUD</h3>
     <div class="sub">Built for high-risk workflows; resists targeted surveillance & advanced location correlation.</div>
+
     <div class="cta">
-      <a class="btn" href="#ghost-details">View details</a>
+      <a class="btn toggle" data-toggle>View details</a>
+    </div>
+
+    <div class="details">
+      <h4>Hardware</h4>
+      <ul>
+        <li>Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage</li>
+        <li>NW750 NitroWall — IMEI, BSSID and MAC randomised/re-rollable to evade IMSI catcher/cell-tower tracking</li>
+        <li>Shockproof phone case & privacy screen protector — extends device lifetime; deters shoulder-surfing</li>
+        <li>Large Faraday bag — total multi-device isolation during travel & storage between sessions</li>
+      </ul>
+
+      <h4>Software</h4>
+      <ul>
+        <li>GrapheneOS — privacy & security-focused encrypted OS</li>
+        <li>OpenWrt — integrated VPN/Tor; encrypts traffic and protects against local eavesdropping/manipulation</li>
+        <li>Privacy SIM (in router) — global coverage, anonymously registered eSIM (data-only, unlimited expiry, 10GB included)</li>
+        <li>Signal & Threema — gold-standard encrypted communications suite</li>
+        <li>KeePassDX — offline encrypted password manager</li>
+        <li>OpenKeychain — PGP encryption/decryption toolkit</li>
+        <li>Cake Wallet — anonymous crypto storage & transactions separated from real-world identity</li>
+      </ul>
     </div>
   </article>
 
 </div>
 
----
-
-<a id="shield-details"></a>
-## PX8-A Shield — Low risk ($1600 AUD)
-
-**Short description**  
-Designed for low risk workflows, protects against app level surveillance & physical theft/seizure.
-
-### Hardware
-- Pixel 8a handset  
-- Shockproof phone case  
-- Privacy screen protector
-
-### Software (GrapheneOS)
-- Hardened kernel & libc: improved memory-safety (zero-initialization, hardened malloc), stronger control-flow integrity, stack protections.  
-- Verified Boot & firmware integrity: ensures bootloader, system and firmware haven’t been tampered with.  
-- Attack surface reduction: disables/restricts optional hardware (USB-C data when locked, pogo-pins, NFC/UWB, sensors) and limits background services.  
-- USB-C control: charging-only mode when locked to block data-connection attacks.  
-- Improved sandboxing & isolation: stronger app/process isolation beyond standard Android.  
-- Fine-grained permission controls: one-time permissions, foreground-only access, sensor toggles, storage & contact scopes, per-app revocable network access.  
-- Network & sensor toggles + default MAC randomisation (Wi-Fi/Bluetooth, mic/camera/sensors).  
-- No built-in Google services/telemetry by default (optional sandboxed Play).  
-- Privacy-focused apps: hardened browser, secure camera (removes EXIF), secure PDF viewer, encrypted backups (SeedVault).  
-- Timely OS updates & device support (focused device set).  
-- App compatibility with alternative stores or optional sandboxed Google Play.  
-- **Duress PIN/Password:** irreversible wipe of device (incl. encryption keys & installed eSIMs) and power-off.  
-- Encrypted storage & backups with strong key-management.
-
----
-
-<a id="shadow-details"></a>
-## PX8-A Shadow — Moderate/High risk ($1800 AUD)
-
-**Short description**  
-Designed for moderate-high risk workflows, protects against passive dragnet surveillance. Enhanced posture against targeted surveillance.
-
-### Hardware
-- Pixel 8a handset — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage.  
-- NW750 NitroWall — device IDs (IMEI, BSSID, MAC) randomised and re-rollable to prevent tracking by IMSI catchers/cell towers.  
-- Shockproof case & privacy screen protector — extends device lifetime; deters shoulder-surfing.  
-- Medium Faraday bag — total device isolation during travel and storage between sessions.
-
-### Software
-- GrapheneOS — privacy & security-focused encrypted OS.  
-- Mullvad VPN — always-on (kill switch), encrypts traffic; protects against local eavesdropping/manipulation.  
-- Privacy SIM (in handset) — global coverage, anonymously registered eSIM (data-only, unlimited expiry, 10GB included).  
-- Signal & Threema — gold-standard encrypted messaging/calls/file-sharing.  
-- KeePassDX — offline encrypted password manager.  
-- OpenKeychain — PGP encryption/decryption toolkit.  
-- Cake Wallet — anonymous crypto storage & transactions separated from real-world identity.
-
----
-
-<a id="ghost-details"></a>
-## PX8-A Ghost — High risk ($2500 AUD)
-
-**Short description**  
-Designed for high risk workflows, protects against targeted surveillance and advanced location correlation.
-
-### Hardware
-- Pixel 8a handset — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage.  
-- NW750 NitroWall — device IDs (IMEI, BSSID, MAC) randomised and re-rollable to prevent tracking by IMSI catchers/cell towers.  
-- Shockproof case & privacy screen protector — extends device lifetime; deters shoulder-surfing.  
-- Large Faraday bag — total multi-device isolation during travel and storage between sessions.
-
-### Software
-- GrapheneOS — privacy & security-focused encrypted OS.  
-- OpenWrt — integrated VPN/Tor; encrypts traffic and protects against local eavesdropping/manipulation.  
-- Privacy SIM (in router) — global coverage, anonymously registered eSIM (data-only, unlimited expiry, 10GB included).  
-- Signal & Threema — gold-standard encrypted communications suite.  
-- KeePassDX — offline encrypted password manager.  
-- OpenKeychain — PGP encryption/decryption toolkit.  
-- Cake Wallet — anonymous crypto storage & transactions separated from real-world identity.
+<script>
+  // Simple toggle for details reveal per tile
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-tile]').forEach(function(tile){
+      var btn = tile.querySelector('[data-toggle]');
+      if(!btn) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        tile.classList.toggle('open');
+        btn.textContent = tile.classList.contains('open') ? 'Hide details' : 'View details';
+      });
+    });
+  });
+</script>
 
 ---
 
