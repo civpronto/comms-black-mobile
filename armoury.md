@@ -1,4 +1,4 @@
----
+﻿---
  
 ---
 
@@ -11,11 +11,14 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .tile {
     background: rgba(255,255,255,.03);
     border: 1px solid rgba(255,255,255,.08);
-    border-radius: 16px; padding: 1.25rem 1.25rem 1rem;
+    border-radius: 16px; padding: 1.25rem 1rem 1rem;
     transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
   }
-  .tile:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.18);
-    box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+  .tile:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,.18);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  }
   .tile h3{ margin:.1rem 0 .35rem; font-size:1.15rem }
   .tile .sub{ opacity:.8; font-size:.92rem; margin-bottom:.6rem }
   .badge{
@@ -66,13 +69,3 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   </article>
 
 </div>
-
----
-
-## Privacy SIM — Quick Top-Ups
-
-- 1GB — $10 ($10/GB)  
-- 10GB — $100 ($10/GB)  
-- 20GB — $180 ($9/GB)  
-- 50GB — $400 ($8/GB)  
-- 100GB — $700 ($7/GB)
