@@ -57,12 +57,15 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     overflow: hidden;
     margin-bottom: .9rem;
   }
+
+  /* ✅ NEW: standardize image size */
   .carousel img {
     display:block;
     width:100%;
-    height:auto;
+    height:240px;
     object-fit:cover;
   }
+
   .carousel .nav {
     position:absolute; top:50%; transform:translateY(-50%);
     border:1px solid rgba(255,255,255,.18);
