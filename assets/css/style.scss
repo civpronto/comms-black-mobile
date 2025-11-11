@@ -121,4 +121,45 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 @media (max-width: 768px){
   .desktop-nav{display:none}
   .hamburger{display:flex}
+
+  /* === Site-wide mobile nav (vertical) ===
+     Forces all common nav containers to stack links top-to-bottom.
+     Uses !important to beat theme defaults. */
+  header .nav ul,
+  nav ul,
+  .navbar ul,
+  .site-nav ul,
+  .menu ul,
+  .navigation ul {
+    display:flex !important;
+    flex-direction:column !important;
+    flex-wrap:nowrap !important;
+    gap:.25rem !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+    width:100% !important;
+  }
+  header .nav ul li,
+  nav ul li,
+  .navbar ul li,
+  .site-nav ul li,
+  .menu ul li,
+  .navigation ul li {
+    display:block !important;
+    width:100% !important;
+  }
+  header .nav ul li a,
+  nav ul li a,
+  .navbar ul li a,
+  .site-nav ul li a,
+  .menu ul li a,
+  .navigation ul li a {
+    display:block !important;
+    width:100% !important;
+    padding:.6rem .75rem !important;
+  }
+
+  /* Prevent horizontal scrolling when menus are open */
+  body{overflow-x:hidden}
 }
