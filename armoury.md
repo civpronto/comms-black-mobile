@@ -29,19 +29,60 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
   .cta .btn { padding:.55rem .9rem }
   ul { margin: 0 0 .4rem .9rem; padding:0; }
+
+  /* ---- Image carousel ---- */
+  .carousel {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: .75rem;
+  }
+  .carousel img {
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .carousel .nav {
+    position:absolute; top:50%; transform:translateY(-50%);
+    border:1px solid rgba(255,255,255,.18);
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(2px);
+    padding:.3rem .55rem;
+    border-radius:999px;
+    cursor:pointer;
+    line-height:1;
+    font-size:1.1rem;
+    color:#fff;
+  }
+  .carousel .prev { left:.5rem; }
+  .carousel .next { right:.5rem; }
+  .carousel .nav:hover { background: rgba(0,0,0,.5); }
+  .carousel .dots {
+    position:absolute; bottom:.4rem; left:50%; transform:translateX(-50%);
+    display:flex; gap:.3rem;
+  }
+  .carousel .dot {
+    width:6px; height:6px; border-radius:999px;
+    background: rgba(255,255,255,.35);
+  }
+  .carousel .dot.active { background: rgba(255,255,255,.9); }
+  .carousel.hidden-arrows .nav { display:none; } /* auto-hide for single-image */
 </style>
 
 
-<!-- ✅ BEGIN UPDATED TILES -->
 <div class="tiles">
 
   <!-- SHIELD -->
   <article class="tile" id="shield">
     <span class="badge">Low risk threat profile</span>
 
-    <img src="/assets/img/pixel8a-grapheneos.jpg"
-         alt="PX8-A Shield"
-         style="width:100%; border-radius:12px; margin-bottom:.75rem;">
+    <!-- Single-image carousel (arrows auto-hidden) -->
+    <div class="carousel" data-images='["/assets/img/pixel8a-grapheneos.jpg"]' aria-label="PX8-A Shield images">
+      <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shield">
+      <button class="nav prev" aria-label="Previous image">‹</button>
+      <button class="nav next" aria-label="Next image">›</button>
+      <div class="dots"></div>
+    </div>
 
     <h3>PX8-A Shield</h3>
     <div class="sub">
@@ -63,13 +104,17 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <article class="tile" id="shadow">
     <span class="badge">Moderate-high risk profile</span>
 
-    <img src="/assets/img/pixel8a-grapheneos.jpg"
-         alt="PX8-A Shadow"
-         style="width:100%; border-radius:12px; margin-bottom:.5rem;">
-
-    <img src="/assets/img/faraday-medium.jpeg"
-         alt="Medium faraday bag"
-         style="width:100%; border-radius:12px; margin-bottom:.75rem;">
+    <div class="carousel"
+         data-images='[
+           "/assets/img/pixel8a-grapheneos.jpg",
+           "/assets/img/faraday-medium.jpeg"
+         ]'
+         aria-label="PX8-A Shadow images">
+      <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shadow">
+      <button class="nav prev" aria-label="Previous image">‹</button>
+      <button class="nav next" aria-label="Next image">›</button>
+      <div class="dots"></div>
+    </div>
 
     <h3>PX8-A Shadow</h3>
     <div class="sub">
@@ -92,17 +137,18 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <article class="tile" id="ghost">
     <span class="badge">High risk threat profile</span>
 
-    <img src="/assets/img/pixel8a-grapheneos.jpg"
-         alt="PX8-A Ghost"
-         style="width:100%; border-radius:12px; margin-bottom:.5rem;">
-
-    <img src="/assets/img/faraday-large.jpeg"
-         alt="Large faraday bag"
-         style="width:100%; border-radius:12px; margin-bottom:.5rem;">
-
-    <img src="/assets/img/nw750.jpg"
-         alt="NW750 router"
-         style="width:100%; border-radius:12px; margin-bottom:.75rem;">
+    <div class="carousel"
+         data-images='[
+           "/assets/img/pixel8a-grapheneos.jpg",
+           "/assets/img/faraday-large.jpeg",
+           "/assets/img/nw750.jpg"
+         ]'
+         aria-label="PX8-A Ghost images">
+      <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Ghost">
+      <button class="nav prev" aria-label="Previous image">‹</button>
+      <button class="nav next" aria-label="Next image">›</button>
+      <div class="dots"></div>
+    </div>
 
     <h3>PX8-A Ghost</h3>
     <div class="sub">
@@ -143,4 +189,69 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   </article>
 
 </div>
-<!-- ✅ END UPDATED TILES -->
+
+<script>
+  // Tiny vanilla JS carousel
+  (function(){
+    function initCarousel(root){
+      try {
+        var data = root.getAttribute('data-images');
+        var images = JSON.parse(data);
+        var imgEl = root.querySelector('img');
+        var prev = root.querySelector('.prev');
+        var next = root.querySelector('.next');
+        var dotsWrap = root.querySelector('.dots');
+        var i = 0;
+
+        // Hide arrows if only one image
+        if (!images || images.length <= 1) {
+          root.classList.add('hidden-arrows');
+        }
+
+        // Build dots
+        dotsWrap.innerHTML = '';
+        images.forEach(function(_, idx){
+          var d = document.createElement('span');
+          d.className = 'dot' + (idx === 0 ? ' active' : '');
+          d.addEventListener('click', function(){ i = idx; render(); });
+          dotsWrap.appendChild(d);
+        });
+
+        function render(){
+          imgEl.src = images[i];
+          var dots = dotsWrap.querySelectorAll('.dot');
+          dots.forEach(function(dot, idx){
+            dot.classList.toggle('active', idx === i);
+          });
+        }
+
+        prev && prev.addEventListener('click', function(e){
+          e.preventDefault();
+          i = (i - 1 + images.length) % images.length;
+          render();
+        });
+
+        next && next.addEventListener('click', function(e){
+          e.preventDefault();
+          i = (i + 1) % images.length;
+          render();
+        });
+
+        // Keyboard: allow left/right when tile focused
+        root.addEventListener('keydown', function(e){
+          if (e.key === 'ArrowLeft'){ i = (i - 1 + images.length) % images.length; render(); }
+          if (e.key === 'ArrowRight'){ i = (i + 1) % images.length; render(); }
+        });
+        root.tabIndex = 0;
+
+        render();
+      } catch (e) {
+        console && console.warn && console.warn('Carousel init failed:', e);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.carousel').forEach(initCarousel);
+    });
+  })();
+</script>
