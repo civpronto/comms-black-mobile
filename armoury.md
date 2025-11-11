@@ -207,11 +207,10 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     </div>
 
     <ul>
-      <li>1GB — $10 ($10/GB)</li>
-      <li>10GB — $100 ($10/GB)</li>
-      <li>20GB — $180 ($9/GB)</li>
-      <li>50GB — $400 ($8/GB)</li>
-      <li>100GB — $700 ($7/GB)</li>
+      <li>Anonymous registration</li>
+      <li>Global coverage</li>
+      <li>Unlimited expiry</li>
+      <li>$10AUD/GB</li>
     </ul>
 
     <div class="cta">
