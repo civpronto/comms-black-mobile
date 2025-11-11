@@ -37,11 +37,16 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     overflow: hidden;
     margin-bottom: .75rem;
   }
+
+  /* ✅ Uniform image sizing */
   .carousel img {
     display:block;
     width:100%;
-    height:auto;
+    height:200px;        /* << adjust height if preferred */
+    object-fit:cover;
+    object-position:center;
   }
+
   .carousel .nav {
     position:absolute; top:50%; transform:translateY(-50%);
     border:1px solid rgba(255,255,255,.18);
@@ -76,7 +81,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <article class="tile" id="shield">
     <span class="badge">Low risk threat profile</span>
 
-    <!-- Single-image carousel (arrows auto-hidden) -->
+    <!-- Single image -->
     <div class="carousel" data-images='["/assets/img/pixel8a-grapheneos.jpg"]' aria-label="PX8-A Shield images">
       <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shield">
       <button class="nav prev" aria-label="Previous image">‹</button>
@@ -190,6 +195,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
 </div>
 
+
 <script>
   // Tiny vanilla JS carousel
   (function(){
@@ -203,12 +209,10 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
         var dotsWrap = root.querySelector('.dots');
         var i = 0;
 
-        // Hide arrows if only one image
         if (!images || images.length <= 1) {
           root.classList.add('hidden-arrows');
         }
 
-        // Build dots
         dotsWrap.innerHTML = '';
         images.forEach(function(_, idx){
           var d = document.createElement('span');
@@ -237,7 +241,6 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
           render();
         });
 
-        // Keyboard: allow left/right when tile focused
         root.addEventListener('keydown', function(e){
           if (e.key === 'ArrowLeft'){ i = (i - 1 + images.length) % images.length; render(); }
           if (e.key === 'ArrowRight'){ i = (i + 1) % images.length; render(); }
@@ -245,9 +248,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
         root.tabIndex = 0;
 
         render();
-      } catch (e) {
-        console && console.warn && console.warn('Carousel init failed:', e);
-      }
+      } catch (e) {}
     }
 
     document.addEventListener('DOMContentLoaded', function(){
