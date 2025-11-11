@@ -2,8 +2,7 @@
 ---
 
 # Armoury
-Purpose-built secure communication kits tailored to your threat profile.  
-Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
+Purpose-built secure communication kits tailored to your threat profile. Conduct <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
 
 <style>
   .tiles { display:grid; gap:1.25rem; margin:1.5rem 0; }
@@ -115,10 +114,10 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     </div>
 
     <ul>
-      <li>GrapheneOS Pixel 8a</li>
+      <li>Hardened Pixel 8a</li>
       <li>BYO SIM</li>
       <li>Privacy app suite</li>
-      <li>Baseline privacy</li>
+      <li>Baseline protection</li>
     </ul>
 
     <div class="cta">
@@ -131,7 +130,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
 
   <!-- SHADOW -->
   <article class="tile" id="shadow">
-    <span class="badge amber">Moderate-high risk threat profile</span>
+    <span class="badge amber">Medium risk threat profile</span>
     <h3>PX8-A Shadow</h3>
 
     <div class="carousel"
@@ -147,10 +146,10 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     </div>
 
     <ul>
-      <li>GrapheneOS Pixel 8a</li>
-      <li>Anonymous SIM</li>
+      <li>Hardened Pixel 8a</li>
+      <li>Privacy SIM</li>
       <li>Encrypted app suite</li>
-      <li>Faraday bag (medium)</li>
+      <li>Medium faraday bag</li>
     </ul>
 
     <div class="cta">
@@ -180,10 +179,10 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     </div>
 
     <ul>
-      <li>GrapheneOS Pixel 8a</li>
+      <li>Hardened Pixel 8a</li>
       <li>NW750 privacy router</li>
-      <li>Anonymous SIM</li>
-      <li>Faraday bag (large)</li>
+      <li>Privacy SIM</li>
+      <li>Large faraday bag</li>
     </ul>
 
     <div class="cta">
@@ -210,7 +209,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     </div>
 
     <ul>
-      <li>Anonymous registration</li>
+      <li>Anonymously registered</li>
       <li>Global coverage</li>
       <li>Unlimited expiry</li>
       <li>$10AUD/GB</li>
