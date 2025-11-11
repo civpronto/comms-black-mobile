@@ -58,16 +58,23 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     margin-bottom: .9rem;
   }
 
-  /* Smaller on desktop; square on mobile */
+  /* Desktop/tablet: smaller, uniform height with tasteful crop */
   .carousel img {
     display:block;
     width:100%;
-    height:180px;            /* ↓ smaller, consistent size on desktop/tablet */
-    object-fit:cover;
+    height:160px;            /* smaller than before */
+    object-fit:cover;        /* neat crop on larger screens */
+    object-position:center;
   }
+
+  /* Mobile: force square frame, show entire image (no cropping) */
   @media (max-width:719px){
-    .carousel { aspect-ratio: 1 / 1; }  /* square frame on mobile */
-    .carousel img { height:100%; }      /* fill square */
+    .carousel { aspect-ratio: 1 / 1; }    /* perfect square frame */
+    .carousel img {
+      height:100%;
+      object-fit:contain;                  /* no cropping on mobile */
+      background: rgba(0,0,0,.15);         /* subtle letterbox fill */
+    }
   }
 
   .carousel .nav {
@@ -85,19 +92,14 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   .carousel .prev { left:.5rem; }
   .carousel .next { right:.5rem; }
   .carousel .nav:hover { background: rgba(0,0,0,.5); }
-  .carousel .dots {
-    position:absolute; bottom:.4rem; left:50%; transform:translateX(-50%);
-    display:flex; gap:.3rem;
-  }
-  .carousel .dot {
-    width:6px; height:6px; border-radius:999px;
-    background: rgba(255,255,255,.35);
-    cursor:pointer;
-  }
-  .carousel .dot.active { background: rgba(255,255,255,.9); }
+
+  /* Hide the dots/circles entirely */
+  .carousel .dots { display:none !important; }
+
+  /* Keep arrows hidden when only one image */
   .carousel.hidden-arrows .nav { display:none; } 
 
-  /* --- Mobile nav fix: force vertical list under hamburger --- */
+  /* --- Mobile nav fix: force vertical list under hamburger (local override) --- */
   @media (max-width:719px){
     header nav ul, nav ul {
       display:flex !important;
@@ -248,26 +250,31 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
       var imgEl = root.querySelector('img');
       var prev = root.querySelector('.prev');
       var next = root.querySelector('.next');
-      var dotsWrap = root.querySelector('.dots');
+      var dotsWrap = root.querySelector('.dots'); // hidden via CSS
       var i = 0;
 
       if (!images || images.length <= 1) {
         root.classList.add('hidden-arrows');
       }
 
-      dotsWrap.innerHTML = '';
-      images.forEach(function(_, idx){
-        var d = document.createElement('span');
-        d.className = 'dot' + (idx === 0 ? ' active' : '');
-        d.addEventListener('click', function(){ i = idx; render(); });
-        dotsWrap.appendChild(d);
-      });
+      // (Dots are hidden; keeping minimal logic for safety)
+      if (dotsWrap) {
+        dotsWrap.innerHTML = '';
+        images.forEach(function(_, idx){
+          var d = document.createElement('span');
+          d.className = 'dot' + (idx === 0 ? ' active' : '');
+          d.addEventListener('click', function(){ i = idx; render(); });
+          dotsWrap.appendChild(d);
+        });
+      }
 
       function render(){
         imgEl.src = images[i];
-        dotsWrap.querySelectorAll('.dot').forEach(function(dot, idx){
-          dot.classList.toggle('active', idx === i);
-        });
+        if (dotsWrap) {
+          dotsWrap.querySelectorAll('.dot').forEach(function(dot, idx){
+            dot.classList.toggle('active', idx === i);
+          });
+        }
       }
 
       prev && prev.addEventListener('click', function(e){
