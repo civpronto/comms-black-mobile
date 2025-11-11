@@ -26,26 +26,21 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     font-size:1.15rem;
     font-weight:600;
   }
-  .price-inline {
-    opacity:.9;
-    font-weight:500;
-  }
+  .price-inline { opacity:.9; font-weight:500; }
 
   ul { margin:0 0 .7rem .9rem; padding:0; }
   .price { font-weight:600; margin:.4rem 0 .6rem; }
 
-  /* badge + colours */
+  /* badges */
   .badge {
     display:inline-block; font-size:.72rem; letter-spacing:.02em;
     padding:.25rem .6rem; border-radius:999px; margin-bottom:.5rem;
-    font-weight:600;
-    border:1px solid rgba(255,255,255,.15);
-    backdrop-filter: blur(2px);
+    font-weight:600; border:1px solid rgba(255,255,255,.15); backdrop-filter: blur(2px);
   }
-  .badge.green  { background: rgba(0,170,68,.35); border-color: rgba(0,200,90,.45); }
-  .badge.amber  { background: rgba(200,130,0,.35); border-color: rgba(233,150,34,.45); }
-  .badge.red    { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
-  .badge.esim   { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
+  .badge.green { background: rgba(0,170,68,.35); border-color: rgba(0,200,90,.45); }
+  .badge.amber { background: rgba(200,130,0,.35); border-color: rgba(233,150,34,.45); }
+  .badge.red { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
+  .badge.esim { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
 
   .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
   .cta .btn { padding:.55rem .9rem }
@@ -56,25 +51,14 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: .9rem;
+    aspect-ratio: 1 / 1;     /* ✅ square at all sizes */
   }
-
-  /* Desktop/tablet: smaller, uniform height with tasteful crop */
   .carousel img {
     display:block;
     width:100%;
-    height:160px;            /* smaller than before */
-    object-fit:cover;        /* neat crop on larger screens */
-    object-position:center;
-  }
-
-  /* Mobile: force square frame, show entire image (no cropping) */
-  @media (max-width:719px){
-    .carousel { aspect-ratio: 1 / 1; }    /* perfect square frame */
-    .carousel img {
-      height:100%;
-      object-fit:contain;                  /* no cropping on mobile */
-      background: rgba(0,0,0,.15);         /* subtle letterbox fill */
-    }
+    height:100%;             /* fill the square */
+    object-fit: cover;       /* ✅ no letterbox, consistent crop */
+    object-position: center;
   }
 
   .carousel .nav {
@@ -97,7 +81,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   .carousel .dots { display:none !important; }
 
   /* Keep arrows hidden when only one image */
-  .carousel.hidden-arrows .nav { display:none; } 
+  .carousel.hidden-arrows .nav { display:none; }
 
   /* --- Mobile nav fix: force vertical list under hamburger (local override) --- */
   @media (max-width:719px){
@@ -257,7 +241,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
         root.classList.add('hidden-arrows');
       }
 
-      // (Dots are hidden; keeping minimal logic for safety)
+      // (Dots are hidden; logic kept minimal)
       if (dotsWrap) {
         dotsWrap.innerHTML = '';
         images.forEach(function(_, idx){
