@@ -19,8 +19,18 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     border-color: rgba(255,255,255,.18);
     box-shadow: 0 8px 20px rgba(0,0,0,.25);
   }
-  .tile h3{ margin:.1rem 0 .5rem; font-size:1.15rem }
-  .tile .sub{ opacity:.9; font-size:.92rem; margin-bottom:.6rem; }
+
+  /* product name + price inline */
+  .tile h3 {
+    margin:.1rem 0 .5rem;
+    font-size:1.15rem;
+    font-weight:600;
+  }
+  .price-inline {
+    opacity:.9;
+    font-weight:500;
+  }
+
   ul { margin:0 0 .7rem .9rem; padding:0; }
   .price { font-weight:600; margin:.4rem 0 .6rem; }
 
@@ -28,12 +38,14 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   .badge {
     display:inline-block; font-size:.72rem; letter-spacing:.02em;
     padding:.25rem .6rem; border-radius:999px; margin-bottom:.5rem;
-    border:1px solid rgba(255,255,255,.12);
     font-weight:600;
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(2px);
   }
-  .badge.green  { background:#0a4; border-color:#0c5; }
-  .badge.amber  { background:#c80; border-color:#e92; }
-  .badge.red    { background:#b00; border-color:#e33; }
+  .badge.green  { background: rgba(0,170,68,.35); border-color: rgba(0,200,90,.45); }
+  .badge.amber  { background: rgba(200,130,0,.35); border-color: rgba(233,150,34,.45); }
+  .badge.red    { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
+  .badge.esim   { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
 
   .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
   .cta .btn { padding:.55rem .9rem }
@@ -87,7 +99,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   <!-- SHIELD -->
   <article class="tile" id="shield">
     <span class="badge green">Low risk threat profile</span>
-    <h3>PX8-A Shield</h3>
+    <h3>PX8-A Shield — <span class="price-inline">$1600 AUD</span></h3>
 
     <div class="carousel"
       data-images='[
@@ -106,8 +118,6 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
       <li>Baseline privacy</li>
     </ul>
 
-    <div class="price">$1600 AUD</div>
-
     <div class="cta">
       <a class="btn" href="/armoury/shield.html">View kit</a>
     </div>
@@ -118,8 +128,8 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
 
   <!-- SHADOW -->
   <article class="tile" id="shadow">
-    <span class="badge amber">Moderate-high risk profile</span>
-    <h3>PX8-A Shadow</h3>
+    <span class="badge amber">Moderate-high risk threat profile</span>
+    <h3>PX8-A Shadow — <span class="price-inline">$1800 AUD</span></h3>
 
     <div class="carousel"
       data-images='[
@@ -140,8 +150,6 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
       <li>Faraday bag (medium)</li>
     </ul>
 
-    <div class="price">$1800 AUD</div>
-
     <div class="cta">
       <a class="btn" href="/armoury/shadow.html">View kit</a>
     </div>
@@ -153,7 +161,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   <!-- GHOST -->
   <article class="tile" id="ghost">
     <span class="badge red">High risk threat profile</span>
-    <h3>PX8-A Ghost</h3>
+    <h3>PX8-A Ghost — <span class="price-inline">$2500 AUD</span></h3>
 
     <div class="carousel"
       data-images='[
@@ -175,8 +183,6 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
       <li>Faraday bag (large)</li>
     </ul>
 
-    <div class="price">$2500 AUD</div>
-
     <div class="cta">
       <a class="btn" href="/armoury/ghost.html">View kit</a>
     </div>
@@ -184,8 +190,10 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
 
 
 
+
   <!-- PRIVACY SIM -->
   <article class="tile" id="privacy-sim">
+    <span class="badge esim">eSIM — Global</span>
     <h3>Privacy SIM recharge</h3>
 
     <div class="carousel"
@@ -217,61 +225,59 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
 
 
 <script>
-  (function(){
-    function initCarousel(root){
-      try {
-        var data = root.getAttribute('data-images');
-        var images = JSON.parse(data);
-        var imgEl = root.querySelector('img');
-        var prev = root.querySelector('.prev');
-        var next = root.querySelector('.next');
-        var dotsWrap = root.querySelector('.dots');
-        var i = 0;
+(function(){
+  function initCarousel(root){
+    try {
+      var images = JSON.parse(root.getAttribute('data-images'));
+      var imgEl = root.querySelector('img');
+      var prev = root.querySelector('.prev');
+      var next = root.querySelector('.next');
+      var dotsWrap = root.querySelector('.dots');
+      var i = 0;
 
-        if (!images || images.length <= 1) {
-          root.classList.add('hidden-arrows');
-        }
+      if (!images || images.length <= 1) {
+        root.classList.add('hidden-arrows');
+      }
 
-        dotsWrap.innerHTML = '';
-        images.forEach(function(_, idx){
-          var d = document.createElement('span');
-          d.className = 'dot' + (idx === 0 ? ' active' : '');
-          d.addEventListener('click', function(){ i = idx; render(); });
-          dotsWrap.appendChild(d);
+      dotsWrap.innerHTML = '';
+      images.forEach(function(_, idx){
+        var d = document.createElement('span');
+        d.className = 'dot' + (idx === 0 ? ' active' : '');
+        d.addEventListener('click', function(){ i = idx; render(); });
+        dotsWrap.appendChild(d);
+      });
+
+      function render(){
+        imgEl.src = images[i];
+        dotsWrap.querySelectorAll('.dot').forEach(function(dot, idx){
+          dot.classList.toggle('active', idx === i);
         });
+      }
 
-        function render(){
-          imgEl.src = images[i];
-          var dots = dotsWrap.querySelectorAll('.dot');
-          dots.forEach(function(dot, idx){
-            dot.classList.toggle('active', idx === i);
-          });
-        }
-
-        prev && prev.addEventListener('click', function(e){
-          e.preventDefault();
-          i = (i - 1 + images.length) % images.length;
-          render();
-        });
-
-        next && next.addEventListener('click', function(e){
-          e.preventDefault();
-          i = (i + 1) % images.length;
-          render();
-        });
-
-        root.addEventListener('keydown', function(e){
-          if (e.key === 'ArrowLeft'){ i = (i - 1 + images.length) % images.length; render(); }
-          if (e.key === 'ArrowRight'){ i = (i + 1) % images.length; render(); }
-        });
-        root.tabIndex = 0;
-
+      prev && prev.addEventListener('click', function(e){
+        e.preventDefault();
+        i = (i - 1 + images.length) % images.length;
         render();
-      } catch (e) {}
-    }
+      });
 
-    document.addEventListener('DOMContentLoaded', function(){
-      document.querySelectorAll('.carousel').forEach(initCarousel);
-    });
-  })();
+      next && next.addEventListener('click', function(e){
+        e.preventDefault();
+        i = (i + 1) % images.length;
+        render();
+      });
+
+      root.addEventListener('keydown', function(e){
+        if (e.key === 'ArrowLeft'){ i = (i - 1 + images.length) % images.length; render(); }
+        if (e.key === 'ArrowRight'){ i = (i + 1) % images.length; render(); }
+      });
+      root.tabIndex = 0;
+
+      render();
+    } catch (e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.carousel').forEach(initCarousel);
+  });
+})();
 </script>
