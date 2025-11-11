@@ -1,7 +1,7 @@
 ---
 title: PX8-A Ghost
 layout: page
-permalink: /armoury/ghost/
+permalink: /armoury/ghost.html
 ---
 
 # PX8-A Ghost — $2500 AUD
@@ -10,7 +10,7 @@ permalink: /armoury/ghost/
 Designed for high risk workflows, protects against targeted surveillance and advanced location correlation.
 
 <div style="margin:1rem 0 1.25rem;">
-  <a href="/contact/" class="btn" style="padding:.6rem 1rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;text-decoration:none;background:transparent;color:inherit;">Contact to order</a>
+  <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
 ## Pricing

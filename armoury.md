@@ -24,8 +24,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     background: rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.12);
   }
   .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
-  .cta .btn { padding:.55rem .9rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; text-decoration:none; background:transparent; color:inherit; }
-  .cta .btn:hover{ border-color: rgba(255,255,255,.18) }
+  .cta .btn { padding:.55rem .9rem }
 </style>
 
 <div class="tiles">
@@ -35,7 +34,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <h3>PX8-A Shield &mdash; Low risk &mdash; $1600 AUD</h3>
     <div class="sub">Designed for low risk workflows; protects against app-level surveillance & physical theft/seizure.</div>
     <div class="cta">
-      <a class="btn" href="/armoury/shield/">View kit</a>
+      <a class="btn" href="/armoury/shield.html">View kit</a>
     </div>
   </article>
 
@@ -44,7 +43,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <h3>PX8-A Shadow &mdash; Moderate/High risk &mdash; $1800 AUD</h3>
     <div class="sub">Defends against passive dragnet surveillance; stronger posture against targeted surveillance.</div>
     <div class="cta">
-      <a class="btn" href="/armoury/shadow/">View kit</a>
+      <a class="btn" href="/armoury/shadow.html">View kit</a>
     </div>
   </article>
 
@@ -53,7 +52,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <h3>PX8-A Ghost &mdash; High risk &mdash; $2500 AUD</h3>
     <div class="sub">Built for high-risk workflows; resists targeted surveillance & advanced location correlation.</div>
     <div class="cta">
-      <a class="btn" href="/armoury/ghost/">View kit</a>
+      <a class="btn" href="/armoury/ghost.html">View kit</a>
     </div>
   </article>
 
@@ -62,7 +61,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <h3>Privacy SIM &mdash; $150 AUD</h3>
     <div class="sub">Anonymous global data-only eSIM with 10GB and unlimited expiry.</div>
     <div class="cta">
-      <a class="btn" href="/armoury/privacy-sim/">View SIM</a>
+      <a class="btn" href="/armoury/privacy-sim.html">View SIM</a>
     </div>
   </article>
 

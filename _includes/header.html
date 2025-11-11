@@ -1,14 +1,16 @@
 <header>
   <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="CommsBlack Mobile logo" class="logo">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="CommsBlack Mobile logo" class="logo">
       <span>CommsBlack Mobile</span>
     </a>
+    {% assign p = page.url | default: '' %}
     <nav class="nav desktop-nav" aria-label="Primary">
-      <a href="index.html">Mission</a>
-      <a href="/threat-assessment.html">Threat Assessment</a> <a href="/armoury.html">Armoury</a>
-      <a href="/training.html">Training</a>
-      <a href="contact.html">Contact</a>
+      <a href="/" class="{% if p == '/' %}active{% endif %}">Mission</a>
+      <a href="/threat-assessment.html" class="{% if p contains '/threat-assessment' %}active{% endif %}">Threat Assessment</a>
+      <a href="/armoury.html" class="{% if p contains '/armoury' %}active{% endif %}">Armoury</a>
+      <a href="/training.html" class="{% if p contains '/training' %}active{% endif %}">Training</a>
+      <a href="/contact.html" class="{% if p contains '/contact' %}active{% endif %}">Contact</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-pressed="false" title="Toggle dark/light" aria-label="Toggle dark or light theme">🌙</button>
@@ -18,20 +20,13 @@
     </div>
   </div>
   <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" hidden>
-    <button class="close-btn" aria-label="Close menu" title="Close menu">&times;</button>
-    <nav class="mobile-nav" aria-label="Mobile Primary">
-      <ul>{% for item in site.data.nav %}<li><a href="{{ item.url }}">{{ item.label }}</a></li>{% endfor %}</ul>
+    <button class="close-btn" aria-label="Close menu" title="Close">✕</button>
+    <nav class="nav mobile-nav" aria-label="Mobile">
+      <a href="/" class="{% if p == '/' %}active{% endif %}">Mission</a>
+      <a href="/threat-assessment.html" class="{% if p contains '/threat-assessment' %}active{% endif %}">Threat Assessment</a>
+      <a href="/armoury.html" class="{% if p contains '/armoury' %}active{% endif %}">Armoury</a>
+      <a href="/training.html" class="{% if p contains '/training' %}active{% endif %}">Training</a>
+      <a href="/contact.html" class="{% if p contains '/contact' %}active{% endif %}">Contact</a>
     </nav>
   </div>
 </header>
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 ---
 title: PX8-A Shadow
 layout: page
-permalink: /armoury/shadow/
+permalink: /armoury/shadow.html
 ---
 
 # PX8-A Shadow — $1800 AUD
@@ -10,7 +10,7 @@ permalink: /armoury/shadow/
 Designed for moderate-high risk workflows, protects against passive dragnet surveillance. Enhanced posture against targeted surveillance.
 
 <div style="margin:1rem 0 1.25rem;">
-  <a href="/contact/" class="btn" style="padding:.6rem 1rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;text-decoration:none;background:transparent;color:inherit;">Contact to order</a>
+  <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
 ## Pricing
