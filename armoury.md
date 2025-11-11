@@ -99,7 +99,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   <!-- SHIELD -->
   <article class="tile" id="shield">
     <span class="badge green">Low risk threat profile</span>
-    <h3>PX8-A Shield — <span class="price-inline">$1600 AUD</span></h3>
+    <h3>PX8-A Shield</h3>
 
     <div class="carousel"
       data-images='[
@@ -129,7 +129,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   <!-- SHADOW -->
   <article class="tile" id="shadow">
     <span class="badge amber">Moderate-high risk threat profile</span>
-    <h3>PX8-A Shadow — <span class="price-inline">$1800 AUD</span></h3>
+    <h3>PX8-A Shadow</h3>
 
     <div class="carousel"
       data-images='[
@@ -161,7 +161,7 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   <!-- GHOST -->
   <article class="tile" id="ghost">
     <span class="badge red">High risk threat profile</span>
-    <h3>PX8-A Ghost — <span class="price-inline">$2500 AUD</span></h3>
+    <h3>PX8-A Ghost</h3>
 
     <div class="carousel"
       data-images='[
