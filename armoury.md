@@ -5,17 +5,114 @@ layout: page
 
 # Armoury
 
-Purpose-built, privacy-first communications gear to protect users across a spectrum of threat-models — from low-risk personal operations to high-risk targeted surveillance environments.
+Purpose-built secure communication kits tailored to your threat profile.  
+Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
 
-_Last updated: 11 Nov 2025_
+<!-- ========================= -->
+<!-- PRODUCT TILE GRID SECTION -->
+<!-- ========================= -->
+
+<style>
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.product-tile {
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #111;
+  color: #fff;
+}
+
+.product-tile img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.product-tile h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.product-tile p {
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.btn-buy {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.btn-buy:hover {
+  opacity: 0.85;
+}
+</style>
+
+<div class="product-grid">
+
+  <!-- PX8-A SHIELD -->
+  <div class="product-tile">
+    <img src="/assets/armoury/px8a-shield.jpg" alt="PX8-A Shield">
+    <h3>PX8-A Shield</h3>
+    <p class="product-price">$1600 AUD</p>
+    <p>Designed for low-risk workflows; protects against app-level surveillance & physical seizure.</p>
+    <a href="#px8-a-shield" class="btn-buy">View Details</a>
+  </div>
+
+  <!-- PX8-A SHADOW -->
+  <div class="product-tile">
+    <img src="/assets/armoury/px8a-shadow.jpg" alt="PX8-A Shadow">
+    <h3>PX8-A Shadow</h3>
+    <p class="product-price">$1800 AUD</p>
+    <p>Designed for moderate–high risk workflows; enhances defence against passive dragnet surveillance.</p>
+    <a href="#px8-a-shadow" class="btn-buy">View Details</a>
+  </div>
+
+  <!-- PX8-A GHOST -->
+  <div class="product-tile">
+    <img src="/assets/armoury/px8a-ghost.jpg" alt="PX8-A Ghost">
+    <h3>PX8-A Ghost</h3>
+    <p class="product-price">$2500 AUD</p>
+    <p>Designed for high-risk workflows; protects against targeted surveillance & location correlation.</p>
+    <a href="#px8-a-ghost" class="btn-buy">View Details</a>
+  </div>
+
+  <!-- PRIVACY SIM -->
+  <div class="product-tile">
+    <img src="/assets/armoury/privacy-sim.png" alt="Privacy SIM">
+    <h3>Privacy SIM</h3>
+    <p class="product-price">$150 AUD</p>
+    <p>Anonymous global data-only SIM with 10GB & unlimited expiry.</p>
+    <a href="#privacy-sim" class="btn-buy">View Details</a>
+  </div>
+
+</div>
+
 
 ---
 
+<!-- ========================= -->
+<!-- PRODUCT SECTIONS BELOW   -->
+<!-- ========================= -->
+
+<a id="px8-a-shield"></a>
 ## PX8-A Shield — Low Risk  
 **Price:** $1600 AUD  
-**SKU:** PX8A-SHIELD  
-**Category:** Device Kit  
-**Availability:** In stock  
 
 Designed for low-risk workflows; protects against app-level surveillance and physical theft/seizure.
 
@@ -43,11 +140,9 @@ Designed for low-risk workflows; protects against app-level surveillance and phy
 
 ---
 
+<a id="px8-a-shadow"></a>
 ## PX8-A Shadow — Moderate / High Risk  
 **Price:** $1800 AUD  
-**SKU:** PX8A-SHADOW  
-**Category:** Device Kit  
-**Availability:** In stock  
 
 Designed for moderate-high-risk workflows; protects against passive dragnet surveillance and improves resistance to targeted collection.
 
@@ -68,11 +163,9 @@ Designed for moderate-high-risk workflows; protects against passive dragnet surv
 
 ---
 
+<a id="px8-a-ghost"></a>
 ## PX8-A Ghost — High Risk  
 **Price:** $2500 AUD  
-**SKU:** PX8A-GHOST  
-**Category:** Device Kit  
-**Availability:** In stock  
 
 Built for high-risk workflows; protects against targeted surveillance and advanced location correlation attacks.
 
@@ -93,11 +186,9 @@ Built for high-risk workflows; protects against targeted surveillance and advanc
 
 ---
 
+<a id="privacy-sim"></a>
 ## Privacy SIM  
 **Price:** $150 AUD  
-**SKU:** PRIVSIM-10GB  
-**Category:** SIM  
-**Availability:** In stock  
 
 Anonymous data-only eSIM protects against phone-number-based SIM-swap attacks and metadata correlation through purchase records.
 
@@ -111,8 +202,6 @@ Anonymous data-only eSIM protects against phone-number-based SIM-swap attacks an
 ---
 
 ## Privacy SIM — Data Top-Up  
-**Category:** SIM Top-Up  
-**Availability:** In stock  
 
 | Data | Price | Rate |
 |------|-------|------|
