@@ -38,11 +38,11 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     margin-bottom: .75rem;
   }
 
-  /* ✅ Uniform image sizing */
+  /* Uniform image sizing */
   .carousel img {
     display:block;
     width:100%;
-    height:200px;        /* << adjust height if preferred */
+    height:200px;        /* adjust if you want taller/shorter */
     object-fit:cover;
     object-position:center;
   }
@@ -81,8 +81,13 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <article class="tile" id="shield">
     <span class="badge">Low risk threat profile</span>
 
-    <!-- Single image -->
-    <div class="carousel" data-images='["/assets/img/pixel8a-grapheneos.jpg"]' aria-label="PX8-A Shield images">
+    <!-- Carousel: image #2 is esim.png -->
+    <div class="carousel"
+         data-images='[
+           "/assets/img/pixel8a-grapheneos.jpg",
+           "/assets/img/esim.png"
+         ]'
+         aria-label="PX8-A Shield images">
       <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shield">
       <button class="nav prev" aria-label="Previous image">‹</button>
       <button class="nav next" aria-label="Next image">›</button>
@@ -129,7 +134,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <ul>
       <li>GrapheneOS Pixel 8a</li>
       <li>Anonymous SIM</li>
-      <li>Encrypted communication suite</li>
+      <li>Encrypted app suite</li>
       <li>Faraday bag (medium)</li>
     </ul>
     <div class="cta">
@@ -142,9 +147,11 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <article class="tile" id="ghost">
     <span class="badge">High risk threat profile</span>
 
+    <!-- Carousel: esim.png is 2nd -->
     <div class="carousel"
          data-images='[
            "/assets/img/pixel8a-grapheneos.jpg",
+           "/assets/img/esim.png",
            "/assets/img/faraday-large.jpeg",
            "/assets/img/nw750.jpg"
          ]'
@@ -164,7 +171,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <li>GrapheneOS Pixel 8a</li>
       <li>NW750 privacy router</li>
       <li>Anonymous SIM</li>
-      <li>Encrypted communication suite</li>
+      <li>Encrypted app suite</li>
       <li>Faraday bag (large)</li>
     </ul>
     <div class="cta">
@@ -176,6 +183,18 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <!-- PRIVACY SIM -->
   <article class="tile" id="privacy-sim">
     <span class="badge">eSIM — Global</span>
+
+    <div class="carousel"
+         data-images='[
+           "/assets/img/esim.png"
+         ]'
+         aria-label="Privacy SIM images">
+      <img src="/assets/img/esim.png" alt="Privacy SIM">
+      <button class="nav prev" aria-label="Previous image">‹</button>
+      <button class="nav next" aria-label="Next image">›</button>
+      <div class="dots"></div>
+    </div>
+
     <h3>Privacy SIM recharge</h3>
     <div class="sub">
       • Anonymously registered<br>
