@@ -1,4 +1,4 @@
----
+﻿---
  
 ---
 
@@ -82,3 +82,8 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 - 20GB — $180 ($9/GB)  
 - 50GB — $400 ($8/GB)  
 - 100GB — $700 ($7/GB)
+
+printf "\n<!-- sync test: %s -->\n" "$(date)" >> armoury.md
+git status -uno
+git diff -- armoury.md | sed -n '1,80p'
+
