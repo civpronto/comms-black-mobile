@@ -58,12 +58,16 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
     margin-bottom: .9rem;
   }
 
-  /* ✅ NEW: standardize image size */
+  /* Smaller on desktop; square on mobile */
   .carousel img {
     display:block;
     width:100%;
-    height:240px;
+    height:180px;            /* ↓ smaller, consistent size on desktop/tablet */
     object-fit:cover;
+  }
+  @media (max-width:719px){
+    .carousel { aspect-ratio: 1 / 1; }  /* square frame on mobile */
+    .carousel img { height:100%; }      /* fill square */
   }
 
   .carousel .nav {
@@ -92,6 +96,16 @@ Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;f
   }
   .carousel .dot.active { background: rgba(255,255,255,.9); }
   .carousel.hidden-arrows .nav { display:none; } 
+
+  /* --- Mobile nav fix: force vertical list under hamburger --- */
+  @media (max-width:719px){
+    header nav ul, nav ul {
+      display:flex !important;
+      flex-direction: column !important;
+      gap:.25rem !important;
+    }
+    header nav ul li, nav ul li { width:100%; }
+  }
 </style>
 
 
