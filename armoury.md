@@ -1,239 +1,151 @@
 ﻿---
-title: Armoury
-layout: page
+ 
 ---
 
 # Armoury
+Purpose-built secure communication kits tailored to your threat profile. Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
 
-Purpose-built secure communication kits tailored to your threat profile.  
-Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
-
-<!-- ========================= -->
-<!-- PRODUCT TILE GRID SECTION -->
-<!-- ========================= -->
-
-{% raw %}
 <style>
-:root {
-  --tile-bg: #6e8d8a;       /* ✅ new light pill */
-  --tile-bg-hover: #5f7b78; /* ✅ darker hover */
-  --tile-text: #0d0d0d;     /* ✅ readable on light */
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin: 2rem 0;
-}
-
-.product-tile {
-  background: var(--tile-bg);
-  color: var(--tile-text);
-  border: 1px solid var(--tile-bg);
-  padding: 1.25rem;
-  border-radius: 9999px;  /* ✅ keep original bubble style */
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.product-tile:hover {
-  background: var(--tile-bg-hover);
-  transform: translateY(-2px);
-}
-
-.product-tile img {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 0.75rem;
-  border: 1px solid rgba(0,0,0,0.12);
-}
-
-.product-tile h3 {
-  margin: 0.25rem 0 0.25rem 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.product-tile p {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.product-price {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 0.95rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.12);
-  color: var(--tile-text);
-  margin-bottom: 0.5rem;
-}
-
-.btn-buy {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.45rem 1rem;
-  background: rgba(0,0,0,0.16);
-  border: none;
-  color: var(--tile-text);
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.25s ease, transform 0.2s ease;
-}
-
-.btn-buy:hover {
-  background: rgba(0,0,0,0.22);
-  transform: translateY(-1px);
-}
+  .tiles { display:grid; gap:1.25rem; margin:1.5rem 0; }
+  @media (min-width:720px){ .tiles{ grid-template-columns:repeat(3,1fr);} }
+  .tile {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px; padding: 1.25rem 1.25rem 1rem;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .tile:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.18);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+  .tile h3{ margin:.1rem 0 .35rem; font-size:1.15rem }
+  .tile .sub{ opacity:.8; font-size:.92rem; margin-bottom:.6rem }
+  .tile ul{ margin:.5rem 0 1rem 1.1rem }
+  .tile li{ margin:.25rem 0 }
+  .badge{
+    display:inline-block; font-size:.72rem; letter-spacing:.02em;
+    padding:.2rem .5rem; border-radius:999px; margin-bottom:.4rem;
+    background: rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.12);
+  }
+  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
+  .cta .btn { padding:.55rem .9rem }
 </style>
 
-<div class="product-grid">
+<div class="tiles">
 
-  <!-- PX8-A SHIELD -->
-  <div class="product-tile">
-    <img src="/assets/armoury/px8a-shield.jpg" alt="PX8-A Shield">
-    <h3>PX8-A Shield</h3>
-    <span class="product-price">$1600 AUD</span>
-    <p>Designed for low-risk workflows; protects against app-level surveillance & physical seizure.</p>
-    <a href="#px8-a-shield" class="btn-buy">View details</a>
-  </div>
+  <article class="tile" id="shield">
+    <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
+    <h3>PX8-A Shield — Low risk — $1600 AUD</h3>
+    <div class="sub">Designed for low risk workflows; protects against app-level surveillance & physical theft/seizure.</div>
+    <div class="cta">
+      <a class="btn" href="#shield-details">View details</a>
+    </div>
+  </article>
 
-  <!-- PX8-A SHADOW -->
-  <div class="product-tile">
-    <img src="/assets/armoury/px8a-shadow.jpg" alt="PX8-A Shadow">
-    <h3>PX8-A Shadow</h3>
-    <span class="product-price">$1800 AUD</span>
-    <p>Built for moderate–high risk workflows; enhanced passive surveillance defence.</p>
-    <a href="#px8-a-shadow" class="btn-buy">View details</a>
-  </div>
+  <article class="tile" id="shadow">
+    <span class="badge">Pixel 8a &mdash; GrapheneOS</span>
+    <h3>PX8-A Shadow — Moderate/High risk — $1800 AUD</h3>
+    <div class="sub">Defends against passive dragnet surveillance; stronger posture against targeted surveillance.</div>
+    <div class="cta">
+      <a class="btn" href="#shadow-details">View details</a>
+    </div>
+  </article>
 
-  <!-- PX8-A GHOST -->
-  <div class="product-tile">
-    <img src="/assets/armoury/px8a-ghost.jpg" alt="PX8-A Ghost">
-    <h3>PX8-A Ghost</h3>
-    <span class="product-price">$2500 AUD</span>
-    <p>Hardened for high-risk workflows; protects against targeted surveillance & correlation.</p>
-    <a href="#px8-a-ghost" class="btn-buy">View details</a>
-  </div>
+  <article class="tile" id="ghost">
+    <span class="badge">Pixel 8a &mdash; GrapheneOS/OpenWrt</span>
+    <h3>PX8-A Ghost — High risk — $2500 AUD</h3>
+    <div class="sub">Built for high-risk workflows; resists targeted surveillance & advanced location correlation.</div>
+    <div class="cta">
+      <a class="btn" href="#ghost-details">View details</a>
+    </div>
+  </article>
 
-  <!-- PRIVACY SIM -->
-  <div class="product-tile">
-    <img src="/assets/armoury/privacy-sim.png" alt="Privacy SIM">
-    <h3>Privacy SIM</h3>
-    <span class="product-price">$150 AUD</span>
-    <p>Anonymous global data-only SIM with 10GB & unlimited expiry.</p>
-    <a href="#privacy-sim" class="btn-buy">View details</a>
-  </div>
 </div>
-{% endraw %}
 
 ---
 
-<!-- ========================= -->
-<!-- PRODUCT SECTIONS BELOW   -->
-<!-- ========================= -->
+<a id="shield-details"></a>
+## PX8-A Shield — Low risk ($1600 AUD)
 
-<a id="px8-a-shield"></a>
-## PX8-A Shield — Low Risk  
-**Price:** $1600 AUD  
-
-Designed for low-risk workflows; protects against app-level surveillance and physical theft/seizure.
-
-![PX8-A Shield](/assets/armoury/px8a-shield.jpg)
+**Short description**  
+Designed for low risk workflows, protects against app level surveillance & physical theft/seizure.
 
 ### Hardware
 - Pixel 8a handset  
 - Shockproof phone case  
-- Privacy screen protector  
+- Privacy screen protector
 
-### Software — GrapheneOS Stack
-- Hardened kernel & libc  
-- Verified Boot & firmware integrity  
-- Attack surface reduction  
-- USB-C charging-only mode when locked  
-- Strong sandboxing & isolation  
-- Fine-grained permission controls  
-- Network & sensor toggles + MAC randomisation  
-- No built-in Google services / telemetry  
-- Privacy-focused system apps  
-- Frequent OS security updates  
-- Android app compatibility  
-- **Duress PIN/Password:** instant cryptographic wipe  
-- Encrypted storage & backups  
+### Software (GrapheneOS)
+- Hardened kernel & libc: improved memory-safety (zero-initialization, hardened malloc), stronger control-flow integrity, stack protections.  
+- Verified Boot & firmware integrity: ensures bootloader, system and firmware haven’t been tampered with.  
+- Attack surface reduction: disables/restricts optional hardware (USB-C data when locked, pogo-pins, NFC/UWB, sensors) and limits background services.  
+- USB-C control: charging-only mode when locked to block data-connection attacks.  
+- Improved sandboxing & isolation: stronger app/process isolation beyond standard Android.  
+- Fine-grained permission controls: one-time permissions, foreground-only access, sensor toggles, storage & contact scopes, per-app revocable network access.  
+- Network & sensor toggles + default MAC randomisation (Wi-Fi/Bluetooth, mic/camera/sensors).  
+- No built-in Google services/telemetry by default (optional sandboxed Play).  
+- Privacy-focused apps: hardened browser, secure camera (removes EXIF), secure PDF viewer, encrypted backups (SeedVault).  
+- Timely OS updates & device support (focused device set).  
+- App compatibility with alternative stores or optional sandboxed Google Play.  
+- **Duress PIN/Password:** irreversible wipe of device (incl. encryption keys & installed eSIMs) and power-off.  
+- Encrypted storage & backups with strong key-management.
 
 ---
 
-<a id="px8-a-shadow"></a>
-## PX8-A Shadow — Moderate / High Risk  
-**Price:** $1800 AUD  
+<a id="shadow-details"></a>
+## PX8-A Shadow — Moderate/High risk ($1800 AUD)
 
-Designed for moderate–high-risk workflows; provides greater defence against passive dragnet surveillance.
+**Short description**  
+Designed for moderate-high risk workflows, protects against passive dragnet surveillance. Enhanced posture against targeted surveillance.
 
 ### Hardware
-- Pixel 8a  
-- NW750 NitroWall — IMEI/BSSID/MAC identity randomisation  
-- Shockproof case + privacy screen  
-- Medium Faraday bag  
+- Pixel 8a handset — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage.  
+- NW750 NitroWall — device IDs (IMEI, BSSID, MAC) randomised and re-rollable to prevent tracking by IMSI catchers/cell towers.  
+- Shockproof case & privacy screen protector — extends device lifetime; deters shoulder-surfing.  
+- Medium Faraday bag — total device isolation during travel and storage between sessions.
 
 ### Software
-- GrapheneOS  
-- Mullvad VPN (always-on)  
-- Privacy SIM (handset) — 10GB included  
-- Signal + Threema  
-- KeePassDX  
-- OpenKeychain  
-- Cake Wallet  
+- GrapheneOS — privacy & security-focused encrypted OS.  
+- Mullvad VPN — always-on (kill switch), encrypts traffic; protects against local eavesdropping/manipulation.  
+- Privacy SIM (in handset) — global coverage, anonymously registered eSIM (data-only, unlimited expiry, 10GB included).  
+- Signal & Threema — gold-standard encrypted messaging/calls/file-sharing.  
+- KeePassDX — offline encrypted password manager.  
+- OpenKeychain — PGP encryption/decryption toolkit.  
+- Cake Wallet — anonymous crypto storage & transactions separated from real-world identity.
 
 ---
 
-<a id="px8-a-ghost"></a>
-## PX8-A Ghost — High Risk  
-**Price:** $2500 AUD  
+<a id="ghost-details"></a>
+## PX8-A Ghost — High risk ($2500 AUD)
 
-Built for hostile environments; defends against targeted surveillance & sophisticated location correlation.
+**Short description**  
+Designed for high risk workflows, protects against targeted surveillance and advanced location correlation.
 
 ### Hardware
-- Pixel 8a  
-- NW750 NitroWall  
-- Shockproof case + privacy screen  
-- **Large Faraday bag** — multi-device isolation  
+- Pixel 8a handset — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage.  
+- NW750 NitroWall — device IDs (IMEI, BSSID, MAC) randomised and re-rollable to prevent tracking by IMSI catchers/cell towers.  
+- Shockproof case & privacy screen protector — extends device lifetime; deters shoulder-surfing.  
+- Large Faraday bag — total multi-device isolation during travel and storage between sessions.
 
 ### Software
-- GrapheneOS  
-- OpenWrt router with VPN/Tor  
-- Privacy SIM (router) — 10GB included  
-- Signal + Threema  
-- KeePassDX  
-- OpenKeychain  
-- Cake Wallet  
+- GrapheneOS — privacy & security-focused encrypted OS.  
+- OpenWrt — integrated VPN/Tor; encrypts traffic and protects against local eavesdropping/manipulation.  
+- Privacy SIM (in router) — global coverage, anonymously registered eSIM (data-only, unlimited expiry, 10GB included).  
+- Signal & Threema — gold-standard encrypted communications suite.  
+- KeePassDX — offline encrypted password manager.  
+- OpenKeychain — PGP encryption/decryption toolkit.  
+- Cake Wallet — anonymous crypto storage & transactions separated from real-world identity.
 
 ---
 
-<a id="privacy-sim"></a>
-## Privacy SIM  
-**Price:** $150 AUD  
+## Privacy SIM — $150 AUD
 
-Anonymous global data-only eSIM designed to break identity linkage.
+**Short description / features**  
+Anonymous data-only eSIM protects against phone-number-based SIM-swap attacks and purchase-record identity correlation.  
+Global coverage footprint and unlimited expiry enhance operational flexibility across borders and ensure unused data never expires.  
+10GB data included with SIM for ease of use straight out of the box.
 
-### Features
-- No personal data / KYC  
-- Global coverage  
-- Unlimited expiry  
-- 10GB included  
-
----
-
-## Privacy SIM — Data Top-Up  
-
-| Data | Price | Rate |
-|------|-------|------|
-| 1GB  | $10   | $10/GB |
-| 10GB | $100  | $10/GB |
-| 20GB | $180  | $9/GB |
-| 50GB | $400  | $8/GB |
-| 100GB | $700 | $7/GB |
-
----
+### Data Top-Up
+- 1GB — $10 ($10/GB)  
+- 10GB — $100 ($10/GB)  
+- 20GB — $180 ($9/GB)  
+- 50GB — $400 ($8/GB)  
+- 100GB — $700 ($7/GB)
