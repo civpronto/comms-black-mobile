@@ -10,7 +10,7 @@ permalink: /armoury/shield/
 Designed for low risk workflows, protects against app level surveillance & physical theft/seizure.
 
 <div style="margin:1rem 0 1.25rem;">
-  <a href="/contact/" class="btn" style="padding:.6rem 1rem;border:none;border-radius:999px;text-decoration:none;background:#6e8d8a;color:#0d0d0d;font-weight:600;">Contact to order</a>
+  <a href="/contact/" class="btn" style="padding:.6rem 1rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;text-decoration:none;background:transparent;color:inherit;">Contact to order</a>
 </div>
 
 ## Pricing

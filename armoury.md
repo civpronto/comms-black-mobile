@@ -1,4 +1,4 @@
-﻿---
+---
  
 ---
 
@@ -6,7 +6,6 @@
 Purpose-built secure communication kits tailored to your threat profile. Conduct our <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
 
 <style>
-
   .tiles { display:grid; gap:1.25rem; margin:1.5rem 0; }
   @media (min-width:720px){ .tiles{ grid-template-columns:repeat(4,1fr);} }
   .tile {
@@ -25,12 +24,8 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     background: rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.12);
   }
   .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
-  .cta .btn {
-    padding:.55rem .9rem; border-radius:999px; text-decoration:none;
-    background: #6e8d8a; color: #0d0d0d; border:none;
-  }
-  .cta .btn:hover{ filter: brightness(0.95); }
-
+  .cta .btn { padding:.55rem .9rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; text-decoration:none; background:transparent; color:inherit; }
+  .cta .btn:hover{ border-color: rgba(255,255,255,.18) }
 </style>
 
 <div class="tiles">
@@ -82,8 +77,3 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 - 20GB — $180 ($9/GB)  
 - 50GB — $400 ($8/GB)  
 - 100GB — $700 ($7/GB)
-
-printf "\n<!-- sync test: %s -->\n" "$(date)" >> armoury.md
-git status -uno
-git diff -- armoury.md | sed -n '1,80p'
-
