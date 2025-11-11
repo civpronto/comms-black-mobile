@@ -31,11 +31,18 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   ul { margin: 0 0 .4rem .9rem; padding:0; }
 </style>
 
+
+<!-- ✅ BEGIN UPDATED TILES -->
 <div class="tiles">
 
   <!-- SHIELD -->
   <article class="tile" id="shield">
     <span class="badge">Low risk threat profile</span>
+
+    <img src="/assets/img/pixel8a-grapheneos.jpg"
+         alt="PX8-A Shield"
+         style="width:100%; border-radius:12px; margin-bottom:.75rem;">
+
     <h3>PX8-A Shield</h3>
     <div class="sub">
       $1600 AUD<br>
@@ -51,9 +58,19 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     </div>
   </article>
 
+
   <!-- SHADOW -->
   <article class="tile" id="shadow">
     <span class="badge">Moderate-high risk profile</span>
+
+    <img src="/assets/img/pixel8a-grapheneos.jpg"
+         alt="PX8-A Shadow"
+         style="width:100%; border-radius:12px; margin-bottom:.5rem;">
+
+    <img src="/assets/img/faraday-medium.jpeg"
+         alt="Medium faraday bag"
+         style="width:100%; border-radius:12px; margin-bottom:.75rem;">
+
     <h3>PX8-A Shadow</h3>
     <div class="sub">
       $1800 AUD<br>
@@ -70,9 +87,23 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     </div>
   </article>
 
+
   <!-- GHOST -->
   <article class="tile" id="ghost">
     <span class="badge">High risk threat profile</span>
+
+    <img src="/assets/img/pixel8a-grapheneos.jpg"
+         alt="PX8-A Ghost"
+         style="width:100%; border-radius:12px; margin-bottom:.5rem;">
+
+    <img src="/assets/img/faraday-large.jpeg"
+         alt="Large faraday bag"
+         style="width:100%; border-radius:12px; margin-bottom:.5rem;">
+
+    <img src="/assets/img/nw750.jpg"
+         alt="NW750 router"
+         style="width:100%; border-radius:12px; margin-bottom:.75rem;">
+
     <h3>PX8-A Ghost</h3>
     <div class="sub">
       $2500 AUD<br>
@@ -89,6 +120,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <a class="btn" href="/armoury/ghost.html">View kit</a>
     </div>
   </article>
+
 
   <!-- PRIVACY SIM -->
   <article class="tile" id="privacy-sim">
@@ -111,3 +143,4 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   </article>
 
 </div>
+<!-- ✅ END UPDATED TILES -->
