@@ -165,14 +165,14 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES v8: Mobile bubble & text size -50% from v7 === */
+/* === OVERRIDES v9: Mobile bubble & text +30% from v8, slight spacing increase === */
 @media (max-width: 900px){
   .mobile-nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: clamp(12px, 3vh, 32px);
+    gap: clamp(16px, 4vh, 40px); /* slightly increased spacing */
     padding-block: clamp(24px, 6vh, 48px);
     flex: 1 1 auto;
     min-height: 0;
@@ -184,17 +184,17 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
     justify-content: center;
     text-align: center;
 
-    /* 50% smaller bubble than v7 */
-    width: 90vw;
-    max-width: 520px;
-    height: clamp(50px, 12vh, 80px);
+    /* 30% bigger bubble than v8 */
+    width: 92vw;
+    max-width: 560px;
+    height: clamp(65px, 15.6vh, 104px); /* ~30% bigger */
 
-    /* 50% smaller text than v7 */
-    font-size: clamp(1.2rem, 4.25vh, 2.1rem);
+    /* 30% bigger text than v8 */
+    font-size: clamp(1.56rem, 5.525vh, 2.73rem);
     line-height: 1.1;
     font-weight: 800;
 
     border-radius: 999px;
-    padding: 0 1.25rem;
+    padding: 0 1.4rem;
   }
 }
