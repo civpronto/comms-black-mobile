@@ -165,41 +165,19 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES v4: Mobile bubbles nearly touching, list perfectly centered with equal top/bottom === */
+/* === OVERRIDES v5: Mobile bubbles comfortably spaced === */
 @media (max-width: 900px){
-  /* Fullscreen overlay preserved */
-  .mobile-menu{
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg);
-    transform: translateX(-100%);
-    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
-    opacity: .98;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .mobile-menu.active{ transform: translateX(0) }
-  .mobile-menu .close-btn{ align-self: flex-end; }
-
-  /* Center the whole stack; tiny gaps; equal top/bottom padding */
   .mobile-nav{
     display: flex;
     flex-direction: column;
-    justify-content: center;                     /* center the group vertically */
+    justify-content: center;                   /* keep centered vertically */
     align-items: center;
-    gap: clamp(2px, 0.6vh, 8px);                 /* near-touching bubbles */
-    padding-block: clamp(24px, 6vh, 48px);       /* equal space above & below the stack */
+    gap: clamp(10px, 2vh, 28px);               /* more spacing between bubbles */
+    padding-block: clamp(24px, 6vh, 48px);     /* equal space above & below */
     flex: 1 1 auto;
     min-height: 0;
   }
 
-  /* Bubble dimensions */
   .mobile-nav a{
     display: flex !important;
     align-items: center;
@@ -207,16 +185,11 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
     text-align: center;
     width: 80vw;
     max-width: 480px;
-    height: clamp(52px, 10vh, 80px);             /* slightly smaller bubble height */
-    font-size: clamp(1.4rem, 4.5vh, 2.4rem);     /* larger text to fill bubble */
+    height: clamp(52px, 10vh, 80px);
+    font-size: clamp(1.4rem, 4.5vh, 2.4rem);
     line-height: 1.1;
     font-weight: 800;
     border-radius: 999px;
     padding: 0 1.25rem;
-  }
-
-  .mobile-nav a:focus-visible{
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
   }
 }
