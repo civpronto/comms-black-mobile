@@ -2,12 +2,12 @@
 ---
 
 # Armoury
-Purpose-built secure communication kits tailored to your threat profile. Conduct <a href="/threat-assessment.html" style="text-decoration:underline;font-weight:600;">Threat Assessment</a> to discover your threat profile.
+Purpose-built secure communication kits tailored to your threat profile. Conduct <a href="/threat-assessment.html" class="accent-link">Threat Assessment</a> to discover your threat profile.
 
 <style>
   .tiles { display:grid; gap:1.25rem; margin:1.5rem 0; }
   @media (min-width:720px){ .tiles{ grid-template-columns:repeat(4,1fr);} }
-  .tile { flex-direction:column; display:flex;
+  .tile {
     background: rgba(255,255,255,.03);
     border: 1px solid rgba(255,255,255,.08);
     border-radius: 16px; padding: 1.25rem 1rem 1rem;
@@ -20,7 +20,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   }
 
   /* product name + price inline */
-  .tile h3 { text-align:center;
+  .tile h3 {
     margin:.1rem 0 .5rem;
     font-size:1.15rem;
     font-weight:600;
@@ -31,8 +31,8 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .price { font-weight:600; margin:.4rem 0 .6rem; }
 
   /* badges */
-  .badge { text-align:center;
-    display:block; font-size:.72rem; letter-spacing:.02em;
+  .badge {
+    display:inline-block; font-size:.72rem; letter-spacing:.02em;
     padding:.25rem .6rem; border-radius:999px; margin-bottom:.5rem;
     font-weight:600; border:1px solid rgba(255,255,255,.15); backdrop-filter: blur(2px);
   }
@@ -41,7 +41,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .badge.red { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
   .badge.esim { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
 
-  .cta { justify-content:center; display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
+  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
   .cta .btn { padding:.55rem .9rem }
 
   /* ---- Image carousel ---- */
@@ -91,6 +91,13 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     }
     header nav ul li, nav ul li { width:100%; }
   }
+
+.accent-link {
+  color: #00aa44;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 </style>
 
 
