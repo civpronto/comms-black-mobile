@@ -165,66 +165,37 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES: Mobile menu tuned bubbles === */
+/* === OVERRIDES: Larger text + wrapped bubbles === */
 @media (max-width: 900px){
-  /* Full-screen overlay preserved */
-  .mobile-menu{
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg);
-    transform: translateX(-100%);
-    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
-    opacity: .98;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding-top: calc(1rem + env(safe-area-inset-top, 0px));
-    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .mobile-menu.active{ transform: translateX(0) }
 
-  .mobile-menu .close-btn{ align-self: flex-end; }
-
-  /* Even spacing from top and bottom, and between bubbles */
   .mobile-nav{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; /* equal space above first, between, and below last */
-    align-items: stretch;
-    gap: 0; /* let space-evenly do the spacing */
-    flex: 1 1 auto; /* fill vertical space */
+    justify-content: space-evenly;
+    align-items: center;   /* center narrower bubbles */
+    gap: 0;
+    flex: 1 1 auto;
     min-height: 0;
   }
 
-  /* Slightly smaller bubbles, with text that fills more of each bubble */
   .mobile-nav a{
     display: flex !important;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100%;
-    max-width: 92vw;
-    margin: 0 auto;
-    /* fixed bubble height so space-evenly can distribute surrounding gaps */
-    height: clamp(48px, 12vh, 84px);
-    /* make text fill more of the bubble */
-    font-size: clamp(1rem, 3.8vh, 1.75rem);
+    /* Bubble width tighter, matching longest label (~Threat Assessment) */
+    width: 80vw;
+    max-width: 480px;
+
+    /* Bubble height + larger text */
+    height: clamp(60px, 13vh, 96px);
+    font-size: clamp(1.3rem, 4.1vh, 2.2rem);
     line-height: 1.15;
     font-weight: 800;
-    /* keep pill/bubble look but slightly tighter */
+    
     border-radius: 999px;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1.25rem;
   }
-
-  /* Optional: tighten letter spacing for better visual fill */
-  .mobile-nav a,
-  .mobile-nav a span{ letter-spacing: 0.01em; }
 
   .mobile-nav a:focus-visible{
     outline: 2px solid var(--accent);
