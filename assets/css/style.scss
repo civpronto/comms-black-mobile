@@ -163,3 +163,18 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
   /* Prevent horizontal scrolling when menus are open */
   body{overflow-x:hidden}
 }
+
+
+
+/* === FIX: vertical mobile nav stack === */
+.mobile-nav{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+.mobile-nav a{
+  display: block;
+  width: 100%;
+  text-align: left;
+}
