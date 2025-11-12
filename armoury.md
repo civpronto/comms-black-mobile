@@ -132,7 +132,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <h3>PX8-A Shadow</h3>
 
     <div class="carousel"
-      data-images='["/assets/img/shadow.png", "/assets/img/pixel8a-grapheneos.jpg", "/assets/img/faraday-medium.jpeg"]'>
+      data-images='["/assets/img/shadow.png", "/assets/img/pixel8a-grapheneos.jpg", "/assets/img/faraday-medium.jpeg", "/assets/img/esim.png"]'>
       <img src="/assets/img/shadow.png" alt="PX8-A Shadow">
       <button class="nav prev">‹</button>
       <button class="nav next">›</button>
@@ -160,7 +160,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     <h3>PX8-A Ghost</h3>
 
     <div class="carousel"
-      data-images='["/assets/img/ghost.png", "/assets/img/pixel8a-grapheneos.jpg", "/assets/img/faraday-large.jpeg", "/assets/img/nw750.jpg"]'>
+      data-images='["/assets/img/ghost.png", "/assets/img/pixel8a-grapheneos.jpg", "/assets/img/faraday-large.jpeg", "/assets/img/nw750.jpg", "/assets/img/esim.png"]'>
       <img src="/assets/img/ghost.png" alt="PX8-A Ghost">
       <button class="nav prev">‹</button>
       <button class="nav next">›</button>
