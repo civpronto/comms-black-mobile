@@ -101,7 +101,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <!-- SHIELD -->
   <article class="tile" id="shield">
     <span class="badge green">Low risk threat profile</span>
-    <h3>PX8-A Shield</h3>
+    <h3>PX8-A SHIELD</h3>
 
     <div class="carousel"
       data-images='["/assets/img/shield.png", "/assets/img/pixel8a-grapheneos.jpg"]'>
@@ -112,7 +112,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     </div>
 
     <div class="cta">
-      <a class="btn" href="/armoury/shield.html">View kit</a>
+      <a class="btn" href="/armoury/shield.html">View SHIELD kit</a>
     </div>
   </article>
 
@@ -122,7 +122,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <!-- SHADOW -->
   <article class="tile" id="shadow">
     <span class="badge amber">Medium risk threat profile</span>
-    <h3>PX8-A Shadow</h3>
+    <h3>PX8-A SHADOW</h3>
 
     <div class="carousel"
       data-images='["/assets/img/shadow.png", "/assets/img/pixel8a-grapheneos.jpg", "/assets/img/faraday-medium.jpeg", "/assets/img/esim.png"]'>
@@ -133,7 +133,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     </div>
 
     <div class="cta">
-      <a class="btn" href="/armoury/shadow.html">View kit</a>
+      <a class="btn" href="/armoury/shadow.html">View SHADOW kit</a>
     </div>
   </article>
 
@@ -143,7 +143,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <!-- GHOST -->
   <article class="tile" id="ghost">
     <span class="badge red">High risk threat profile</span>
-    <h3>PX8-A Ghost</h3>
+    <h3>PX8-A GHOST</h3>
 
     <div class="carousel"
       data-images='["/assets/img/ghost.png", "/assets/img/pixel8a-grapheneos.jpg", "/assets/img/faraday-large.jpeg", "/assets/img/nw750.jpg", "/assets/img/esim.png"]'>
@@ -153,7 +153,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <div class="dots"></div>
     </div>
     <div class="cta">
-      <a class="btn" href="/armoury/ghost.html">View kit</a>
+      <a class="btn" href="/armoury/ghost.html">View GHOST kit</a>
     </div>
   </article>
 
@@ -163,7 +163,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <!-- PRIVACY SIM -->
   <article class="tile" id="privacy-sim">
     <span class="badge esim">eSIM — Global</span>
-    <h3>Privacy SIM recharge</h3>
+    <h3>PRIVACY SIM RECHARGE</h3>
 
     <div class="carousel"
       data-images='[
@@ -176,7 +176,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     </div>
 
     <div class="cta">
-      <a class="btn" href="/armoury/privacy-sim.html">View SIM</a>
+      <a class="btn" href="/armoury/privacy-sim.html">RECHARGE SIM</a>
     </div>
   </article>
 
