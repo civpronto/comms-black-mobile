@@ -1,4 +1,4 @@
-﻿---
+﻿﻿---
 ---
 
 # Armoury
@@ -91,11 +91,27 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     }
     header nav ul li, nav ul li { width:100%; }
   }
-.accent-link {
-  color: #1eb6a6;
-  font-weight: 600;
-  text-decoration: underline;
-}
+  .accent-link { color: #1eb6a6; font-weight: 600; text-decoration: underline; }
+
+  /* ===== Comparison Table ===== */
+  .compare { width:100%; border-collapse:collapse; margin:2rem 0 0; font-size:.95rem; }
+  .compare th, .compare td {
+    border:1px solid rgba(255,255,255,.12);
+    padding:.65rem .6rem;
+    vertical-align:top;
+  }
+  .compare thead th {
+    background: rgba(255,255,255,.06);
+    font-weight:700; text-align:center;
+  }
+  .compare tbody th { text-align:left; width: 34%; }
+  .compare td { text-align:center; }
+  .compare .muted { opacity:.7; }
+  .compare a { color: inherit; text-decoration: underline; }
+  @media (max-width: 860px){
+    .compare { font-size:.9rem; }
+    .compare tbody th { width:auto; }
+  }
 </style>
 
 
@@ -187,6 +203,85 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
 </div>
 
+
+<!-- =======================
+     COMPARE MODELS (new)
+     ======================= -->
+<section class="container" style="margin: 1.5rem 0 2.5rem;">
+  <h2 style="margin-bottom:.75rem;">Compare Models</h2>
+  <table class="compare">
+    <thead>
+      <tr>
+        <th></th>
+        <th>PX8-A Shield</th>
+        <th>PX8-A Shadow</th>
+        <th>PX8-A Ghost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Threat level</th>
+        <td>🟢 Low</td>
+        <td>🟡 Medium</td>
+        <td>🔴 High</td>
+      </tr>
+      <tr>
+        <th>Primary protection</th>
+        <td>App surveillance + physical seizure</td>
+        <td>Dragnet + metadata collection</td>
+        <td>Targeted tracking + identity correlation</td>
+      </tr>
+      <tr>
+        <th>Network anonymisation</th>
+        <td class="muted">—</td>
+        <td>VPN (always-on)</td>
+        <td>VPN/Tor gateway</td>
+      </tr>
+      <tr>
+        <th>Faraday bag</th>
+        <td class="muted">—</td>
+        <td>Medium</td>
+        <td>Large (multi-device)</td>
+      </tr>
+      <tr>
+        <th>NitroWall ID randomisation</th>
+        <td class="muted">—</td>
+        <td class="muted">—</td>
+        <td>✅ (IMEI/MAC/BSSID re-roll)</td>
+      </tr>
+      <tr>
+        <th>Privacy SIM included</th>
+        <td class="muted">—</td>
+        <td>✅ (in handset)</td>
+        <td>✅ (in router)</td>
+      </tr>
+      <tr>
+        <th>Encrypted comms suite</th>
+        <td>Signal-ready (via user install)</td>
+        <td>✅ Signal + Threema</td>
+        <td>✅ Signal + Threema</td>
+      </tr>
+      <tr>
+        <th>Best for</th>
+        <td>Everyday privacy</td>
+        <td>Travel + moderate risk</td>
+        <td>Hostile/high-risk ops</td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td>$1600 AUD</td>
+        <td>$1800 AUD</td>
+        <td>$2500 AUD</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td><a href="/armoury/shield.html">View Shield →</a></td>
+        <td><a href="/armoury/shadow.html">View Shadow →</a></td>
+        <td><a href="/armoury/ghost.html">View Ghost →</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
 
 

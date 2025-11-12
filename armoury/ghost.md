@@ -6,57 +6,53 @@ permalink: /armoury/ghost.html
 
 # PX8-A Ghost — $2500 AUD
 
-A high-risk communications system designed to defeat **targeted surveillance, device/location correlation, and ID-based tracking**. Built for hostile environments, persistent monitoring, and identity-sensitive movement.
+Built for **high-risk** scenarios: defeats targeted surveillance, device/location correlation, and infrastructure-level tracking with **identity randomisation** and **network anonymity**.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
-## Who It’s For
-- High-risk journalists
-- Field intelligence roles
-- Dissidents & political actors
-- Sensitive corporate/government operations
-- Users requiring advanced location/mobility privacy
+## Quick Summary
+<table>
+  <tr><td><strong>Threat level</strong></td><td>High</td></tr>
+  <tr><td><strong>Best for</strong></td><td>Field journalism, dissidents, intelligence roles</td></tr>
+  <tr><td><strong>Primary protection</strong></td><td>Targeted tracking + identity correlation</td></tr>
+  <tr><td><strong>Ease of use</strong></td><td>★★★☆☆</td></tr>
+</table>
 
-## Threat Model
-✔ Strong resistance to targeted surveillance  
-✔ Protection against device identity tracking  
-✔ Defeats tower-based correlation / IMSI catcher profiling  
-
----
+## Feature Tiles
+<table>
+  <tr><td>NitroWall</td><td>IMEI/MAC/BSSID re-roll; breaks tower tracking</td></tr>
+  <tr><td>VPN/Tor gateway</td><td>OpenWrt network anonymity</td></tr>
+  <tr><td>Privacy SIM</td><td>Anonymous connectivity (10GB)</td></tr>
+  <tr><td>Faraday bag (Large)</td><td>Multi-device RF isolation</td></tr>
+  <tr><td>Encrypted comms</td><td>Signal + Threema suite</td></tr>
+  <tr><td>PGP + Vault</td><td>OpenKeychain + KeePassDX</td></tr>
+</table>
 
 ## Pricing
 | Item | Price |
 |------|------:|
 | PX8-A Ghost kit | $2500 AUD |
 
----
-
 ## Hardware
 - Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted
-- **NW750 NitroWall**  
-  → Randomises IMEI, BSSID & MAC with no restriction  
-  → Obscures identity to cell towers & interception devices
-- Shockproof case + privacy screen protector
-- **Large Faraday bag** — multi-device RF isolation for travel/storage
+- **NW750 NitroWall** — re-roll IMEI/BSSID/MAC to defeat correlation
+- Shockproof case & privacy screen protector
+- **Large Faraday bag**
 
----
+<details>
+<summary><strong>Software & Security (details)</strong></summary>
 
-## Software & Security
-
-- GrapheneOS — hardened encrypted OS
-- OpenWrt network gateway — VPN/Tor routing + local-network resistance
-- Privacy SIM (in router)  
-  → Anonymous eSIM, global, unlimited expiry, 10GB included
-
-### Encrypted Apps Suite
-- Signal & Threema — end-to-end secure comms
-- KeePassDX — offline password manager
-- OpenKeychain — PGP crypto toolkit
+- GrapheneOS hardened encrypted OS  
+- OpenWrt gateway — VPN/Tor routing + local-network resistance  
+- Privacy SIM (in router) — anonymous, global, unlimited expiry, 10GB included  
+- Signal & Threema — end-to-end comms  
+- KeePassDX — offline password manager  
+- OpenKeychain — PGP crypto toolkit  
 - Cake Wallet — anonymous crypto storage & transactions
 
----
+</details>
 
 ## Summary
-A comprehensive platform able to counter **identity-correlating adversaries** and hostile network infrastructure, ideal for users requiring maximum communications deniability + network anonymity.
+A comprehensive platform for **hostile environments** requiring maximum communications deniability and network anonymity.

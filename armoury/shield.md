@@ -6,73 +6,61 @@ permalink: /armoury/shield.html
 
 # PX8-A Shield — $1600 AUD
 
-A hardened, privacy-focused handset designed for **low-risk workflows**, protecting against **app-level surveillance, data compromise, and physical theft/seizure** — while maintaining everyday usability.
+A hardened, privacy-focused handset for **low-risk workflows**. Protects against **app-level surveillance, data compromise, and physical theft/seizure** — while keeping everyday Android workflows familiar.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
-## Who It’s For
-- Journalists & researchers
-- Privacy-conscious individuals
-- Business travellers
-- Users needing strong privacy with minimal workflow disruption
+## Quick Summary
+<table>
+  <tr><td><strong>Threat level</strong></td><td>Low</td></tr>
+  <tr><td><strong>Best for</strong></td><td>Travellers, journalists, privacy-minded users</td></tr>
+  <tr><td><strong>Primary protection</strong></td><td>App surveillance + physical seizure</td></tr>
+  <tr><td><strong>Ease of use</strong></td><td>★★★★★</td></tr>
+</table>
 
-## Threat Model
-✔ App-level surveillance protection  
-✔ Physical theft/seizure safety  
-⚠ Not designed for advanced network-level adversaries  
-
----
+## Feature Tiles
+<table>
+  <tr><td>Hardened OS</td><td>Strong exploit resistance</td></tr>
+  <tr><td>Verified Boot</td><td>Detects firmware tampering</td></tr>
+  <tr><td>USB data lock</td><td>Charging-only when locked</td></tr>
+  <tr><td>Duress wipe</td><td>Instant irreversible sanitisation</td></tr>
+  <tr><td>Fine permissions</td><td>Per-app network, mic/camera toggles</td></tr>
+  <tr><td>No Google telemetry</td><td>Optional sandboxed Play</td></tr>
+</table>
 
 ## Pricing
 | Item | Price |
 |------|------:|
 | PX8-A Shield kit | $1600 AUD |
 
----
-
 ## Hardware
 - Pixel 8a handset
 - Shockproof protective case
 - Privacy screen protector
 
----
-
-## Software & Security
+<details>
+<summary><strong>Software & Security (details)</strong></summary>
 
 ### GrapheneOS Base
-- Hardened kernel & libc — hardened malloc, zero-init memory, strong stack + CFI protections
-- Verified Boot — detects firmware/system tampering
-- Attack-surface reduction — restricts optional hardware: USB data lines (when locked), pogo-pins, NFC/UWB, sensors
-- USB-C data lockdown — charging-only when locked
-- App/process sandboxing beyond standard Android
+- Hardened kernel & libc (hardened malloc, zero-init), CFI + stack protections
+- Verified Boot; detects system/firmware tampering
+- Attack-surface reduction (USB lines locked when device locked, sensors/NFC/UWB constraints)
+- App/process sandboxing beyond stock Android
 
-### Fine-Grained Privacy Controls
-- One-time & foreground-only permissions
-- Mic/camera/sensor toggles
-- Per-app network access control
-- Scoped storage & contact access
+### Privacy Controls & Apps
+- One-time / foreground-only permissions
+- Mic/camera/sensor toggles, per-app network access, scoped storage/contacts
 - Default MAC randomisation
-
-### Application Suite
-- Hardened browser
-- Secure camera (EXIF metadata removed)
-- Secure PDF viewer
+- Hardened browser, secure camera (EXIF removed), secure PDF viewer
 - Encrypted backups (SeedVault)
 
-### Telemetry & Compatibility
-- No built-in Google services/telemetry
-- Optional sandboxed Google Play available
+### Telemetry & Emergency
+- No built-in Google services; optional sandboxed Play
+- **Duress PIN/Password** → wipe + power-off
 
-### Emergency Response
-- **Duress PIN/Password** — irreversible full wipe (incl. encryption keys + eSIMs) + power-off
-
-### Encryption
-- Full encryption with strong key management
-- Encrypted backup support
-
----
+</details>
 
 ## Summary
-A highly secure daily-use device prioritising privacy, data control, and anti-seizure resilience — ideal for users operating in **low-risk threat environments**.
+Secure daily-use device for **low-risk environments** prioritising privacy and data control with minimal workflow change.
