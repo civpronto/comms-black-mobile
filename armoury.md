@@ -41,7 +41,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .badge.red { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
   .badge.esim { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
 
-  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
+  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem   justify-content:center; }
   .cta .btn { padding:.55rem .9rem }
 
   /* ---- Image carousel ---- */
@@ -163,7 +163,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   <!-- PRIVACY SIM -->
   <article class="tile" id="privacy-sim">
     <span class="badge esim">eSIM — Global</span>
-    <h3>PRIVACY SIM RECHARGE</h3>
+    <h3>Privacy SIM Recharge</h3>
 
     <div class="carousel"
       data-images='[
