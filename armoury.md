@@ -20,7 +20,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   }
 
   /* product name + price inline */
-  .tile h3 { text-align:center;
+  .tile h3 {
     margin:.1rem 0 .5rem;
     font-size:1.15rem;
     font-weight:600;
@@ -31,7 +31,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .price { font-weight:600; margin:.4rem 0 .6rem; }
 
   /* badges */
-  .badge { text-align:center; justify-content:center; display:flex;
+  .badge { align-self:center;
     display:inline-block; font-size:.72rem; letter-spacing:.02em;
     padding:.25rem .6rem; border-radius:999px; margin-bottom:.5rem;
     font-weight:600; border:1px solid rgba(255,255,255,.15); backdrop-filter: blur(2px);
@@ -41,7 +41,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
   .badge.red { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
   .badge.esim { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
 
-  .cta { margin-top:auto; justify-content:center; display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
+  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
   .cta .btn { padding:.55rem .9rem }
 
   /* ---- Image carousel ---- */
@@ -91,13 +91,11 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     }
     header nav ul li, nav ul li { width:100%; }
   }
-
 .accent-link {
-  color: #007066;
+  color: #1eb6a6;
   font-weight: 600;
   text-decoration: underline;
 }
-
 </style>
 
 
