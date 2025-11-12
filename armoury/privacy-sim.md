@@ -6,18 +6,40 @@ permalink: /armoury/privacy-sim.html
 
 # Privacy SIM — $150 AUD
 
-Anonymous data-only eSIM protects against phone-number-based SIM-swap attacks and purchase-record identity correlation.  
-Global coverage footprint and unlimited expiry enhance operational flexibility across borders and ensure unused data never expires.  
-10GB data included with SIM for ease of use straight out of the box.
+An anonymous data-only eSIM designed to prevent **identity correlation, SIM-swap exploitation, and subscription-based tracking**. Global coverage + unlimited expiry ensures flexible operational readiness anywhere.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
+## Who It’s For
+- Travel
+- Sensitive communications
+- High-risk environments
+- Communications segregation
+
+## Threat Model
+✔ Prevents SIM-swap identity ties  
+✔ Prevents subscription record correlation  
+✔ Reduces metadata linkage  
+
+---
+
 ## Pricing
 | Item | Price |
 |------|------:|
-| Privacy SIM (with 10GB) | $150 AUD |
+| Privacy SIM (10GB incl.) | $150 AUD |
+
+---
+
+## Features
+- Anonymous — no PII required
+- Data-only — prevents voice-ID tracking
+- Unlimited expiry — data never expires
+- Global roaming footprint
+- 10GB included
+
+---
 
 ## Data Top-Up
 | Data | Price | Rate |
@@ -27,3 +49,8 @@ Global coverage footprint and unlimited expiry enhance operational flexibility a
 | 20GB | $180  | $9/GB  |
 | 50GB | $400  | $8/GB  |
 | 100GB| $700  | $7/GB  |
+
+---
+
+## Summary
+A privacy-preserving eSIM enabling secure, anonymous data usage across borders without tying activity to a real-world identity.
