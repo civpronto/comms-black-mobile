@@ -165,14 +165,13 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES v7: Mobile DOUBLE bubble + text size === */
+/* === OVERRIDES v8: Mobile bubble & text size -50% from v7 === */
 @media (max-width: 900px){
   .mobile-nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Keep modest spacing so layout stays centered */
     gap: clamp(12px, 3vh, 32px);
     padding-block: clamp(24px, 6vh, 48px);
     flex: 1 1 auto;
@@ -185,17 +184,17 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
     justify-content: center;
     text-align: center;
 
-    /* DOUBLE bubble size */
+    /* 50% smaller bubble than v7 */
     width: 90vw;
     max-width: 520px;
-    height: clamp(100px, 24vh, 160px);
+    height: clamp(50px, 12vh, 80px);
 
-    /* DOUBLE text size */
-    font-size: clamp(2.4rem, 8.5vh, 4.2rem);
-    line-height: 1.05;
-    font-weight: 900;
+    /* 50% smaller text than v7 */
+    font-size: clamp(1.2rem, 4.25vh, 2.1rem);
+    line-height: 1.1;
+    font-weight: 800;
 
     border-radius: 999px;
-    padding: 0 2rem;
+    padding: 0 1.25rem;
   }
 }
