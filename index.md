@@ -11,7 +11,7 @@ permalink: /
         <h1>Speak Freely</h1>
         <div class="cta-row">
 <a class="btn" href="/armoury.html">Arm Yourself</a>
-          <a class="btn btn-outline" href="/training.html">Learn the Basics</a>
+          <a class="btn btn-outline" href="/threat-assessment.html">2 min Threat Assessment</a>
         </div>
       </div>
       <div class="hero-media">
