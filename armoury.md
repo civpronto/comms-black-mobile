@@ -166,14 +166,6 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <button class="nav next">›</button>
       <div class="dots"></div>
     </div>
-
-    <ul>
-      <li>Hardened Pixel 8a</li>
-      <li>NW750 privacy router</li>
-      <li>Privacy SIM</li>
-      <li>Large faraday bag</li>
-    </ul>
-
     <div class="cta">
       <a class="btn" href="/armoury/ghost.html">View kit</a>
     </div>
