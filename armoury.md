@@ -111,13 +111,6 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <div class="dots"></div>
     </div>
 
-    <ul>
-      <li>Hardened Pixel 8a</li>
-      <li>BYO SIM</li>
-      <li>Privacy app suite</li>
-      <li>Baseline protection</li>
-    </ul>
-
     <div class="cta">
       <a class="btn" href="/armoury/shield.html">View kit</a>
     </div>
@@ -138,13 +131,6 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <button class="nav next">›</button>
       <div class="dots"></div>
     </div>
-
-    <ul>
-      <li>Hardened Pixel 8a</li>
-      <li>Privacy SIM</li>
-      <li>Encrypted app suite</li>
-      <li>Medium faraday bag</li>
-    </ul>
 
     <div class="cta">
       <a class="btn" href="/armoury/shadow.html">View kit</a>
@@ -188,13 +174,6 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
       <button class="nav next">›</button>
       <div class="dots"></div>
     </div>
-
-    <ul>
-      <li>Anonymously registered</li>
-      <li>Global coverage</li>
-      <li>Unlimited expiry</li>
-      <li>$10AUD/GB</li>
-    </ul>
 
     <div class="cta">
       <a class="btn" href="/armoury/privacy-sim.html">View SIM</a>
