@@ -105,9 +105,9 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
     <div class="carousel"
       data-images='[
-        "/assets/img/pixel8a-grapheneos.jpg"
+        "/assets/img/shield.png"
       ]'>
-      <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shield">
+      <img src="/assets/img/shield.png" alt="PX8-A Shield">
       <button class="nav prev">‹</button>
       <button class="nav next">›</button>
       <div class="dots"></div>
@@ -135,11 +135,11 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
     <div class="carousel"
       data-images='[
-        "/assets/img/pixel8a-grapheneos.jpg",
+        "/assets/img/shadow.png",
         "/assets/img/esim.png",
         "/assets/img/faraday-medium.jpeg"
       ]'>
-      <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Shadow">
+      <img src="/assets/img/shadow.png" alt="PX8-A Shadow">
       <button class="nav prev">‹</button>
       <button class="nav next">›</button>
       <div class="dots"></div>
@@ -167,12 +167,12 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
 
     <div class="carousel"
       data-images='[
-        "/assets/img/pixel8a-grapheneos.jpg",
+        "/assets/img/ghost.png",
         "/assets/img/esim.png",
         "/assets/img/faraday-large.jpeg",
         "/assets/img/nw750.jpg"
       ]'>
-      <img src="/assets/img/pixel8a-grapheneos.jpg" alt="PX8-A Ghost">
+      <img src="/assets/img/ghost.png" alt="PX8-A Ghost">
       <button class="nav prev">‹</button>
       <button class="nav next">›</button>
       <div class="dots"></div>
