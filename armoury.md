@@ -24,7 +24,7 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     margin:.1rem 0 .5rem;
     font-size:1.15rem;
     font-weight:600;
-  }
+   text-align:center;}
   .price-inline { opacity:.9; font-weight:500; }
 
   ul { margin:0 0 .7rem .9rem; padding:0; }
@@ -35,13 +35,13 @@ Purpose-built secure communication kits tailored to your threat profile. Conduct
     display:inline-block; font-size:.72rem; letter-spacing:.02em;
     padding:.25rem .6rem; border-radius:999px; margin-bottom:.5rem;
     font-weight:600; border:1px solid rgba(255,255,255,.15); backdrop-filter: blur(2px);
-  }
+   display:flex; justify-content:center; text-align:center;}
   .badge.green { background: rgba(0,170,68,.35); border-color: rgba(0,200,90,.45); }
   .badge.amber { background: rgba(200,130,0,.35); border-color: rgba(233,150,34,.45); }
   .badge.red { background: rgba(180,0,0,.35); border-color: rgba(230,50,50,.45); }
   .badge.esim { background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
 
-  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem }
+  .cta { display:flex; gap:.5rem; align-items:center; margin-top:.5rem  justify-content:center;}
   .cta .btn { padding:.55rem .9rem }
 
   /* ---- Image carousel ---- */
