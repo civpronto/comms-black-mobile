@@ -165,36 +165,22 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES v9: Mobile bubble & text +30% from v8, slight spacing increase === */
+/* === OVERRIDES: Mobile true vertical centering without changing sizes/spacings === */
 @media (max-width: 900px){
-  .mobile-nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(16px, 4vh, 40px); /* slightly increased spacing */
-    padding-block: clamp(24px, 6vh, 48px);
-    flex: 1 1 auto;
-    min-height: 0;
+  /* Anchor for absolute-positioned close button */
+  .mobile-menu{
+    position: relative; /* keep full-screen; this doesn't alter sizes or gaps */
   }
-
-  .mobile-nav a{
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    /* 30% bigger bubble than v8 */
-    width: 92vw;
-    max-width: 560px;
-    height: clamp(65px, 15.6vh, 104px); /* ~30% bigger */
-
-    /* 30% bigger text than v8 */
-    font-size: clamp(1.56rem, 5.525vh, 2.73rem);
-    line-height: 1.1;
-    font-weight: 800;
-
-    border-radius: 999px;
-    padding: 0 1.4rem;
+  /* Take the 'X' out of the flex flow so it no longer shifts centering */
+  .mobile-menu .close-btn{
+    position: absolute;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    right: 12px;
+    z-index: 2;
+  }
+  /* Center the whole list within the viewport (top/bottom equal),
+     without touching the existing gap or bubble sizes */
+  .mobile-nav{
+    margin-block: auto;   /* equal space above and below the nav stack */
   }
 }
