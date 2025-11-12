@@ -165,16 +165,37 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES v6: Mobile bubbles 5x larger gap === */
+/* === OVERRIDES v7: Mobile DOUBLE bubble + text size === */
 @media (max-width: 900px){
   .mobile-nav{
     display: flex;
     flex-direction: column;
-    justify-content: center;                   
+    justify-content: center;
     align-items: center;
-    gap: clamp(50px, 10vh, 140px);              /* 5x larger spacing */
-    padding-block: clamp(24px, 6vh, 48px);     
+    /* Keep modest spacing so layout stays centered */
+    gap: clamp(12px, 3vh, 32px);
+    padding-block: clamp(24px, 6vh, 48px);
     flex: 1 1 auto;
     min-height: 0;
+  }
+
+  .mobile-nav a{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* DOUBLE bubble size */
+    width: 90vw;
+    max-width: 520px;
+    height: clamp(100px, 24vh, 160px);
+
+    /* DOUBLE text size */
+    font-size: clamp(2.4rem, 8.5vh, 4.2rem);
+    line-height: 1.05;
+    font-weight: 900;
+
+    border-radius: 999px;
+    padding: 0 2rem;
   }
 }
