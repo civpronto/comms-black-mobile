@@ -165,31 +165,16 @@ footer{border-top:1px solid rgba(0,0,0,.12);margin-top:2rem;text-align:center;pa
 }
 
 
-/* === OVERRIDES v5: Mobile bubbles comfortably spaced === */
+/* === OVERRIDES v6: Mobile bubbles 5x larger gap === */
 @media (max-width: 900px){
   .mobile-nav{
     display: flex;
     flex-direction: column;
-    justify-content: center;                   /* keep centered vertically */
+    justify-content: center;                   
     align-items: center;
-    gap: clamp(10px, 2vh, 28px);               /* more spacing between bubbles */
-    padding-block: clamp(24px, 6vh, 48px);     /* equal space above & below */
+    gap: clamp(50px, 10vh, 140px);              /* 5x larger spacing */
+    padding-block: clamp(24px, 6vh, 48px);     
     flex: 1 1 auto;
     min-height: 0;
-  }
-
-  .mobile-nav a{
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 80vw;
-    max-width: 480px;
-    height: clamp(52px, 10vh, 80px);
-    font-size: clamp(1.4rem, 4.5vh, 2.4rem);
-    line-height: 1.1;
-    font-weight: 800;
-    border-radius: 999px;
-    padding: 0 1.25rem;
   }
 }
