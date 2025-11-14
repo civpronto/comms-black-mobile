@@ -722,42 +722,44 @@ No names, emails, or personal details are collected.
 <script>
 // Card-select behaviour, one-question-at-a-time wizard and kit logic
 (function() {
-  const form = document.getElementById('threat-assessment-form');
-  const resultEl = document.getElementById('ta-result');
+  var form = document.getElementById('threat-assessment-form');
+  var resultEl = document.getElementById('ta-result');
   if (!form || !resultEl) return;
 
-  const questions = Array.prototype.slice.call(form.querySelectorAll('.ta-question'));
-  const sections  = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
-  const prevBtn   = document.getElementById('ta-prev');
-  const nextBtn   = document.getElementById('ta-next');
-  const submitBtn = document.getElementById('ta-submit');
-  const progressText = document.getElementById('ta-progress-text');
-  const progressFill = document.getElementById('ta-progressbar-fill');
-  const nav = document.querySelector('.ta-nav');
+  var questions = Array.prototype.slice.call(form.querySelectorAll('.ta-question'));
+  var sections  = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
+  var prevBtn   = document.getElementById('ta-prev');
+  var nextBtn   = document.getElementById('ta-next');
+  var submitBtn = document.getElementById('ta-submit');
+  var progressText = document.getElementById('ta-progress-text');
+  var progressFill = document.getElementById('ta-progressbar-fill');
+  var nav = document.querySelector('.ta-nav');
 
-  const total = questions.length;
-  let current = 0;
+  var total = questions.length;
+  var current = 0;
 
-  // Init card-select: clicking a card selects input and toggles "selected" class
+  // Card-select: clicking a card selects input and toggles "selected" class
   form.addEventListener('click', function(e) {
-    const card = e.target.closest('.ta-card');
+    var card = e.target.closest ? e.target.closest('.ta-card') : null;
     if (!card) return;
 
-    const input = card.querySelector('input');
+    var input = card.querySelector('input');
     if (!input) return;
 
     if (input.type === 'radio') {
-      const name = input.name;
-      const groupCards = form.querySelectorAll('.ta-card input[name="' + name + '"]');
-      groupCards.forEach(function(inp) {
-        inp.closest('.ta-card').classList.remove('selected');
+      var name = input.name;
+      var groupCards = form.querySelectorAll('.ta-card input[name="' + name + '"]');
+      Array.prototype.forEach.call(groupCards, function(inp) {
+        var c = inp.closest('.ta-card');
+        if (c) c.classList.remove('selected');
       });
       card.classList.add('selected');
       input.checked = true;
     } else if (input.type === 'checkbox') {
-      const selected = card.classList.toggle('selected');
+      var selected = card.classList.toggle('selected');
       input.checked = selected;
     }
+
     updateProgress();
   });
 
@@ -769,17 +771,17 @@ No names, emails, or personal details are collected.
       sec.style.display = 'none';
     });
 
-    const q = questions[index];
+    var q = questions[index];
     if (!q) return;
     q.classList.add('active');
 
-    const parentSection = q.closest('.ta-section');
+    var parentSection = q.closest('.ta-section');
     if (parentSection) {
       parentSection.style.display = 'block';
     }
 
     // Move nav into the active question so controls sit inside the tile
-    if (nav && q.contains(nav) === false) {
+    if (nav && !q.contains(nav)) {
       q.appendChild(nav);
     }
 
@@ -787,35 +789,37 @@ No names, emails, or personal details are collected.
       prevBtn.disabled = index === 0;
       prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
     }
-    if (nextBtn) nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
-    if (submitBtn) submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
-
-    updateProgress();
+    if (nextBtn) {
+      nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
+    }
+    if (submitBtn) {
+      submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
+    }
 
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function val(name) {
-    const el = form.querySelector('[name="' + name + '"]:checked');
+    var el = form.querySelector('[name="' + name + '"]:checked');
     return el ? el.value : null;
   }
 
   function updateProgress() {
     if (!progressText || !progressFill) return;
-    let answered = 0;
+    var answered = 0;
     questions.forEach(function(q) {
-      const input = q.querySelector('input[type="radio"], input[type="checkbox"]');
+      var input = q.querySelector('input[type="radio"], input[type="checkbox"]');
       if (!input) return;
-      const name = input.name;
+      var name = input.name;
       if (form.querySelector('[name="' + name + '"]:checked')) {
         answered += 1;
       }
     });
-    const pct = Math.round((answered / questions.length) * 100);
+    var pct = Math.round((answered / questions.length) * 100);
+    if (pct < 0) pct = 0;
+    if (pct > 100) pct = 100;
     progressText.textContent = pct + '% complete';
     progressFill.style.width = pct + '%';
-  }
-
   }
 
   if (prevBtn) {
@@ -843,9 +847,9 @@ No names, emails, or personal details are collected.
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const q1 = val('q1_adversary');
-    const q4 = val('q4_location_risk');
-    const q5 = val('q5_consequence');
+    var q1 = val('q1_adversary');
+    var q4 = val('q4_location_risk');
+    var q5 = val('q5_consequence');
 
     if (!q1) {
       resultEl.innerHTML = '<p>Please answer the first question about whether you are facing an adversary to get a recommendation.</p>';
@@ -853,7 +857,7 @@ No names, emails, or personal details are collected.
       return;
     }
 
-    let kit = 'shield';
+    var kit = 'shield';
 
     if (q1 && q1 !== 'no') {
       kit = 'shadow';
@@ -862,7 +866,7 @@ No names, emails, or personal details are collected.
       }
     }
 
-    let html = '';
+    var html = '';
 
     if (kit === 'shield') {
       html = `
@@ -959,3 +963,4 @@ No names, emails, or personal details are collected.
   });
 })();
 </script>
+
