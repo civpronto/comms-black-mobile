@@ -1,5 +1,4 @@
-﻿﻿---
-# Armoury
+﻿# Armoury
 Purpose-built communication kits tailored to your threat profile. Visit <a href="/threat-assessment.html" class="accent-link">Threat Assessment</a> to find your profile.
 
 <style>
