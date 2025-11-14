@@ -1,24 +1,4 @@
 ---
-
-<style>
-.ta-question label {
-  display:block;
-  border:1px solid #444;
-  padding:10px;
-  margin:6px 0;
-  border-radius:8px;
-  cursor:pointer;
-}
-.ta-question input[type=radio],
-.ta-question input[type=checkbox] { 
-  margin-right:8px;
-}
-.ta-question label:hover {
-  background:#1b1b1b;
-}
-.ta-question input:checked + span { font-weight:bold; }
-</style>
-
 layout: default
 title: Threat Assessment
 permalink: /threat-assessment.html
@@ -131,6 +111,18 @@ No names, emails, or personal details are collected.
     font-size: 0.9rem;
     opacity: 0.8;
   }
+
+  #threat-assessment-form .ta-question label {
+    display: block;
+    border: 1px solid #444;
+    padding: 0.55rem 0.75rem;
+    margin: 0.2rem 0;
+    border-radius: 8px;
+  }
+  #threat-assessment-form .ta-question label:hover {
+    background: #1b1b1b;
+  }
+
 </style>
 
 ---
