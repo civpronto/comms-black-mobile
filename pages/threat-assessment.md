@@ -59,17 +59,18 @@ No names, emails, or personal details are collected.
   #threat-assessment-form .ta-card {
     position: relative;
     display: block;
-    border: 1px solid #15857a;
-    background: rgba(21,133,122,0.08);
+    border: 1px solid #0f7468;
+    background: #1eb6a6;
     padding: 0.75rem 0.9rem 0.75rem 0.9rem;
-    margin: 0.35rem 0;
+    margin: 0.45rem 0;
     border-radius: 999px;
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
     font-size: 0.95rem;
+    text-align: center;
   }
   #threat-assessment-form .ta-card span.ta-icon {
-    margin-right: 0.6rem;
+    margin-right: 0.5rem;
     opacity: 0.95;
   }
   #threat-assessment-form .ta-card input[type="radio"],
@@ -79,10 +80,10 @@ No names, emails, or personal details are collected.
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #15857a;
-    border-color: #19a08b;
+    background: #12a394;
+    border-color: #0f7468;
     transform: translateY(-1px);
-    box-shadow: 0 0 0 1px #0b4841;
+    box-shadow: 0 0 0 2px #021614;
   }
   #threat-assessment-form .ta-card:hover {
     background: rgba(21,133,122,0.22);
@@ -757,6 +758,7 @@ No names, emails, or personal details are collected.
       const selected = card.classList.toggle('selected');
       input.checked = selected;
     }
+    updateProgress();
   });
 
   function showQuestion(index) {
@@ -781,13 +783,14 @@ No names, emails, or personal details are collected.
       q.appendChild(nav);
     }
 
-    if (prevBtn) prevBtn.disabled = index === 0;
+    if (prevBtn) {
+      prevBtn.disabled = index === 0;
+      prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+    }
     if (nextBtn) nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
     if (submitBtn) submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
 
-    const pct = Math.round(((index + 1) / total) * 100);
-    if (progressText) progressText.textContent = pct + '% complete';
-    if (progressFill) progressFill.style.width = pct + '%';
+    updateProgress();
 
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -795,6 +798,24 @@ No names, emails, or personal details are collected.
   function val(name) {
     const el = form.querySelector('[name="' + name + '"]:checked');
     return el ? el.value : null;
+  }
+
+  function updateProgress() {
+    if (!progressText || !progressFill) return;
+    let answered = 0;
+    questions.forEach(function(q) {
+      const input = q.querySelector('input[type="radio"], input[type="checkbox"]');
+      if (!input) return;
+      const name = input.name;
+      if (form.querySelector('[name="' + name + '"]:checked')) {
+        answered += 1;
+      }
+    });
+    const pct = Math.round((answered / questions.length) * 100);
+    progressText.textContent = pct + '% complete';
+    progressFill.style.width = pct + '%';
+  }
+
   }
 
   if (prevBtn) {
@@ -817,6 +838,7 @@ No names, emails, or personal details are collected.
 
   // Start at first question
   showQuestion(current);
+  updateProgress();
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
