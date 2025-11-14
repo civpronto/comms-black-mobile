@@ -326,3 +326,143 @@ When the logic is wired up, your answers will automatically generate a personali
 </form>
 
 <p style="text-align:center"><small>Last updated: 14 Nov 2025</small></p>
+
+
+---
+
+## Your results
+
+<div id="ta-result" class="ta-result">
+  <p><em>Complete the assessment and your personalised recommendation will appear here.</em></p>
+</div>
+
+<script>
+// Simple JS logic to map answers to Shield / Shadow / Ghost
+(function() {
+  const form = document.getElementById('threat-assessment-form');
+  const resultEl = document.getElementById('ta-result');
+
+  if (!form || !resultEl) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    function val(name) {
+      const el = form.querySelector('[name="' + name + '"]:checked');
+      return el ? el.value : null;
+    }
+
+    const q1 = val('q1_adversary');
+    const q4 = val('q4_location_risk');
+    const q5 = val('q5_consequence');
+
+    let kit = 'shield';
+
+    // Primary branch: Shield vs Shadow
+    if (q1 && q1 !== 'no') {
+      // There is an adversary (or user is unsure) -> Shadow or Ghost
+      kit = 'shadow';
+
+      // Ghost threshold: location risk + serious consequence
+      if (q4 === 'yes' || q5 === 'danger') {
+        kit = 'ghost';
+      }
+    }
+
+    let html = '';
+
+    if (kit === 'shield') {
+      html = `
+<h2>Recommended: Shield – Hardened Daily Driver</h2>
+<p>You don’t appear to be facing a targeted adversary. Your risks are mainly <strong>corporate tracking, data harvesting, and general digital exposure</strong> – not life- or liberty-threatening surveillance.</p>
+<p><strong>Shield</strong> is designed for this environment: a hardened, privacy-first phone that still behaves like a normal phone.</p>
+
+<h3>Why Shield fits you</h3>
+<ul>
+  <li>No active adversary trying to monitor your communications.</li>
+  <li>You want stronger privacy than a stock phone.</li>
+  <li>You don’t need to hide where you are when you connect.</li>
+  <li>You still want seamless maps, calls, and apps.</li>
+</ul>
+
+<h3>What Shield does for you</h3>
+<ul>
+  <li>Runs GrapheneOS with tightened security defaults.</li>
+  <li>Reduces tracking from apps, advertisers, and data brokers.</li>
+  <li>Encrypts device storage by default.</li>
+  <li>Cuts down your digital footprint without changing your lifestyle.</li>
+</ul>
+
+<h3>Voice & calling options</h3>
+<p>You can optionally use a <strong>KYC VoIP service</strong> if you’d like fewer call records stored with your telco. This <strong>doesn’t encrypt call content</strong>, but it does move call metadata off the mobile network. For your risk level, non-KYC VoIP is usually unnecessary.</p>
+
+<p><strong>Next:</strong> learn more about the Shield kit and how it compares to Shadow and Ghost.</p>
+`;
+    } else if (kit === 'shadow') {
+      html = `
+<h2>Recommended: Shadow – Identity-Separated Comms Device</h2>
+<p>Your answers show you’re facing an adversary or situation where your <strong>identity, content, or communications</strong> matter if exposed. You don’t currently need full location anonymity, but you do need a safer place to talk, plan, and store sensitive material.</p>
+
+<h3>Why Shadow fits you</h3>
+<ul>
+  <li>There is a specific person, group, or organisation you want protection from, or you’re unsure but concerned.</li>
+  <li>You would face consequences if messages or files were exposed.</li>
+  <li>You need stronger privacy than a normal phone can offer.</li>
+  <li>You don’t yet require high-friction, location-anonymous workflows.</li>
+</ul>
+
+<h3>What Shadow does for you</h3>
+<ul>
+  <li>Protects <strong>what you say</strong> and <strong>who you say it to</strong>.</li>
+  <li>Separates sensitive comms from your day-to-day footprint.</li>
+  <li>Runs a hardened GrapheneOS build with an encrypted comms stack.</li>
+  <li>Can be your daily driver or a dedicated second device.</li>
+</ul>
+
+<h3>Voice & calling options</h3>
+<p>If you need to make calls from this device:</p>
+<ul>
+  <li><strong>KYC VoIP</strong>: easier to use, supports SMS and affordable credit; improves privacy over normal SIM calling <em>but does not encrypt call content</em>. Suitable when being linked to the VoIP account isn’t high risk for you.</li>
+  <li><strong>Non-KYC VoIP</strong>: no ID attached to the account, no SMS, moderate credit cost; best when you want anonymous calling without your name or telco in the loop. Recommended for Shadow users who must have call capability.</li>
+</ul>
+<p>Your encrypted messaging apps are what protect call or chat content – VoIP mainly reduces metadata and identity linkage.</p>
+
+<p><strong>Next:</strong> explore the Shadow kit and how to use it as a safe second phone or hardened daily driver.</p>
+`;
+    } else {
+      html = `
+<h2>Recommended: Ghost – Operational Anonymity Stack</h2>
+<p>Your answers indicate that <strong>where and when your device connects is itself sensitive</strong>. If someone could tie your physical presence to your network activity, you could face serious consequences.</p>
+
+<h3>Why Ghost is required</h3>
+<ul>
+  <li>Location or timing correlation could put you at legal, professional, or physical risk.</li>
+  <li>You may be dealing with capable adversaries (with access to metadata, telco logs, or surveillance).</li>
+  <li>It’s no longer enough to protect just content and identity – your <strong>pattern of use</strong> must also be obscured.</li>
+</ul>
+
+<h3>What Ghost does for you</h3>
+<ul>
+  <li>Takes the SIM out of the phone entirely – all traffic passes through a privacy router.</li>
+  <li>Keeps the handset radio-silent (airplane mode) and USB-tethered.</li>
+  <li>Uses identity rotation, VPN + Tor and traffic padding to resist correlation.</li>
+  <li>Encourages short, deliberate sessions from varied locations instead of always-on presence.</li>
+</ul>
+
+<h3>Voice & calling options</h3>
+<p>Ghost is designed as a message-first system. If you <em>must</em> make calls:</p>
+<ul>
+  <li><strong>Non-KYC VoIP only</strong>, and only when strictly necessary. This keeps your real identity off the account but does <em>not</em> encrypt call content.</li>
+  <li><strong>KYC VoIP is not recommended</strong> for Ghost – it reintroduces identity binding that Ghost is designed to avoid.</li>
+</ul>
+<p>For highly sensitive conversations, end-to-end encrypted voice inside your comms apps is preferred, from short sessions and varied locations.</p>
+
+<p><strong>Next:</strong> read more about the Ghost kit and what day-to-day use looks like at this risk level.</p>
+`;
+    }
+
+    resultEl.innerHTML = html;
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>
