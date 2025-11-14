@@ -8,7 +8,7 @@ permalink: /threat-assessment.html
 
 Find out whether your situation calls for **Shield**, **Shadow** or **Ghost** in around 5–7 minutes.
 
-This assessment gives you a **kit recommendation** based on:
+This assessment gives you a kit recommendation based on:
 - Whether you’re facing a real adversary  
 - How dangerous it would be if your device use was linked to a time and place  
 
@@ -27,22 +27,24 @@ No names, emails, or personal details are collected.
     border-radius: 12px;
     padding: 1.4rem 1.6rem;
     margin-bottom: 1.2rem;
-    display: none;
-  }
-  #threat-assessment-form .ta-section.active {
-    display: block;
   }
   #threat-assessment-form .ta-section h3 {
     margin-top: 0;
     margin-bottom: 0.75rem;
   }
   #threat-assessment-form .ta-question {
-    margin: 0.8rem 0 1rem 0;
-    padding-bottom: 0.55rem;
-    border-bottom: 1px dashed rgba(255,255,255,0.08);
-  }
-  #threat-assessment-form .ta-question:last-child {
+    margin: 0.5rem 0 0.2rem 0;
+    padding-bottom: 0.4rem;
     border-bottom: none;
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  #threat-assessment-form .ta-question.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
   #threat-assessment-form .ta-question-title {
     margin: 0 0 0.35rem 0;
@@ -51,14 +53,37 @@ No names, emails, or personal details are collected.
   #threat-assessment-form small {
     opacity: 0.75;
   }
-  #threat-assessment-form label {
-    display: block;
-    margin: 0.15rem 0;
-    cursor: pointer;
+  #threat-assessment-form .ta-options {
+    margin-top: 0.4rem;
   }
-  #threat-assessment-form input[type="radio"],
-  #threat-assessment-form input[type="checkbox"] {
-    margin-right: 0.35rem;
+  #threat-assessment-form .ta-card {
+    position: relative;
+    display: block;
+    border: 1px solid #444;
+    padding: 0.65rem 0.8rem 0.65rem 0.8rem;
+    margin: 0.25rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    font-size: 0.95rem;
+  }
+  #threat-assessment-form .ta-card span.ta-icon {
+    margin-right: 0.45rem;
+    opacity: 0.9;
+  }
+  #threat-assessment-form .ta-card input[type="radio"],
+  #threat-assessment-form .ta-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #threat-assessment-form .ta-card.selected {
+    background: #151515;
+    border-color: #888;
+    transform: translateY(-1px);
+  }
+  #threat-assessment-form .ta-card:hover {
+    background: #1b1b1b;
   }
   #threat-assessment-form .ta-nav {
     display: flex;
@@ -67,9 +92,9 @@ No names, emails, or personal details are collected.
     margin-top: 1.2rem;
     gap: 0.75rem;
   }
-  #threat-assessment-form .ta-progress {
-    font-size: 0.85rem;
-    opacity: 0.8;
+  #threat-assessment-form .ta-buttons {
+    display: flex;
+    gap: 0.5rem;
   }
   #threat-assessment-form button[type="button"],
   #threat-assessment-form button[type="submit"] {
@@ -89,6 +114,26 @@ No names, emails, or personal details are collected.
     opacity: 0.4;
     cursor: default;
   }
+  #threat-assessment-form .ta-progress-wrapper {
+    flex: 1;
+    text-align: right;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  #threat-assessment-form .ta-progressbar-bg {
+    background: #111;
+    border-radius: 999px;
+    overflow: hidden;
+    height: 6px;
+    margin-top: 0.2rem;
+  }
+  #threat-assessment-form .ta-progressbar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #888, #fff);
+    transition: width 0.25s ease;
+  }
+
   .ta-result {
     max-width: 780px;
     margin: 2rem auto 4rem auto;
@@ -111,18 +156,6 @@ No names, emails, or personal details are collected.
     font-size: 0.9rem;
     opacity: 0.8;
   }
-
-  #threat-assessment-form .ta-question label {
-    display: block;
-    border: 1px solid #444;
-    padding: 0.55rem 0.75rem;
-    margin: 0.2rem 0;
-    border-radius: 8px;
-  }
-  #threat-assessment-form .ta-question label:hover {
-    background: #1b1b1b;
-  }
-
 </style>
 
 ---
@@ -139,276 +172,628 @@ No names, emails, or personal details are collected.
 
 <form id="threat-assessment-form" action="#" method="get">
 
-<div class="ta-section active" data-step="1">
+<div class="ta-section" data-section="1">
   <h3>Section 1 — Threat presence</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="1">
     <p class="ta-question-title">1. Are you facing any adversary who is intentionally trying to identify, monitor, or obtain your communications?</p>
-    <label><input type="radio" name="q1_adversary" value="yes"> Yes</label>
-    <label><input type="radio" name="q1_adversary" value="no"> No</label>
-    <label><input type="radio" name="q1_adversary" value="unsure"> Unsure</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q1_adversary" value="yes">
+        <span class="ta-icon">🎯</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q1_adversary" value="no">
+        <span class="ta-icon">🌐</span> No
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q1_adversary" value="unsure">
+        <span class="ta-icon">❓</span> Unsure
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="2">
     <p class="ta-question-title">2. Who do you believe your adversary could be?</p>
     <small>Select all that apply.</small>
-    <label><input type="checkbox" name="q2_adv[]" value="bigtech"> Data brokers / Big Tech</label>
-    <label><input type="checkbox" name="q2_adv[]" value="stalker"> Stalker / harassing individual</label>
-    <label><input type="checkbox" name="q2_adv[]" value="scammers"> Scammers / hackers</label>
-    <label><input type="checkbox" name="q2_adv[]" value="crime"> Criminal / organised crime</label>
-    <label><input type="checkbox" name="q2_adv[]" value="le_intel"> Law enforcement / intelligence</label>
-    <label><input type="checkbox" name="q2_adv[]" value="employer"> Employer / workplace</label>
-    <label><input type="checkbox" name="q2_adv[]" value="none"> No specific adversary</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="bigtech">
+        <span class="ta-icon">🏢</span> Data brokers / Big Tech
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="stalker">
+        <span class="ta-icon">👤</span> Stalker / harassing individual
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="scammers">
+        <span class="ta-icon">🕵️</span> Scammers / hackers
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="crime">
+        <span class="ta-icon">💀</span> Criminal / organised crime
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="le_intel">
+        <span class="ta-icon">⚖️</span> Law enforcement / intelligence
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="employer">
+        <span class="ta-icon">💼</span> Employer / workplace
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q2_adv[]" value="none">
+        <span class="ta-icon">➖</span> No specific adversary
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="3">
     <p class="ta-question-title">3. Do you believe you are being targeted right now?</p>
-    <label><input type="radio" name="q3_targeted" value="yes"> Yes</label>
-    <label><input type="radio" name="q3_targeted" value="no"> No</label>
-    <label><input type="radio" name="q3_targeted" value="unsure"> Unsure</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q3_targeted" value="yes">
+        <span class="ta-icon">🚨</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q3_targeted" value="no">
+        <span class="ta-icon">✅</span> No
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q3_targeted" value="unsure">
+        <span class="ta-icon">❓</span> Unsure
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="2">
+<div class="ta-section" data-section="2">
   <h3>Section 2 — Location risk (Ghost threshold)</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="4">
     <p class="ta-question-title">
       4. Your communications are protected, but advanced adversaries can still exploit <em>where and when</em> your device connects.
       Would it cause issues if someone knew your device connected at a protest, workplace, or other sensitive location?
     </p>
-    <label><input type="radio" name="q4_location_risk" value="yes"> Yes</label>
-    <label><input type="radio" name="q4_location_risk" value="no"> No</label>
-    <label><input type="radio" name="q4_location_risk" value="unsure"> Unsure</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q4_location_risk" value="yes">
+        <span class="ta-icon">📍</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q4_location_risk" value="no">
+        <span class="ta-icon">🧭</span> No
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q4_location_risk" value="unsure">
+        <span class="ta-icon">❓</span> Unsure
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="5">
     <p class="ta-question-title">5. If your location during device use was exposed, what would the consequence be?</p>
-    <label><input type="radio" name="q5_consequence" value="none"> No real consequence</label>
-    <label><input type="radio" name="q5_consequence" value="mild"> Mild inconvenience or unwanted profiling</label>
-    <label><input type="radio" name="q5_consequence" value="reputation"> Reputation or employment risk</label>
-    <label><input type="radio" name="q5_consequence" value="financial"> Financial loss or legal trouble</label>
-    <label><input type="radio" name="q5_consequence" value="danger"> Physical harm, arrest, or serious danger</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q5_consequence" value="none">
+        <span class="ta-icon">🙂</span> No real consequence
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q5_consequence" value="mild">
+        <span class="ta-icon">😕</span> Mild inconvenience or unwanted profiling
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q5_consequence" value="reputation">
+        <span class="ta-icon">💼</span> Reputation or employment risk
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q5_consequence" value="financial">
+        <span class="ta-icon">💸</span> Financial loss or legal trouble
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q5_consequence" value="danger">
+        <span class="ta-icon">⚠️</span> Physical harm, arrest, or serious danger
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="3">
+<div class="ta-section" data-section="3">
   <h3>Section 3 — Goals &amp; use case</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="6">
     <p class="ta-question-title">6. What is your main privacy/security goal for this device?</p>
-    <label><input type="radio" name="q6_goal" value="privacy"> General privacy</label>
-    <label><input type="radio" name="q6_goal" value="identity"> Protect identity</label>
-    <label><input type="radio" name="q6_goal" value="content"> Protect communication content</label>
-    <label><input type="radio" name="q6_goal" value="location"> Avoid linking device to routine/locations</label>
-    <label><input type="radio" name="q6_goal" value="compartment"> Dedicated second device / compartment</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q6_goal" value="privacy">
+        <span class="ta-icon">🛡️</span> General privacy
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q6_goal" value="identity">
+        <span class="ta-icon">🧑‍💼</span> Protect identity
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q6_goal" value="content">
+        <span class="ta-icon">✉️</span> Protect communication content
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q6_goal" value="location">
+        <span class="ta-icon">📍</span> Avoid linking device to routine/locations
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q6_goal" value="compartment">
+        <span class="ta-icon">📦</span> Dedicated second device / compartment
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="7">
     <p class="ta-question-title">7. How will you use this device?</p>
-    <label><input type="radio" name="q7_use" value="daily"> Daily driver (primary phone)</label>
-    <label><input type="radio" name="q7_use" value="second"> Second device for sensitive comms</label>
-    <label><input type="radio" name="q7_use" value="one_purpose"> Highly compartmentalised one-purpose device</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q7_use" value="daily">
+        <span class="ta-icon">📱</span> Daily driver (primary phone)
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q7_use" value="second">
+        <span class="ta-icon">📲</span> Second device for sensitive comms
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q7_use" value="one_purpose">
+        <span class="ta-icon">🎯</span> Highly compartmentalised one-purpose device
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="8">
     <p class="ta-question-title">8. Do you work in an area that increases your privacy/security risk?</p>
-    <label><input type="radio" name="q8_work" value="yes"> Yes (journalism, activism, legal, finance, government, etc.)</label>
-    <label><input type="radio" name="q8_work" value="no"> No</label>
-    <label><input type="radio" name="q8_work" value="na"> Prefer not to say</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q8_work" value="yes">
+        <span class="ta-icon">📢</span> Yes (journalism, activism, legal, finance, government, etc.)
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q8_work" value="no">
+        <span class="ta-icon">🏠</span> No
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q8_work" value="na">
+        <span class="ta-icon">➖</span> Prefer not to say
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="4">
+<div class="ta-section" data-section="4">
   <h3>Section 4 — Assets &amp; impact</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="9">
     <p class="ta-question-title">9. Which assets matter most to protect?</p>
     <small>Select all that apply.</small>
-    <label><input type="checkbox" name="q9_assets[]" value="identity"> Identity</label>
-    <label><input type="checkbox" name="q9_assets[]" value="location"> Location / movements</label>
-    <label><input type="checkbox" name="q9_assets[]" value="content"> Communication content</label>
-    <label><input type="checkbox" name="q9_assets[]" value="relationships"> Relationships / contacts</label>
-    <label><input type="checkbox" name="q9_assets[]" value="files"> Files, photos, documents</label>
-    <label><input type="checkbox" name="q9_assets[]" value="metadata"> Metadata and patterns</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="checkbox" name="q9_assets[]" value="identity">
+        <span class="ta-icon">🪪</span> Identity
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q9_assets[]" value="location">
+        <span class="ta-icon">📍</span> Location / movements
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q9_assets[]" value="content">
+        <span class="ta-icon">✉️</span> Communication content
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q9_assets[]" value="relationships">
+        <span class="ta-icon">👥</span> Relationships / contacts
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q9_assets[]" value="files">
+        <span class="ta-icon">🗂️</span> Files, photos, documents
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q9_assets[]" value="metadata">
+        <span class="ta-icon">🔍</span> Metadata and patterns
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="10">
     <p class="ta-question-title">10. What would the impact be if these assets were exposed?</p>
-    <label><input type="radio" name="q10_impact" value="embarrassing"> Embarrassing or inconvenient</label>
-    <label><input type="radio" name="q10_impact" value="reputational"> Reputational harm</label>
-    <label><input type="radio" name="q10_impact" value="job"> Job or contract loss</label>
-    <label><input type="radio" name="q10_impact" value="financial"> Financial loss</label>
-    <label><input type="radio" name="q10_impact" value="legal"> Legal consequences</label>
-    <label><input type="radio" name="q10_impact" value="harm"> Physical harm or imprisonment</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q10_impact" value="embarrassing">
+        <span class="ta-icon">😬</span> Embarrassing or inconvenient
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q10_impact" value="reputational">
+        <span class="ta-icon">💼</span> Reputational harm
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q10_impact" value="job">
+        <span class="ta-icon">📉</span> Job or contract loss
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q10_impact" value="financial">
+        <span class="ta-icon">💸</span> Financial loss
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q10_impact" value="legal">
+        <span class="ta-icon">⚖️</span> Legal consequences
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q10_impact" value="harm">
+        <span class="ta-icon">🚨</span> Physical harm or imprisonment
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="11">
     <p class="ta-question-title">11. Do you store or handle sensitive information that could interest an adversary?</p>
-    <label><input type="radio" name="q11_sensitive" value="yes"> Yes</label>
-    <label><input type="radio" name="q11_sensitive" value="no"> No</label>
-    <label><input type="radio" name="q11_sensitive" value="unsure"> Unsure</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q11_sensitive" value="yes">
+        <span class="ta-icon">🗄️</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q11_sensitive" value="no">
+        <span class="ta-icon">➖</span> No
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q11_sensitive" value="unsure">
+        <span class="ta-icon">❓</span> Unsure
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="5">
+<div class="ta-section" data-section="5">
   <h3>Section 5 — Network &amp; device setup</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="12">
     <p class="ta-question-title">12. How do you usually connect to the internet?</p>
     <small>Select all that apply.</small>
-    <label><input type="checkbox" name="q12_net[]" value="public_wifi"> Public Wi-Fi</label>
-    <label><input type="checkbox" name="q12_net[]" value="home_wifi"> Home Wi-Fi</label>
-    <label><input type="checkbox" name="q12_net[]" value="personal_sim"> Personal SIM in my name</label>
-    <label><input type="checkbox" name="q12_net[]" value="shared_net"> Shared family/work network</label>
-    <label><input type="checkbox" name="q12_net[]" value="always_vpn"> Always-on VPN</label>
-    <label><input type="checkbox" name="q12_net[]" value="anon_sim"> Anonymous SIM / data-only eSIM</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="checkbox" name="q12_net[]" value="public_wifi">
+        <span class="ta-icon">📶</span> Public Wi-Fi
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q12_net[]" value="home_wifi">
+        <span class="ta-icon">🏠</span> Home Wi-Fi
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q12_net[]" value="personal_sim">
+        <span class="ta-icon">📡</span> Personal SIM in my name
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q12_net[]" value="shared_net">
+        <span class="ta-icon">👨‍👩‍👧‍👦</span> Shared family/work network
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q12_net[]" value="always_vpn">
+        <span class="ta-icon">🔐</span> Always-on VPN
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q12_net[]" value="anon_sim">
+        <span class="ta-icon">🕵️</span> Anonymous SIM / data-only eSIM
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="13">
     <p class="ta-question-title">13. Which of these behaviours apply to you?</p>
     <small>Select all that apply.</small>
-    <label><input type="checkbox" name="q13_behaviour[]" value="always_on"> Keep phone powered on all day</label>
-    <label><input type="checkbox" name="q13_behaviour[]" value="predictable_locations"> Use device in predictable locations</label>
-    <label><input type="checkbox" name="q13_behaviour[]" value="co_located"> Keep personal and private phone together</label>
-    <label><input type="checkbox" name="q13_behaviour[]" value="scanning_on"> Leave Bluetooth/Wi-Fi scanning on</label>
-    <label><input type="checkbox" name="q13_behaviour[]" value="public_charging"> Charge device in public places</label>
-    <label><input type="checkbox" name="q13_behaviour[]" value="none"> None of these</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="checkbox" name="q13_behaviour[]" value="always_on">
+        <span class="ta-icon">⏱️</span> Keep phone powered on all day
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q13_behaviour[]" value="predictable_locations">
+        <span class="ta-icon">📍</span> Use device in predictable locations
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q13_behaviour[]" value="co_located">
+        <span class="ta-icon">📱📱</span> Keep personal and private phone together
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q13_behaviour[]" value="scanning_on">
+        <span class="ta-icon">📡</span> Leave Bluetooth/Wi-Fi scanning on
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q13_behaviour[]" value="public_charging">
+        <span class="ta-icon">🔌</span> Charge device in public places
+      </label>
+      <label class="ta-card">
+        <input type="checkbox" name="q13_behaviour[]" value="none">
+        <span class="ta-icon">➖</span> None of these
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="14">
     <p class="ta-question-title">14. Does anyone else have access to your devices, even briefly?</p>
-    <label><input type="radio" name="q14_access" value="yes"> Yes</label>
-    <label><input type="radio" name="q14_access" value="no"> No</label>
-    <label><input type="radio" name="q14_access" value="unsure"> Unsure</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q14_access" value="yes">
+        <span class="ta-icon">👥</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q14_access" value="no">
+        <span class="ta-icon">🔒</span> No
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q14_access" value="unsure">
+        <span class="ta-icon">❓</span> Unsure
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="6">
+<div class="ta-section" data-section="6">
   <h3>Section 6 — Technical capability</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="15">
     <p class="ta-question-title">15. How would you rate your technical skill level?</p>
-    <label><input type="radio" name="q15_skill" value="basic"> Basic</label>
-    <label><input type="radio" name="q15_skill" value="intermediate"> Intermediate</label>
-    <label><input type="radio" name="q15_skill" value="advanced"> Advanced</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q15_skill" value="basic">
+        <span class="ta-icon">📗</span> Basic
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q15_skill" value="intermediate">
+        <span class="ta-icon">📘</span> Intermediate
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q15_skill" value="advanced">
+        <span class="ta-icon">📙</span> Advanced
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="16">
     <p class="ta-question-title">16. How confident are you in following OPSEC (operational security) steps if needed?</p>
-    <label><input type="radio" name="q16_opsec" value="low"> Not confident</label>
-    <label><input type="radio" name="q16_opsec" value="medium"> Reasonably confident</label>
-    <label><input type="radio" name="q16_opsec" value="high"> Highly confident / experienced</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q16_opsec" value="low">
+        <span class="ta-icon">🌱</span> Not confident
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q16_opsec" value="medium">
+        <span class="ta-icon">🌿</span> Reasonably confident
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q16_opsec" value="high">
+        <span class="ta-icon">🌳</span> Highly confident / experienced
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="7">
+<div class="ta-section" data-section="7">
   <h3>Section 7 — Communication needs</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="17">
     <p class="ta-question-title">17. Do you need reliable voice calling from this device?</p>
-    <label><input type="radio" name="q17_voice" value="yes_regular"> Yes (regular voice calls)</label>
-    <label><input type="radio" name="q17_voice" value="yes_voip"> Yes (VoIP only is fine)</label>
-    <label><input type="radio" name="q17_voice" value="no"> No (messaging only)</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q17_voice" value="yes_regular">
+        <span class="ta-icon">📞</span> Yes (regular voice calls)
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q17_voice" value="yes_voip">
+        <span class="ta-icon">📲</span> Yes (VoIP only is fine)
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q17_voice" value="no">
+        <span class="ta-icon">💬</span> No (messaging only)
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="18">
     <p class="ta-question-title">18. Do you need SMS capability?</p>
-    <label><input type="radio" name="q18_sms" value="yes"> Yes</label>
-    <label><input type="radio" name="q18_sms" value="no"> No</label>
-    <label><input type="radio" name="q18_sms" value="optional"> Optional / don’t mind switching to VoIP</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q18_sms" value="yes">
+        <span class="ta-icon">📩</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q18_sms" value="no">
+        <span class="ta-icon">❌</span> No</label>
+      <label class="ta-card">
+        <input type="radio" name="q18_sms" value="optional">
+        <span class="ta-icon">♻️</span> Optional / don’t mind switching to VoIP
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="19">
     <p class="ta-question-title">19. Are you comfortable using VoIP apps (internet calling)?</p>
-    <label><input type="radio" name="q19_voip" value="yes"> Yes, happy to use VoIP</label>
-    <label><input type="radio" name="q19_voip" value="yes_nokyc"> Yes, but prefer KYC-free options</label>
-    <label><input type="radio" name="q19_voip" value="unsure"> Unsure</label>
-    <label><input type="radio" name="q19_voip" value="no"> Not comfortable</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q19_voip" value="yes">
+        <span class="ta-icon">📶</span> Yes, happy to use VoIP
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q19_voip" value="yes_nokyc">
+        <span class="ta-icon">🕵️</span> Yes, but prefer KYC-free options
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q19_voip" value="unsure">
+        <span class="ta-icon">❓</span> Unsure
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q19_voip" value="no">
+        <span class="ta-icon">❌</span> Not comfortable
+      </label>
+    </div>
   </div>
 </div>
 
-<div class="ta-section" data-step="8">
+<div class="ta-section" data-section="8">
   <h3>Section 8 — Usability &amp; lifestyle</h3>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="20">
     <p class="ta-question-title">20. How structured is your daily routine?</p>
-    <label><input type="radio" name="q20_routine" value="predictable"> Very predictable</label>
-    <label><input type="radio" name="q20_routine" value="some"> Some routine</label>
-    <label><input type="radio" name="q20_routine" value="unpredictable"> Mostly unpredictable</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q20_routine" value="predictable">
+        <span class="ta-icon">📅</span> Very predictable
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q20_routine" value="some">
+        <span class="ta-icon">📆</span> Some routine
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q20_routine" value="unpredictable">
+        <span class="ta-icon">🎲</span> Mostly unpredictable
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="21">
     <p class="ta-question-title">21. Are you willing to follow simple OPSEC steps (e.g. keeping devices separate, short connection sessions)?</p>
-    <label><input type="radio" name="q21_willing" value="yes"> Yes</label>
-    <label><input type="radio" name="q21_willing" value="maybe"> Maybe</label>
-    <label><input type="radio" name="q21_willing" value="no"> No</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q21_willing" value="yes">
+        <span class="ta-icon">✅</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q21_willing" value="maybe">
+        <span class="ta-icon">🤔</span> Maybe
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q21_willing" value="no">
+        <span class="ta-icon">❌</span> No
+      </label>
+    </div>
   </div>
 
-  <div class="ta-question">
+  <div class="ta-question" data-question="22">
     <p class="ta-question-title">22. Would you tolerate comms-site style usage (short, deliberate sessions) if your situation required it?</p>
-    <label><input type="radio" name="q22_commsite" value="yes"> Yes</label>
-    <label><input type="radio" name="q22_commsite" value="maybe"> Maybe</label>
-    <label><input type="radio" name="q22_commsite" value="no"> No</label>
+    <div class="ta-options">
+      <label class="ta-card">
+        <input type="radio" name="q22_commsite" value="yes">
+        <span class="ta-icon">📡</span> Yes
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q22_commsite" value="maybe">
+        <span class="ta-icon">🤔</span> Maybe
+      </label>
+      <label class="ta-card">
+        <input type="radio" name="q22_commsite" value="no">
+        <span class="ta-icon">❌</span> No
+      </label>
+    </div>
   </div>
 </div>
 
 <div class="ta-nav">
-  <button type="button" id="ta-prev">Back</button>
-  <button type="button" id="ta-next">Next</button>
-  <button type="submit" id="ta-submit">Get my recommendation</button>
-  <div class="ta-progress" id="ta-progress">Step 1 of 8</div>
+  <div class="ta-buttons">
+    <button type="button" id="ta-prev">Back</button>
+    <button type="button" id="ta-next">Next</button>
+    <button type="submit" id="ta-submit">Get my recommendation</button>
+  </div>
+  <div class="ta-progress-wrapper">
+    <div id="ta-progress-text">0% complete</div>
+    <div class="ta-progressbar-bg">
+      <div class="ta-progressbar-fill" id="ta-progressbar-fill"></div>
+    </div>
+  </div>
 </div>
 
 </form>
 
 <div class="ta-note">
-  <p><em>Your answers are processed in your browser. The core kit recommendation follows the logic designed for Shield (low risk), Shadow (medium risk) and Ghost (high risk). Future versions may use more of your answers to further customise wording.</em></p>
+  <p><em>Your answers are processed in your browser. The core kit recommendation follows the logic designed for Shield (low risk), Shadow (medium risk) and Ghost (high risk).</em></p>
 </div>
 
 ## Your results
 
 <div id="ta-result" class="ta-result">
-  <p><em>Work through the sections above and click “Get my recommendation” on the last step to see your result here.</em></p>
+  <p><em>Work through the questions above and click “Get my recommendation” on the last step to see your result here.</em></p>
 </div>
 
 <script>
-// Wizard-style section navigation + simple kit logic
+// Card-select behaviour, one-question-at-a-time wizard and kit logic
 (function() {
   const form = document.getElementById('threat-assessment-form');
   const resultEl = document.getElementById('ta-result');
   if (!form || !resultEl) return;
 
-  const sections = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
-  const prevBtn = document.getElementById('ta-prev');
-  const nextBtn = document.getElementById('ta-next');
+  const questions = Array.prototype.slice.call(form.querySelectorAll('.ta-question'));
+  const sections  = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
+  const prevBtn   = document.getElementById('ta-prev');
+  const nextBtn   = document.getElementById('ta-next');
   const submitBtn = document.getElementById('ta-submit');
-  const progressEl = document.getElementById('ta-progress');
+  const progressText = document.getElementById('ta-progress-text');
+  const progressFill = document.getElementById('ta-progressbar-fill');
 
+  const total = questions.length;
   let current = 0;
-  const total = sections.length;
 
-  function showSection(index) {
-    sections.forEach((sec, i) => {
-      sec.classList.toggle('active', i === index);
+  // Init card-select: clicking a card selects input and toggles "selected" class
+  form.addEventListener('click', function(e) {
+    const card = e.target.closest('.ta-card');
+    if (!card) return;
+
+    const input = card.querySelector('input');
+    if (!input) return;
+
+    if (input.type === 'radio') {
+      const name = input.name;
+      const groupCards = form.querySelectorAll('.ta-card input[name="' + name + '"]');
+      groupCards.forEach(function(inp) {
+        inp.closest('.ta-card').classList.remove('selected');
+      });
+      card.classList.add('selected');
+      input.checked = true;
+    } else if (input.type === 'checkbox') {
+      const selected = card.classList.toggle('selected');
+      input.checked = selected;
+    }
+  });
+
+  function showQuestion(index) {
+    questions.forEach(function(q) {
+      q.classList.remove('active');
+    });
+    sections.forEach(function(sec) {
+      sec.style.display = 'none';
     });
 
-    if (progressEl) {
-      progressEl.textContent = 'Step ' + (index + 1) + ' of ' + total;
+    const q = questions[index];
+    if (!q) return;
+    q.classList.add('active');
+
+    const parentSection = q.closest('.ta-section');
+    if (parentSection) {
+      parentSection.style.display = 'block';
     }
 
     if (prevBtn) prevBtn.disabled = index === 0;
     if (nextBtn) nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
     if (submitBtn) submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
 
+    const pct = Math.round(((index + 1) / total) * 100);
+    if (progressText) progressText.textContent = pct + '% complete';
+    if (progressFill) progressFill.style.width = pct + '%';
+
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function val(name) {
+    const el = form.querySelector('[name="' + name + '"]:checked');
+    return el ? el.value : null;
   }
 
   if (prevBtn) {
     prevBtn.addEventListener('click', function() {
       if (current > 0) {
         current -= 1;
-        showSection(current);
+        showQuestion(current);
       }
     });
   }
@@ -417,17 +802,13 @@ No names, emails, or personal details are collected.
     nextBtn.addEventListener('click', function() {
       if (current < total - 1) {
         current += 1;
-        showSection(current);
+        showQuestion(current);
       }
     });
   }
 
-  showSection(current);
-
-  function val(name) {
-    const el = form.querySelector('[name="' + name + '"]:checked');
-    return el ? el.value : null;
-  }
+  // Start at first question
+  showQuestion(current);
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
