@@ -1,4 +1,24 @@
 ---
+
+<style>
+.ta-question label {
+  display:block;
+  border:1px solid #444;
+  padding:10px;
+  margin:6px 0;
+  border-radius:8px;
+  cursor:pointer;
+}
+.ta-question input[type=radio],
+.ta-question input[type=checkbox] { 
+  margin-right:8px;
+}
+.ta-question label:hover {
+  background:#1b1b1b;
+}
+.ta-question input:checked + span { font-weight:bold; }
+</style>
+
 layout: default
 title: Threat Assessment
 permalink: /threat-assessment.html
