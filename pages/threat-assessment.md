@@ -23,10 +23,12 @@ No names, emails, or personal details are collected.
     line-height: 1.6;
   }
   #threat-assessment-form .ta-section {
-    border: 1px solid #333;
-    border-radius: 12px;
+    border: 1px solid #0f7468;
+    border-radius: 16px;
     padding: 1.4rem 1.6rem;
     margin-bottom: 1.2rem;
+    background: #1eb6a6;
+    color: #003132;
   }
   #threat-assessment-form .ta-section h3 {
     margin-top: 0;
@@ -60,7 +62,7 @@ No names, emails, or personal details are collected.
     position: relative;
     display: block;
     border: 1px solid #0f7468;
-    background: #1eb6a6;
+    background: #071b1b;
     padding: 0.75rem 0.9rem 0.75rem 0.9rem;
     margin: 0.45rem 0;
     border-radius: 999px;
@@ -68,6 +70,7 @@ No names, emails, or personal details are collected.
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
     font-size: 0.95rem;
     text-align: center;
+    color: #f4f9f8;
   }
   #threat-assessment-form .ta-card span.ta-icon {
     margin-right: 0.5rem;
@@ -80,8 +83,8 @@ No names, emails, or personal details are collected.
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #12a394;
-    border-color: #0f7468;
+    background: #0f7468;
+    border-color: #1eb6a6;
     transform: translateY(-1px);
     box-shadow: 0 0 0 2px #021614;
   }
