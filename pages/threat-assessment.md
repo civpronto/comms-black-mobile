@@ -59,17 +59,18 @@ No names, emails, or personal details are collected.
   #threat-assessment-form .ta-card {
     position: relative;
     display: block;
-    border: 1px solid #444;
-    padding: 0.65rem 0.8rem 0.65rem 0.8rem;
-    margin: 0.25rem 0;
-    border-radius: 10px;
+    border: 1px solid #15857a;
+    background: rgba(21,133,122,0.08);
+    padding: 0.75rem 0.9rem 0.75rem 0.9rem;
+    margin: 0.35rem 0;
+    border-radius: 999px;
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
     font-size: 0.95rem;
   }
   #threat-assessment-form .ta-card span.ta-icon {
-    margin-right: 0.45rem;
-    opacity: 0.9;
+    margin-right: 0.6rem;
+    opacity: 0.95;
   }
   #threat-assessment-form .ta-card input[type="radio"],
   #threat-assessment-form .ta-card input[type="checkbox"] {
@@ -78,12 +79,13 @@ No names, emails, or personal details are collected.
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #151515;
-    border-color: #888;
+    background: #15857a;
+    border-color: #19a08b;
     transform: translateY(-1px);
+    box-shadow: 0 0 0 1px #0b4841;
   }
   #threat-assessment-form .ta-card:hover {
-    background: #1b1b1b;
+    background: rgba(21,133,122,0.22);
   }
   #threat-assessment-form .ta-nav {
     display: flex;
@@ -730,6 +732,7 @@ No names, emails, or personal details are collected.
   const submitBtn = document.getElementById('ta-submit');
   const progressText = document.getElementById('ta-progress-text');
   const progressFill = document.getElementById('ta-progressbar-fill');
+  const nav = document.querySelector('.ta-nav');
 
   const total = questions.length;
   let current = 0;
@@ -771,6 +774,11 @@ No names, emails, or personal details are collected.
     const parentSection = q.closest('.ta-section');
     if (parentSection) {
       parentSection.style.display = 'block';
+    }
+
+    // Move nav into the active question so controls sit inside the tile
+    if (nav && q.contains(nav) === false) {
+      q.appendChild(nav);
     }
 
     if (prevBtn) prevBtn.disabled = index === 0;
