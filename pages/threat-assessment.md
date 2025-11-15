@@ -610,13 +610,16 @@ permalink: /threat-assessment.html
 /* Progress bar spans full background tile */
 .ta-progress{
   width:100%;
-  max-width:none;     /* REMOVE width cap */
-  margin-inline:0;    /* Fill entire tile */
+  max-width:none;
+  margin-inline:0;
   margin-bottom:1.5rem;
   padding-bottom:0.75rem;
-  background:var(--card);
+
+  /* MATCH Armoury tile background */
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+
   box-shadow:none;
-  transition:background .15s ease-out;
   position:sticky;
   top:var(--ta-sticky-offset);
   z-index:5;
@@ -777,13 +780,14 @@ permalink: /threat-assessment.html
 
 /* Button as a pill sized to its text */
 .ta-actions .btn{
-  align-self:flex-start;
+  align-self:center;     /* center the button */
   width:auto;
   display:inline-flex;
   justify-content:center;
   padding:.6rem 1.8rem;
   border-radius:999px;
 }
+
 .ta-error{
   color:#ff9b9b;
   font-size:.9rem;
