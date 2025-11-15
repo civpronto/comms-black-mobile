@@ -599,12 +599,8 @@ permalink: /threat-assessment.html
   flex-direction:column;
   align-items:center;
 
-  /* Darker, accent-tinted background just for this page’s card */
-  background:linear-gradient(
-    145deg,
-    rgba(0,0,0,.96),
-    rgba(30,182,166,.22)
-  );
+  /* Consistent accent-tinted background top-to-bottom */
+  background:rgba(30,182,166,.22);
 
   /* Extra depth at the bottom so it doesn’t look chopped off */
   padding-bottom:3rem;
