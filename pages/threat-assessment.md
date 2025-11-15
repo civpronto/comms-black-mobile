@@ -600,18 +600,18 @@ permalink: /threat-assessment.html
   align-items:center;
 }
 
-/* Progress, form, and result all share the same centred width */
-.ta-progress,
+/* Progress, form, and result widths */
 .ta-form,
 .ta-result{
   width:100%;
   max-width:960px;
 }
 
-/* Sticky progress bar under the site header */
+/* Progress bar spans full card width (no max-width cap) */
 .ta-progress{
+  width:100%;
   margin-bottom:1.5rem;
-  padding:0.5rem 0 0.75rem;
+  padding-bottom:0.75rem;
   background:var(--card);
   box-shadow:none;
   transition:background .15s ease-out;
@@ -624,6 +624,7 @@ permalink: /threat-assessment.html
   background:var(--card);
   box-shadow:none;
 }
+
 
 /* Progress header + track */
 .ta-progress-header{
