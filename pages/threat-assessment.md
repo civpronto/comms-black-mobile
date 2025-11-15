@@ -587,7 +587,7 @@ permalink: /threat-assessment.html
 
 /* Global sticky offset so layout + JS/scroll behavior stay in sync */
 :root{
-  --ta-sticky-offset: 7rem; /* was 5rem */
+  --ta-sticky-offset: 4rem; /* approx header height, no visible gap */
 }
 
 /* Card is now just a flex container to centre inner content */
@@ -677,8 +677,8 @@ permalink: /threat-assessment.html
   background:var(--card);
   box-shadow:0 4px 12px rgba(0,0,0,.22);
 
-  /* Make auto-scroll respect the sticky header + progress bar */
-  scroll-margin-top:calc(var(--ta-sticky-offset) + 1rem);
+  /* More space so titles never sit under header + progress */
+  scroll-margin-top:calc(var(--ta-sticky-offset) + 3.5rem);
 }
 .ta-question-title{
   margin:0 0 .6rem;
