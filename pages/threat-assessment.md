@@ -585,21 +585,27 @@ permalink: /threat-assessment.html
 <style>
 /* Threat Assessment — scoped styles using existing theme variables */
 
-/* Card uses normal card width, centred */
+/* Global sticky offset so layout + JS/scroll behavior stay in sync */
+:root{
+  --ta-sticky-offset: 5rem; /* adjust if your header is taller/shorter */
+}
+
+/* Card is now just a flex container to centre inner content */
 .ta-card{
   margin-top:1.5rem;
   position:relative;
   overflow:visible;
-  max-width: 860px;      /* adjust this up/down if you want tighter/wider */
-  margin-left:auto;
-  margin-right:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-/* Progress, form, and result just fill the card */
+/* Progress, form, and result all share the same centred width */
 .ta-progress,
 .ta-form,
 .ta-result{
   width:100%;
+  max-width:960px;
 }
 
 /* Progress bar base style (no standalone tile feel) */
@@ -608,6 +614,11 @@ permalink: /threat-assessment.html
   padding-bottom:0.75rem;
   background:transparent;
   transition:background .15s ease-out;
+
+  /* Make it persist while scrolling */
+  position:sticky;
+  top:var(--ta-sticky-offset);
+  z-index:5;
 }
 
 /* Progress header + track */
@@ -659,6 +670,9 @@ permalink: /threat-assessment.html
   border-radius:1rem;
   background:var(--card);
   box-shadow:0 4px 12px rgba(0,0,0,.22);
+
+  /* Make auto-scroll respect the sticky header + progress bar */
+  scroll-margin-top:calc(var(--ta-sticky-offset) + 1rem);
 }
 .ta-question-title{
   margin:0 0 .6rem;
@@ -814,10 +828,6 @@ permalink: /threat-assessment.html
   const submitBtn = document.getElementById('ta-submit');
   const resultEl = document.getElementById('ta-result');
 
-  const taCard = document.querySelector('.ta-card');
-  const taProgress = document.querySelector('.ta-progress');
-  let progressPlaceholder = null;
-
   if(!form) return;
 
   /* ---------- Progress percentage ---------- */
@@ -849,15 +859,7 @@ permalink: /threat-assessment.html
     }
   }
 
-  /* Helper: how far down to scroll so the next question isn't cut off */
- function getScrollOffset(){
-  const header = document.querySelector('header');
-  const headerHeight = header ? header.getBoundingClientRect().height : 0;
-  const extraMargin = 24; // a little breathing space
-  return headerHeight + extraMargin;
-}
-
-    /* ---------- Change handler + smooth auto-scroll ---------- */
+  /* ---------- Change handler + smooth auto-scroll ---------- */
   form.addEventListener('change', function(e){
     const target = e.target;
     if(!target.matches('input[type="radio"], input[type="checkbox"]')) return;
@@ -877,10 +879,8 @@ permalink: /threat-assessment.html
           const nextQ = questions[idx + 1];
 
           setTimeout(() => {
-            const rect = nextQ.getBoundingClientRect();
-            const offset = getScrollOffset();
-            const targetY = rect.top + window.scrollY - offset;
-            window.scrollTo({ top: targetY, behavior: 'smooth' });
+            // scroll-margin-top on .ta-question handles the offset
+            nextQ.scrollIntoView({ behavior:'smooth', block:'start' });
           }, 160);
         }
       }
@@ -1294,11 +1294,10 @@ permalink: /threat-assessment.html
     if(incomplete){
       const title = incomplete.querySelector('.ta-question-title');
       errorEl.textContent = 'Please answer all questions to generate an accurate Threat Profile.';
-      const offset = getScrollOffset();
+
       const targetEl = title || incomplete;
-      const rect = targetEl.getBoundingClientRect();
-      const targetY = rect.top + window.scrollY - offset;
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
+      // scroll-margin-top on .ta-question will handle the sticky offset
+      targetEl.scrollIntoView({ behavior:'smooth', block:'start' });
       return;
     }
 
