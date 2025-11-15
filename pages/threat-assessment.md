@@ -18,9 +18,8 @@ permalink: /threat-assessment.html
     <div class="ta-progress-track">
       <div id="ta-progress-bar"></div>
     </div>
-    <p class="ta-progress-note" id="ta-progress-note">
-      Answer each question to unlock your Threat Profile.
-    </p>
+    <!-- note element kept for JS, but visually hidden -->
+    <p class="ta-progress-note" id="ta-progress-note"></p>
   </div>
 
   <form id="ta-form" class="ta-form" novalidate>
@@ -592,18 +591,18 @@ permalink: /threat-assessment.html
   overflow:visible;
 }
 
-/* Progress bar (base – now clean, no gradient) */
+/* Progress bar (base – clean, no background strip) */
 .ta-progress{
   margin-bottom:1.5rem;
   padding-bottom:0.75rem;
-  background:none;
+  background:transparent;
   transition:box-shadow .15s ease-out, background .15s ease-out;
 }
 
 /* When JS pins it under the header */
 .ta-progress-fixed{
-  background:var(--bg, transparent);
-  box-shadow:none; /* remove awkward shadow */
+  background:transparent !important; /* ensure no dark band */
+  box-shadow:none !important;       /* no shadow */
 }
 
 .ta-progress-header{
@@ -632,7 +631,10 @@ permalink: /threat-assessment.html
   background:var(--accent);
   transition:width .25s ease-out;
 }
+
+/* hide progress note text entirely */
 .ta-progress-note{
+  display:none;
   margin-top:.35rem;
   font-size:.85rem;
   color:var(--muted);
@@ -829,13 +831,13 @@ permalink: /threat-assessment.html
     bar.style.width = pct + '%';
     pctLabel.textContent = pct + '%';
 
-    if(answered === 0){
-      note.textContent = 'Answer each question to unlock your Threat Profile.';
-    }else if(answered < totalQuestions){
-      // Keep the same simple prompt (remove "Progress saved..." text)
-      note.textContent = 'Answer each question to unlock your Threat Profile.';
-    }else{
-      note.textContent = 'All questions answered. Generate your Threat Profile below.';
+    // We keep note hidden via CSS, but avoid leaving old text around
+    if(note){
+      if(answered === totalQuestions){
+        note.textContent = 'All questions answered. Generate your Threat Profile below.';
+      } else {
+        note.textContent = '';
+      }
     }
   }
 
