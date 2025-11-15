@@ -608,17 +608,23 @@ permalink: /threat-assessment.html
   max-width:960px;
 }
 
-/* Progress bar base style (no standalone tile feel) */
 .ta-progress{
   margin-bottom:1.5rem;
   padding-bottom:0.75rem;
-  background:transparent;
-  transition:background .15s ease-out;
 
-  /* Make it persist while scrolling */
+  /* NEW: solid background so text doesn't bleed through */
+  background:var(--card);
+  box-shadow:none; /* or a tiny shadow if you prefer */
+
+  transition:background .15s ease-out;
   position:sticky;
   top:var(--ta-sticky-offset);
   z-index:5;
+}
+
+:root[data-theme="light"] .ta-progress{
+  background:var(--card);
+  box-shadow:none;
 }
 
 /* Progress header + track */
