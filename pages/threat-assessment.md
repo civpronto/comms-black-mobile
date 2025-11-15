@@ -25,9 +25,6 @@ permalink: /threat-assessment.html
 
   <form id="ta-form" class="ta-form" novalidate>
     
-    <!-- SECTION 1 — THREAT PRESENCE -->
-    <h2 class="ta-section-title">Section 1 — Threat Presence</h2>
-
     <!-- Q1 -->
     <div class="ta-question" data-question-id="1">
       <h3 class="ta-question-title">
@@ -107,9 +104,6 @@ permalink: /threat-assessment.html
       </div>
     </div>
 
-    <!-- SECTION 2 — LOCATION RISK -->
-    <h2 class="ta-section-title">Section 2 — Location Risk (Ghost Threshold)</h2>
-
     <!-- Q4 -->
     <div class="ta-question" data-question-id="4">
       <h3 class="ta-question-title">
@@ -160,9 +154,6 @@ permalink: /threat-assessment.html
         </label>
       </div>
     </div>
-
-    <!-- SECTION 3 — USER GOALS & USE CASE -->
-    <h2 class="ta-section-title">Section 3 — User Goals &amp; Use Case</h2>
 
     <!-- Q6 -->
     <div class="ta-question" data-question-id="6">
@@ -234,9 +225,6 @@ permalink: /threat-assessment.html
         </label>
       </div>
     </div>
-
-    <!-- SECTION 4 — ASSETS & IMPACT -->
-    <h2 class="ta-section-title">Section 4 — Assets &amp; Impact</h2>
 
     <!-- Q9 -->
     <div class="ta-question" data-question-id="9">
@@ -325,9 +313,6 @@ permalink: /threat-assessment.html
       </div>
     </div>
 
-    <!-- SECTION 5 — NETWORK & DEVICE SETUP -->
-    <h2 class="ta-section-title">Section 5 — Network &amp; Device Setup</h2>
-
     <!-- Q12 -->
     <div class="ta-question" data-question-id="12">
       <h3 class="ta-question-title">
@@ -415,9 +400,6 @@ permalink: /threat-assessment.html
       </div>
     </div>
 
-    <!-- SECTION 6 — TECHNICAL CAPABILITY -->
-    <h2 class="ta-section-title">Section 6 — Technical Capability</h2>
-
     <!-- Q15 -->
     <div class="ta-question" data-question-id="15">
       <h3 class="ta-question-title">
@@ -459,9 +441,6 @@ permalink: /threat-assessment.html
         </label>
       </div>
     </div>
-
-    <!-- SECTION 7 — COMMUNICATION REQUIREMENTS -->
-    <h2 class="ta-section-title">Section 7 — Communication Requirements</h2>
 
     <!-- Q17 -->
     <div class="ta-question" data-question-id="17">
@@ -529,9 +508,6 @@ permalink: /threat-assessment.html
         </label>
       </div>
     </div>
-
-    <!-- SECTION 8 — USABILITY & LIFESTYLE -->
-    <h2 class="ta-section-title">Section 8 — Usability &amp; Lifestyle</h2>
 
     <!-- Q20 -->
     <div class="ta-question" data-question-id="20">
@@ -613,20 +589,23 @@ permalink: /threat-assessment.html
 .ta-card{
   margin-top:1.5rem;
   position:relative;
-  overflow:visible; /* allow sticky children */
+  overflow:visible;
 }
 
-/* Sticky progress bar */
+/* Progress bar (base) */
 .ta-progress{
   margin-bottom:1.5rem;
-  position:sticky;
-  top:0;
-  z-index:10;
   padding-bottom:0.75rem;
   background:linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0));
+  transition:box-shadow .15s ease-out, background .15s ease-out;
 }
 :root[data-theme="light"] .ta-progress{
   background:linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(255,255,255,0));
+}
+
+/* When JS pins it under the header */
+.ta-progress-fixed{
+  box-shadow:0 10px 24px rgba(0,0,0,.45);
 }
 
 .ta-progress-header{
@@ -665,15 +644,6 @@ permalink: /threat-assessment.html
   display:flex;
   flex-direction:column;
   gap:1rem;
-}
-
-.ta-section-title{
-  margin-top:1.5rem;
-  margin-bottom:.25rem;
-  font-size:1.05rem;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  color:var(--muted);
 }
 
 .ta-question{
@@ -835,8 +805,13 @@ permalink: /threat-assessment.html
   const submitBtn = document.getElementById('ta-submit');
   const resultEl = document.getElementById('ta-result');
 
+  const taCard = document.querySelector('.ta-card');
+  const taProgress = document.querySelector('.ta-progress');
+  let progressPlaceholder = null;
+
   if(!form) return;
 
+  /* ---------- Progress percentage ---------- */
   function countAnswered(){
     let count = 0;
     questions.forEach(q => {
@@ -865,7 +840,54 @@ permalink: /threat-assessment.html
     }
   }
 
-  // Change handler with smoother auto-scroll for radio questions
+  /* ---------- Sticky progress under header ---------- */
+  function updateProgressSticky(){
+    if(!taCard || !taProgress) return;
+
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+
+    const cardRect = taCard.getBoundingClientRect();
+    const progRect = taProgress.getBoundingClientRect();
+
+    // Fix while the card is in view and we've scrolled past its top
+    const shouldFix =
+      cardRect.top < headerHeight &&
+      cardRect.bottom > headerHeight + progRect.height;
+
+    if(shouldFix){
+      // Create placeholder to avoid layout jump
+      if(!progressPlaceholder){
+        progressPlaceholder = document.createElement('div');
+        progressPlaceholder.style.height = progRect.height + 'px';
+        taProgress.parentNode.insertBefore(progressPlaceholder, taProgress);
+      }
+      const cardRectNow = taCard.getBoundingClientRect();
+      taProgress.classList.add('ta-progress-fixed');
+
+      taProgress.style.position = 'fixed';
+      taProgress.style.top = (headerHeight + 4) + 'px';
+      taProgress.style.left = cardRectNow.left + 'px';
+      taProgress.style.width = cardRectNow.width + 'px';
+      taProgress.style.zIndex = 20;
+    }else{
+      if(progressPlaceholder){
+        progressPlaceholder.remove();
+        progressPlaceholder = null;
+      }
+      taProgress.classList.remove('ta-progress-fixed');
+      taProgress.style.position = '';
+      taProgress.style.top = '';
+      taProgress.style.left = '';
+      taProgress.style.width = '';
+      taProgress.style.zIndex = '';
+    }
+  }
+
+  window.addEventListener('scroll', updateProgressSticky);
+  window.addEventListener('resize', updateProgressSticky);
+
+  /* ---------- Change handler + smooth auto-scroll ---------- */
   form.addEventListener('change', function(e){
     const target = e.target;
     if(!target.matches('input[type="radio"], input[type="checkbox"]')) return;
@@ -886,10 +908,9 @@ permalink: /threat-assessment.html
         if(idx > -1 && idx < questions.length - 1){
           const nextQ = questions[idx + 1];
 
-          // Small delay so the checked state + progress bar update feel smooth
           setTimeout(() => {
             const rect = nextQ.getBoundingClientRect();
-            const offset = 120; // adjust if you want more/less space above
+            const offset = 120; // space under header + breathing room
             const targetY = rect.top + window.scrollY - offset;
             window.scrollTo({ top: targetY, behavior: 'smooth' });
           }, 160);
@@ -898,6 +919,7 @@ permalink: /threat-assessment.html
     }
   });
 
+  /* ---------- Helpers for reading answers ---------- */
   function getRadio(name){
     const el = form.querySelector('input[name="'+name+'"]:checked');
     return el ? el.value : null;
@@ -906,6 +928,7 @@ permalink: /threat-assessment.html
     return Array.from(form.querySelectorAll('input[name="'+name+'"]:checked')).map(i => i.value);
   }
 
+  /* ---------- Core kit logic ---------- */
   function inferKit(){
     const q1 = getRadio('q1');
     const q4 = getRadio('q4');
@@ -1004,6 +1027,7 @@ permalink: /threat-assessment.html
     return list.map(v => map[v]).filter(Boolean);
   }
 
+  /* ---------- Output builders (Shield / Shadow / Ghost) ---------- */
   function buildShield(answers){
     const assets = mapAssets(answers.q9 || []);
     const impact = describeImpact(answers.q10);
@@ -1293,6 +1317,7 @@ permalink: /threat-assessment.html
     resultEl.scrollIntoView({behavior:'smooth', block:'start'});
   }
 
+  /* ---------- Submit handler ---------- */
   submitBtn.addEventListener('click', function(){
     errorEl.textContent = '';
 
@@ -1322,7 +1347,8 @@ permalink: /threat-assessment.html
     }
   });
 
-  // Initialise progress on load
+  // Initialise on load
   updateProgress();
+  updateProgressSticky();
 })();
 </script>
