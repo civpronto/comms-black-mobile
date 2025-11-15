@@ -682,6 +682,7 @@ permalink: /threat-assessment.html
 .ta-question-title{
   margin:0 0 .6rem;
   font-size:1rem;
+  text-align:center;          /* NEW: center question text */
 }
 .ta-sub{
   font-size:.85rem;
@@ -692,6 +693,7 @@ permalink: /threat-assessment.html
   display:flex;
   flex-wrap:wrap;
   gap:.5rem;
+  justify-content:center;     /* NEW: center the row of pills in the card */
 }
 
 /* Answer tiles – shrink-wrap to content */
@@ -716,7 +718,9 @@ permalink: /threat-assessment.html
   font-size:.9rem;
   display:flex;
   align-items:center;
+  justify-content:center;     /* NEW: center icon + text in the pill */
   gap:.35rem;
+  text-align:center;          /* NEW: center multi-line text */
   transition:background .15s ease-out, border-color .15s ease-out, box-shadow .15s ease-out, transform .08s ease-out;
   user-select:none;
   white-space:normal;
