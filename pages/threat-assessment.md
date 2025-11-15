@@ -614,9 +614,19 @@ permalink: /threat-assessment.html
   margin-top:1.5rem;
 }
 
+/* Sticky progress bar */
 .ta-progress{
   margin-bottom:1.5rem;
+  position:sticky;
+  top:0.75rem;
+  z-index:10;
+  padding-bottom:0.75rem;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0));
 }
+:root[data-theme="light"] .ta-progress{
+  background:linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(255,255,255,0));
+}
+
 .ta-progress-header{
   display:flex;
   align-items:center;
@@ -685,10 +695,11 @@ permalink: /threat-assessment.html
   gap:.5rem;
 }
 
+/* Answer tiles – shrink-wrap to content */
 .ta-option{
   position:relative;
   display:inline-flex;
-  flex: 1 1 220px;
+  flex:0 0 auto;
   max-width:100%;
   cursor:pointer;
 }
@@ -698,7 +709,7 @@ permalink: /threat-assessment.html
   pointer-events:none;
 }
 .ta-option-inner{
-  width:100%;
+  width:auto;
   padding:.55rem .75rem;
   border-radius:.9rem;
   border:1px solid rgba(255,255,255,.07);
@@ -709,6 +720,7 @@ permalink: /threat-assessment.html
   gap:.35rem;
   transition:background .15s ease-out, border-color .15s ease-out, box-shadow .15s ease-out, transform .08s ease-out;
   user-select:none;
+  white-space:normal;
 }
 :root[data-theme="light"] .ta-option-inner{
   background:rgba(255,255,255,.65);
@@ -851,11 +863,31 @@ permalink: /threat-assessment.html
     }
   }
 
+  // Change handler with auto-scroll for radio questions
   form.addEventListener('change', function(e){
     const target = e.target;
-    if(target.matches('input[type="radio"], input[type="checkbox"]')){
-      errorEl.textContent = '';
-      updateProgress();
+    if(!target.matches('input[type="radio"], input[type="checkbox"]')) return;
+
+    errorEl.textContent = '';
+    updateProgress();
+
+    // Only auto-scroll on radio (single-choice) questions
+    if(target.type === 'radio'){
+      const qEl = target.closest('.ta-question');
+      if(!qEl) return;
+
+      // Only scroll the first time this question is answered
+      if(!qEl.dataset.answered){
+        qEl.dataset.answered = 'true';
+
+        const idx = questions.indexOf(qEl);
+        if(idx > -1 && idx < questions.length - 1){
+          const nextQ = questions[idx + 1];
+          setTimeout(() => {
+            nextQ.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 160);
+        }
+      }
     }
   });
 
