@@ -607,8 +607,20 @@ permalink: /threat-assessment.html
   /* keep your padding */
   padding-bottom:3rem;
 }
-/* Progress, form, and result widths */
-.ta-progress,
+/* Progress bar spans full background tile */
+.ta-progress{
+  width:100%;
+  max-width:none;     /* REMOVE width cap */
+  margin-inline:0;    /* Fill entire tile */
+  margin-bottom:1.5rem;
+  padding-bottom:0.75rem;
+  background:var(--card);
+  box-shadow:none;
+  transition:background .15s ease-out;
+  position:sticky;
+  top:var(--ta-sticky-offset);
+  z-index:5;
+}
 .ta-form,
 .ta-result{
   width:100%;
@@ -760,6 +772,7 @@ permalink: /threat-assessment.html
   display:flex;
   flex-direction:column;
   gap:.4rem;
+  align-items:center;   /* NEW: center contents */
 }
 
 /* Button as a pill sized to its text */
