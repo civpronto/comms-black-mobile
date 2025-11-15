@@ -51,6 +51,8 @@ permalink: /threat-assessment.html
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
+    text-align: center;
   }
   #threat-assessment-form .ta-card {
     position: relative;
@@ -83,7 +85,7 @@ permalink: /threat-assessment.html
     transform: translateY(-1px);
   }
   #threat-assessment-form .ta-card:hover {
-    background: #181818;
+    background: inherit;
   }
   #threat-assessment-form .ta-nav {
     display: flex;
