@@ -6,16 +6,6 @@ permalink: /threat-assessment.html
 
 # Threat Assessment
 
-Find out whether your situation calls for **Shield**, **Shadow** or **Ghost** in around 5–7 minutes.
-
-This assessment gives you a kit recommendation based on:
-- Whether you’re facing a real adversary  
-- How dangerous it would be if your device use was linked to a time and place  
-
-No names, emails, or personal details are collected.
-
-<p style="text-align:center"><small>Last updated: 14 Nov 2025</small></p>
-
 <style>
   #threat-assessment-form {
     max-width: 780px;
@@ -29,6 +19,8 @@ No names, emails, or personal details are collected.
     margin-bottom: 1.2rem;
     background: #021616;
     color: #f4f9f8;
+    height: 420px;
+    overflow-y: auto;
   }
   #threat-assessment-form .ta-section h3 {
     margin-top: 0;
@@ -57,23 +49,20 @@ No names, emails, or personal details are collected.
   }
   #threat-assessment-form .ta-options {
     margin-top: 0.4rem;
-    text-align: center;
   }
   #threat-assessment-form .ta-card {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #0f7468;
-    background: #1eb6a6;
-    padding: 0.5rem 0.9rem;
-    margin: 0.25rem 0.4rem;
-    border-radius: 999px;
+    display: block;
+    border: 1px solid #083434;
+    background: #021616;
+    padding: 0.6rem 0.9rem;
+    margin: 0.35rem 0;
+    border-radius: 14px;
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
     font-size: 0.95rem;
-    text-align: center;
-    color: #003132;
+    text-align: left;
+    color: #f4f9f8;
   }
   #threat-assessment-form .ta-card span.ta-icon {
     margin-right: 0.5rem;
@@ -86,14 +75,13 @@ No names, emails, or personal details are collected.
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #12a394;
+    background: #06302c;
     border-color: #0f7468;
     transform: translateY(-1px);
-    box-shadow: 0 0 0 2px #021614;
-    color: #001b1a;
+    box-shadow: 0 0 0 2px #0f7468;
   }
   #threat-assessment-form .ta-card:hover {
-    background: #3fd3c3;
+    background: #041f1d;
   }
   #threat-assessment-form .ta-nav {
     display: flex;
@@ -111,15 +99,15 @@ No names, emails, or personal details are collected.
     padding: 0.45rem 1.2rem;
     border-radius: 999px;
     border: 1px solid #0f7468;
-    background: #1eb6a6;
+    background: #0f7468;
     cursor: pointer;
     font-weight: 600;
     font-size: 0.9rem;
-    color: #003132;
+    color: #f4f9f8;
   }
   #threat-assessment-form button[type="button"]:hover,
   #threat-assessment-form button[type="submit"]:hover {
-    background: #3fd3c3;
+    background: #15857a;
   }
   #threat-assessment-form button[disabled] {
     opacity: 0.4;
@@ -168,18 +156,6 @@ No names, emails, or personal details are collected.
     opacity: 0.8;
   }
 </style>
-
----
-
-## Quick kit overview
-
-- **Shield** – Hardened daily driver for people with **no active adversary**, but who want out of the default tracking ecosystem.  
-- **Shadow** – Identity-separated comms device for people with a **real adversary or situation** where content and identity matter.  
-- **Ghost** – Operational anonymity stack for people who could face **serious consequences** if their device can be tied to a time and place.
-
----
-
-> ⏱️ **Time:** 5–7 minutes &nbsp;&nbsp; 🧾 **No signup** &nbsp;&nbsp; 🔐 **No identifying information**
 
 <form id="threat-assessment-form" action="#" method="get">
 
