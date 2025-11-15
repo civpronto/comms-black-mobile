@@ -770,6 +770,9 @@ permalink: /threat-assessment.html
   background:var(--card);
   box-shadow:0 8px 24px rgba(0,0,0,.5);
   border:1px solid rgba(255,255,255,.08);
+
+  /* NEW: make auto-scroll land the result below header + progress bar */
+  scroll-margin-top:calc(var(--ta-sticky-offset) + 3.5rem);
 }
 .ta-hidden{display:none;}
 
