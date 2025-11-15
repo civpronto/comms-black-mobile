@@ -586,23 +586,24 @@ permalink: /threat-assessment.html
 /* Threat Assessment — scoped styles using existing theme variables */
 
 .ta-card{
-  margin-top:1.5rem;
+  margin:1.5rem auto 0;   /* centered column */
   position:relative;
   overflow:visible;
+  max-width:780px;        /* nice readable width */
 }
 
-/* Progress bar (base – clean, no background strip) */
+/* Progress bar now uses same solid background as header */
 .ta-progress{
   margin-bottom:1.5rem;
-  padding-bottom:0.75rem;
-  background:transparent;
+  padding:0.75rem 0 0.75rem;
+  background:var(--cb-bg, var(--bg)); /* match header colour */
   transition:box-shadow .15s ease-out, background .15s ease-out;
 }
 
 /* When JS pins it under the header */
 .ta-progress-fixed{
-  background:transparent !important; /* ensure no dark band */
-  box-shadow:none !important;       /* no shadow */
+  background:var(--cb-bg, var(--bg)) !important;
+  box-shadow:none !important;
 }
 
 .ta-progress-header{
@@ -784,6 +785,10 @@ permalink: /threat-assessment.html
 }
 
 @media (max-width: 720px){
+  .ta-card{
+    margin-top:1rem;
+    max-width:100%;
+  }
   .ta-question{
     padding:.9rem;
   }
@@ -831,7 +836,6 @@ permalink: /threat-assessment.html
     bar.style.width = pct + '%';
     pctLabel.textContent = pct + '%';
 
-    // We keep note hidden via CSS, but avoid leaving old text around
     if(note){
       if(answered === totalQuestions){
         note.textContent = 'All questions answered. Generate your Threat Profile below.';
@@ -1024,7 +1028,7 @@ permalink: /threat-assessment.html
   /* ---------- Output builders ---------- */
   function buildShield(answers){
     const assets = mapAssets(answers.q9 || []);
-    const impact = describeImpact(answers.q10);
+       const impact = describeImpact(answers.q10);
 
     const assetsList = assets.length
       ? '<ul>' + assets.map(a => '<li>'+a+'</li>').join('') + '</ul>'
