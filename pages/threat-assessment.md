@@ -6,6 +6,16 @@ permalink: /threat-assessment.html
 
 # Threat Assessment
 
+Find out whether your situation calls for **Shield**, **Shadow** or **Ghost** in around 5–7 minutes.
+
+This assessment gives you a kit recommendation based on:
+- Whether you’re facing a real adversary  
+- How dangerous it would be if your device use was linked to a time and place  
+
+No names, emails, or personal details are collected.
+
+<p style="text-align:center"><small>Last updated: 14 Nov 2025</small></p>
+
 <style>
   #threat-assessment-form {
     max-width: 780px;
@@ -13,14 +23,13 @@ permalink: /threat-assessment.html
     line-height: 1.6;
   }
   #threat-assessment-form .ta-section {
-    border: 1px solid #0f7468;
-    border-radius: 16px;
+    border: 1px solid #333;
+    border-radius: 12px;
     padding: 1.4rem 1.6rem;
     margin-bottom: 1.2rem;
-    background: #021616;
-    color: #f4f9f8;
     height: 420px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
   #threat-assessment-form .ta-section h3 {
     margin-top: 0;
@@ -49,24 +58,27 @@ permalink: /threat-assessment.html
   }
   #threat-assessment-form .ta-options {
     margin-top: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   #threat-assessment-form .ta-card {
     position: relative;
-    display: block;
-    border: 1px solid #083434;
-    background: #021616;
-    padding: 0.6rem 0.9rem;
-    margin: 0.35rem 0;
-    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #444;
+    padding: 0.55rem 0.85rem;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     font-size: 0.95rem;
-    text-align: left;
-    color: #f4f9f8;
+    max-width: 100%;
   }
   #threat-assessment-form .ta-card span.ta-icon {
-    margin-right: 0.5rem;
-    opacity: 0.95;
+    margin-right: 0.45rem;
+    opacity: 0.9;
   }
   #threat-assessment-form .ta-card input[type="radio"],
   #threat-assessment-form .ta-card input[type="checkbox"] {
@@ -75,13 +87,12 @@ permalink: /threat-assessment.html
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #06302c;
-    border-color: #0f7468;
+    background: #151515;
+    border-color: #888;
     transform: translateY(-1px);
-    box-shadow: 0 0 0 2px #0f7468;
   }
   #threat-assessment-form .ta-card:hover {
-    background: #041f1d;
+    background: #1b1b1b;
   }
   #threat-assessment-form .ta-nav {
     display: flex;
@@ -96,18 +107,17 @@ permalink: /threat-assessment.html
   }
   #threat-assessment-form button[type="button"],
   #threat-assessment-form button[type="submit"] {
-    padding: 0.45rem 1.2rem;
+    padding: 0.55rem 1.3rem;
     border-radius: 999px;
-    border: 1px solid #0f7468;
-    background: #0f7468;
+    border: 1px solid #444;
+    background: #111;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.9rem;
-    color: #f4f9f8;
+    font-size: 0.95rem;
   }
   #threat-assessment-form button[type="button"]:hover,
   #threat-assessment-form button[type="submit"]:hover {
-    background: #15857a;
+    background: #181818;
   }
   #threat-assessment-form button[disabled] {
     opacity: 0.4;
@@ -133,7 +143,12 @@ permalink: /threat-assessment.html
     transition: width 0.25s ease;
   }
 
-  .ta-result {
+    #threat-assessment-form .ta-section.results-mode {
+    height: auto;
+    min-height: 420px;
+  }
+
+.ta-result {
     max-width: 780px;
     margin: 2rem auto 4rem auto;
     border: 1px solid #333;
@@ -147,6 +162,10 @@ permalink: /threat-assessment.html
     padding-left: 1.2rem;
   }
   .ta-result ul li {
+
+  .ta-inline-result {
+    margin-top: 0.75rem;
+  }
     margin: 0.25rem 0;
   }
   .ta-note {
@@ -156,6 +175,18 @@ permalink: /threat-assessment.html
     opacity: 0.8;
   }
 </style>
+
+---
+
+## Quick kit overview
+
+- **Shield** – Hardened daily driver for people with **no active adversary**, but who want out of the default tracking ecosystem.  
+- **Shadow** – Identity-separated comms device for people with a **real adversary or situation** where content and identity matter.  
+- **Ghost** – Operational anonymity stack for people who could face **serious consequences** if their device can be tied to a time and place.
+
+---
+
+> ⏱️ **Time:** 5–7 minutes &nbsp;&nbsp; 🧾 **No signup** &nbsp;&nbsp; 🔐 **No identifying information**
 
 <form id="threat-assessment-form" action="#" method="get">
 
@@ -700,51 +731,44 @@ permalink: /threat-assessment.html
 ## Your results
 
 <div id="ta-result" class="ta-result">
-  <p><em>Work through the questions above and click “Get my recommendation” on the last step to see your result here.</em></p>
-</div>
-
-<script>
+  <p><em>Work through the questions above and click “Get my recommendation” on the <script>
 // Card-select behaviour, one-question-at-a-time wizard and kit logic
 (function() {
-  var form = document.getElementById('threat-assessment-form');
-  var resultEl = document.getElementById('ta-result');
-  if (!form || !resultEl) return;
+  const form = document.getElementById('threat-assessment-form');
+  const resultEl = document.getElementById('ta-result');
+  if (!form) return;
 
-  var questions = Array.prototype.slice.call(form.querySelectorAll('.ta-question'));
-  var sections  = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
-  var prevBtn   = document.getElementById('ta-prev');
-  var nextBtn   = document.getElementById('ta-next');
-  var submitBtn = document.getElementById('ta-submit');
-  var progressText = document.getElementById('ta-progress-text');
-  var progressFill = document.getElementById('ta-progressbar-fill');
-  var nav = document.querySelector('.ta-nav');
+  const questions = Array.prototype.slice.call(form.querySelectorAll('.ta-question'));
+  const sections  = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
+  const prevBtn   = document.getElementById('ta-prev');
+  const nextBtn   = document.getElementById('ta-next');
+  const submitBtn = document.getElementById('ta-submit');
+  const progressText = document.getElementById('ta-progress-text');
+  const progressFill = document.getElementById('ta-progressbar-fill');
 
-  var total = questions.length;
-  var current = 0;
+  const total = questions.length;
+  let current = 0;
 
-  // Card-select: clicking a card selects input and toggles "selected" class
+  // Init card-select: clicking a card selects input and toggles "selected" class
   form.addEventListener('click', function(e) {
-    var card = e.target.closest ? e.target.closest('.ta-card') : null;
+    const card = e.target.closest('.ta-card');
     if (!card) return;
 
-    var input = card.querySelector('input');
+    const input = card.querySelector('input');
     if (!input) return;
 
     if (input.type === 'radio') {
-      var name = input.name;
-      var groupCards = form.querySelectorAll('.ta-card input[name="' + name + '"]');
-      Array.prototype.forEach.call(groupCards, function(inp) {
-        var c = inp.closest('.ta-card');
-        if (c) c.classList.remove('selected');
+      const name = input.name;
+      const groupCards = form.querySelectorAll('.ta-card input[name="' + name + '"]');
+      groupCards.forEach(function(inp) {
+        inp.closest('.ta-card').classList.remove('selected');
       });
       card.classList.add('selected');
       input.checked = true;
     } else if (input.type === 'checkbox') {
-      var selected = card.classList.toggle('selected');
+      const selected = card.classList.toggle('selected');
       input.checked = selected;
     }
-
-    updateProgress();
   });
 
   function showQuestion(index) {
@@ -755,54 +779,29 @@ permalink: /threat-assessment.html
       sec.style.display = 'none';
     });
 
-    var q = questions[index];
+    const q = questions[index];
     if (!q) return;
     q.classList.add('active');
 
-    var parentSection = q.closest('.ta-section');
+    const parentSection = q.closest('.ta-section');
     if (parentSection) {
       parentSection.style.display = 'block';
     }
 
-    // Move nav into the active question so controls sit inside the tile
-    if (nav && !q.contains(nav)) {
-      q.appendChild(nav);
-    }
+    if (prevBtn) prevBtn.disabled = index === 0;
+    if (nextBtn) nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
+    if (submitBtn) submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
 
-    if (prevBtn) {
-      prevBtn.disabled = index === 0;
-      prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
-    }
-    if (nextBtn) {
-      nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
-    }
-    if (submitBtn) {
-      submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
-    }
+    const pct = Math.round(((index + 1) / total) * 100);
+    if (progressText) progressText.textContent = pct + '% complete';
+    if (progressFill) progressFill.style.width = pct + '%';
 
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function val(name) {
-    var el = form.querySelector('[name="' + name + '"]:checked');
+    const el = form.querySelector('[name="' + name + '"]:checked');
     return el ? el.value : null;
-  }
-
-  function updateProgress() {
-    if (!progressText || !progressFill) return;
-    var answered = 0;
-    questions.forEach(function(q) {
-      var input = q.querySelector('input[type="radio"], input[type="checkbox"]');
-      if (!input) return;
-      var name = input.name;
-      if (form.querySelector('[name="' + name + '"]:checked')) {
-        answered += 1;
-      }
-    });
-    var pct = Math.round((answered / questions.length) * 100);
-    if (pct < 0) pct = 0;
-    if (pct > 100) pct = 100;
-    progressText.textContent = pct + '% complete';
-    progressFill.style.width = pct + '%';
   }
 
   if (prevBtn) {
@@ -825,22 +824,23 @@ permalink: /threat-assessment.html
 
   // Start at first question
   showQuestion(current);
-  updateProgress();
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var q1 = val('q1_adversary');
-    var q4 = val('q4_location_risk');
-    var q5 = val('q5_consequence');
+    const q1 = val('q1_adversary');
+    const q4 = val('q4_location_risk');
+    const q5 = val('q5_consequence');
 
     if (!q1) {
-      resultEl.innerHTML = '<p>Please answer the first question about whether you are facing an adversary to get a recommendation.</p>';
-      resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // If first question unanswered, keep using external result box (above the fold) but no scroll jump
+      if (resultEl) {
+        resultEl.innerHTML = '<p>Please answer the first question about whether you are facing an adversary to get a recommendation.</p>';
+      }
       return;
     }
 
-    var kit = 'shield';
+    let kit = 'shield';
 
     if (q1 && q1 !== 'no') {
       kit = 'shadow';
@@ -849,7 +849,7 @@ permalink: /threat-assessment.html
       }
     }
 
-    var html = '';
+    let html = '';
 
     if (kit === 'shield') {
       html = `
@@ -941,9 +941,37 @@ permalink: /threat-assessment.html
 `;
     }
 
-    resultEl.innerHTML = html;
-    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Show results inside the current wizard tile
+    const activeQuestion = questions[current];
+    const parentSection = activeQuestion ? activeQuestion.closest('.ta-section') : sections[0];
+
+    if (parentSection) {
+      // Hide all questions in this section
+      parentSection.querySelectorAll('.ta-question').forEach(function(q) {
+        q.classList.remove('active');
+        q.style.display = 'none';
+      });
+
+      // Create or reuse an inline results container
+      let inline = parentSection.querySelector('.ta-inline-result');
+      if (!inline) {
+        inline = document.createElement('div');
+        inline.className = 'ta-inline-result';
+        parentSection.appendChild(inline);
+      }
+
+      // Allow the tile to grow for results
+      parentSection.classList.add('results-mode');
+      inline.innerHTML = html;
+    }
+
+    // Optional: also mirror into the external result element if present (no scroll jump)
+    if (resultEl) {
+      resultEl.innerHTML = html;
+    }
+  });
+})();
+</script>: 'smooth', block: 'start' });
   });
 })();
 </script>
-
