@@ -590,7 +590,7 @@ permalink: /threat-assessment.html
   --ta-sticky-offset: 4rem;
 }
 
-/* Card is now just a flex container to centre inner content */
+/* Big background tile that wraps progress, questions, and results */
 .ta-card{
   margin-top:1.5rem;
   position:relative;
@@ -599,12 +599,16 @@ permalink: /threat-assessment.html
   flex-direction:column;
   align-items:center;
 
-  /* Consistent accent-tinted background top-to-bottom */
-  background:rgba(30,182,166,.22);
+  /* Single, translucent, product-style panel */
+  background:rgba(0,0,0,.82);
+  border-radius:1.75rem;
+  border:1px solid rgba(30,182,166,.35);
+  box-shadow:0 18px 40px rgba(0,0,0,.8);
 
   /* Extra depth at the bottom so it doesn’t look chopped off */
   padding-bottom:3rem;
 }
+
 /* Progress, form, and result widths */
 .ta-progress,
 .ta-form,
@@ -614,12 +618,7 @@ permalink: /threat-assessment.html
   margin-inline:auto;       /* centre column inside big background tile */
 }
 
-/* Offset just the result card for the sticky header + progress bar */
-.ta-result{
-  scroll-margin-top:140px;  /* bump this up/down a bit if you want more/less gap */
-}
-
-/* Progress bar spans full card width (no max-width cap) */
+/* Progress bar spans full card width */
 .ta-progress{
   width:100%;
   margin-bottom:1.5rem;
@@ -636,7 +635,6 @@ permalink: /threat-assessment.html
   background:var(--card);
   box-shadow:none;
 }
-
 
 /* Progress header + track */
 .ta-progress-header{
@@ -666,7 +664,7 @@ permalink: /threat-assessment.html
   transition:width .25s ease-out;
 }
 
-/* hide progress note text entirely */
+/* hide progress note text entirely (but keep for JS) */
 .ta-progress-note{
   display:none;
   margin-top:.35rem;
@@ -681,7 +679,7 @@ permalink: /threat-assessment.html
   gap:1rem;
 }
 
-/* Questions still look like tiles, but centred by the container above */
+/* Questions look like centred tiles */
 .ta-question{
   padding:1rem;
   border-radius:1rem;
@@ -694,18 +692,19 @@ permalink: /threat-assessment.html
 .ta-question-title{
   margin:0 0 .6rem;
   font-size:1rem;
-  text-align:center;          /* NEW: center question text */
+  text-align:center;
 }
 .ta-sub{
   font-size:.85rem;
   color:var(--muted);
 }
 
+/* Answer rows centred in each tile */
 .ta-options{
   display:flex;
   flex-wrap:wrap;
   gap:.5rem;
-  justify-content:center;     /* NEW: center the row of pills in the card */
+  justify-content:center;
 }
 
 /* Answer tiles – shrink-wrap to content */
@@ -730,9 +729,9 @@ permalink: /threat-assessment.html
   font-size:.9rem;
   display:flex;
   align-items:center;
-  justify-content:center;     /* NEW: center icon + text in the pill */
+  justify-content:center;
   gap:.35rem;
-  text-align:center;          /* NEW: center multi-line text */
+  text-align:center;
   transition:background .15s ease-out, border-color .15s ease-out, box-shadow .15s ease-out, transform .08s ease-out;
   user-select:none;
   white-space:normal;
@@ -767,8 +766,8 @@ permalink: /threat-assessment.html
 
 /* Button as a pill sized to its text */
 .ta-actions .btn{
-  align-self:flex-start;   /* don’t stretch full width */
-  width:auto;              /* override any global 100% */
+  align-self:flex-start;
+  width:auto;
   display:inline-flex;
   justify-content:center;
   padding:.6rem 1.8rem;
@@ -789,7 +788,7 @@ permalink: /threat-assessment.html
   box-shadow:0 8px 24px rgba(0,0,0,.5);
   border:1px solid rgba(255,255,255,.08);
 
-  /* NEW: make auto-scroll land the result below header + progress bar */
+  /* Make auto-scroll land the result below header + progress bar */
   scroll-margin-top:calc(var(--ta-sticky-offset) + 3.5rem);
 }
 .ta-hidden{display:none;}
@@ -876,12 +875,12 @@ permalink: /threat-assessment.html
   }
 
   // Smooth scroll taking header + progress bar height into account
-  function scrollToQuestion(el){
+  function scrollWithOffset(el){
     if(!el) return;
 
     const headerHeight = header ? header.getBoundingClientRect().height : 0;
     const progressHeight = progressEl ? progressEl.getBoundingClientRect().height : 0;
-    const extra = 16; // little breathing space
+    const extra = 16; // breathing space
 
     const rect = el.getBoundingClientRect();
     const targetY = rect.top + window.scrollY - (headerHeight + progressHeight + extra);
@@ -917,7 +916,7 @@ permalink: /threat-assessment.html
 
     if(note){
       if(answered === totalQuestions){
-        note.textContent = 'All questions answered. Generate your Threat Profile below.';
+        note.textContent = 'All questions answered. Get your results below.';
       } else {
         note.textContent = '';
       }
@@ -944,7 +943,7 @@ permalink: /threat-assessment.html
           const nextQ = questions[idx + 1];
 
           setTimeout(() => {
-            scrollToQuestion(nextQ);
+            scrollWithOffset(nextQ);
           }, 160);
         }
       }
@@ -1343,7 +1342,8 @@ permalink: /threat-assessment.html
     }
     resultEl.innerHTML = html;
     resultEl.classList.remove('ta-hidden');
-    resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+    // Use the same offset-aware scroll as questions
+    scrollWithOffset(resultEl);
   }
 
   /* ---------- Submit handler ---------- */
@@ -1360,7 +1360,7 @@ permalink: /threat-assessment.html
       errorEl.textContent = 'Please answer all questions to generate an accurate Threat Profile.';
 
       const targetEl = title || incomplete;
-      scrollToQuestion(targetEl);
+      scrollWithOffset(targetEl);
       return;
     }
 
