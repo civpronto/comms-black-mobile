@@ -592,20 +592,18 @@ permalink: /threat-assessment.html
   overflow:visible;
 }
 
-/* Progress bar (base) */
+/* Progress bar (base – now clean, no gradient) */
 .ta-progress{
   margin-bottom:1.5rem;
   padding-bottom:0.75rem;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0));
+  background:none;
   transition:box-shadow .15s ease-out, background .15s ease-out;
-}
-:root[data-theme="light"] .ta-progress{
-  background:linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(255,255,255,0));
 }
 
 /* When JS pins it under the header */
 .ta-progress-fixed{
-  box-shadow:0 10px 24px rgba(0,0,0,.45);
+  background:var(--bg, transparent);
+  box-shadow:none; /* remove awkward shadow */
 }
 
 .ta-progress-header{
@@ -834,7 +832,8 @@ permalink: /threat-assessment.html
     if(answered === 0){
       note.textContent = 'Answer each question to unlock your Threat Profile.';
     }else if(answered < totalQuestions){
-      note.textContent = 'Progress saved. You can stop anytime, but full results need all answers.';
+      // Keep the same simple prompt (remove "Progress saved..." text)
+      note.textContent = 'Answer each question to unlock your Threat Profile.';
     }else{
       note.textContent = 'All questions answered. Generate your Threat Profile below.';
     }
@@ -850,13 +849,11 @@ permalink: /threat-assessment.html
     const cardRect = taCard.getBoundingClientRect();
     const progRect = taProgress.getBoundingClientRect();
 
-    // Fix while the card is in view and we've scrolled past its top
     const shouldFix =
       cardRect.top < headerHeight &&
       cardRect.bottom > headerHeight + progRect.height;
 
     if(shouldFix){
-      // Create placeholder to avoid layout jump
       if(!progressPlaceholder){
         progressPlaceholder = document.createElement('div');
         progressPlaceholder.style.height = progRect.height + 'px';
@@ -895,12 +892,10 @@ permalink: /threat-assessment.html
     errorEl.textContent = '';
     updateProgress();
 
-    // Only auto-scroll on radio (single-choice) questions
     if(target.type === 'radio'){
       const qEl = target.closest('.ta-question');
       if(!qEl) return;
 
-      // Only scroll the first time this question is answered
       if(!qEl.dataset.answered){
         qEl.dataset.answered = 'true';
 
@@ -910,7 +905,7 @@ permalink: /threat-assessment.html
 
           setTimeout(() => {
             const rect = nextQ.getBoundingClientRect();
-            const offset = 120; // space under header + breathing room
+            const offset = 120;
             const targetY = rect.top + window.scrollY - offset;
             window.scrollTo({ top: targetY, behavior: 'smooth' });
           }, 160);
@@ -938,12 +933,10 @@ permalink: /threat-assessment.html
       throw new Error('Please answer Question 1 about your adversary.');
     }
 
-    // Primary branch
     if(q1 === 'no'){
       return 'SHIELD';
     }
 
-    // Shadow / Ghost branch
     if(!q4){
       throw new Error('Please answer Question 4 about location risk.');
     }
@@ -955,7 +948,6 @@ permalink: /threat-assessment.html
       return 'SHADOW';
     }
 
-    // q4 = unsure → look at Q5
     if(!q5){
       throw new Error('Please answer Question 5 about the consequence of location exposure.');
     }
@@ -1027,7 +1019,7 @@ permalink: /threat-assessment.html
     return list.map(v => map[v]).filter(Boolean);
   }
 
-  /* ---------- Output builders (Shield / Shadow / Ghost) ---------- */
+  /* ---------- Output builders ---------- */
   function buildShield(answers){
     const assets = mapAssets(answers.q9 || []);
     const impact = describeImpact(answers.q10);
@@ -1321,7 +1313,6 @@ permalink: /threat-assessment.html
   submitBtn.addEventListener('click', function(){
     errorEl.textContent = '';
 
-    // Simple completion check: every question must have at least one answer
     const incomplete = questions.find(q => {
       const inputs = q.querySelectorAll('input');
       return !Array.from(inputs).some(i => i.checked);
