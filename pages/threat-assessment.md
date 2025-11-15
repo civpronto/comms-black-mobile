@@ -585,22 +585,21 @@ permalink: /threat-assessment.html
 <style>
 /* Threat Assessment — scoped styles using existing theme variables */
 
-/* Card is now just a flex container to centre inner content */
+/* Card uses normal card width, centred */
 .ta-card{
   margin-top:1.5rem;
   position:relative;
   overflow:visible;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  max-width: 860px;      /* adjust this up/down if you want tighter/wider */
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* Progress, form, and result all share the same centred width */
+/* Progress, form, and result just fill the card */
 .ta-progress,
 .ta-form,
 .ta-result{
   width:100%;
-  max-width:960px;
 }
 
 /* Progress bar base style (no standalone tile feel) */
@@ -609,11 +608,6 @@ permalink: /threat-assessment.html
   padding-bottom:0.75rem;
   background:transparent;
   transition:background .15s ease-out;
-}
-
-/* When JS pins it under the header – keep visual style the same */
-.ta-progress-fixed{
-  background:transparent;
 }
 
 /* Progress header + track */
@@ -856,64 +850,14 @@ permalink: /threat-assessment.html
   }
 
   /* Helper: how far down to scroll so the next question isn't cut off */
-  function getScrollOffset(){
-    const header = document.querySelector('header');
-    const headerHeight = header ? header.getBoundingClientRect().height : 0;
-    const progHeight = taProgress ? taProgress.getBoundingClientRect().height : 0;
-    const hasFixedProgress = taProgress && taProgress.classList.contains('ta-progress-fixed');
+ function getScrollOffset(){
+  const header = document.querySelector('header');
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  const extraMargin = 24; // a little breathing space
+  return headerHeight + extraMargin;
+}
 
-    // When fixed, header + progress bar occupy the top; otherwise just header.
-    const occupied = hasFixedProgress ? headerHeight + progHeight : headerHeight;
-    const extraMargin = 24; // a little breathing space
-    return occupied + extraMargin;
-  }
-
-  /* ---------- Sticky progress under header ---------- */
-  function updateProgressSticky(){
-    if(!taCard || !taProgress) return;
-
-    const header = document.querySelector('header');
-    const headerHeight = header ? header.getBoundingClientRect().height : 0;
-
-    const cardRect = taCard.getBoundingClientRect();
-    const progRect = taProgress.getBoundingClientRect();
-
-    const shouldFix =
-      cardRect.top < headerHeight &&
-      cardRect.bottom > headerHeight + progRect.height;
-
-    if(shouldFix){
-      if(!progressPlaceholder){
-        progressPlaceholder = document.createElement('div');
-        progressPlaceholder.style.height = progRect.height + 'px';
-        taProgress.parentNode.insertBefore(progressPlaceholder, taProgress);
-      }
-      const cardRectNow = taCard.getBoundingClientRect();
-      taProgress.classList.add('ta-progress-fixed');
-
-      taProgress.style.position = 'fixed';
-      taProgress.style.top = (headerHeight + 4) + 'px';
-      taProgress.style.left = cardRectNow.left + 'px';
-      taProgress.style.width = cardRectNow.width + 'px';
-      taProgress.style.zIndex = 20;
-    }else{
-      if(progressPlaceholder){
-        progressPlaceholder.remove();
-        progressPlaceholder = null;
-      }
-      taProgress.classList.remove('ta-progress-fixed');
-      taProgress.style.position = '';
-      taProgress.style.top = '';
-      taProgress.style.left = '';
-      taProgress.style.width = '';
-      taProgress.style.zIndex = '';
-    }
-  }
-
-  window.addEventListener('scroll', updateProgressSticky);
-  window.addEventListener('resize', updateProgressSticky);
-
-  /* ---------- Change handler + smooth auto-scroll ---------- */
+    /* ---------- Change handler + smooth auto-scroll ---------- */
   form.addEventListener('change', function(e){
     const target = e.target;
     if(!target.matches('input[type="radio"], input[type="checkbox"]')) return;
@@ -1369,6 +1313,5 @@ permalink: /threat-assessment.html
 
   // Initialise on load
   updateProgress();
-  updateProgressSticky();
 })();
 </script>
