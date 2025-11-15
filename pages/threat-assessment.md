@@ -585,24 +585,27 @@ permalink: /threat-assessment.html
 <style>
 /* Threat Assessment — scoped styles using existing theme variables */
 
+/* Center the whole card on the page */
 .ta-card{
-  margin:1.5rem auto 0;   /* centered column */
+  margin:1.5rem auto 0;
   position:relative;
   overflow:visible;
-  max-width:780px;        /* nice readable width */
+  max-width:840px;
 }
 
-/* Progress bar now uses same solid background as header */
+/* Progress card – same styling as questions so it feels like part of the questionnaire */
 .ta-progress{
   margin-bottom:1.5rem;
-  padding:0.75rem 0 0.75rem;
-  background:var(--cb-bg, var(--bg)); /* match header colour */
+  padding:0.85rem 1rem 1rem;
+  border-radius:1rem;
+  background:var(--card);
+  box-shadow:0 4px 12px rgba(0,0,0,.22);
   transition:box-shadow .15s ease-out, background .15s ease-out;
 }
 
-/* When JS pins it under the header */
+/* When pinned under the header: keep same background, remove shadow */
 .ta-progress-fixed{
-  background:var(--cb-bg, var(--bg)) !important;
+  background:var(--card) !important;
   box-shadow:none !important;
 }
 
@@ -641,12 +644,14 @@ permalink: /threat-assessment.html
   color:var(--muted);
 }
 
+/* Centre the form content inside the card */
 .ta-form{
   display:flex;
   flex-direction:column;
   gap:1rem;
 }
 
+/* Question blocks */
 .ta-question{
   padding:1rem;
   border-radius:1rem;
@@ -786,7 +791,6 @@ permalink: /threat-assessment.html
 
 @media (max-width: 720px){
   .ta-card{
-    margin-top:1rem;
     max-width:100%;
   }
   .ta-question{
@@ -836,6 +840,7 @@ permalink: /threat-assessment.html
     bar.style.width = pct + '%';
     pctLabel.textContent = pct + '%';
 
+    // Keep note cleared / minimal
     if(note){
       if(answered === totalQuestions){
         note.textContent = 'All questions answered. Generate your Threat Profile below.';
@@ -1028,7 +1033,7 @@ permalink: /threat-assessment.html
   /* ---------- Output builders ---------- */
   function buildShield(answers){
     const assets = mapAssets(answers.q9 || []);
-       const impact = describeImpact(answers.q10);
+    const impact = describeImpact(answers.q10);
 
     const assetsList = assets.length
       ? '<ul>' + assets.map(a => '<li>'+a+'</li>').join('') + '</ul>'
