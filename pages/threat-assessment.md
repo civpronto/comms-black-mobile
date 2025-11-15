@@ -600,7 +600,7 @@ permalink: /threat-assessment.html
   align-items:center;
 
   /* Single, translucent, product-style panel */
-  background:rgba(0,0,0,.82);
+  background:rgba(30,182,166,.22);
   border-radius:1.75rem;
   border:1px solid rgba(30,182,166,.35);
   box-shadow:0 18px 40px rgba(0,0,0,.8);
