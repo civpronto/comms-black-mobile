@@ -572,7 +572,7 @@ permalink: /threat-assessment.html
     </div>
 
     <div class="ta-actions">
-      <button type="button" id="ta-submit" class="btn">Generate Threat Profile</button>
+      <button type="button" id="ta-submit" class="btn">Get Results</button>
       <p class="ta-error" id="ta-error" aria-live="polite"></p>
     </div>
 
@@ -598,18 +598,30 @@ permalink: /threat-assessment.html
   display:flex;
   flex-direction:column;
   align-items:center;
-}
 
+  /* Darker, accent-tinted background just for this page’s card */
+  background:linear-gradient(
+    145deg,
+    rgba(0,0,0,.96),
+    rgba(30,182,166,.22)
+  );
+
+  /* Extra depth at the bottom so it doesn’t look chopped off */
+  padding-bottom:3rem;
+}
 /* Progress, form, and result widths */
+.ta-progress,
 .ta-form,
 .ta-result{
   width:100%;
   max-width:960px;
-
-  /* NEW — prevents auto-scroll cutoff under sticky progress bar */
-  scroll-margin-top: 90px; 
+  margin-inline:auto;       /* centre column inside big background tile */
 }
 
+/* Offset just the result card for the sticky header + progress bar */
+.ta-result{
+  scroll-margin-top:140px;  /* bump this up/down a bit if you want more/less gap */
+}
 
 /* Progress bar spans full card width (no max-width cap) */
 .ta-progress{
@@ -755,6 +767,16 @@ permalink: /threat-assessment.html
   display:flex;
   flex-direction:column;
   gap:.4rem;
+}
+
+/* Button as a pill sized to its text */
+.ta-actions .btn{
+  align-self:flex-start;   /* don’t stretch full width */
+  width:auto;              /* override any global 100% */
+  display:inline-flex;
+  justify-content:center;
+  padding:.6rem 1.8rem;
+  border-radius:999px;
 }
 .ta-error{
   color:#ff9b9b;
