@@ -6,16 +6,6 @@ permalink: /threat-assessment.html
 
 # Threat Assessment
 
-Find out whether your situation calls for **Shield**, **Shadow** or **Ghost** in around 5–7 minutes.
-
-This assessment gives you a kit recommendation based on:
-- Whether you’re facing a real adversary  
-- How dangerous it would be if your device use was linked to a time and place  
-
-No names, emails, or personal details are collected.
-
-<p style="text-align:center"><small>Last updated: 14 Nov 2025</small></p>
-
 <style>
   #threat-assessment-form {
     max-width: 780px;
@@ -87,18 +77,20 @@ No names, emails, or personal details are collected.
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #151515;
-    border-color: #888;
+    background: #0f7468;
+    border-color: #1eb6a6;
+    color: #f4f9f8;
     transform: translateY(-1px);
   }
   #threat-assessment-form .ta-card:hover {
-    background: #1b1b1b;
+    background: #181818;
   }
   #threat-assessment-form .ta-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.2rem;
+    margin-top: auto;
+    padding-top: 1.2rem;
     gap: 0.75rem;
   }
   #threat-assessment-form .ta-buttons {
@@ -148,45 +140,10 @@ No names, emails, or personal details are collected.
     min-height: 420px;
   }
 
-.ta-result {
-    max-width: 780px;
-    margin: 2rem auto 4rem auto;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 1.5rem 1.75rem;
-  }
-  .ta-result h2 {
-    margin-top: 0;
-  }
-  .ta-result ul {
-    padding-left: 1.2rem;
-  }
-  .ta-result ul li {
-
   .ta-inline-result {
     margin-top: 0.75rem;
   }
-    margin: 0.25rem 0;
-  }
-  .ta-note {
-    max-width: 780px;
-    margin: 0 auto 1.5rem auto;
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
 </style>
-
----
-
-## Quick kit overview
-
-- **Shield** – Hardened daily driver for people with **no active adversary**, but who want out of the default tracking ecosystem.  
-- **Shadow** – Identity-separated comms device for people with a **real adversary or situation** where content and identity matter.  
-- **Ghost** – Operational anonymity stack for people who could face **serious consequences** if their device can be tied to a time and place.
-
----
-
-> ⏱️ **Time:** 5–7 minutes &nbsp;&nbsp; 🧾 **No signup** &nbsp;&nbsp; 🔐 **No identifying information**
 
 <form id="threat-assessment-form" action="#" method="get">
 
@@ -724,14 +681,7 @@ No names, emails, or personal details are collected.
 
 </form>
 
-<div class="ta-note">
-  <p><em>Your answers are processed in your browser. The core kit recommendation follows the logic designed for Shield (low risk), Shadow (medium risk) and Ghost (high risk).</em></p>
-</div>
-
-## Your results
-
-<div id="ta-result" class="ta-result">
-  <p><em>Work through the questions above and click “Get my recommendation” on the <script>
+<script>
 // Card-select behaviour, one-question-at-a-time wizard and kit logic
 (function() {
   const form = document.getElementById('threat-assessment-form');
@@ -740,6 +690,7 @@ No names, emails, or personal details are collected.
 
   const questions = Array.prototype.slice.call(form.querySelectorAll('.ta-question'));
   const sections  = Array.prototype.slice.call(form.querySelectorAll('.ta-section'));
+  const nav       = form.querySelector('.ta-nav');
   const prevBtn   = document.getElementById('ta-prev');
   const nextBtn   = document.getElementById('ta-next');
   const submitBtn = document.getElementById('ta-submit');
@@ -769,7 +720,21 @@ No names, emails, or personal details are collected.
       const selected = card.classList.toggle('selected');
       input.checked = selected;
     }
+    updateProgress();
   });
+
+
+  function updateProgress() {
+    if (!progressText || !progressFill) return;
+    let answered = 0;
+    questions.forEach(function(q) {
+      const anyChecked = q.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked');
+      if (anyChecked) answered += 1;
+    });
+    const pct = Math.round((answered / total) * 100);
+    progressText.textContent = pct + '% complete';
+    progressFill.style.width = pct + '%';
+  }
 
   function showQuestion(index) {
     questions.forEach(function(q) {
@@ -786,17 +751,23 @@ No names, emails, or personal details are collected.
     const parentSection = q.closest('.ta-section');
     if (parentSection) {
       parentSection.style.display = 'block';
+      if (nav && !parentSection.contains(nav)) {
+        parentSection.appendChild(nav);
+      }
     }
 
-    if (prevBtn) prevBtn.disabled = index === 0;
+    if (prevBtn) {
+      if (index === 0) {
+        prevBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'inline-block';
+      }
+    }
+
     if (nextBtn) nextBtn.style.display = index === total - 1 ? 'none' : 'inline-block';
     if (submitBtn) submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
 
-    const pct = Math.round(((index + 1) / total) * 100);
-    if (progressText) progressText.textContent = pct + '% complete';
-    if (progressFill) progressFill.style.width = pct + '%';
-
-    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateProgress();
   }
 
   function val(name) {
@@ -963,15 +934,22 @@ No names, emails, or personal details are collected.
       // Allow the tile to grow for results
       parentSection.classList.add('results-mode');
       inline.innerHTML = html;
+
+      // After showing results, hide navigation buttons so Next can't be clicked
+      if (nextBtn) {
+        nextBtn.style.display = 'none';
+        nextBtn.disabled = true;
+      }
+      if (submitBtn) {
+        submitBtn.style.display = 'none';
+        submitBtn.disabled = true;
+      }
     }
 
     // Optional: also mirror into the external result element if present (no scroll jump)
     if (resultEl) {
       resultEl.innerHTML = html;
     }
-  });
-})();
-</script>: 'smooth', block: 'start' });
   });
 })();
 </script>
