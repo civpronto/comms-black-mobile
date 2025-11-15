@@ -612,13 +612,15 @@ permalink: /threat-assessment.html
 
 .ta-card{
   margin-top:1.5rem;
+  position:relative;
+  overflow:visible; /* allow sticky children */
 }
 
 /* Sticky progress bar */
 .ta-progress{
   margin-bottom:1.5rem;
   position:sticky;
-  top:0.75rem;
+  top:0;
   z-index:10;
   padding-bottom:0.75rem;
   background:linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0));
@@ -863,7 +865,7 @@ permalink: /threat-assessment.html
     }
   }
 
-  // Change handler with auto-scroll for radio questions
+  // Change handler with smoother auto-scroll for radio questions
   form.addEventListener('change', function(e){
     const target = e.target;
     if(!target.matches('input[type="radio"], input[type="checkbox"]')) return;
@@ -883,8 +885,13 @@ permalink: /threat-assessment.html
         const idx = questions.indexOf(qEl);
         if(idx > -1 && idx < questions.length - 1){
           const nextQ = questions[idx + 1];
+
+          // Small delay so the checked state + progress bar update feel smooth
           setTimeout(() => {
-            nextQ.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const rect = nextQ.getBoundingClientRect();
+            const offset = 120; // adjust if you want more/less space above
+            const targetY = rect.top + window.scrollY - offset;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
           }, 160);
         }
       }
