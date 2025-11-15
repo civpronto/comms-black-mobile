@@ -595,37 +595,34 @@ permalink: /threat-assessment.html
   margin-top:1.5rem;
   position:relative;
   overflow:visible;
+
   display:flex;
   flex-direction:column;
   align-items:center;
 
-  /* EXACT Armoury tile background + border */
+  /* MATCH ARMOURY TILE EXACTLY */
   background:rgba(255,255,255,.03);
   border:1px solid rgba(255,255,255,.08);
   border-radius:16px;
 
-  /* keep your padding */
-  padding-bottom:3rem;
+  /* This ensures the progress bar reaches edge-to-edge */
+  padding:0;
 }
-/* Progress bar spans full tile */
+/* Progress bar matches background tile exactly */
 .ta-progress{
   width:100%;
-  max-width:100%;        /* Force full tile width */
-  margin:0;              /* Remove side spacing so it touches edges */
-  padding:1rem 1.25rem 0.75rem;
+  margin:0;
+  padding:1rem 1.5rem .75rem;
 
-  /* Match background tile (.ta-card) */
-  background:linear-gradient(
-    145deg,
-    rgba(0,0,0,.96),
-    rgba(30,182,166,.22)
-  );
-  border-bottom:1px solid rgba(255,255,255,.08);
+  /* MATCH Armoury tile background */
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.06);
 
-  box-shadow:none;
   position:sticky;
   top:var(--ta-sticky-offset);
   z-index:5;
+
+  border-radius:16px 16px 0 0; /* top corners match tile */
 }
 .ta-form,
 .ta-result{
