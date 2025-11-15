@@ -599,16 +599,14 @@ permalink: /threat-assessment.html
   flex-direction:column;
   align-items:center;
 
-  /* Single, translucent, product-style panel */
-  background:rgba(30,182,166,.22);
-  border-radius:1.75rem;
-  border:1px solid rgba(30,182,166,.35);
-  box-shadow:0 18px 40px rgba(0,0,0,.8);
+  /* EXACT Armoury tile background + border */
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
 
-  /* Extra depth at the bottom so it doesn’t look chopped off */
+  /* keep your padding */
   padding-bottom:3rem;
 }
-
 /* Progress, form, and result widths */
 .ta-progress,
 .ta-form,
