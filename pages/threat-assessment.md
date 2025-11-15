@@ -605,7 +605,11 @@ permalink: /threat-assessment.html
 .ta-result{
   width:100%;
   max-width:960px;
+
+  /* NEW — prevents auto-scroll cutoff under sticky progress bar */
+  scroll-margin-top: 90px; 
 }
+
 
 /* Progress bar spans full card width (no max-width cap) */
 .ta-progress{
