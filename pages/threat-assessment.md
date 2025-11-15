@@ -27,8 +27,8 @@ No names, emails, or personal details are collected.
     border-radius: 16px;
     padding: 1.4rem 1.6rem;
     margin-bottom: 1.2rem;
-    background: #1eb6a6;
-    color: #003132;
+    background: #021616;
+    color: #f4f9f8;
   }
   #threat-assessment-form .ta-section h3 {
     margin-top: 0;
@@ -57,20 +57,23 @@ No names, emails, or personal details are collected.
   }
   #threat-assessment-form .ta-options {
     margin-top: 0.4rem;
+    text-align: center;
   }
   #threat-assessment-form .ta-card {
     position: relative;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #0f7468;
-    background: #071b1b;
-    padding: 0.75rem 0.9rem 0.75rem 0.9rem;
-    margin: 0.45rem 0;
+    background: #1eb6a6;
+    padding: 0.5rem 0.9rem;
+    margin: 0.25rem 0.4rem;
     border-radius: 999px;
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
     font-size: 0.95rem;
     text-align: center;
-    color: #f4f9f8;
+    color: #003132;
   }
   #threat-assessment-form .ta-card span.ta-icon {
     margin-right: 0.5rem;
@@ -83,13 +86,14 @@ No names, emails, or personal details are collected.
     pointer-events: none;
   }
   #threat-assessment-form .ta-card.selected {
-    background: #0f7468;
-    border-color: #1eb6a6;
+    background: #12a394;
+    border-color: #0f7468;
     transform: translateY(-1px);
     box-shadow: 0 0 0 2px #021614;
+    color: #001b1a;
   }
   #threat-assessment-form .ta-card:hover {
-    background: rgba(21,133,122,0.22);
+    background: #3fd3c3;
   }
   #threat-assessment-form .ta-nav {
     display: flex;
@@ -104,17 +108,18 @@ No names, emails, or personal details are collected.
   }
   #threat-assessment-form button[type="button"],
   #threat-assessment-form button[type="submit"] {
-    padding: 0.55rem 1.3rem;
+    padding: 0.45rem 1.2rem;
     border-radius: 999px;
-    border: 1px solid #444;
-    background: #111;
+    border: 1px solid #0f7468;
+    background: #1eb6a6;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    color: #003132;
   }
   #threat-assessment-form button[type="button"]:hover,
   #threat-assessment-form button[type="submit"]:hover {
-    background: #181818;
+    background: #3fd3c3;
   }
   #threat-assessment-form button[disabled] {
     opacity: 0.4;
@@ -799,7 +804,6 @@ No names, emails, or personal details are collected.
       submitBtn.style.display = index === total - 1 ? 'inline-block' : 'none';
     }
 
-    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function val(name) {
