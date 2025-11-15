@@ -607,17 +607,20 @@ permalink: /threat-assessment.html
   /* keep your padding */
   padding-bottom:3rem;
 }
-/* Progress bar spans full background tile */
+/* Progress bar spans full tile */
 .ta-progress{
   width:100%;
-  max-width:none;
-  margin-inline:0;
-  margin-bottom:1.5rem;
-  padding-bottom:0.75rem;
+  max-width:100%;        /* Force full tile width */
+  margin:0;              /* Remove side spacing so it touches edges */
+  padding:1rem 1.25rem 0.75rem;
 
-  /* MATCH Armoury tile background */
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.08);
+  /* Match background tile (.ta-card) */
+  background:linear-gradient(
+    145deg,
+    rgba(0,0,0,.96),
+    rgba(30,182,166,.22)
+  );
+  border-bottom:1px solid rgba(255,255,255,.08);
 
   box-shadow:none;
   position:sticky;
