@@ -585,9 +585,9 @@ permalink: /threat-assessment.html
 <style>
 /* Threat Assessment — scoped styles using existing theme variables */
 
-/* Global sticky offset so layout + JS/scroll behavior stay in sync */
+/* Default; JS will overwrite based on actual header height */
 :root{
-  --ta-sticky-offset: 4rem; /* approx header height, no visible gap */
+  --ta-sticky-offset: 4rem;
 }
 
 /* Card is now just a flex container to centre inner content */
@@ -608,14 +608,12 @@ permalink: /threat-assessment.html
   max-width:960px;
 }
 
+/* Sticky progress bar under the site header */
 .ta-progress{
   margin-bottom:1.5rem;
-  padding-bottom:0.75rem;
-
-  /* NEW: solid background so text doesn't bleed through */
+  padding:0.5rem 0 0.75rem;
   background:var(--card);
-  box-shadow:none; /* or a tiny shadow if you prefer */
-
+  box-shadow:none;
   transition:background .15s ease-out;
   position:sticky;
   top:var(--ta-sticky-offset);
@@ -677,8 +675,8 @@ permalink: /threat-assessment.html
   background:var(--card);
   box-shadow:0 4px 12px rgba(0,0,0,.22);
 
-  /* More space so titles never sit under header + progress */
-  scroll-margin-top:calc(var(--ta-sticky-offset) + 3.5rem);
+  /* small margin for manual scroll; JS handles exact offset */
+  scroll-margin-top:1rem;
 }
 .ta-question-title{
   margin:0 0 .6rem;
@@ -833,8 +831,39 @@ permalink: /threat-assessment.html
   const errorEl = document.getElementById('ta-error');
   const submitBtn = document.getElementById('ta-submit');
   const resultEl = document.getElementById('ta-result');
+  const header = document.querySelector('header');
+  const progressEl = document.querySelector('.ta-progress');
 
   if(!form) return;
+
+  /* ---------- Layout helpers ---------- */
+
+  // Keep sticky offset in sync with real header height
+  function updateStickyOffset(){
+    if(!header) return;
+    const headerHeight = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--ta-sticky-offset', headerHeight + 'px');
+  }
+
+  // Smooth scroll taking header + progress bar height into account
+  function scrollToQuestion(el){
+    if(!el) return;
+
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const progressHeight = progressEl ? progressEl.getBoundingClientRect().height : 0;
+    const extra = 16; // little breathing space
+
+    const rect = el.getBoundingClientRect();
+    const targetY = rect.top + window.scrollY - (headerHeight + progressHeight + extra);
+
+    window.scrollTo({
+      top: targetY,
+      behavior: 'smooth'
+    });
+  }
+
+  updateStickyOffset();
+  window.addEventListener('resize', updateStickyOffset);
 
   /* ---------- Progress percentage ---------- */
   function countAnswered(){
@@ -885,8 +914,7 @@ permalink: /threat-assessment.html
           const nextQ = questions[idx + 1];
 
           setTimeout(() => {
-            // scroll-margin-top on .ta-question handles the offset
-            nextQ.scrollIntoView({ behavior:'smooth', block:'start' });
+            scrollToQuestion(nextQ);
           }, 160);
         }
       }
@@ -1302,8 +1330,7 @@ permalink: /threat-assessment.html
       errorEl.textContent = 'Please answer all questions to generate an accurate Threat Profile.';
 
       const targetEl = title || incomplete;
-      // scroll-margin-top on .ta-question will handle the sticky offset
-      targetEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      scrollToQuestion(targetEl);
       return;
     }
 
