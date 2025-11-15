@@ -587,7 +587,7 @@ permalink: /threat-assessment.html
 
 /* Global sticky offset so layout + JS/scroll behavior stay in sync */
 :root{
-  --ta-sticky-offset: 5rem; /* adjust if your header is taller/shorter */
+  --ta-sticky-offset: 7rem; /* was 5rem */
 }
 
 /* Card is now just a flex container to centre inner content */
