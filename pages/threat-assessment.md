@@ -585,30 +585,38 @@ permalink: /threat-assessment.html
 <style>
 /* Threat Assessment — scoped styles using existing theme variables */
 
-/* Center the whole card on the page */
+/* Card is now just a flex container to centre inner content */
 .ta-card{
-  margin:1.5rem auto 0;
+  margin-top:1.5rem;
   position:relative;
   overflow:visible;
-  max-width:840px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-/* Progress card – same styling as questions so it feels like part of the questionnaire */
+/* Progress, form, and result all share the same centred width */
+.ta-progress,
+.ta-form,
+.ta-result{
+  width:100%;
+  max-width:960px;
+}
+
+/* Progress bar base style (no standalone tile feel) */
 .ta-progress{
   margin-bottom:1.5rem;
-  padding:0.85rem 1rem 1rem;
-  border-radius:1rem;
-  background:var(--card);
-  box-shadow:0 4px 12px rgba(0,0,0,.22);
-  transition:box-shadow .15s ease-out, background .15s ease-out;
+  padding-bottom:0.75rem;
+  background:transparent;
+  transition:background .15s ease-out;
 }
 
-/* When pinned under the header: keep same background, remove shadow */
+/* When JS pins it under the header – keep visual style the same */
 .ta-progress-fixed{
-  background:var(--card) !important;
-  box-shadow:none !important;
+  background:transparent;
 }
 
+/* Progress header + track */
 .ta-progress-header{
   display:flex;
   align-items:center;
@@ -644,14 +652,14 @@ permalink: /threat-assessment.html
   color:var(--muted);
 }
 
-/* Centre the form content inside the card */
+/* Form layout */
 .ta-form{
   display:flex;
   flex-direction:column;
   gap:1rem;
 }
 
-/* Question blocks */
+/* Questions still look like tiles, but centred by the container above */
 .ta-question{
   padding:1rem;
   border-radius:1rem;
@@ -733,6 +741,7 @@ permalink: /threat-assessment.html
   min-height:1.1em;
 }
 
+/* Result panel shares same centred width via .ta-result rule above */
 .ta-result{
   margin-top:2rem;
   padding:1.25rem;
@@ -790,9 +799,6 @@ permalink: /threat-assessment.html
 }
 
 @media (max-width: 720px){
-  .ta-card{
-    max-width:100%;
-  }
   .ta-question{
     padding:.9rem;
   }
@@ -840,7 +846,6 @@ permalink: /threat-assessment.html
     bar.style.width = pct + '%';
     pctLabel.textContent = pct + '%';
 
-    // Keep note cleared / minimal
     if(note){
       if(answered === totalQuestions){
         note.textContent = 'All questions answered. Generate your Threat Profile below.';
@@ -848,6 +853,19 @@ permalink: /threat-assessment.html
         note.textContent = '';
       }
     }
+  }
+
+  /* Helper: how far down to scroll so the next question isn't cut off */
+  function getScrollOffset(){
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const progHeight = taProgress ? taProgress.getBoundingClientRect().height : 0;
+    const hasFixedProgress = taProgress && taProgress.classList.contains('ta-progress-fixed');
+
+    // When fixed, header + progress bar occupy the top; otherwise just header.
+    const occupied = hasFixedProgress ? headerHeight + progHeight : headerHeight;
+    const extraMargin = 24; // a little breathing space
+    return occupied + extraMargin;
   }
 
   /* ---------- Sticky progress under header ---------- */
@@ -916,7 +934,7 @@ permalink: /threat-assessment.html
 
           setTimeout(() => {
             const rect = nextQ.getBoundingClientRect();
-            const offset = 120;
+            const offset = getScrollOffset();
             const targetY = rect.top + window.scrollY - offset;
             window.scrollTo({ top: targetY, behavior: 'smooth' });
           }, 160);
@@ -1332,11 +1350,11 @@ permalink: /threat-assessment.html
     if(incomplete){
       const title = incomplete.querySelector('.ta-question-title');
       errorEl.textContent = 'Please answer all questions to generate an accurate Threat Profile.';
-      if(title){
-        title.scrollIntoView({behavior:'smooth', block:'center'});
-      }else{
-        incomplete.scrollIntoView({behavior:'smooth', block:'center'});
-      }
+      const offset = getScrollOffset();
+      const targetEl = title || incomplete;
+      const rect = targetEl.getBoundingClientRect();
+      const targetY = rect.top + window.scrollY - offset;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
       return;
     }
 
