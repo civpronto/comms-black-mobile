@@ -3,193 +3,110 @@ layout: default
 title: Training
 permalink: /training.html
 ---
-<main class="container">
-    
-    <h1>CommsBlack Academy</h1>
-    <p>Learn how to secure your communications, protect your privacy, and operate with confidence in a digital‑first world.</p>
-    <h2>Core Topics</h2>
-    <details><summary>GrapheneOS Basics</summary><p>GrapheneOS minimizes attack surface and removes bloatware.</p></details>
-    <details><summary>VoIP & Anonymous Numbers</summary><p>Use internet‑based calling and messaging with private numbers.</p></details>
-    <details><summary>Faraday Protection</summary><p>Block wireless signals in transit and storage with Faraday gear.</p></details>
-    
-  </main><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Module <MODULE NUMBER> — <MODULE NAME> | CommsBlack Training</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="<META DESCRIPTION>">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-    }
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px 16px 64px;
-    }
-    a { color: #38bdf8; text-decoration: none; }
-    header {
-      margin-bottom: 18px;
-    }
-    .crumb {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-bottom: 6px;
-    }
-    .crumb a { color: #9ca3af; }
-    .tagline {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #9ca3af;
-      margin-bottom: 4px;
-    }
-    h1 {
-      font-size: 1.7rem;
-      margin: 0 0 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    h1 span.icon {
-      font-size: 1.4rem;
-    }
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-bottom: 10px;
-    }
-    .meta-pill {
-      border-radius: 999px;
-      padding: 3px 9px;
-      border: 1px solid #1f2937;
-      background: #020617;
-    }
-    .intro {
-      font-size: 0.95rem;
-      color: #d1d5db;
-      margin-bottom: 18px;
-    }
-    .section {
-      border-radius: 16px;
-      border: 1px solid #111827;
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.13), #020617);
-      padding: 14px 14px 12px;
-      margin-bottom: 14px;
-    }
-    .section h2 {
-      font-size: 1.05rem;
-      margin: 0 0 4px;
-    }
-    .section p {
-      font-size: 0.9rem;
-      margin: 4px 0;
-    }
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 6px;
-    }
-    .badge {
-      border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 0.75rem;
-      border: 1px solid #1f2937;
-      color: #9ca3af;
-      background: #020617;
-    }
-    ul {
-      margin: 4px 0 6px 18px;
-      padding: 0;
-      font-size: 0.9rem;
-    }
-    li { margin-bottom: 3px; }
-    .callout {
-      border-radius: 14px;
-      border: 1px dashed #1f2937;
-      padding: 10px;
-      font-size: 0.86rem;
-      background: #020617;
-      color: #e5e7eb;
-      margin-top: 6px;
-    }
-    .callout strong {
-      color: #38bdf8;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      margin-top: 4px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.82rem;
-    }
-    th, td {
-      padding: 5px 6px;
-      border-bottom: 1px solid #111827;
-      text-align: left;
-    }
-    th {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.7rem;
-      color: #9ca3af;
-    }
-    .footer-nav {
-      margin-top: 18px;
-      font-size: 0.85rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      border-top: 1px solid #111827;
-      padding-top: 10px;
-      color: #9ca3af;
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <header>
-      <div class="crumb">
-        <a href="training.html">← Back to Training Overview</a>
-      </div>
-      <div class="tagline">Module <MODULE NUMBER></div>
-      <h1><span class="icon">[ICON]</span><MODULE NAME></h1>
-      <div class="meta-row">
-        <span class="meta-pill">Level: [Core / Applied / Advanced]</span>
-        <span class="meta-pill">Recommended for: [Shield / Shadow / Ghost]</span>
-        <span class="meta-pill">Est. time: ~[X] minutes</span>
-      </div>
-      <div class="intro">
-        <!-- Short intro (2–3 lines) -->
-        [MODULE INTRO TEXT]
-      </div>
-    </header>
+<main class="container training">
+  <h1>CommsBlack Training</h1>
 
-    <!-- Sections go here -->
+  <p>
+    Learn how to secure your communications, protect your privacy, and operate
+    with confidence in a digital-first world. These modules are designed for
+    users of Shield, Shadow and Ghost communication kits.
+  </p>
 
-    <div class="footer-nav">
-      <span>Part of CommsBlack Training for Shield / Shadow / Ghost.</span>
-      <span>
-        Next: <a href="module-XX-next.html">[Next module name] →</a>
-      </span>
-    </div>
-  </div>
-</body>
-</html>
+  <h2>How to use this training</h2>
+  <p>
+    Work through the modules in order for a full onboarding, or jump directly to
+    the area that matches your threat model. Modules are tagged as
+    <strong>Core</strong>, <strong>Applied</strong> or <strong>Advanced</strong>.
+  </p>
 
+  <ol class="module-list">
+    <li>
+      <strong>Module 01 — Foundations &amp; GrapheneOS (Core)</strong><br>
+      Security vs privacy vs anonymity, GrapheneOS basics, and the duress PIN for
+      theft/seizure scenarios.<br>
+      <a href="/training/module-01-foundations.html">Open module →</a>
+    </li>
 
+    <li>
+      <strong>Module 02 — Device Security &amp; Kits (Core)</strong><br>
+      Standard vs Shield vs Shadow vs Ghost device setups, plus seizure and theft
+      protections.<br>
+      <a href="/training/module-02-device-security.html">Open module →</a>
+    </li>
 
+    <li>
+      <strong>Module 03 — Connection Security (Core)</strong><br>
+      VPN, Tor, anonymous SIMs, NW750 privacy router, Faraday usage and
+      correlation attacks.<br>
+      <a href="/training/module-03-connection-security.html">Open module →</a>
+    </li>
 
+    <li>
+      <strong>Module 04 — Metadata Minimisation (Core)</strong><br>
+      Metadata awareness, account hygiene, data-session habits and traffic
+      padding.<br>
+      <a href="/training/module-04-metadata.html">Open module →</a>
+    </li>
 
+    <li>
+      <strong>Module 05 — Secure Communications (COMMSEC) (Core)</strong><br>
+      What COMMSEC is, encrypted app suite, and PGP for higher-assurance
+      communications.<br>
+      <a href="/training/module-05-commsec.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 06 — Secure Transactions (Crypto Privacy) (Applied)</strong><br>
+      Cryptocurrency basics, privacy coins and Cake Wallet usage/limitations.<br>
+      <a href="/training/module-06-crypto.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 07 — Operational Security (OPSEC) (Applied)</strong><br>
+      What OPSEC is, common failures and workflows for Shield, Shadow and Ghost
+      kits.<br>
+      <a href="/training/module-07-opsec.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 08 — Global Digital Privacy Awareness (Context)</strong><br>
+      Global digital freedom landscape, surveillance laws and case studies.<br>
+      <a href="/training/module-08-global-privacy.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 09 — Australia: Laws &amp; Reality (Context)</strong><br>
+      How Australian surveillance powers compare globally, with practical
+      implications for CommsBlack users.<br>
+      <a href="/training/module-09-australia-privacy.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 10 — Compartmentalisation (Advanced)</strong><br>
+      Building and maintaining digital compartments to avoid cross-contamination
+      between identities and devices.<br>
+      <a href="/training/module-10-compartments.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 11 — App Selection &amp; Risk (Advanced)</strong><br>
+      How apps leak metadata, how to vet them and safer choices on GrapheneOS.<br>
+      <a href="/training/module-11-app-risk.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 12 — Anti-Forensics Awareness (Advanced)</strong><br>
+      What leaves traces, realistic anti-forensics behaviour and how the duress
+      PIN fits into seizure scenarios.<br>
+      <a href="/training/module-12-anti-forensics.html">Open module →</a>
+    </li>
+
+    <li>
+      <strong>Module 13 — Defending by Adversary Class (Mapping)</strong><br>
+      Understanding different adversary types and mapping them to Shield, Shadow
+      and Ghost workflows.<br>
+      <a href="/training/module-13-adversaries.html">Open module →</a>
+    </li>
+  </ol>
+</main>
