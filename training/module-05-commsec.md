@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 05 — Secure Communications (COMMSEC)
-  permalink: /training/module-05-commsec.html
-  ---
+---
+layout: default
+title: Module 05 — Secure Communications (COMMSEC)
+permalink: /training/module-05-commsec.html
+---
 
   <main class="container training-module">
 

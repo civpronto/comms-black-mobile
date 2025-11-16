@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 13 — Defending by Adversary Class
-  permalink: /training/module-13-adversaries.html
-  ---
+---
+layout: default
+title: Module 13 — Defending by Adversary Class
+permalink: /training/module-13-adversaries.html
+---
 
   <main class="container training-module">
 

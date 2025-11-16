@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 11 — App Selection & Risk
-  permalink: /training/module-11-app-risk.html
-  ---
+---
+layout: default
+title: Module 11 — App Selection & Risk
+permalink: /training/module-11-app-risk.html
+---
 
   <main class="container training-module">
 

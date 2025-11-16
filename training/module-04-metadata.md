@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 04 — Metadata Minimisation
-  permalink: /training/module-04-metadata.html
-  ---
+---
+layout: default
+title: Module 04 — Metadata Minimisation
+permalink: /training/module-04-metadata.html
+---
 
   <main class="container training-module">
 

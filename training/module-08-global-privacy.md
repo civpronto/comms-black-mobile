@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 08 — Global Digital Privacy Awareness
-  permalink: /training/module-08-global-privacy.html
-  ---
+---
+layout: default
+title: Module 08 — Global Digital Privacy Awareness
+permalink: /training/module-08-global-privacy.html
+---
 
   <main class="container training-module">
 

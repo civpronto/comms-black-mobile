@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 10 — Compartmentalisation
-  permalink: /training/module-10-compartments.html
-  ---
+---
+layout: default
+title: Module 10 — Compartmentalisation
+permalink: /training/module-10-compartments.html
+---
 
   <main class="container training-module">
 

@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 12 — Anti-Forensics Awareness
-  permalink: /training/module-12-anti-forensics.html
-  ---
+---
+layout: default
+title: Module 12 — Anti-Forensics Awareness
+permalink: /training/module-12-anti-forensics.html
+---
 
   <main class="container training-module">
 

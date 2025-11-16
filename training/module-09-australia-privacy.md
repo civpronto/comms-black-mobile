@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 09 — Australia: Laws & Reality
-  permalink: /training/module-09-australia-privacy.html
-  ---
+---
+layout: default
+title: Module 09 — Australia: Laws & Reality
+permalink: /training/module-09-australia-privacy.html
+---
 
   <main class="container training-module">
 

@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 06 — Secure Transactions (Crypto Privacy)
-  permalink: /training/module-06-crypto.html
-  ---
+---
+layout: default
+title: Module 06 — Secure Transactions (Crypto Privacy)
+permalink: /training/module-06-crypto.html
+---
 
   <main class="container training-module">
 

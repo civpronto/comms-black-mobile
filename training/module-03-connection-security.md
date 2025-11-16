@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 03 — Connection Security
-  permalink: /training/module-03-connection-security.html
-  ---
+---
+layout: default
+title: Module 03 — Connection Security
+permalink: /training/module-03-connection-security.html
+---
 
   <main class="container training-module">
 

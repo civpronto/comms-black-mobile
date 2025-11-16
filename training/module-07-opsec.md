@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 07 — Operational Security (OPSEC)
-  permalink: /training/module-07-opsec.html
-  ---
+---
+layout: default
+title: Module 07 — Operational Security (OPSEC)
+permalink: /training/module-07-opsec.html
+---
 
   <main class="container training-module">
 

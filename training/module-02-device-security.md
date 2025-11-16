@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 02 — Device Security & Kits
-  permalink: /training/module-02-device-security.html
-  ---
+---
+layout: default
+title: Module 02 — Device Security & Kits
+permalink: /training/module-02-device-security.html
+---
 
   <main class="container training-module">
 
