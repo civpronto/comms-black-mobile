@@ -5,11 +5,17 @@
     ---
 
     <main class="container training-module">
-      <p class="breadcrumb"><a href="/training.html">← Back to CommsBlack Academy</a></p>
+
+      <p class="breadcrumb">
+        <a href="/training.html">← Back to CommsBlack Academy</a>
+      </p>
+
       <h1>Module 08 — Global Digital Privacy Awareness</h1>
       <p class="meta">
         Level: Context · Recommended for: All kits · Est. time: ~15 minutes
       </p>
+
+      <hr>
 
     <section>
   <h2>1. Digital Freedom Landscape</h2>
@@ -24,8 +30,8 @@
   <h2>2. Surveillance Laws &amp; Powers</h2>
   <ul>
     <li>Data retention, interception warrants and device search powers.</li>
-    <li>Cross-border data sharing between states.</li>
-    <li>Why “legal” access can still feel like a breach of privacy.</li>
+    <li>Cross‑border data sharing between states.</li>
+    <li>Why "legal" access can still feel like a breach of privacy.</li>
   </ul>
 </section>
 

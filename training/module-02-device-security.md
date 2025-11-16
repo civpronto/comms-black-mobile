@@ -5,40 +5,46 @@
     ---
 
     <main class="container training-module">
-      <p class="breadcrumb"><a href="/training.html">← Back to CommsBlack Academy</a></p>
+
+      <p class="breadcrumb">
+        <a href="/training.html">← Back to CommsBlack Academy</a>
+      </p>
+
       <h1>Module 02 — Device Security & Kits</h1>
       <p class="meta">
         Level: Core · Recommended for: Shield / Shadow / Ghost · Est. time: ~25 minutes
       </p>
 
+      <hr>
+
     <section>
   <h2>1. Standard Device vs CommsBlack Kits</h2>
   <p>
-    This section compares a normal Android device with hardened CommsBlack devices.
+    Compare a normal Android device to a CommsBlack kit.
   </p>
-  <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+  <table>
     <thead>
       <tr>
-        <th style="border-bottom:1px solid #222; text-align:left; padding:4px;">Aspect</th>
-        <th style="border-bottom:1px solid #222; text-align:left; padding:4px;">Standard Device</th>
-        <th style="border-bottom:1px solid #222; text-align:left; padding:4px;">CommsBlack Kit</th>
+        <th>Aspect</th>
+        <th>Standard device</th>
+        <th>CommsBlack kit</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="padding:4px;">OS &amp; firmware</td>
-        <td style="padding:4px;">Stock Android, vendor apps, unclear patch state.</td>
-        <td style="padding:4px;">GrapheneOS, curated hardware, controlled setup.</td>
+        <td>OS &amp; firmware</td>
+        <td>Stock Android, vendor apps, unclear patch state.</td>
+        <td>GrapheneOS, curated hardware, controlled setup.</td>
       </tr>
       <tr>
-        <td style="padding:4px;">Attack surface</td>
-        <td style="padding:4px;">Broad — many preinstalled apps and services.</td>
-        <td style="padding:4px;">Reduced — minimal extras, hardened defaults.</td>
+        <td>Attack surface</td>
+        <td>Broad — many preinstalled apps and services.</td>
+        <td>Reduced — minimal extras, hardened defaults.</td>
       </tr>
       <tr>
-        <td style="padding:4px;">Threat model clarity</td>
-        <td style="padding:4px;">Unclear; unknown history and tracking.</td>
-        <td style="padding:4px;">Clear; known configuration and workflows.</td>
+        <td>Threat model clarity</td>
+        <td>Unclear; unknown history and tracking.</td>
+        <td>Clear; known configuration and workflows.</td>
       </tr>
     </tbody>
   </table>
@@ -68,7 +74,7 @@
   <h3>Capabilities</h3>
   <ul>
     <li>Low-profile device with stricter app selection and compartments.</li>
-    <li>Designed to interact with higher-risk environments.</li>
+    <li>Designed for higher-risk environments.</li>
   </ul>
   <h3>Mitigations</h3>
   <ul>
@@ -85,7 +91,7 @@
   <h2>4. Ghost Configuration</h2>
   <h3>Capabilities</h3>
   <ul>
-    <li>High-friction device for operations requiring stronger anonymity.</li>
+    <li>High-friction device for operations needing stronger anonymity.</li>
     <li>Heavily restricted apps, networks and behaviours.</li>
   </ul>
   <h3>Mitigations</h3>
@@ -102,10 +108,9 @@
 
 <section>
   <h2>5. Device Seizure &amp; Theft</h2>
-  <p style="margin-bottom:0.4rem;">Simple decision flow:</p>
   <ol>
-    <li>If travelling or protesting, prefer PIN over biometrics.</li>
-    <li>If device is out of sight, power it down or enable auto-reboot.</li>
+    <li>If travelling or protesting, prefer a strong PIN over biometrics.</li>
+    <li>If a device is out of sight, power it down or enable auto-reboot.</li>
     <li>If coerced to unlock and safe to do so, use the duress PIN.</li>
     <li>After any incident, assume all visible data may be copied.</li>
   </ol>

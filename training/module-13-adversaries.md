@@ -5,11 +5,17 @@
     ---
 
     <main class="container training-module">
-      <p class="breadcrumb"><a href="/training.html">← Back to CommsBlack Academy</a></p>
+
+      <p class="breadcrumb">
+        <a href="/training.html">← Back to CommsBlack Academy</a>
+      </p>
+
       <h1>Module 13 — Defending by Adversary Class</h1>
       <p class="meta">
         Level: Mapping · Recommended for: All kits · Est. time: ~20 minutes
       </p>
+
+      <hr>
 
     <section>
   <h2>1. Adversary Types</h2>

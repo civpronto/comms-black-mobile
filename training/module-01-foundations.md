@@ -5,11 +5,17 @@
     ---
 
     <main class="container training-module">
-      <p class="breadcrumb"><a href="/training.html">← Back to CommsBlack Academy</a></p>
+
+      <p class="breadcrumb">
+        <a href="/training.html">← Back to CommsBlack Academy</a>
+      </p>
+
       <h1>Module 01 — Foundations & GrapheneOS</h1>
       <p class="meta">
         Level: Core · Recommended for: Shield / Shadow / Ghost · Est. time: ~20 minutes
       </p>
+
+      <hr>
 
     <section>
   <h2>1. Security vs Privacy vs Anonymity</h2>
@@ -17,29 +23,29 @@
     Most mistakes happen because these three concepts get blurred. Use this
     section to anchor your expectations.
   </p>
-  <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+  <table>
     <thead>
       <tr>
-        <th style="border-bottom:1px solid #222; text-align:left; padding:4px;">Goal</th>
-        <th style="border-bottom:1px solid #222; text-align:left; padding:4px;">Description</th>
-        <th style="border-bottom:1px solid #222; text-align:left; padding:4px;">Example focus</th>
+        <th>Goal</th>
+        <th>Description</th>
+        <th>Example focus</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="padding:4px;">Security</td>
-        <td style="padding:4px;">Prevent compromise of device and accounts.</td>
-        <td style="padding:4px;">Lockscreen, patches, hardened OS (GrapheneOS).</td>
+        <td>Security</td>
+        <td>Prevent compromise of device and accounts.</td>
+        <td>Lockscreen, patches, hardened OS (GrapheneOS).</td>
       </tr>
       <tr>
-        <td style="padding:4px;">Privacy</td>
-        <td style="padding:4px;">Limit who can see your data and activity.</td>
-        <td style="padding:4px;">Encrypted apps, VPN, minimising data shared.</td>
+        <td>Privacy</td>
+        <td>Limit who can see your data and activity.</td>
+        <td>Encrypted apps, VPN, minimising data shared.</td>
       </tr>
       <tr>
-        <td style="padding:4px;">Anonymity</td>
-        <td style="padding:4px;">Hide who you are, even if activity is visible.</td>
-        <td style="padding:4px;">Compartmented devices, Tor, strict behaviour.</td>
+        <td>Anonymity</td>
+        <td>Hide who you are, even if activity is visible.</td>
+        <td>Compartmented devices, Tor, strict behaviour.</td>
       </tr>
     </tbody>
   </table>
@@ -77,30 +83,33 @@
     scenarios. It looks like a normal PIN but triggers a defensive action
     instead of simply unlocking the device.
   </p>
+
   <h3>What it does</h3>
   <ul>
     <li>Acts as a separate PIN that you enter under coercion.</li>
-    <li>Can trigger secure wipe or other pre-configured behaviour.</li>
-    <li>Designed to protect data during live theft or seizure events.</li>
+    <li>Can trigger secure wipe or other configured behaviour.</li>
+    <li>Protects data during live theft or seizure events.</li>
   </ul>
 
   <h3>Effective when</h3>
   <ul>
     <li>You still control the device long enough to enter the duress PIN.</li>
-    <li>You have rehearsed when to use it and what it will do.</li>
-    <li>Your highest-risk data is stored in profiles that will be destroyed.</li>
+    <li>You've rehearsed when to use it and what it will do.</li>
+    <li>Your highest-risk data is held in profiles that will be destroyed.</li>
   </ul>
 
   <h3>Not a magic eraser</h3>
   <ul>
-    <li>Does not undo actions already taken on an unlocked device.</li>
-    <li>Does not remove metadata from external services.</li>
-    <li>Cannot erase historical forensic captures of the device.</li>
+    <li>Doesn't undo actions already taken on an unlocked device.</li>
+    <li>Doesn't remove metadata from external services.</li>
+    <li>Can't erase historical forensic captures of the device.</li>
   </ul>
 
   <p>
-    You will see how the duress PIN fits into broader anti-forensics thinking in
-    <a href="/training/module-12-anti-forensics.html">Module 12 — Anti-Forensics Awareness</a>.
+    You'll see how the duress PIN fits into broader anti-forensics thinking in
+    <a href="/training/module-12-anti-forensics.html">
+      Module 12 — Anti-Forensics Awareness
+    </a>.
   </p>
 </section>
 
@@ -109,7 +118,7 @@
   <p>Before moving on, you should be able to answer:</p>
   <ul>
     <li>Which matters more for this kit: security, privacy or anonymity?</li>
-    <li>Who your likely adversary is (friend, employer, criminal, state).</li>
+    <li>Who your likely adversary is (friend, employer, criminal, state)?</li>
     <li>Whether you will configure and use a duress PIN — and when.</li>
   </ul>
 </section>
