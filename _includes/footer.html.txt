@@ -1,0 +1,7 @@
+<footer>
+  <div class="container">
+    <p>© 2025 Comms Black Mobile. No tracking. No data collection. No compliance with law enforcement, regulators or government.</p>
+  </div>
+</footer>
+
+
