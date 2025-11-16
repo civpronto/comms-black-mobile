@@ -1,8 +1,8 @@
-  ---
-  layout: default
-  title: Module 01 — Foundations & GrapheneOS
-  permalink: /training/module-01-foundations.html
-  ---
+---
+layout: default
+title: Module 01 — Foundations & GrapheneOS
+permalink: /training/module-01-foundations.html
+---
 
   <main class="container training-module">
 
