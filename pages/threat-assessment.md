@@ -634,16 +634,19 @@ permalink: /threat-assessment.html
 /* Progress bar spans full card width */
 .ta-progress{
   width:100%;
-  margin-bottom:1.5rem;
-  padding-bottom:0.75rem;
-  background:var(--card);
-  box-shadow:none;
-  transition:background .15s ease-out;
+  max-width:none;
+  margin:0 0 1.5rem;
+  padding:1rem 1.5rem 1.25rem;
+
+  /* KEY LINES: match the big background tile */
+  background:inherit;         /* same as .ta-card (rgba(255,255,255,.03)) */
+  border-radius:inherit;      /* keep the rounded top corners */
+  box-shadow:none;            /* remove darker card shadow */
+
   position:sticky;
   top:var(--ta-sticky-offset);
   z-index:5;
 }
-
 :root[data-theme="light"] .ta-progress{
   background:var(--card);
   box-shadow:none;
