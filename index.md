@@ -10,8 +10,8 @@ permalink: /
       <div class="hero-copy">
         <h1>Speak Freely</h1>
         <div class="cta-row">
-          <a class="btn btn-outline" href="/threat-assessment.html">Threat Assessment</a>
-          <a class="btn" href="/armoury.html">Arm Yourself</a>
+          <a class="btn" href="/threat-assessment.html">Threat Assessment</a>
+	  <a class="btn btn-outline" href="/armoury.html">Arm Yourself</a>
         </div>
       </div>
       <div class="hero-media">
