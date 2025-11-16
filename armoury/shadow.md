@@ -6,52 +6,57 @@ permalink: /armoury/shadow.html
 
 # PX8-A Shadow — $1800 AUD
 
-A secure comms kit for **moderate-risk** workflows. Adds stronger **network & metadata protection** on top of OS hardening — ideal for travel and operational privacy.
+**Moderate-risk secure comms kit** that layers strong network and metadata protection on top of OS hardening. Built for travel and operational privacy without full Ghost-level complexity.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
-## Quick Summary
-<table>
-  <tr><td><strong>Threat level</strong></td><td>Medium</td></tr>
-  <tr><td><strong>Best for</strong></td><td>Activists, execs, cross-border travellers</td></tr>
-  <tr><td><strong>Primary protection</strong></td><td>Dragnet surveillance + light targeting</td></tr>
-  <tr><td><strong>Ease of use</strong></td><td>★★★★☆</td></tr>
-</table>
+---
 
-## Feature Tiles
-<table>
-  <tr><td>Always-on VPN</td><td>Encrypted traffic + killswitch</td></tr>
-  <tr><td>Privacy SIM</td><td>Anonymous mobile data (10GB)</td></tr>
-  <tr><td>Faraday bag</td><td>RF isolation in transit/storage</td></tr>
-  <tr><td>Encrypted comms</td><td>Signal & Threema</td></tr>
-  <tr><td>Password vault</td><td>Offline KeePassDX</td></tr>
-  <tr><td>PGP toolkit</td><td>OpenKeychain</td></tr>
-</table>
+## At a glance
 
-## Pricing
-| Item | Price |
-|------|------:|
-| PX8-A Shadow kit | $1800 AUD |
+- **Threat level:** Medium  
+- **Best for:** Activists, executives, cross-border travellers  
+- **Primary protection:** Dragnet surveillance & light targeting  
+- **Ease of use:** ★★★★☆  
 
-## Hardware
-- Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted
-- Shockproof case & privacy screen protector
-- **Medium Faraday bag**
+---
 
-<details>
-<summary><strong>Software & Security (details)</strong></summary>
+## What you get
+
+### Hardware
+
+- Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage  
+- Shockproof protective case  
+- Privacy screen protector  
+- **Medium Faraday bag** — RF isolation in transit/storage  
+
+### Network & metadata layer
+
+- **Mullvad VPN**
+  - Always-on with kill switch enforced
+  - Encrypts all traffic and masks IP-level metadata
+- **Privacy SIM (in handset)**
+  - Anonymous, global mobile data
+  - Unlimited expiry with **10GB included**
+
+### Software & security
 
 - GrapheneOS hardened encrypted OS  
-- Mullvad VPN — always-on + kill switch  
-- Privacy SIM (in handset) — anonymous, global, unlimited expiry, 10GB included  
-- Signal & Threema — secure messaging, calls, file sharing  
+- Signal & Threema — secure messaging, calls, file transfer  
 - KeePassDX — offline password manager  
-- OpenKeychain — PGP encryption/decryption  
-- Cake Wallet — anonymous crypto storage & transactions
+- OpenKeychain — PGP encryption/decryption toolkit  
+- Cake Wallet — anonymous crypto storage & transactions  
 
-</details>
+---
+
+## Ideal scenarios
+
+- **Cross-border travel** where dragnet collection and device inspection are a concern  
+- **Activism and campaigns** needing separation from personal devices and accounts  
+- Executives needing a **clean, privacy-focused travel handset** for higher-risk regions  
 
 ## Summary
-A balanced, travel-ready platform for **moderate-risk** environments: encrypted comms, anonymous data, and RF isolation.
+
+A balanced, travel-ready platform for **moderate-risk environments**: hardened OS, encrypted comms, anonymous data, and RF isolation — with everyday usability intact.

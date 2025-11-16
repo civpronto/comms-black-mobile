@@ -4,43 +4,59 @@ layout: page
 permalink: /armoury/privacy-sim.html
 ---
 
-# Privacy SIM — $150 AUD
+# Privacy SIM — Recharge
 
-Anonymous data-only eSIM designed to prevent **identity correlation, SIM-swap exploitation, and subscription-based tracking**. Global coverage and **no expiry** for long-term operational flexibility.
+**Anonymous data-only eSIM** designed to break identity correlation, SIM-swap exploitation, and subscription-based tracking. Global reach with **no data expiry** for long-term operational flexibility.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
-## Quick Summary
-<table>
-  <tr><td><strong>Use cases</strong></td><td>Private travel, comms segregation, high-risk ops</td></tr>
-  <tr><td><strong>Coverage</strong></td><td>Global</td></tr>
-  <tr><td><strong>Expiry</strong></td><td>None (data never expires)</td></tr>
-  <tr><td><strong>Included data</strong></td><td>10GB</td></tr>
-</table>
+---
 
-## Features
-<table>
-  <tr><td>No PII</td><td>Purchases not identity-linked</td></tr>
-  <tr><td>Data-only</td><td>No voice-ID trail</td></tr>
-  <tr><td>Unlimited expiry</td><td>Data stays valid</td></tr>
-  <tr><td>Global roaming</td><td>Worldwide operation</td></tr>
-</table>
+## At a glance
 
-## Pricing
-| Item | Price |
-|------|------:|
-| Privacy SIM (10GB incl.) | $150 AUD |
+- **Use cases:** Private travel, comms segregation, high-risk operations  
+- **Coverage:** Global  
+- **Expiry:** None — data never expires  
+- **Included data:** 10GB  
 
-## Data Top-Up
-| Data | Price | Rate |
-|------|------:|------:|
-| 1GB  | $10   | $10/GB |
-| 10GB | $100  | $10/GB |
-| 20GB | $180  | $9/GB  |
-| 50GB | $400  | $8/GB  |
-| 100GB| $700  | $7/GB  |
+---
+
+## Key properties
+
+- **No PII required**  
+  Purchases are not identity-linked to your real-world details.
+
+- **Data-only profile**  
+  No voice/SMS subscription trail; reduces metadata exposed through legacy telco channels.
+
+- **Unlimited expiry**  
+  Data remains valid indefinitely — ideal for standby devices and contingency kits.
+
+- **Global roaming**  
+  Works worldwide for cross-border operations and travel.
+
+---
+
+## Data top-up pricing
+
+| Data  | Price | Rate    |
+|-------|------:|--------:|
+| 1GB   | $10   | $10/GB  |
+| 10GB  | $100  | $10/GB  |
+| 20GB  | $180  | $9/GB   |
+| 50GB  | $400  | $8/GB   |
+| 100GB | $700  | $7/GB   |
+
+---
+
+## Ideal uses
+
+- Keeping **travel devices** off your main identity  
+- Building **segregated comms stacks** (work vs ops vs personal)  
+- Maintaining a **cold standby device** that’s always ready, without worrying about expiry  
 
 ## Summary
-A privacy-preserving eSIM that enables **anonymous data usage** across borders without tying activity to a real-world identity.
+
+A privacy-preserving eSIM enabling **anonymous, cross-border data usage** without tying activity to a real-world identity or expiring your balance.

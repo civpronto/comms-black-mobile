@@ -6,61 +6,67 @@ permalink: /armoury/shield.html
 
 # PX8-A Shield — $1600 AUD
 
-A hardened, privacy-focused handset for **low-risk workflows**. Protects against **app-level surveillance, data compromise, and physical theft/seizure** — while keeping everyday Android workflows familiar.
+A **hardened, privacy-focused handset** for low-risk workflows. Protects against app-level surveillance, data compromise, and physical theft/seizure while keeping Android workflows familiar.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
-## Quick Summary
-<table>
-  <tr><td><strong>Threat level</strong></td><td>Low</td></tr>
-  <tr><td><strong>Best for</strong></td><td>Travellers, journalists, privacy-minded users</td></tr>
-  <tr><td><strong>Primary protection</strong></td><td>App surveillance + physical seizure</td></tr>
-  <tr><td><strong>Ease of use</strong></td><td>★★★★★</td></tr>
-</table>
+---
 
-## Feature Tiles
-<table>
-  <tr><td>Hardened OS</td><td>Strong exploit resistance</td></tr>
-  <tr><td>Verified Boot</td><td>Detects firmware tampering</td></tr>
-  <tr><td>USB data lock</td><td>Charging-only when locked</td></tr>
-  <tr><td>Duress wipe</td><td>Instant irreversible sanitisation</td></tr>
-  <tr><td>Fine permissions</td><td>Per-app network, mic/camera toggles</td></tr>
-  <tr><td>No Google telemetry</td><td>Optional sandboxed Play</td></tr>
-</table>
+## At a glance
 
-## Pricing
-| Item | Price |
-|------|------:|
-| PX8-A Shield kit | $1600 AUD |
+- **Threat level:** Low  
+- **Best for:** Travellers, journalists, privacy-minded users  
+- **Primary protection:** App surveillance & physical seizure  
+- **Ease of use:** ★★★★★  
 
-## Hardware
-- Pixel 8a handset
-- Shockproof protective case
-- Privacy screen protector
+---
 
-<details>
-<summary><strong>Software & Security (details)</strong></summary>
+## What you get
 
-### GrapheneOS Base
-- Hardened kernel & libc (hardened malloc, zero-init), CFI + stack protections
-- Verified Boot; detects system/firmware tampering
-- Attack-surface reduction (USB lines locked when device locked, sensors/NFC/UWB constraints)
-- App/process sandboxing beyond stock Android
+### Hardware
 
-### Privacy Controls & Apps
-- One-time / foreground-only permissions
-- Mic/camera/sensor toggles, per-app network access, scoped storage/contacts
-- Default MAC randomisation
-- Hardened browser, secure camera (EXIF removed), secure PDF viewer
-- Encrypted backups (SeedVault)
+- Pixel 8a handset  
+- Shockproof protective case  
+- Privacy screen protector  
 
-### Telemetry & Emergency
-- No built-in Google services; optional sandboxed Play
-- **Duress PIN/Password** → wipe + power-off
+### GrapheneOS base
 
-</details>
+- Hardened kernel & libc (hardened malloc, zero-init)  
+- Control-flow integrity, stack protections  
+- **Verified Boot** — detects system/firmware tampering  
+- Attack-surface reduction:
+  - USB data lines locked when device is locked
+  - Sensors/NFC/UWB constraints
+  - Strong app/process sandboxing beyond stock Android  
+
+### Privacy controls & apps
+
+- One-time / foreground-only permissions  
+- Mic, camera, and sensor toggles  
+- Per-app network access controls  
+- Scoped storage/contacts for data minimisation  
+- Default MAC randomisation  
+- Hardened browser, secure camera (EXIF stripped), secure PDF viewer  
+- Encrypted backups via SeedVault  
+
+### Telemetry & emergency response
+
+- No built-in Google services  
+- Optional sandboxed Play for app compatibility  
+- **Duress PIN/password**:
+  - Instant irreversible wipe
+  - Automatic power-off  
+
+---
+
+## Ideal scenarios
+
+- Users in **low-risk environments** who still want meaningful privacy and security  
+- Journalists and travellers needing a **daily-use secure handset**  
+- Anyone wanting to **de-Google** their primary device without breaking their workflow  
 
 ## Summary
-Secure daily-use device for **low-risk environments** prioritising privacy and data control with minimal workflow change.
+
+A secure daily-use device for **low-risk environments**, prioritising privacy and data control with minimal workflow change and maximum familiarity.

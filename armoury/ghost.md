@@ -6,53 +6,59 @@ permalink: /armoury/ghost.html
 
 # PX8-A Ghost — $2500 AUD
 
-Built for **high-risk** scenarios: defeats targeted surveillance, device/location correlation, and infrastructure-level tracking with **identity randomisation** and **network anonymity**.
+**High-risk comms kit for hostile environments.** Built to break targeted surveillance, device/location correlation, and infrastructure-level tracking with identity randomisation and strong network anonymity.
 
 <div style="margin:1rem 0 1.25rem;">
   <a href="/contact.html" class="btn">Contact to order</a>
 </div>
 
-## Quick Summary
-<table>
-  <tr><td><strong>Threat level</strong></td><td>High</td></tr>
-  <tr><td><strong>Best for</strong></td><td>Field journalism, dissidents, intelligence roles</td></tr>
-  <tr><td><strong>Primary protection</strong></td><td>Targeted tracking + identity correlation</td></tr>
-  <tr><td><strong>Ease of use</strong></td><td>★★★☆☆</td></tr>
-</table>
+---
 
-## Feature Tiles
-<table>
-  <tr><td>NitroWall</td><td>IMEI/MAC/BSSID re-roll; breaks tower tracking</td></tr>
-  <tr><td>VPN/Tor gateway</td><td>OpenWrt network anonymity</td></tr>
-  <tr><td>Privacy SIM</td><td>Anonymous connectivity (10GB)</td></tr>
-  <tr><td>Faraday bag (Large)</td><td>Multi-device RF isolation</td></tr>
-  <tr><td>Encrypted comms</td><td>Signal + Threema suite</td></tr>
-  <tr><td>PGP + Vault</td><td>OpenKeychain + KeePassDX</td></tr>
-</table>
+## At a glance
 
-## Pricing
-| Item | Price |
-|------|------:|
-| PX8-A Ghost kit | $2500 AUD |
+- **Threat level:** High  
+- **Best for:** Field journalism, dissidents, intelligence roles  
+- **Primary protection:** Targeted tracking & identity correlation  
+- **Ease of use:** ★★★☆☆  
 
-## Hardware
-- Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted
-- **NW750 NitroWall** — re-roll IMEI/BSSID/MAC to defeat correlation
-- Shockproof case & privacy screen protector
-- **Large Faraday bag**
+---
 
-<details>
-<summary><strong>Software & Security (details)</strong></summary>
+## What you get
 
-- GrapheneOS hardened encrypted OS  
-- OpenWrt gateway — VPN/Tor routing + local-network resistance  
-- Privacy SIM (in router) — anonymous, global, unlimited expiry, 10GB included  
-- Signal & Threema — end-to-end comms  
+### Hardware
+
+- Pixel 8a — 6.1" Gorilla Glass, Tensor G3, 8GB RAM, 128GB encrypted storage  
+- **NW750 NitroWall** — re-rolls IMEI/BSSID/MAC to defeat device/tower correlation  
+- Shockproof case & privacy screen protector  
+- **Large Faraday bag** — RF isolation for multiple devices  
+
+### Network & identity layer
+
+- **NitroWall gateway** (OpenWrt)
+  - IMEI/MAC/BSSID re-roll to break long-term tracking
+  - VPN/Tor routing for network anonymity
+- **Privacy SIM** (in router)
+  - Anonymous, global data
+  - Unlimited expiry with **10GB included**
+
+### Software & security
+
+- GrapheneOS hardened encrypted OS on handset  
+- OpenWrt gateway with VPN/Tor routing + local-network resistance  
+- Signal & Threema — end-to-end encrypted messaging, calls, file sharing  
 - KeePassDX — offline password manager  
 - OpenKeychain — PGP crypto toolkit  
-- Cake Wallet — anonymous crypto storage & transactions
+- Cake Wallet — anonymous crypto storage & transactions  
 
-</details>
+---
+
+## Ideal scenarios
+
+- Operating in **hostile jurisdictions** where devices are actively targeted  
+- Crossing borders where **tower correlation and SIM history** matter  
+- Running **separate, deniable identities** for field work  
+- Coordinating sensitive activity where both **device and network anonymity** are required  
 
 ## Summary
-A comprehensive platform for **hostile environments** requiring maximum communications deniability and network anonymity.
+
+A comprehensive platform for **maximum deniability and anonymity** in high-risk environments, combining hardened hardware, identity randomisation, and network-level protection.
