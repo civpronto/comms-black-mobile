@@ -4,109 +4,141 @@ title: Training
 permalink: /training.html
 ---
 
+<style>
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .module-tile {
+    border: 1px solid #111827;
+    border-radius: 14px;
+    padding: 16px;
+    background: radial-gradient(circle at top left, rgba(56,189,248,0.12), #020617);
+    color: #e5e7eb;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  }
+
+  .module-tile h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    color: #f1f5f9;
+  }
+
+  .module-tile p {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    margin: 0 0 12px;
+  }
+
+  .module-button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background: #38bdf8;
+    color: #020617;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .module-button:hover {
+    background: #7dd3fc;
+  }
+</style>
+
 <main class="container training">
-  <h1>CommsBlack Training</h1>
+  <h1>CommsBlack Academy</h1>
 
   <p>
     Learn how to secure your communications, protect your privacy, and operate
-    with confidence in a digital-first world. These modules are designed for
-    users of Shield, Shadow and Ghost communication kits.
+    with confidence in a digital-first world. These modules cover everything
+    needed for Shield, Shadow and Ghost communication kits.
   </p>
 
-  <h2>How to use this training</h2>
-  <p>
-    Work through the modules in order for a full onboarding, or jump directly to
-    the area that matches your threat model. Modules are tagged as
-    <strong>Core</strong>, <strong>Applied</strong> or <strong>Advanced</strong>.
-  </p>
+  <h2>Training Modules</h2>
 
-  <ol class="module-list">
-    <li>
-      <strong>Module 01 — Foundations &amp; GrapheneOS (Core)</strong><br>
-      Security vs privacy vs anonymity, GrapheneOS basics, and the duress PIN for
-      theft/seizure scenarios.<br>
-      <a href="/training/module-01-foundations.html">Open module →</a>
-    </li>
+  <div class="module-grid">
 
-    <li>
-      <strong>Module 02 — Device Security &amp; Kits (Core)</strong><br>
-      Standard vs Shield vs Shadow vs Ghost device setups, plus seizure and theft
-      protections.<br>
-      <a href="/training/module-02-device-security.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 01 — Foundations & GrapheneOS</h3>
+      <p>Security vs privacy vs anonymity, GrapheneOS basics, duress PIN.</p>
+      <a class="module-button" href="/training/module-01-foundations.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 03 — Connection Security (Core)</strong><br>
-      VPN, Tor, anonymous SIMs, NW750 privacy router, Faraday usage and
-      correlation attacks.<br>
-      <a href="/training/module-03-connection-security.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 02 — Device Security & Kits</h3>
+      <p>Standard vs Shield, Shadow and Ghost device models and protections.</p>
+      <a class="module-button" href="/training/module-02-device-security.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 04 — Metadata Minimisation (Core)</strong><br>
-      Metadata awareness, account hygiene, data-session habits and traffic
-      padding.<br>
-      <a href="/training/module-04-metadata.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 03 — Connection Security</h3>
+      <p>VPN, Tor, anonymous SIMs, NW750 router, Faraday and correlation attacks.</p>
+      <a class="module-button" href="/training/module-03-connection-security.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 05 — Secure Communications (COMMSEC) (Core)</strong><br>
-      What COMMSEC is, encrypted app suite, and PGP for higher-assurance
-      communications.<br>
-      <a href="/training/module-05-commsec.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 04 — Metadata Minimisation</h3>
+      <p>Metadata awareness, account hygiene, traffic padding, session control.</p>
+      <a class="module-button" href="/training/module-04-metadata.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 06 — Secure Transactions (Crypto Privacy) (Applied)</strong><br>
-      Cryptocurrency basics, privacy coins and Cake Wallet usage/limitations.<br>
-      <a href="/training/module-06-crypto.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 05 — Secure Communications (COMMSEC)</h3>
+      <p>Encrypted apps, PGP, identity protection and compartmented messaging.</p>
+      <a class="module-button" href="/training/module-05-commsec.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 07 — Operational Security (OPSEC) (Applied)</strong><br>
-      What OPSEC is, common failures and workflows for Shield, Shadow and Ghost
-      kits.<br>
-      <a href="/training/module-07-opsec.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 06 — Secure Transactions (Crypto Privacy)</h3>
+      <p>Crypto basics, privacy coins, Cake Wallet and safe transaction workflows.</p>
+      <a class="module-button" href="/training/module-06-crypto.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 08 — Global Digital Privacy Awareness (Context)</strong><br>
-      Global digital freedom landscape, surveillance laws and case studies.<br>
-      <a href="/training/module-08-global-privacy.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 07 — Operational Security (OPSEC)</h3>
+      <p>Behavioural security, role separation, Shield/Shadow/Ghost workflows.</p>
+      <a class="module-button" href="/training/module-07-opsec.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 09 — Australia: Laws &amp; Reality (Context)</strong><br>
-      How Australian surveillance powers compare globally, with practical
-      implications for CommsBlack users.<br>
-      <a href="/training/module-09-australia-privacy.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 08 — Global Digital Privacy Awareness</h3>
+      <p>Digital freedom overview, government surveillance powers, case studies.</p>
+      <a class="module-button" href="/training/module-08-global-privacy.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 10 — Compartmentalisation (Advanced)</strong><br>
-      Building and maintaining digital compartments to avoid cross-contamination
-      between identities and devices.<br>
-      <a href="/training/module-10-compartments.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 09 — Australia: Laws & Reality</h3>
+      <p>Australia’s surveillance laws and what they mean for CommsBlack users.</p>
+      <a class="module-button" href="/training/module-09-australia-privacy.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 11 — App Selection &amp; Risk (Advanced)</strong><br>
-      How apps leak metadata, how to vet them and safer choices on GrapheneOS.<br>
-      <a href="/training/module-11-app-risk.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 10 — Compartmentalisation</h3>
+      <p>Identity separation, device roles, contamination prevention, workflows.</p>
+      <a class="module-button" href="/training/module-10-compartments.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 12 — Anti-Forensics Awareness (Advanced)</strong><br>
-      What leaves traces, realistic anti-forensics behaviour and how the duress
-      PIN fits into seizure scenarios.<br>
-      <a href="/training/module-12-anti-forensics.html">Open module →</a>
-    </li>
+    <div class="module-tile">
+      <h3>Module 11 — App Selection & Risk</h3>
+      <p>App fingerprinting, risk assessment, recommended app choices.</p>
+      <a class="module-button" href="/training/module-11-app-risk.html">Open Module</a>
+    </div>
 
-    <li>
-      <strong>Module 13 — Defending by Adversary Class (Mapping)</strong><br>
-      Understanding different adversary types and mapping them to Shield, Shadow
-      and Ghost workflows.<br>
-      <a href="/training/module-13-adversaries.html">Open module →</a>
-    </li>
-  </ol>
+    <div class="module-tile">
+      <h3>Module 12 — Anti-Forensics Awareness</h3>
+      <p>Forensic realities, misconceptions, duress workflows, safe practices.</p>
+      <a class="module-button" href="/training/module-12-anti-forensics.html">Open Module</a>
+    </div>
+
+    <div class="module-tile">
+      <h3>Module 13 — Defending by Adversary Class</h3>
+      <p>Adversary capability mapping and choosing the right workflow.</p>
+      <a class="module-button" href="/training/module-13-adversaries.html">Open Module</a>
+    </div>
+
+  </div>
 </main>
