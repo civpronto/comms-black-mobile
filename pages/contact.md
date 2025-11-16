@@ -5,13 +5,14 @@ permalink: /contact.html
 ---
 
 <main class="container">
-  <h1>Contact CommsBlack</h1>
+  <h1>CommsBlack Contact</h1>
 
   <p class="muted">
     CommsBlack puts privacy first. Whether you're in Australia or overseas,
     you can reach us securely using the options below.
   </p>
 
+  <!-- CONTACT METHODS CARD -->
   <section class="card">
     <h2>Contact Methods</h2>
 
@@ -40,10 +41,12 @@ permalink: /contact.html
     </p>
 
     <h3>Optional: PGP Public Key (Advanced Privacy)</h3>
-    <p>
-      If you are familiar with PGP and prefer encrypted email, you can use this public key:
-    </p>
-    <pre>
+    <details>
+      <summary>Show PGP public key</summary>
+      <p>
+        If you are familiar with PGP and prefer encrypted email, you can use this public key:
+      </p>
+      <pre>
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEaRlLihYJKwYBBAHaRw8BAQdAQHw2IvtugPLkrXChrbV8q1KXDneNGSToZqbs
 n+4vE1m0NENvbW1zQmxhY2sub25saW5lIDxjb21tc2JsYWNrLm9ubGluZUBwcm90
@@ -55,14 +58,16 @@ CQWCaRlLigKbDAAKCRAvUumTlBWkwNqmAQDJWFXiwJn8N0QWH3XWrvyf8vqxis/M
 QasRteSJ3/hBWwEAxjiR/A/puGYysa2OKGT6GuEA1HzJOi1UFIF/V9T3FA4=
 =yi+z
 -----END PGP PUBLIC KEY BLOCK-----
-    </pre>
-    <p>
-      PGP is <strong>optional</strong>, not required. If you are not sure how to use it,
-      just contact us on Signal or send a normal email for general questions.
-    </p>
+      </pre>
+      <p>
+        PGP is <strong>optional</strong>, not required. If you are not sure how to use it,
+        just contact us on Signal or send a normal email for general questions.
+      </p>
+    </details>
   </section>
 
-  <section class="card">
+  <!-- RESPONSE TIMES CARD (SPACED) -->
+  <section class="card" style="margin-top: 1.5rem;">
     <h2>Response Times</h2>
     <ul>
       <li><strong>Signal:</strong> usually same-day</li>
@@ -70,71 +75,93 @@ QasRteSJ3/hBWwEAxjiR/A/puGYysa2OKGT6GuEA1HzJOi1UFIF/V9T3FA4=
     </ul>
   </section>
 
-  <section class="card">
+  <!-- FAQ CARD WITH COLLAPSIBLE ITEMS (SPACED) -->
+  <section class="card" style="margin-top: 1.5rem;">
     <h2>General FAQs</h2>
 
-    <h3>What does CommsBlack offer?</h3>
-    <p>
-      CommsBlack provides privacy-focused mobile setups, secure communication tools,
-      and services designed to minimise digital footprint and increase operational privacy.
-    </p>
+    <details>
+      <summary><strong>What does CommsBlack offer?</strong></summary>
+      <p>
+        CommsBlack provides privacy-focused mobile setups, secure communication tools,
+        and services designed to minimise digital footprint and increase operational privacy.
+      </p>
+    </details>
 
-    <h3>What is the safest way to contact you?</h3>
-    <p>
-      The safest and most private method is Signal using our handle
-      <code>commsblack.10</code>. Email is fine for general or simple questions.
-    </p>
+    <details>
+      <summary><strong>What is the safest way to contact you?</strong></summary>
+      <p>
+        The safest and most private method is Signal using our handle
+        <code>commsblack.10</code>. Email is fine for general or simple questions.
+      </p>
+    </details>
 
-    <h3>Do you store logs or tracking information?</h3>
-    <p>
-      No. We operate with strict minimal data retention: no tracking, no analytics,
-      and no unnecessary logs.
-    </p>
+    <details>
+      <summary><strong>Do you store logs or tracking information?</strong></summary>
+      <p>
+        No. We operate with strict minimal data retention: no tracking, no analytics,
+        and no unnecessary logs.
+      </p>
+    </details>
 
-    <h3>Can I send sensitive information by email?</h3>
-    <p>
-      You can, but email is not private by default. For sensitive details (addresses,
-      receipts, order information), we recommend using Signal, or optionally encrypting
-      your email with our PGP key. If you are unsure how, just use Signal instead.
-    </p>
+    <details>
+      <summary><strong>Can I send sensitive information by email?</strong></summary>
+      <p>
+        You can, but email is not private by default. For sensitive details (addresses,
+        receipts, order information), we recommend using Signal, or optionally encrypting
+        your email with our PGP key. If you are unsure how, just use Signal instead.
+      </p>
+    </details>
 
-    <h3>Do you have a phone number?</h3>
-    <p>
-      No. For privacy reasons, we only use secure communication channels (Signal and email).
-    </p>
+    <details>
+      <summary><strong>Do you have a phone number?</strong></summary>
+      <p>
+        No. For privacy reasons, we only use secure communication channels (Signal and email).
+      </p>
+    </details>
 
-    <h3>What payment methods do you accept?</h3>
-    <p>
-      We accept <strong>XMR (Monero) only</strong>. We do not accept fiat, credit cards,
-      PayPal, or other cryptocurrencies.
-    </p>
+    <details>
+      <summary><strong>What payment methods do you accept?</strong></summary>
+      <p>
+        We accept <strong>XMR (Monero) only</strong>. We do not accept fiat, credit cards,
+        PayPal, or other cryptocurrencies.
+      </p>
+    </details>
 
-    <h3>What is your refund or support policy?</h3>
-    <p>
-      Support and refunds are handled on a case-by-case basis. For any issues, contact us
-      via Signal or email and include relevant details (you may optionally encrypt them with PGP).
-    </p>
+    <details>
+      <summary><strong>What is your refund or support policy?</strong></summary>
+      <p>
+        Support and refunds are handled on a case-by-case basis. For any issues, contact us
+        via Signal or email and include relevant details (you may optionally encrypt them with PGP).
+      </p>
+    </details>
 
-    <h3>Where are you based?</h3>
-    <p>
-      We are based in <strong>Australia</strong> and support customers
-      <strong>internationally</strong>. All communication and service delivery are handled online.
-    </p>
+    <details>
+      <summary><strong>Where are you based?</strong></summary>
+      <p>
+        We are based in <strong>Australia</strong> and support customers
+        <strong>internationally</strong>. All communication and service delivery are handled online.
+      </p>
+    </details>
 
-    <h3>Are my messages kept confidential?</h3>
-    <p>
-      Yes. Signal is end-to-end encrypted, email can optionally be encrypted with PGP,
-      and we do not track visitors or keep communication logs beyond what is technically necessary.
-    </p>
+    <details>
+      <summary><strong>Are my messages kept confidential?</strong></summary>
+      <p>
+        Yes. Signal is end-to-end encrypted, email can optionally be encrypted with PGP,
+        and we do not track visitors or keep communication logs beyond what is technically necessary.
+      </p>
+    </details>
 
-    <h3>Do I need an account to contact you?</h3>
-    <p>
-      No. There is no account, login, or profile required. You can contact us anonymously
-      via Signal or email.
-    </p>
+    <details>
+      <summary><strong>Do I need an account to contact you?</strong></summary>
+      <p>
+        No. There is no account, login, or profile required. You can contact us anonymously
+        via Signal or email.
+      </p>
+    </details>
   </section>
 
-  <section class="card">
+  <!-- PRIVACY NOTICE CARD (SPACED) -->
+  <section class="card" style="margin-top: 1.5rem;">
     <h2>Privacy Notice</h2>
     <p>
       CommsBlack does not use trackers or analytics and does not log conversations.
