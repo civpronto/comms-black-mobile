@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 13 — Defending by Adversary Class</h1>

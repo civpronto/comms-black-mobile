@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 03 — Connection Security</h1>
@@ -21,19 +21,19 @@
   <h2>1. VPN</h2>
   <ul>
     <li><strong>Capabilities:</strong> Encrypts traffic between you and the VPN exit.</li>
-    <li><strong>Mitigations:</strong> Hides traffic from local Wi‑Fi/ISP; blends you into other users.</li>
+    <li><strong>Mitigations:</strong> Hides traffic from local Wi-Fi/ISP; blends you into other users.</li>
     <li><strong>Limitations:</strong> VPN provider sees your traffic; does not make you anonymous alone.</li>
-    <li><strong>Use cases:</strong> Shield daily use, travel, untrusted Wi‑Fi.</li>
+    <li><strong>Use cases:</strong> Shield daily use, travel, untrusted Wi-Fi.</li>
   </ul>
 </section>
 
 <section>
   <h2>2. Tor</h2>
   <ul>
-    <li><strong>Capabilities:</strong> Multi‑hop network designed for anonymity.</li>
+    <li><strong>Capabilities:</strong> Multi-hop network designed for anonymity.</li>
     <li><strong>Mitigations:</strong> Separates your IP from destination; resists simple tracking.</li>
     <li><strong>Limitations:</strong> Slower; some services block Tor; behaviour can still deanonymise you.</li>
-    <li><strong>Use cases:</strong> Shadow/Ghost workflows, high‑risk research.</li>
+    <li><strong>Use cases:</strong> Shadow/Ghost workflows, high-risk research.</li>
   </ul>
 </section>
 
@@ -51,7 +51,7 @@
   <ul>
     <li>NW750 privacy router centralises hardened DNS and outbound policy.</li>
     <li>Faraday bags physically isolate devices during transit or storage.</li>
-    <li>Use during border crossings, sensitive meetings and long‑term storage.</li>
+    <li>Use during border crossings, sensitive meetings and long-term storage.</li>
   </ul>
 </section>
 

@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 04 — Metadata Minimisation</h1>
@@ -39,7 +39,7 @@
   <h2>3. Account &amp; Session Hygiene</h2>
   <ul>
     <li>Use separate accounts for separate identities.</li>
-    <li>Avoid logging into personal accounts from high‑risk devices.</li>
+    <li>Avoid logging into personal accounts from high-risk devices.</li>
     <li>Restart devices between roles to clear volatile traces.</li>
   </ul>
 </section>

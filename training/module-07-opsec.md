@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 07 — Operational Security (OPSEC)</h1>
@@ -30,7 +30,7 @@
   <h2>2. Common Failure Points</h2>
   <ul>
     <li>Reusing accounts across roles or devices.</li>
-    <li>Logging into personal social accounts from high‑risk devices.</li>
+    <li>Logging into personal social accounts from high-risk devices.</li>
     <li>Talking about operations on normal channels "just once".</li>
   </ul>
 </section>
@@ -38,7 +38,7 @@
 <section>
   <h2>3. Shield Workflow</h2>
   <ul>
-    <li>Daily‑driver with stronger security/privacy.</li>
+    <li>Daily-driver with stronger security/privacy.</li>
     <li>Defined set of apps; update and backup routines.</li>
     <li>Clear rules for when not to use Shield (e.g. sensitive whistleblowing).</li>
   </ul>

@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 08 — Global Digital Privacy Awareness</h1>
@@ -30,7 +30,7 @@
   <h2>2. Surveillance Laws &amp; Powers</h2>
   <ul>
     <li>Data retention, interception warrants and device search powers.</li>
-    <li>Cross‑border data sharing between states.</li>
+    <li>Cross-border data sharing between states.</li>
     <li>Why "legal" access can still feel like a breach of privacy.</li>
   </ul>
 </section>

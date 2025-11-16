@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 11 — App Selection & Risk</h1>
@@ -38,13 +38,13 @@
 <section>
   <h2>3. Safer App Categories</h2>
   <ul>
-    <li>Open‑source where possible, or at least well‑audited.</li>
+    <li>Open-source where possible, or at least well-audited.</li>
     <li>Minimal permissions, clear privacy policy, no dark patterns.</li>
   </ul>
 </section>
 
 <section>
-  <h2>4. Per‑Kit App Strategy</h2>
+  <h2>4. Per-Kit App Strategy</h2>
   <ul>
     <li>Shield: broader but vetted app set.</li>
     <li>Shadow: essential apps only, with strict permissions.</li>

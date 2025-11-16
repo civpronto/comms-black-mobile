@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 10 — Compartmentalisation</h1>
@@ -35,7 +35,7 @@
 </section>
 
 <section>
-  <h2>3. Avoiding Cross‑Contamination</h2>
+  <h2>3. Avoiding Cross-Contamination</h2>
   <ul>
     <li>Never reuse logins or recovery emails across compartments.</li>
     <li>Do not move files between compartments without a clear reason.</li>
@@ -47,8 +47,8 @@
   <h2>4. Mapping Compartments to Kits</h2>
   <ul>
     <li>Shield: personal + work, with stronger hygiene.</li>
-    <li>Shadow: specific high‑risk roles or investigations.</li>
-    <li>Ghost: short‑lived, tightly scoped operations.</li>
+    <li>Shadow: specific high-risk roles or investigations.</li>
+    <li>Ghost: short-lived, tightly scoped operations.</li>
   </ul>
 </section>
 

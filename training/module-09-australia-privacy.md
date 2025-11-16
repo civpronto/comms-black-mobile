@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 09 — Australia: Laws & Reality</h1>
@@ -20,7 +20,7 @@
     <section>
   <h2>1. Australia vs Global</h2>
   <ul>
-    <li>How local surveillance and data‑access powers compare to other regions.</li>
+    <li>How local surveillance and data-access powers compare to other regions.</li>
     <li>Practical impact on journalists, activists and everyday users.</li>
   </ul>
 </section>

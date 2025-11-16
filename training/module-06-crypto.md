@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 06 — Secure Transactions (Crypto Privacy)</h1>
@@ -48,7 +48,7 @@
   <h2>4. Operational Guidelines</h2>
   <ul>
     <li>Never mix "clean" and "tainted" funds in the same wallet.</li>
-    <li>Consider how on/off‑ramps expose you even with privacy coins.</li>
+    <li>Consider how on/off-ramps expose you even with privacy coins.</li>
     <li>Document simple workflows instead of improvising under stress.</li>
   </ul>
 </section>

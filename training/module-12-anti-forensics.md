@@ -7,7 +7,7 @@
     <main class="container training-module">
 
       <p class="breadcrumb">
-        <a href="/training.html">← Back to CommsBlack Academy</a>
+        <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
       </p>
 
       <h1>Module 12 — Anti-Forensics Awareness</h1>
@@ -36,9 +36,9 @@
 </section>
 
 <section>
-  <h2>3. Practical Anti‑Forensics</h2>
+  <h2>3. Practical Anti-Forensics</h2>
   <ul>
-    <li>Use separate devices/profiles for high‑risk roles.</li>
+    <li>Use separate devices/profiles for high-risk roles.</li>
     <li>Limit the number of apps and accounts involved in an operation.</li>
     <li>Use the duress PIN as a planned, rehearsed response to live seizure.</li>
   </ul>
@@ -47,7 +47,7 @@
 <section>
   <h2>4. Limits &amp; Ethics</h2>
   <ul>
-    <li>No anti‑forensics is perfect, especially against state‑level actors.</li>
+    <li>No anti-forensics is perfect, especially against state-level actors.</li>
     <li>Consider legal and ethical boundaries in your jurisdiction.</li>
     <li>The goal is risk reduction, not invincibility.</li>
   </ul>
