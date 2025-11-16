@@ -631,22 +631,23 @@ permalink: /threat-assessment.html
   margin-inline:auto;       /* centre column inside big background tile */
 }
 
-/* Progress bar spans full card width */
+/* Progress bar styled like a question card */
 .ta-progress{
   width:100%;
   max-width:none;
   margin:0 0 1.5rem;
   padding:1rem 1.5rem 1.25rem;
 
-  /* KEY LINES: match the big background tile */
-  background:inherit;         /* same as .ta-card (rgba(255,255,255,.03)) */
-  border-radius:inherit;      /* keep the rounded top corners */
-  box-shadow:none;            /* remove darker card shadow */
+  /* MATCH QUESTION CARD BACKGROUND EXACTLY */
+  background: var(--card);   /* <-- the same value your question tiles use */
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);  /* same shadow as cards */
 
   position:sticky;
   top:var(--ta-sticky-offset);
   z-index:5;
 }
+
 :root[data-theme="light"] .ta-progress{
   background:var(--card);
   box-shadow:none;
