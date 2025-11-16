@@ -10,10 +10,35 @@
       <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
     </p>
 
+
+<style>
+  .training-module .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .training-module table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .training-module th,
+  .training-module td {
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+  }
+  .training-module thead th {
+    background: #020617;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+  .training-module tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+  }
+</style>
+
     <h1>Module 07 — Operational Security (OPSEC)</h1>
-    <p class="meta">
-      Level: Applied · Recommended for: Shield / Shadow / Ghost · Est. time: ~25–30 minutes
-    </p>
 
     <hr>
 
@@ -31,7 +56,7 @@
   <h2>⚠️ 2. Common Failure Patterns</h2>
   <ul>
     <li>Reusing the same email or phone number across unrelated roles.</li>
-    <li>Logging into personal social media from a high‑risk environment.</li>
+    <li>Logging into personal social media from a high-risk environment.</li>
     <li>Sharing screenshots or photos that reveal more than intended.</li>
   </ul>
 </section>

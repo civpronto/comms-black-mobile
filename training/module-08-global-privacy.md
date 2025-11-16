@@ -10,10 +10,35 @@
       <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
     </p>
 
+
+<style>
+  .training-module .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .training-module table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .training-module th,
+  .training-module td {
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+  }
+  .training-module thead th {
+    background: #020617;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+  .training-module tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+  }
+</style>
+
     <h1>Module 08 — Global Digital Privacy Awareness</h1>
-    <p class="meta">
-      Level: Context · Recommended for: All kits · Est. time: ~15–20 minutes
-    </p>
 
     <hr>
 
@@ -32,12 +57,12 @@
   <ul>
     <li>Data retention laws for telecoms and internet providers.</li>
     <li>Interception and monitoring powers with varying oversight.</li>
-    <li>Cross‑border data‑sharing agreements.</li>
+    <li>Cross-border data-sharing agreements.</li>
   </ul>
 </section>
 
 <section>
-  <h2>📚 3. Case‑Study Thinking</h2>
+  <h2>📚 3. Case-Study Thinking</h2>
   <p>
     Rather than memorising specific laws per country, focus on questions:
   </p>

@@ -10,10 +10,35 @@
       <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
     </p>
 
+
+<style>
+  .training-module .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .training-module table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .training-module th,
+  .training-module td {
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+  }
+  .training-module thead th {
+    background: #020617;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+  .training-module tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+  }
+</style>
+
     <h1>Module 04 — Metadata Minimisation</h1>
-    <p class="meta">
-      Level: Core · Recommended for: Shield / Shadow / Ghost · Est. time: ~20–25 minutes
-    </p>
 
     <hr>
 
@@ -79,7 +104,7 @@
       unless there is a very clear reason.
     </li>
     <li>
-      Restart devices between roles to clear temporary state and reduce cross‑linking.
+      Restart devices between roles to clear temporary state and reduce cross-linking.
     </li>
     <li>
       Periodically review where you are logged in and revoke old sessions.
@@ -100,7 +125,7 @@
     </li>
     <li>
       Prefer steady, predictable use over long periods rather than big,
-      attention‑grabbing bursts.
+      attention-grabbing bursts.
     </li>
     <li>
       Some advanced tools add “padding” traffic; these can help, but only when

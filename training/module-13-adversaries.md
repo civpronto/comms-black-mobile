@@ -10,10 +10,35 @@
       <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
     </p>
 
+
+<style>
+  .training-module .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .training-module table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .training-module th,
+  .training-module td {
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+  }
+  .training-module thead th {
+    background: #020617;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+  .training-module tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+  }
+</style>
+
     <h1>Module 13 — Defending by Adversary Class</h1>
-    <p class="meta">
-      Level: Mapping · Recommended for: All kits · Est. time: ~20–25 minutes
-    </p>
 
     <hr>
 
@@ -24,7 +49,7 @@
     <li>Opportunistic criminals and scammers.</li>
     <li>Persistent harassers or stalkers.</li>
     <li>Corporate or investigative actors.</li>
-    <li>State‑level or highly resourced organisations.</li>
+    <li>State-level or highly resourced organisations.</li>
   </ul>
 </section>
 
@@ -47,7 +72,7 @@
         </tr>
         <tr>
           <td>Harassers / doxxers</td>
-          <td>Open‑source search, social engineering.</td>
+          <td>Open-source search, social engineering.</td>
           <td>Shield + Shadow for separated roles.</td>
         </tr>
         <tr>
@@ -56,7 +81,7 @@
           <td>Shadow as primary; Ghost for select operations.</td>
         </tr>
         <tr>
-          <td>State‑level</td>
+          <td>State-level</td>
           <td>Broad data access, advanced tooling.</td>
           <td>
             Ghost where appropriate, plus conservative assumptions about what

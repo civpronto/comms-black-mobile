@@ -10,10 +10,35 @@
       <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
     </p>
 
+
+<style>
+  .training-module .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .training-module table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .training-module th,
+  .training-module td {
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+  }
+  .training-module thead th {
+    background: #020617;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+  .training-module tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+  }
+</style>
+
     <h1>Module 01 — Foundations & GrapheneOS</h1>
-    <p class="meta">
-      Level: Core · Recommended for: Shield / Shadow / Ghost · Est. time: ~25–30 minutes
-    </p>
 
     <hr>
 
@@ -44,7 +69,7 @@
         <tr>
           <td>Privacy 🕶️</td>
           <td>Limit who can see your data and digital activity.</td>
-          <td>End‑to‑end encryption, data minimisation, permissions.</td>
+          <td>End-to-end encryption, data minimisation, permissions.</td>
         </tr>
         <tr>
           <td>Anonymity 🕵️</td>
@@ -64,16 +89,16 @@
 <section>
   <h2>📱 2. GrapheneOS in Plain Language</h2>
   <p>
-    GrapheneOS is a hardened Android‑based operating system focused on
+    GrapheneOS is a hardened Android-based operating system focused on
     <strong>exploit resistance</strong> and <strong>privacy controls</strong> rather than
-    eye‑candy or vendor bloat.
+    eye-candy or vendor bloat.
   </p>
   <h3>✅ Capabilities</h3>
   <ul>
     <li>Hardened memory management to make many exploits significantly harder.</li>
     <li>Stronger app sandboxing and strict permission controls.</li>
-    <li>Improved lockscreen and full‑disk encryption defaults.</li>
-    <li>Per‑app network, sensor and storage controls.</li>
+    <li>Improved lockscreen and full-disk encryption defaults.</li>
+    <li>Per-app network, sensor and storage controls.</li>
     <li>Profile separation for clean “compartments” on one device.</li>
   </ul>
   <h3>🛡️ What it mitigates</h3>
@@ -93,23 +118,23 @@
   </ul>
   <p>
     Think of GrapheneOS as the <strong>foundation</strong> of your kit: it removes many
-    “easy win” attack paths so you can focus on higher‑level risks.
+    “easy win” attack paths so you can focus on higher-level risks.
   </p>
 </section>
 
 <section>
-  <h2>🚨 3. Duress PIN: Last‑Resort Protection</h2>
+  <h2>🚨 3. Duress PIN: Last-Resort Protection</h2>
   <p>
     A duress PIN is a special code you can enter on the lockscreen that looks
     like a normal unlock attempt but instead triggers a defensive action
-    (for example, wiping a profile). It is designed for high‑pressure
+    (for example, wiping a profile). It is designed for high-pressure
     situations where you are being forced to unlock a device.
   </p>
   <h3>How it helps</h3>
   <ul>
     <li>Lets you respond under pressure in a way you have rehearsed.</li>
     <li>
-      Can rapidly protect the highest‑risk data if you no longer expect to
+      Can rapidly protect the highest-risk data if you no longer expect to
       control the device.
     </li>
     <li>
@@ -125,7 +150,7 @@
     </li>
     <li>
       You understand that it protects local data, not information already
-      stored with third‑party services.
+      stored with third-party services.
     </li>
   </ul>
   <h3>Important cautions</h3>
@@ -144,14 +169,14 @@
     </li>
   </ul>
   <p>
-    You will see how duress strategies fit into broader anti‑forensics
+    You will see how duress strategies fit into broader anti-forensics
     thinking later in
-    <a href="/training/module-12-anti-forensics.html">Module 12 — Anti‑Forensics Awareness</a>.
+    <a href="/training/module-12-anti-forensics.html">Module 12 — Anti-Forensics Awareness</a>.
   </p>
 </section>
 
 <section>
-  <h2>✅ 4. Quick Self‑Check</h2>
+  <h2>✅ 4. Quick Self-Check</h2>
   <ul>
     <li>Can you clearly explain the difference between security, privacy and anonymity?</li>
     <li>Do you understand what GrapheneOS gives you — and what it doesn’t?</li>

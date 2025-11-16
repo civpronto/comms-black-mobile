@@ -10,10 +10,35 @@
       <a class="btn" href="/training.html">← Back to CommsBlack Training</a>
     </p>
 
+
+<style>
+  .training-module .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .training-module table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .training-module th,
+  .training-module td {
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+  }
+  .training-module thead th {
+    background: #020617;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+  .training-module tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+  }
+</style>
+
     <h1>Module 06 — Secure Transactions (Crypto Privacy)</h1>
-    <p class="meta">
-      Level: Applied · Recommended for: Shadow / Ghost · Est. time: ~20–25 minutes
-    </p>
 
     <hr>
 
@@ -28,10 +53,10 @@
 </section>
 
 <section>
-  <h2>🪙 2. Privacy‑Focused Coins</h2>
+  <h2>🪙 2. Privacy-Focused Coins</h2>
   <p>
-    Privacy‑oriented cryptocurrencies aim to hide sender, receiver and/or
-    amounts on‑chain. They are tools for financial privacy, not magic cloaks.
+    Privacy-oriented cryptocurrencies aim to hide sender, receiver and/or
+    amounts on-chain. They are tools for financial privacy, not magic cloaks.
   </p>
   <ul>
     <li>
@@ -39,7 +64,7 @@
       public ledger alone.
     </li>
     <li>
-      Trade‑offs: regulatory scrutiny, availability, liquidity and learning
+      Trade-offs: regulatory scrutiny, availability, liquidity and learning
       curve.
     </li>
   </ul>
@@ -52,7 +77,7 @@
     <li>Use separate wallets for different roles or projects.</li>
     <li>
       Avoid mixing funds that you want to keep logically separate; once mixed,
-      they can be hard to “un‑entangle”.
+      they can be hard to “un-entangle”.
     </li>
   </ul>
 </section>
@@ -60,7 +85,7 @@
 <section>
   <h2>📈 4. Operational Considerations</h2>
   <ul>
-    <li>Understand that on/off‑ramps (exchanges, brokers) often perform KYC.</li>
+    <li>Understand that on/off-ramps (exchanges, brokers) often perform KYC.</li>
     <li>
       Document a simple, repeatable process that matches your legal obligations
       and risk tolerance.
