@@ -10,7 +10,7 @@ permalink: /
       <div class="hero-copy">
         <h1>Speak Freely</h1>
         <div class="cta-row">
-          <a class="btn btn-outline" href="/threat-assessment.html">2 min Threat Assessment</a>
+          <a class="btn btn-outline" href="/threat-assessment.html">Threat Assessment</a>
           <a class="btn" href="/armoury.html">Arm Yourself</a>
         </div>
       </div>
