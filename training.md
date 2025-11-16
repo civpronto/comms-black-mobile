@@ -65,7 +65,7 @@ permalink: /training.html
 </style>
 
 <main class="container training">
-  <h1>CommsBlack Academy</h1>
+  <h1>CommsBlack Training</h1>
 
   <p>
     Learn how to secure your communications, protect your privacy, and operate
