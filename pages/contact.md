@@ -20,7 +20,7 @@ permalink: /contact.html
     <p>
       For the fastest and most private communication, contact us on Signal.
     </p>
-    <p><strong>Signal handle:</strong> <code>commsblack.10</code></p>
+    <p><strong>Signal handle:</strong> <code>commsblack.70</code></p>
     <p>
       Open Signal and search for the handle above, or visit
       <a href="https://signal.me" target="_blank" rel="noopener">signal.me</a>
